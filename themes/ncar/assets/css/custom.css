@@ -4,7 +4,7 @@ body {
     background-image: url(../img/background.png)!important;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center top;
+    background-position: center center;
 }
 
 a.u-url {
