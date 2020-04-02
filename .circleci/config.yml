@@ -1,0 +1,74 @@
+version: 2.1
+
+jobs:
+
+  build_site:
+
+    docker:
+      - image: circleci/python:latest
+
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "2f:46:d4:bf:53:bd:96:3c:e6:b3:aa:68:5e:42:0b:b9"
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "conf.py" }}
+      - run:
+          name: Install Nikola
+          command: sudo pip install nikola[extras]
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "conf.py" }}
+          paths:
+            - "$HOME/.cache/pip"
+      - run:
+          name: Build site with Nikola
+          command: nikola build
+      - store_artifacts:
+          path: ./output/
+
+  deploy_site:
+
+    docker:
+      - image: circleci/python:latest
+
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "2f:46:d4:bf:53:bd:96:3c:e6:b3:aa:68:5e:42:0b:b9"
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "conf.py" }}
+      - run:
+          name: Install Nikola
+          command: sudo pip install nikola[extras]
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "conf.py" }}
+          paths:
+            - "$HOME/.cache/pip"
+      - run:
+          name: Build site with Nikola and deploy to GitHub Pages
+          command: |
+            git config --global user.name 'Xdev Bot'
+            git config --global user.email '47308153+xdev-bot@users.noreply.github.com'
+            nikola build
+            nikola github_deploy -m '[ci skip] Nikola auto deploy'
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_site:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+                - master
+
+      - deploy_site:
+          filters:
+            branches:
+              only:
+                - master
+              ignore:
+                - gh-pages
