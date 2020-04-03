@@ -230,9 +230,9 @@ PAGES = (
 )
 
 # And to avoid a conflict because blogs try to generate /index.html
-INDEX_PATH = "blog"
+#INDEX_PATH = "blog"
 # Or you can disable blog indexes altogether:
-# DISABLE_INDEXES = True
+DISABLE_INDEXES = True
 
 # Below this point, everything is optional
 
