@@ -226,6 +226,7 @@ PAGES = (
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "page.tmpl"),
 )
 
 # And to avoid a conflict because blogs try to generate /index.html
