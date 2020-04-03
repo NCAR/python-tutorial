@@ -217,13 +217,15 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
+# you can also keep the current content of POSTS if you want a blog with your site
 POSTS = ()
 
+# remove destination directory to generate pages in the root directory
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
 )
 
 
