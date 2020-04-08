@@ -8,16 +8,24 @@
 .. type: text
 .. hidetitle: True
 
-# NCAR Python Tutorial
---------------------------
+======================
+NCAR Python Tutorial
+======================
 
-[Getting Started](../pages/requirements.ipynb)
 
-## Zero to Thirty Beginner 
+Getting Started
+================
+Requirements: /requirements.ipynb
 
-### 1. First Python Script -- part_1
 
-#### 1a. [Reading in a .txt File](part_1/z230_p1a.ipynb)
+Zero to Thirty Beginner 
+======================
+
+1. First Python Script
+=======================
+
+1.1 [Reading in a .txt File](part_1/z230_p1a.ipynb)
+----------------------------
 - Workspace Setup:
     - Creating a directory
     - Creating a conda environment
@@ -39,7 +47,8 @@
     - `git commit`
     - `git logs`
 
-#### 1b. [Creating a Data Dictionary](part_1/z230_p1b.ipynb)
+1.2 [Creating a Data Dictionary](part_1/z230_p1b.ipynb)
+----------------------------
 -  Python Data Structures
     - `list` 
         - `list.append()`
@@ -53,8 +62,9 @@
     - initializing data variables
     - `str.split()`
     - the `float` datatype.
-    
-#### 1c. [Writing a Function to Compute Wind Chill Index](part_1/z230_p1c.ipynb)
+ 
+1.3 [Writing a Function to Compute Wind Chill Index](part_1/z230_p1c.ipynb)
+----------------------------
 - Python Concepts:
     - functions
     - math operators
