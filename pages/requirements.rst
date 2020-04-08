@@ -35,3 +35,6 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 4. `Install git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
     
     Git is a program that tracks changes made to files. This makes it easy to maintain access to multiple versions of your code as you improve it, and revert your code back to a previous version if you've made any mistakes.
+
+
+`Begin Tutorial Part 1.1: Reading in a .txt File <link://slug/part1_1>`_
