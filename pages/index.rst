@@ -25,7 +25,7 @@ Zero to Thirty Beginner
 1. First Python Script
 =======================
 
-1.1 `Reading in a .txt File <link://slug/part1_1`_
+1.1 `Reading in a .txt File <link://slug/part1_1>`_
 ---------------------------------------------------
 - Workspace Setup:
     - Creating a directory
