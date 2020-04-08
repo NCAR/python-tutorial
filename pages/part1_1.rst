@@ -108,8 +108,8 @@ Open a terminal to begin:
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
 . . code-block:: python
-
     print("Hello, world!")
+
 
     Your classic first command will be to print "Hello World".
 
@@ -123,7 +123,6 @@ Yay! You've just created your first Python script.
 
     Change the mysci.py script to read:
 .. code_block:: python
-
     # Read the data file
     filename = "data/wxobs20170821.txt"
     datafile = open(filename, 'r')
@@ -135,6 +134,7 @@ Yay! You've just created your first Python script.
 
     datafile.close()
 
+    
     First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
     Then create a variable associated with the opened file, here it is called datafile.
@@ -156,7 +156,6 @@ Yay! You've just created your first Python script.
 19. Change the mysci.py script to read your whole data file:
 
 .. code-block:: python
-
     # Read the data file
     filename = "data/wxobs20170821.txt"
     datafile = open(filename, 'r')
@@ -167,6 +166,7 @@ Yay! You've just created your first Python script.
     print(data)
     print('data')
 
+
     Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
 
     Try print('data') as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
@@ -176,7 +176,6 @@ Yay! You've just created your first Python script.
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
 .. code-block:: python
-
     # Read the data file
     filename = "data/wxobs20170821.txt"
     with open(filename, 'r') as datafile:
@@ -184,6 +183,7 @@ Yay! You've just created your first Python script.
 
     # DEBUG
     print(data)
+
 
     Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
@@ -198,8 +198,8 @@ Yay! You've just created your first Python script.
     Add the following to the DEBUG section of our script:
 
 .. code-block:: python
-
     print(type(data))
+
 
     And execute with `python mysci.py`
 
