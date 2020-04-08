@@ -16,7 +16,6 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
 1. Check that you have conda or miniconda installed on your OS by checking your conda version: 
     
-    .. code-block: bash
     $ conda --version 
 
     At the time of writing this, the latest version of conda is 4.8. If you have an old version of conda installed, update it. \
@@ -34,4 +33,5 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
 
 4. `Install git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
-Git is a program that tracks changes made to files. This makes it easy to maintain access to multiple versions of your code as you improve it, and revert your code back to a previous version if you've made any mistakes.
+    
+    Git is a program that tracks changes made to files. This makes it easy to maintain access to multiple versions of your code as you improve it, and revert your code back to a previous version if you've made any mistakes.
