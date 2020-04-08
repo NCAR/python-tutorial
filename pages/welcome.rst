@@ -36,3 +36,5 @@ Open source -
     Python as a language is open source which means that there is a community of developers behind its codebase. Anyone can join the developer community and contribute to deciding the future of the language. When someone identifies gaps to Python's abilities, they can write up the code to fill these gaps. The open source nature of Python means that Python as a language is very adaptable to shifting needs of the user community.
 
 Python is a language designed for rapid prototyping and efficient programming. It is easy to write new code quickly with less typing.
+
+Begin `Tutorial Part 1.1 <link://slug/part1_!>`_

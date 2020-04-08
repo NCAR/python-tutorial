@@ -135,19 +135,19 @@ Yay! You've just created your first Python script.
 
     $ python mysci.py
 
-First create a variable for your datafile name, which is a string - this can be in single or double quotes.
+    First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
-Then create a variable associated with the opened file, here it is called datafile.
+    Then create a variable associated with the opened file, here it is called datafile.
 
-The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
+    The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
 
-The readline command moves through the open file, always reading the next line.
+    The readline command moves through the open file, always reading the next line.
 
-And remember to close your datafile.
+    And remember to close your datafile.
 
-Comments in Python are indicated with a hash, as you can see in the first line # Read the data file. Comments are ignored by the interpreter.
+    Comments in Python are indicated with a hash, as you can see in the first line # Read the data file. Comments are ignored by the interpreter.
 
-Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
+    Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
 18. Change the mysci.py script to read your whole data file:
 
@@ -161,11 +161,11 @@ Testing of your script with python mysci.py should be done every time you wish t
     print(data)
     print('data')
 
-Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
+    Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
 
-Try print('data') as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
+    Try print('data') as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
 
-Don't forget to execute with python mysci.py
+    Don't forget to execute with python mysci.py
 
 19. Change the mysci.py script to read your whole data file using a context manager with:
 
@@ -177,24 +177,25 @@ Don't forget to execute with python mysci.py
     # DEBUG
     print(data)
 
-Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
+    Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
-The indendation of the line data = datafile.read() is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
+    The indendation of the line data = datafile.read() is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
 
-Combined these two lines mean: with the datafile opened, I'd like to read it.
+    Combined these two lines mean: with the datafile opened, I'd like to read it.
 
-And execute with python mysci.py.
+    And execute with python mysci.py.
 
-python What did we just see? What is the data object? What type is data? How do we find out?
+20. What did we just see? What is the data object? What type is data? How do we find out?
 
-Add the following to the DEBUG section of our script:
+    Add the following to the DEBUG section of our script:
 
-print(type(data))
-And execute with `python mysci.py`
+    print(type(data))
 
-20. What did we just see? What is the data object? In the 'DEBUG' section of our script let's find out the type of our data object. Object types refer to 'float' 'integer' 'string' or other types that you can create.
+    And execute with `python mysci.py`
 
-Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
+    Object types refer to 'float' 'integer' 'string' or other types that you can create.
+
+    Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
 
 21. Now, clean up the script by removing the DEBUG section, before we commit this to git.
 
@@ -231,9 +232,8 @@ Python is a dynamically typed language, which means you don't have to explicitly
 
 
 
------------------------
 That concludes the first lesson of this virtual tutorial.
 
 In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of open(), readline(), read(), close(), and print(), as well as the context manager with. You should be familiar with the str datatype. You also used fundamental git commands such as git init, git status, git add, git commit, and git logs.
 
-Please continue to `Part 1.2 <link://slug/part1.2>`_. 
+Please continue to `Part 1.2 <link://slug/part1_2>`_. 
