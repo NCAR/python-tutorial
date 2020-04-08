@@ -15,7 +15,8 @@ NCAR Python Tutorial
 
 Getting Started
 ================
-Requirements: /requirements.ipynb
+Requirements_ 
+.. Requirements: /requirements.ipynb
 
 
 Zero to Thirty Beginner 
