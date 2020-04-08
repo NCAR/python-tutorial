@@ -20,13 +20,13 @@ link://requirements.rst
 
 
 Zero to Thirty Beginner 
-======================
+=======================
 
 1. First Python Script
 =======================
 
 1.1 [Reading in a .txt File](part_1/z230_p1a.ipynb)
-----------------------------
+---------------------------------------------------
 - Workspace Setup:
     - Creating a directory
     - Creating a conda environment
@@ -49,12 +49,12 @@ Zero to Thirty Beginner
     - `git logs`
 
 1.2 [Creating a Data Dictionary](part_1/z230_p1b.ipynb)
-----------------------------
+-------------------------------------------------------
 -  Python Data Structures
     - `list` 
         - `list.append()`
         - `list` indexing
-        - nested `list`s
+        - nested `list` s
     - `range`
     - `dict` 
         - key/value pairs
@@ -65,7 +65,7 @@ Zero to Thirty Beginner
     - the `float` datatype.
  
 1.3 [Writing a Function to Compute Wind Chill Index](part_1/z230_p1c.ipynb)
-----------------------------
+---------------------------------------------------------------------------
 - Python Concepts:
     - functions
     - math operators
