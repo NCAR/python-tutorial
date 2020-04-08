@@ -16,7 +16,7 @@ NCAR Python Tutorial
 Getting Started
 ================
 Requirements 
-:ref:`requirements`
+link://requirements.rst
 
 
 Zero to Thirty Beginner 
