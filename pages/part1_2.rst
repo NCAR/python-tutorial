@@ -202,4 +202,4 @@ In this section you saved the variables of date, time, and tempout in a data dic
 
 You should now be familiar with the data structures lists (as well as list indexing, nested lists, and the command list.append()), dictionaries (their keys and the command dict.get()), and ranges. You also learned to write for-loops, about the float datatype, and using the Python commands str.split.
 
-Please continue to `Part 1.3 <link://slurm/part1_3>`_.
+Please continue to `Part 1.3 <link://slug/part1_3>`_.
