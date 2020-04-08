@@ -15,8 +15,7 @@ NCAR Python Tutorial
 
 Getting Started
 ================
-Requirements 
-<link://slug/requirements>
+`Requirements  <link://slug/requirements>`_
 
 
 Zero to Thirty Beginner 
