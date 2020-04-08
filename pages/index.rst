@@ -13,6 +13,7 @@ NCAR Python Tutorial
 ======================
 
 
+
 Getting Started
 ================
 `Requirements  <link://slug/requirements>`_
@@ -24,7 +25,7 @@ Zero to Thirty Beginner
 1. First Python Script
 =======================
 
-1.1 [Reading in a .txt File](part_1/z230_p1a.ipynb)
+1.1 `Reading in a .txt File <link://slug/part1_1`_
 ---------------------------------------------------
 - Workspace Setup:
     - Creating a directory
@@ -47,8 +48,8 @@ Zero to Thirty Beginner
     - `git commit`
     - `git logs`
 
-1.2 [Creating a Data Dictionary](part_1/z230_p1b.ipynb)
--------------------------------------------------------
+1.2 `Creating a Data Dictionary <link://slug/part1_2.ipynb>`_
+-------------------------------------------------------------
 -  Python Data Structures
     - `list` 
         - `list.append()`
@@ -63,7 +64,7 @@ Zero to Thirty Beginner
     - `str.split()`
     - the `float` datatype.
  
-1.3 [Writing a Function to Compute Wind Chill Index](part_1/z230_p1c.ipynb)
+1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
 ---------------------------------------------------------------------------
 - Python Concepts:
     - functions
