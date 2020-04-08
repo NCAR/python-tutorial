@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 
 =========================
 1.1 - First Python Script

@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 
 Part 1c - Writing Function to Compute Wind Chill Index
 This is intended to pick off right where part 1b left off- you had just commited your new script that reads the file, saving the variables of date, time, and tempout in a data dictionary.

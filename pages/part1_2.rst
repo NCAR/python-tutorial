@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 
 =====================================
 Part 1.2 - Creating a Data Dictionary
