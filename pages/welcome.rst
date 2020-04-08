@@ -1,5 +1,5 @@
-.. title: part1_1
-.. slug: part1_1
+.. title: welcome
+.. slug: welcome
 .. date: 2020-04-08 14:29:40 UTC-06:00
 .. tags: 
 .. category: 
