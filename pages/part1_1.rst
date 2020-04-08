@@ -108,6 +108,7 @@ Open a terminal to begin:
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
 . . code-block:: python
+
     print("Hello, world!")
 
 
@@ -123,6 +124,7 @@ Yay! You've just created your first Python script.
 
     Change the mysci.py script to read:
 .. code_block:: python
+
     # Read the data file
     filename = "data/wxobs20170821.txt"
     datafile = open(filename, 'r')
@@ -156,6 +158,7 @@ Yay! You've just created your first Python script.
 19. Change the mysci.py script to read your whole data file:
 
 .. code-block:: python
+
     # Read the data file
     filename = "data/wxobs20170821.txt"
     datafile = open(filename, 'r')
@@ -176,6 +179,7 @@ Yay! You've just created your first Python script.
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
 .. code-block:: python
+
     # Read the data file
     filename = "data/wxobs20170821.txt"
     with open(filename, 'r') as datafile:
@@ -198,6 +202,7 @@ Yay! You've just created your first Python script.
     Add the following to the DEBUG section of our script:
 
 .. code-block:: python
+
     print(type(data))
 
 
