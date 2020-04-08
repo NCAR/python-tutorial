@@ -19,7 +19,7 @@ Getting Started
 `Requirements  <link://slug/requirements>`_
 
 
-Zero to Thirty Beginner 
+`Zero-to-Thirty Beginner Tutorial Introduction <link://slug/welcome>`_
 =======================
 
 1. First Python Script
@@ -48,8 +48,8 @@ Zero to Thirty Beginner
     - `git commit`
     - `git logs`
 
-1.2 `Creating a Data Dictionary <link://slug/part1_2.ipynb>`_
--------------------------------------------------------------
+1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
+-------------------------------------------------------
 -  Python Data Structures
     - `list` 
         - `list.append()`
