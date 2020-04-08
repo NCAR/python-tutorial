@@ -37,4 +37,4 @@ Open source -
 
 Python is a language designed for rapid prototyping and efficient programming. It is easy to write new code quickly with less typing.
 
-Begin `Tutorial Part 1.1 <link://slug/part1_!>`_
+Begin `Tutorial Part 1.1 <link://slug/part1_1>`_
