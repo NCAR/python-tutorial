@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 
 ==========================
 Python 0-30 for Scientists
