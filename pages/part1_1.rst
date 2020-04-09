@@ -111,7 +111,7 @@ Open a terminal to begin:
 
 ..
 
-   By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type "git add" and then the name of the altered file to stage your change.
+   By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type `git add` and then the name of the altered file to stage your change.
 
 10. Check your git status once again
 
@@ -131,7 +131,7 @@ Open a terminal to begin:
 
 ..
 
-   With "git commit", you've updated your repository with all the changes you staged, in this case just one file.
+   With `git commit`, you've updated your repository with all the changes you staged, in this case just one file.
 
 12. Look at the git logs:
 
@@ -141,7 +141,7 @@ Open a terminal to begin:
 
 ..
 
-   If you type "git log" you will show a log of all the commits, or changes made to your repository.
+   If you type `git log` you will show a log of all the commits, or changes made to your repository.
 
 13. Go back to the top-level directory:
 
@@ -173,7 +173,10 @@ Open a terminal to begin:
 
 ..
 
-   Yay! You've just created your first Python script.
+   **Yay!** You've just created your first Python script.
+
+..
+
 
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
@@ -196,7 +199,7 @@ Open a terminal to begin:
 
    First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
-   Then create a variable associated with the opened file, here it is called datafile.
+   Then create a variable associated with the opened file, here it is called `datafile`.
 
    The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
 
@@ -214,7 +217,7 @@ Open a terminal to begin:
 
 ..
 
-   Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
+   Testing of your script with `python mysci.py` should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
 19. Change the mysci.py script to read your whole data file:
 
@@ -232,11 +235,11 @@ Open a terminal to begin:
 
 ..
 
-   Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
+   Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll `print(data)`. Print statements in python require parenthesis around the object you wish to print, here it is data.
 
    Try `print('data')` as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
 
-   Don't forget to execute with python mysci.py
+   Don't forget to execute with `python mysci.py`.
 
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
@@ -245,7 +248,7 @@ Open a terminal to begin:
    # Read the data file
    filename = "data/wxobs20170821.txt"
    with open(filename, 'r') as datafile:
-   data = datafile.read()
+      data = datafile.read()
 
    # DEBUG
    print(data)
@@ -254,11 +257,11 @@ Open a terminal to begin:
 
    Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
-   The indendation of the line data = datafile.read() is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
+   The indendation of the line `data = datafile.read()` is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
 
    Combined these two lines mean: with the datafile opened, I'd like to read it.
 
-   And execute with python mysci.py.
+   And execute with `python mysci.py`.
 
 21. What did we just see? What is the data object? What type is data? How do we find out?
 
@@ -279,6 +282,7 @@ Open a terminal to begin:
 22. Now, clean up the script by removing the DEBUG section, before we commit this to git.
 
 ..
+
 
 23. Let's check the status of our git repository
 
@@ -314,7 +318,7 @@ Open a terminal to begin:
 
 ..
 
-   Here a good commit message -m for our changes would be "Adding script file"
+   Here a good commit message `-m` for our changes would be "Adding script file"
 
 27. Let's check the status of our git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
 
@@ -332,16 +336,12 @@ Open a terminal to begin:
 
 ..
 
-   You can also print simplified logs with the --oneline option.
+   You can also print simplified logs with the `--oneline` option.
 
-
-..
-..
-..
 
 
 That concludes the first lesson of this virtual tutorial.
 
-In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of open(), readline(), read(), close(), and print(), as well as the context manager with. You should be familiar with the str datatype. You also used fundamental git commands such as git init, git status, git add, git commit, and git logs.
+In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of `open()`, `readline()`, `read()`, `close()`, and `print()`, as well as the context manager `with`. You should be familiar with the `str` datatype. You also used fundamental git commands such as `git init`, `git status`, `git add`, `git commit`, and `git logs`.
 
 Please continue to `Part 1.2 <link://slug/part1_2>`_. 
