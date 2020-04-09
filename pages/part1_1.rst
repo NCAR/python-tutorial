@@ -228,7 +228,9 @@ Open a terminal to begin:
       # Read the data file
       filename = "data/wxobs20170821.txt"
       datafile = open(filename, 'r')
+      
       data = datafile.read()
+      
       datafile.close()
 
       # DEBUG

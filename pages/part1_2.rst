@@ -56,9 +56,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
    .. code-block:: python
     
       0
-
       1
-
       2
 
    ..
@@ -92,7 +90,8 @@ In doing so you will learn how to write iterative for loops and about Python dat
     Index your list by adding the number of your index in square brackets, ``[]``, after the name of the ``list``. Python is 0-indexed so ``data[0]`` refers to the first index and ``[-1]`` refers to the last index.
 
 3.  Now, to practice slice indexing, get the first 10 rows in data.
-    Change the DEBUG section of our mysci.py script to:
+
+   Change the DEBUG section of our mysci.py script to:
 
    .. code-block:: python
       :linenos:
