@@ -29,6 +29,7 @@ In this section you will compute wind chill index by writing your first function
     Modify the columns variable to read:
 
    .. code-block:: python
+      :linenos:
 
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7}
 
@@ -37,6 +38,7 @@ In this section you will compute wind chill index by writing your first function
     and modify the types variable to be:
 
    .. code-block:: python
+      :linenos:
 
       types = {'tempout': float, 'windspeed': float}
 
@@ -50,6 +52,7 @@ In this section you will compute wind chill index by writing your first function
 3. Now, let's write our first function to computethe wind chill factor. We'll add this function to the bottom of the file.
 
    .. code-block:: python
+      :linenos:
 
       # Compute the wind chill temperature
       def compute_windchill(t, v):
@@ -71,6 +74,7 @@ In this section you will compute wind chill index by writing your first function
     And then let's compute a new list with windchill data atthe bottom of mysci.py:
 
   .. code-block:: python
+     :linenos:
 
       # Let's actually compute the wind chill factor
       windchill = []
@@ -86,6 +90,7 @@ In this section you will compute wind chill index by writing your first function
     And finally, add a DEBUG section to see theresults:
 
    .. code-block:: python
+      :linenos:
 
       # DEBUG
       print(windchill)
@@ -100,6 +105,7 @@ In this section you will compute wind chill index by writing your first function
     Edit the columns and types ``dict``:
 
    .. code-block:: python
+      :linenos:
 
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7,
         'windchill': 12}
@@ -111,6 +117,7 @@ In this section you will compute wind chill index by writing your first function
     and
 
    .. code-block:: python
+      :linenos:
 
       types = {'tempout': float, 'windspeed': float, 'windchill': float}
     
@@ -119,6 +126,7 @@ In this section you will compute wind chill index by writing your first function
     Then, in a DEBUG section at the end of your script to compare the two different values (from data and computed by our function):
 
    .. code-block:: python
+      :linenos:
 
       # DEBUG
       for wc_data, wc_comp in zip(data['windchill'], windchill):
@@ -139,6 +147,7 @@ In this section you will compute wind chill index by writing your first function
     To the end of the file, add:
 
    .. code-block:: python
+      :linenos:
 
       # Output comparison of data
       print('                ORIGINAL  COMPUTED')
