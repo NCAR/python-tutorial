@@ -12,13 +12,17 @@
 NCAR Python Tutorial
 ======================
 
-
+..
 
 `Getting Started <link://slug/requirements>`_
 =============================================
 
+..
+
 `Zero-to-Thirty Beginner Tutorial Introduction <link://slug/welcome>`_
 ======================================================================
+
+..
 
 1. First Python Script
 =======================
