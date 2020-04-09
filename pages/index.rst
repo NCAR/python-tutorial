@@ -8,26 +8,18 @@
 .. type: text
 .. hidetitle: True
 
-======================
-NCAR Python Tutorial
-======================
+============================================
+NCAR Zero-to-Thirty Beginner Python Tutorial
+============================================
 
------
+`Introduction <link://slug/welcome>`_
 
-Zero-to-Thirty Beginner Tutorial 
-==================================
 
-    `Introduction <link://slug/welcome>`_
-    ======================================
+`Requirements and Installation <link://slug/requirements>`_
 
-    `Requirements and Installation <link://slug/requirements>`_
-    =============================================
+1. First Python Script
 
-    1. First Python Script
-    =======================
-
-        1.1 `Reading in a .txt File <link://slug/part1_1>`_
-        ---------------------------------------------------
+    1.1 `Reading in a .txt File <link://slug/part1_1>`_
         - Workspace Setup:
             - Creating a directory
             - Creating a conda environment
@@ -35,43 +27,41 @@ Zero-to-Thirty Beginner Tutorial
             - Downloading a file
 
         - Python Concepts:
-            - the `str` datatype
-            - `print()`
-            - `open()`
-            - `readline()`
-            - `read()`
-            - `close()`
-            - the `with` context manager
+            - the ``str`` datatype
+            - ``print()``
+            - ``open()``
+            - ``readline()``
+            - ``read()``
+            - ``close()``
+            - the ``with`` context manager
 
         - Git Fundamentals
-            - `git status`
-            - `git add`
-            - `git commit`
-            - `git logs`
+            - ``git status``
+            - ``git add``
+            - ``git commit``
+            - ``git logs``
 
-        1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
-        -------------------------------------------------------
+    1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
         -  Python Data Structures
-            - `list` 
-                - `list.append()`
-                - `list` indexing
-                - nested `list` s
-            - `range`
-            - `dict` 
+            - ``list`` 
+                - ``list.append()``
+                - ``list`` indexing
+                - nested ``list`` s
+            - ``range``
+            - ``dict`` 
                 - key/value pairs
-                - `dict.get()`
+                - ``dict.get()``
         - Other Python Concepts
             - initializing data variables
-            - `str.split()`
-            - the `float` datatype.
- 
-        1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
-        ---------------------------------------------------------------------------
+            - ``str.split()``
+            - the ``float`` datatype.
+
+    1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
         - Python Concepts:
             - functions
             - math operators
-            - `zip()`
-            - the `tuple` data structure
+            - ``zip()``
+            - the ``tuple`` data structure
             - f-string formatting
         - Git:
             - pushing a local repository to GitHub
