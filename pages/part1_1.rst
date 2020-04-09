@@ -109,12 +109,9 @@ Open a terminal to begin:
 
 . . code-block:: python
 
-    print("Hello, world!")
+   print("Hello, world!")
 
-::
-
-
-        Your classic first command will be to print "Hello World".
+Your classic first command will be to print "Hello World".
 
 16. Try testing the script by typing "python" and then the name of your script:
 
@@ -125,21 +122,20 @@ Yay! You've just created your first Python script.
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
     Change the mysci.py script to read:
-.. code_block:: python
 
-    # Read the data file
-    filename = "data/wxobs20170821.txt"
-    datafile = open(filename, 'r')
+.. code-block:: python
 
-    print(datafile.readline())
-    print(datafile.readline())
-    print(datafile.readline())
-    print(datafile.readline())
+   # Read the data file
+   filename = "data/wxobs20170821.txt"
+   datafile = open(filename, 'r')
 
-    datafile.close()
+   print(datafile.readline())
+   print(datafile.readline())
+   print(datafile.readline())
+   print(datafile.readline())
 
-::
-    
+   datafile.close()
+
     First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
     Then create a variable associated with the opened file, here it is called datafile.
@@ -162,17 +158,16 @@ Yay! You've just created your first Python script.
 
 .. code-block:: python
 
-    # Read the data file
-    filename = "data/wxobs20170821.txt"
-    datafile = open(filename, 'r')
-    data = datafile.read()
-    datafile.close()
+   # Read the data file
+   filename = "data/wxobs20170821.txt"
+   datafile = open(filename, 'r')
+   data = datafile.read()
+   datafile.close()
 
-    # DEBUG
-    print(data)
-    print('data')
+   # DEBUG
+   print(data)
+   print('data')
 
-::
 
     Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
 
@@ -184,15 +179,13 @@ Yay! You've just created your first Python script.
 
 .. code-block:: python
 
-    # Read the data file
-    filename = "data/wxobs20170821.txt"
-    with open(filename, 'r') as datafile:
-    data = datafile.read()
+   # Read the data file
+   filename = "data/wxobs20170821.txt"
+   with open(filename, 'r') as datafile:
+   data = datafile.read()
 
-    # DEBUG
-    print(data)
-
-::
+   # DEBUG
+   print(data)
 
     Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
@@ -208,9 +201,8 @@ Yay! You've just created your first Python script.
 
 .. code-block:: python
 
-    print(type(data))
+   print(type(data))
 
-::
 
     And execute with `python mysci.py`
 
