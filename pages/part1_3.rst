@@ -22,7 +22,7 @@ In this section you will compute wind chill index by writing your first function
 
     $$ WCI = a + (b * t) - (c * v^2) + (d * t * v^2)$$
 
-    Where `WCI` refers to the Wind Chill in degrees F, `t` is temperature in degrees F, `v` is wind speed in mph, and the other variables are as follows: `a` = 35.74, `b` = 0.6215, `c` = 35.75, and `d` = 0.4275. Wind Chill Index is only defined for temperatures within the range -45 to +45 degrees F.
+    Where ``WCI`` refers to the Wind Chill in degrees F, ``t`` is temperature in degrees F, ``v`` is wind speed in mph, and the other variables are as follows: ``a`` = 35.74, ``b`` = 0.6215, ``c`` = 35.75, and ``d`` = 0.4275. Wind Chill Index is only defined for temperatures within the range -45 to +45 degrees F.
 
     You've read the temperature data into the tempout variable, but to do this calculation, you also needto read the windspeed variable from column 7.
 
@@ -66,7 +66,7 @@ In this section you will compute wind chill index by writing your first function
     
     To indicate a function in python you type def for define, the name of your function, and then in parenthesis the input arguments of that function, followed by a colon. On the next lines tab-indented is the code of your function, and your return value.
 
-    Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, `**`, indicates an exponential. A backslash, `/`, is for division, and a double backslash, `//`, is for integer division.
+    Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, ``**``, indicates an exponential. A backslash, ``/``, is for division, and a double backslash, ``//``, is for integer division.
 
     And then let's compute a new list with windchill data atthe bottom of mysci.py:
 
@@ -79,9 +79,9 @@ In this section you will compute wind chill index by writing your first function
 
    ..
 
-    Now we'll call our function. Initialize a `list` for wind chill with empty square brackets, `[]`. And in a `for` loop, loop through our temperature and wind speed data, applying the function to each `tuple` data pair. `tuple`s are ordered like `list`s, but they are indicated by parenthesis, `()`, instead of square brackets and cannot be changed or appended. `tuple` s are generally faster than `list` s.
+    Now we'll call our function. Initialize a ``list`` for wind chill with empty square brackets, ``[]``. And in a ``for`` loop, loop through our temperature and wind speed data, applying the function to each ``tuple`` data pair. ``tuple``s are ordered like ``list``s, but they are indicated by parenthesis, ``()``, instead of square brackets and cannot be changed or appended. ``tuple`` s are generally faster than ``list`` s.
 
-    We use the `zip` function in Python to automatically unravel the `tuple`s. Take a look at `zip([1,2], [3,4,5])`. What is the result?
+    We use the ``zip`` function in Python to automatically unravel the ``tuple``s. Take a look at ``zip([1,2], [3,4,5])``. What is the result?
 
     And finally, add a DEBUG section to see theresults:
 
@@ -93,11 +93,11 @@ In this section you will compute wind chill index by writing your first function
    ..
 
 
-4. Clean up, stage, and commit (`git commit -m "Compute wind chill factor"`)
+4. Clean up, stage, and commit (``git commit -m "Compute wind chill factor"``)
 
-5. Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a `float`:
+5. Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a ``float``:
 
-    Edit the columns and types `dict`:
+    Edit the columns and types ``dict``:
 
    .. code-block:: python
 
@@ -126,7 +126,7 @@ In this section you will compute wind chill index by writing your first function
     
    ..    
 
-    Using `f-string`s with float formatting you can determine the precision with which to print the values to. `.5f` means you want 5 places after the decimal point.
+    Using ``f-string``s with float formatting you can determine the precision with which to print the values to. ``.5f`` means you want 5 places after the decimal point.
 
     Test the results. What do you see? Our computation isn't very good is it?
 
@@ -149,9 +149,9 @@ In this section you will compute wind chill index by writing your first function
     
    ..    
     
-    Here you used `f-string` formatting with more `f-string` formatting options. `>6` indicates that you'd like the characters of the string to be right-justified and to take up 6 spaces.
+    Here you used ``f-string`` formatting with more ``f-string`` formatting options. ``>6`` indicates that you'd like the characters of the string to be right-justified and to take up 6 spaces.
 
-    `9f` specifies that you want the value to fill 9 spaces, so `9.6f` indicates you'd like the value to fill 9 spaces with 6 of them being after the decimal point. Same concept for `10.6f`.
+    ``9f`` specifies that you want the value to fill 9 spaces, so ``9.6f`` indicates you'd like the value to fill 9 spaces with 6 of them being after the decimal point. Same concept for ``10.6f``.
 
     You now have your first complete Python script!
 
@@ -213,5 +213,5 @@ In this section you will compute wind chill index by writing your first function
 
 That concludes Part 1 of this virtual tutorial where you learned to write your first Python script.
 
-In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the `zip()` command, `tuple` datastructure, `f-string` formatting, and how to push your repository to GitHub.
+In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the ``zip()`` command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your repository to GitHub.
 
