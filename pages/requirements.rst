@@ -24,7 +24,7 @@ At the time of writing this, the latest version of conda is 4.8. If you have an 
 
 2. If necessary, update:
 
-.. codeblock:: bash    
+.. code-block:: bash    
 
    $ conda update
     

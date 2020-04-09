@@ -29,24 +29,32 @@ Open a terminal to begin:
 
 1. Create a directory:
 
-    $ mkdir ncar_python_tutorial
+.. code-block:: bash 
+
+   $ mkdir ncar_python_tutorial
 
     The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."
 
 2. Go into the directory:
 
-    $ cd ncar_python_tutorial
+.. code-block:: bash 
+
+   $ cd ncar_python_tutorial
 
 3. Create a virtual environment for this project:
 
-    $ conda create --name ncar_python_tutorial python
+.. code-block:: bash 
+   $ conda create --name ncar_python_tutorial python
+    
     A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "ncar_python_tutorial," and then specify that you are using python to create a virtual environment for this project.
 
     It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
 
 4. Make the directory a git repository:
 
-    $ git init .
+.. code-block:: bash 
+
+   $ git init .
 
     A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
 
@@ -54,60 +62,80 @@ Open a terminal to begin:
 
 5. Create a data directory:
 
-    $ mkdir data
+.. code-block:: bash 
+
+   $ mkdir data
     And we'll make a directory for our data.
 
 6. Go into the data directory:
 
-    $ cd data
+.. code-block:: bash 
+
+   $ cd data
 
 7. Download sample data from the CU Boulder weather station:
 
-    $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+.. code-block:: bash 
+
+   $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
     This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.
 
 8. Check the status of your repository
 
-    $ git status
+.. code-block:: bash 
+
+   $ git status
 
     You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
 
 9. Add the file to the git staging area:
 
-    $ git add wxobs20170821.txt
+.. code-block:: bash 
+
+   $ git add wxobs20170821.txt
 
     By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type "git add" and then the name of the altered file to stage your change.
 
 10. Check your git status once again
 
-    $ git status
+.. code-block:: bash 
+
+   $ git status
 
     Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
 
 11 Commit the file to the git repository:
 
-    $ git commit -m "Adding sample data file"
+.. code-block:: bash 
+
+   $ git commit -m "Adding sample data file"
 
     With "git commit", you've updated your repository with all the changes you staged, in this case just one file.
 
 12. Look at the git logs:
 
-    $ git log
+.. code-block:: bash 
+
+   $ git log
 
     If you type "git log" you will show a log of all the commits, or changes made to your repository.
 
 13. Go back to the top-level directory:
 
-    $ cd ..
+.. code-block:: bash 
+
+   $ cd ..
 
 14. And now that you've set up our workspace, create a blank Python script, called "mysci.py":
 
-    $ touch mysci.py
+.. code-block:: bash 
+
+   $ touch mysci.py
 
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
-. . code-block:: python
+.. code-block:: python
 
    print("Hello, world!")
 
@@ -115,7 +143,9 @@ Your classic first command will be to print "Hello World".
 
 16. Try testing the script by typing "python" and then the name of your script:
 
-    $ python mysci.py
+.. code-block:: bash 
+
+   $ python mysci.py
 
 Yay! You've just created your first Python script.
 
@@ -150,7 +180,9 @@ Yay! You've just created your first Python script.
 
 18. And test your script again by typing:
 
-    $ python mysci.py
+.. code-block:: bash 
+
+   $ python mysci.py
 
     Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
@@ -214,31 +246,42 @@ Yay! You've just created your first Python script.
 
 23. Let's check the status of our git repository
 
-    $ git status
+.. code-block:: bash 
+
+   $ git status
 
     Note what files have been changed in the repository.
 
 24. Stage these changes:
 
-    $ git add mysci.py
+.. code-block:: bash 
+
+   $ git add mysci.py
 
 25. Let's check the status of our git repository,again. What's different from the last time we checked the status?
 
-    $ git status
+.. code-block:: bash 
+
+   $ git status
 
 26. Commit these changes:
 
-    $ git commit -m "Adding script file"
+.. code-block:: bash 
+
+   $ git commit -m "Adding script file"
 
     Here a good commit message -m for our changes would be "Adding script file"
 
 27. Let's check the status of our git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
 
-    $ git status
+.. code-block:: bash 
+
+   $ git status
 
 28. Look at the git logs, again:
 
-    $ git log
+.. code-block:: bash 
+   $ git log
 
     You can also print simplified logs with the --oneline option.
 
