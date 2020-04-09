@@ -251,7 +251,7 @@ Python is a dynamically typed language, which means you don't have to explicitly
 
    $ git status
 
-    Note what files have been changed in the repository.
+Note what files have been changed in the repository.
 
 24. Stage these changes:
 
