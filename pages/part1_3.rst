@@ -82,7 +82,7 @@ In this section you will compute wind chill index by writing your first function
 
 ..
 
-    Now we'll call our function. Initialize a `list` for wind chill with empty square brackets, `[]`. And in a `for` loop, loop through our temperature and wind speed data, applying the function to each `tuple` data pair. `tuple`s are ordered like `list`s, but they are indicated by parenthesis, `()`, instead of square brackets and cannot be changed or appended. `tuple`s are generally faster than `list`s.
+    Now we'll call our function. Initialize a `list` for wind chill with empty square brackets, `[]`. And in a `for` loop, loop through our temperature and wind speed data, applying the function to each `tuple` data pair. `tuple`s are ordered like `list`s, but they are indicated by parenthesis, `()`, instead of square brackets and cannot be changed or appended. `tuple` s are generally faster than `list` s.
 
     We use the `zip` function in Python to automatically unravel the `tuple`s. Take a look at `zip([1,2], [3,4,5])`. What is the result?
 
