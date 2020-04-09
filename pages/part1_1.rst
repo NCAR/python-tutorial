@@ -33,7 +33,9 @@ Open a terminal to begin:
 
    $ mkdir ncar_python_tutorial
 
-The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."
+..
+
+   The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."
 
 2. Go into the directory:
 
@@ -47,9 +49,11 @@ The first thing we have to do is create a directory to store our work. Let's cal
 
    $ conda create --name ncar_python_tutorial python
     
-A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "ncar_python_tutorial," and then specify that you are using python to create a virtual environment for this project.
+..
 
-It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
+   A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "ncar_python_tutorial," and then specify that you are using python to create a virtual environment for this project.
+
+   It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
 
 4. Make the directory a git repository:
 
@@ -57,9 +61,11 @@ It is a good idea to create new environments for different projects because sinc
 
    $ git init .
 
-A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
+..
 
-This command adds version control to this new ncar_python_tutorial directory and all of its contents.
+   A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
+
+   This command adds version control to this new ncar_python_tutorial directory and all of its contents.
 
 5. Create a data directory:
 
@@ -67,7 +73,9 @@ This command adds version control to this new ncar_python_tutorial directory and
 
    $ mkdir data
 
-And we'll make a directory for our data.
+..
+
+   And we'll make a directory for our data.
 
 6. Go into the data directory:
 
@@ -81,7 +89,9 @@ And we'll make a directory for our data.
 
    $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
-This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.
+..
+
+   This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.
 
 8. Check the status of your repository
 
@@ -89,7 +99,9 @@ This weather station is a Davis Instruments wireless Vantage Pro2 located on the
 
    $ git status
 
-You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
+..
+
+   You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
 
 9. Add the file to the git staging area:
 
@@ -97,7 +109,9 @@ You will see the newly downloaded file listed as an "untracked file." Git status
 
    $ git add wxobs20170821.txt
 
-By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type "git add" and then the name of the altered file to stage your change.
+..
+
+   By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type "git add" and then the name of the altered file to stage your change.
 
 10. Check your git status once again
 
@@ -105,7 +119,9 @@ By adding this datafile to your directory, you have made a change that is not ye
 
    $ git status
 
-Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
+..
+
+   Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
 
 11 Commit the file to the git repository:
 
@@ -113,7 +129,9 @@ Now this file is listed as a "change to be commited," i.e. staged. Staged change
 
    $ git commit -m "Adding sample data file"
 
-With "git commit", you've updated your repository with all the changes you staged, in this case just one file.
+..
+
+   With "git commit", you've updated your repository with all the changes you staged, in this case just one file.
 
 12. Look at the git logs:
 
@@ -121,7 +139,9 @@ With "git commit", you've updated your repository with all the changes you stage
 
    $ git log
 
-If you type "git log" you will show a log of all the commits, or changes made to your repository.
+..
+
+   If you type "git log" you will show a log of all the commits, or changes made to your repository.
 
 13. Go back to the top-level directory:
 
@@ -141,7 +161,9 @@ If you type "git log" you will show a log of all the commits, or changes made to
 
    print("Hello, world!")
 
-Your classic first command will be to print "Hello World".
+..
+
+   Your classic first command will be to print "Hello World".
 
 16. Try testing the script by typing "python" and then the name of your script:
 
@@ -149,11 +171,13 @@ Your classic first command will be to print "Hello World".
 
    $ python mysci.py
 
-Yay! You've just created your first Python script.
+..
+
+   Yay! You've just created your first Python script.
 
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
-Change the mysci.py script to read:
+   Change the mysci.py script to read:
 
 .. code-block:: python
 
@@ -168,17 +192,19 @@ Change the mysci.py script to read:
 
    datafile.close()
 
-First create a variable for your datafile name, which is a string - this can be in single or double quotes.
+..
 
-Then create a variable associated with the opened file, here it is called datafile.
+   First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
-The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
+   Then create a variable associated with the opened file, here it is called datafile.
 
-The readline command moves through the open file, always reading the next line.
+   The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
 
-And remember to close your datafile.
+   The readline command moves through the open file, always reading the next line.
 
-Comments in Python are indicated with a hash, as you can see in the first line # Read the data file. Comments are ignored by the interpreter.
+   And remember to close your datafile.
+
+   Comments in Python are indicated with a hash, as you can see in the first line # Read the data file. Comments are ignored by the interpreter.
 
 18. And test your script again by typing:
 
@@ -186,7 +212,9 @@ Comments in Python are indicated with a hash, as you can see in the first line #
 
    $ python mysci.py
 
-Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
+..
+
+   Testing of your script with python mysci.py should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
 19. Change the mysci.py script to read your whole data file:
 
@@ -202,11 +230,13 @@ Testing of your script with python mysci.py should be done every time you wish t
    print(data)
    print('data')
 
-Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
+..
 
-Try `print('data')` as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
+   Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
 
-Don't forget to execute with python mysci.py
+   Try `print('data')` as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
+
+   Don't forget to execute with python mysci.py
 
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
@@ -220,30 +250,35 @@ Don't forget to execute with python mysci.py
    # DEBUG
    print(data)
 
-Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
+..
 
-The indendation of the line data = datafile.read() is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
+   Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
-Combined these two lines mean: with the datafile opened, I'd like to read it.
+   The indendation of the line data = datafile.read() is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
 
-And execute with python mysci.py.
+   Combined these two lines mean: with the datafile opened, I'd like to read it.
+
+   And execute with python mysci.py.
 
 21. What did we just see? What is the data object? What type is data? How do we find out?
 
-    Add the following to the DEBUG section of our script:
+   Add the following to the DEBUG section of our script:
 
 .. code-block:: python
 
    print(type(data))
 
+..
 
-And execute with `python mysci.py`
+   And execute with `python mysci.py`
 
-Object types refer to 'float' 'integer' 'string' or other types that you can create.
+   Object types refer to 'float' 'integer' 'string' or other types that you can create.
 
-Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
+   Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
 
 22. Now, clean up the script by removing the DEBUG section, before we commit this to git.
+
+..
 
 23. Let's check the status of our git repository
 
@@ -251,7 +286,9 @@ Python is a dynamically typed language, which means you don't have to explicitly
 
    $ git status
 
-Note what files have been changed in the repository.
+..
+
+   Note what files have been changed in the repository.
 
 24. Stage these changes:
 
@@ -259,11 +296,15 @@ Note what files have been changed in the repository.
 
    $ git add mysci.py
 
+..
+
 25. Let's check the status of our git repository,again. What's different from the last time we checked the status?
 
 .. code-block:: bash 
 
    $ git status
+
+..
 
 26. Commit these changes:
 
@@ -271,7 +312,9 @@ Note what files have been changed in the repository.
 
    $ git commit -m "Adding script file"
 
-Here a good commit message -m for our changes would be "Adding script file"
+..
+
+   Here a good commit message -m for our changes would be "Adding script file"
 
 27. Let's check the status of our git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
 
@@ -279,15 +322,22 @@ Here a good commit message -m for our changes would be "Adding script file"
 
    $ git status
 
+..
+
 28. Look at the git logs, again:
 
 .. code-block:: bash 
 
    $ git log
 
-You can also print simplified logs with the --oneline option.
+..
+
+   You can also print simplified logs with the --oneline option.
 
 
+..
+..
+..
 
 
 That concludes the first lesson of this virtual tutorial.
