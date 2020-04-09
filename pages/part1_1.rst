@@ -159,6 +159,7 @@ Open a terminal to begin:
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
    .. code-block:: python
+      :linenos:
 
       print("Hello, world!")
 
@@ -182,6 +183,7 @@ Open a terminal to begin:
    Change the mysci.py script to read:
 
    .. code-block:: python
+      :linenos:
 
       # Read the data file
       filename = "data/wxobs20170821.txt"
@@ -221,6 +223,7 @@ Open a terminal to begin:
 19. Change the mysci.py script to read your whole data file:
 
    .. code-block:: python
+      :linenos:
 
       # Read the data file
       filename = "data/wxobs20170821.txt"
@@ -243,6 +246,7 @@ Open a terminal to begin:
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
    .. code-block:: python
+      :linenos:
 
       # Read the data file
       filename = "data/wxobs20170821.txt"
@@ -267,6 +271,7 @@ Open a terminal to begin:
    Add the following to the DEBUG section of our script:
 
    .. code-block:: python
+      :linenos:
 
       print(type(data))
 
