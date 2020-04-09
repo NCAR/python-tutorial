@@ -9,7 +9,7 @@
 .. hidetitle: True
 
 =========================
-1.1 - First Python Script
+1 - First Python Script
 =========================
 
 This section of the Zero to Thirty tutorial will focus on teaching you Python through the creation of your first script. 
@@ -20,8 +20,9 @@ We will also incorporate lessons on the use of git because we highly you recomme
 
 We are assuming you are familiar with bash and terminal commands. If not `here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
 
+==============================
 Part 1.1 - Reading a .txt File
-------------------------------
+==============================
 
 In building your first Python script we will set up our workspace, read a .txt file, and learn git fundamentals.
 
@@ -29,27 +30,27 @@ Open a terminal to begin:
 
 1. Create a directory:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ mkdir ncar_python_tutorial
+      $ mkdir ncar_python_tutorial
 
-..
+   ..
 
    The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."
 
 2. Go into the directory:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ cd ncar_python_tutorial
+      $ cd ncar_python_tutorial
 
 3. Create a virtual environment for this project:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ conda create --name ncar_python_tutorial python
+     $ conda create --name ncar_python_tutorial python
     
-..
+   ..
 
    A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "ncar_python_tutorial," and then specify that you are using python to create a virtual environment for this project.
 
@@ -57,11 +58,11 @@ Open a terminal to begin:
 
 4. Make the directory a git repository:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git init .
+      $ git init .
 
-..
+   ..
 
    A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
 
@@ -69,133 +70,131 @@ Open a terminal to begin:
 
 5. Create a data directory:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ mkdir data
+      $ mkdir data
 
-..
+   ..
 
    And we'll make a directory for our data.
 
 6. Go into the data directory:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ cd data
+      $ cd data
 
 7. Download sample data from the CU Boulder weather station:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+      $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
-..
+   ..
 
    This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.
 
 8. Check the status of your repository
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git status
+      $ git status
 
-..
+   ..
 
    You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
 
 9. Add the file to the git staging area:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git add wxobs20170821.txt
+      $ git add wxobs20170821.txt
 
-..
+   ..
 
    By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type `git add` and then the name of the altered file to stage your change.
 
 10. Check your git status once again
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git status
+      $ git status
 
-..
+   ..
 
    Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
 
 11 Commit the file to the git repository:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git commit -m "Adding sample data file"
+      $ git commit -m "Adding sample data file"
 
-..
+   ..
 
    With `git commit`, you've updated your repository with all the changes you staged, in this case just one file.
 
 12. Look at the git logs:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git log
+      $ git log
 
-..
+   ..
 
    If you type `git log` you will show a log of all the commits, or changes made to your repository.
 
 13. Go back to the top-level directory:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ cd ..
+      $ cd ..
 
 14. And now that you've set up our workspace, create a blank Python script, called "mysci.py":
 
-.. code-block:: bash 
+  .. code-block:: bash 
 
-   $ touch mysci.py
+      $ touch mysci.py
 
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
-.. code-block:: python
+   .. code-block:: python
 
-   print("Hello, world!")
+      print("Hello, world!")
 
-..
+   ..
 
    Your classic first command will be to print "Hello World".
 
 16. Try testing the script by typing "python" and then the name of your script:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ python mysci.py
+      $ python mysci.py
 
-..
+   ..
 
    **Yay!** You've just created your first Python script.
-
-..
 
 
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
    Change the mysci.py script to read:
 
-.. code-block:: python
+   .. code-block:: python
 
-   # Read the data file
-   filename = "data/wxobs20170821.txt"
-   datafile = open(filename, 'r')
+      # Read the data file
+      filename = "data/wxobs20170821.txt"
+      datafile = open(filename, 'r')
 
-   print(datafile.readline())
-   print(datafile.readline())
-   print(datafile.readline())
-   print(datafile.readline())
+      print(datafile.readline())
+      print(datafile.readline())
+      print(datafile.readline())
+      print(datafile.readline())
 
-   datafile.close()
+      datafile.close()
 
-..
+   ..
 
    First create a variable for your datafile name, which is a string - this can be in single or double quotes.
 
@@ -211,29 +210,29 @@ Open a terminal to begin:
 
 18. And test your script again by typing:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ python mysci.py
+      $ python mysci.py
 
-..
+   ..
 
    Testing of your script with `python mysci.py` should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
 19. Change the mysci.py script to read your whole data file:
 
-.. code-block:: python
+   .. code-block:: python
 
-   # Read the data file
-   filename = "data/wxobs20170821.txt"
-   datafile = open(filename, 'r')
-   data = datafile.read()
-   datafile.close()
+      # Read the data file
+      filename = "data/wxobs20170821.txt"
+      datafile = open(filename, 'r')
+      data = datafile.read()
+      datafile.close()
 
-   # DEBUG
-   print(data)
-   print('data')
+      # DEBUG
+      print(data)
+      print('data')
 
-..
+   ..
 
    Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll `print(data)`. Print statements in python require parenthesis around the object you wish to print, here it is data.
 
@@ -243,17 +242,17 @@ Open a terminal to begin:
 
 20. Change the mysci.py script to read your whole data file using a context manager with:
 
-.. code-block:: python
+   .. code-block:: python
 
-   # Read the data file
-   filename = "data/wxobs20170821.txt"
-   with open(filename, 'r') as datafile:
-      data = datafile.read()
+      # Read the data file
+      filename = "data/wxobs20170821.txt"
+      with open(filename, 'r') as datafile:
+         data = datafile.read()
 
-   # DEBUG
-   print(data)
+      # DEBUG
+      print(data)
 
-..
+   ..
 
    Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
 
@@ -267,11 +266,11 @@ Open a terminal to begin:
 
    Add the following to the DEBUG section of our script:
 
-.. code-block:: python
+   .. code-block:: python
 
-   print(type(data))
+      print(type(data))
 
-..
+   ..
 
    And execute with `python mysci.py`
 
@@ -281,63 +280,63 @@ Open a terminal to begin:
 
 22. Now, clean up the script by removing the DEBUG section, before we commit this to git.
 
-..
-
 
 23. Let's check the status of our git repository
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git status
+      $ git status
 
-..
+   ..
 
    Note what files have been changed in the repository.
 
 24. Stage these changes:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git add mysci.py
+      $ git add mysci.py
 
-..
+   ..
 
 25. Let's check the status of our git repository,again. What's different from the last time we checked the status?
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git status
+      $ git status
 
-..
+   ..
 
 26. Commit these changes:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git commit -m "Adding script file"
+      $ git commit -m "Adding script file"
 
-..
+   ..
 
    Here a good commit message `-m` for our changes would be "Adding script file"
 
 27. Let's check the status of our git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git status
+      $ git status
 
-..
+   ..
 
 28. Look at the git logs, again:
 
-.. code-block:: bash 
+   .. code-block:: bash 
 
-   $ git log
+      $ git log
 
-..
+   ..
 
    You can also print simplified logs with the `--oneline` option.
 
+
+-----
 
 
 That concludes the first lesson of this virtual tutorial.
