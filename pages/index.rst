@@ -12,62 +12,66 @@
 NCAR Python Tutorial
 ======================
 
-`Getting Started <link://slug/requirements>`_
-=============================================
+-----
 
-`Zero-to-Thirty Beginner Tutorial Introduction <link://slug/welcome>`_
-======================================================================
+Zero-to-Thirty Beginner Tutorial 
+==================================
 
+    `Introduction <link://slug/welcome>`_
+    ======================================
 
-1. First Python Script
-=======================
+    `Requirements and Installation <link://slug/requirements>`_
+    =============================================
 
-1.1 `Reading in a .txt File <link://slug/part1_1>`_
----------------------------------------------------
-- Workspace Setup:
-    - Creating a directory
-    - Creating a conda environment
-    - Creating a git repository
-    - Downloading a file
+    1. First Python Script
+    =======================
 
-- Python Concepts:
-    - the `str` datatype
-    - `print()`
-    - `open()`
-    - `readline()`
-    - `read()`
-    - `close()`
-    - the `with` context manager
+        1.1 `Reading in a .txt File <link://slug/part1_1>`_
+        ---------------------------------------------------
+        - Workspace Setup:
+            - Creating a directory
+            - Creating a conda environment
+            - Creating a git repository
+            - Downloading a file
 
-- Git Fundamentals
-    - `git status`
-    - `git add`
-    - `git commit`
-    - `git logs`
+        - Python Concepts:
+            - the `str` datatype
+            - `print()`
+            - `open()`
+            - `readline()`
+            - `read()`
+            - `close()`
+            - the `with` context manager
 
-1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
--------------------------------------------------------
--  Python Data Structures
-    - `list` 
-        - `list.append()`
-        - `list` indexing
-        - nested `list` s
-    - `range`
-    - `dict` 
-        - key/value pairs
-        - `dict.get()`
-- Other Python Concepts
-    - initializing data variables
-    - `str.split()`
-    - the `float` datatype.
+        - Git Fundamentals
+            - `git status`
+            - `git add`
+            - `git commit`
+            - `git logs`
+
+        1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
+        -------------------------------------------------------
+        -  Python Data Structures
+            - `list` 
+                - `list.append()`
+                - `list` indexing
+                - nested `list` s
+            - `range`
+            - `dict` 
+                - key/value pairs
+                - `dict.get()`
+        - Other Python Concepts
+            - initializing data variables
+            - `str.split()`
+            - the `float` datatype.
  
-1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
----------------------------------------------------------------------------
-- Python Concepts:
-    - functions
-    - math operators
-    - `zip()`
-    - the `tuple` data structure
-    - f-string formatting
-- Git:
-    - pushing a local repository to GitHub
+        1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
+        ---------------------------------------------------------------------------
+        - Python Concepts:
+            - functions
+            - math operators
+            - `zip()`
+            - the `tuple` data structure
+            - f-string formatting
+        - Git:
+            - pushing a local repository to GitHub
