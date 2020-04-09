@@ -22,25 +22,30 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     Change the mysci.py script to read:
 
-    # Initialize my data variable
-    data = []
+.. code-block:: python
 
-    # Read and parse the data file
-    filename = "data/wxobs20170821.txt"
-    with open(filename, 'r') as datafile:
+   # Initialize my data variable
+   data = []
+   
+   # Read and parse the data file
+   filename = "data/wxobs20170821.txt"
+   with open(filename, 'r') as datafile:
 
-        # Read the first three lines (header)
-        for _ in range(3):
-            datafile.readline()
-        
-        # Read and parse the rest of the file
-        for line in datafile:
-            datum = line.split()
-            data.append(datum)
+    # Read the first three lines (header)
+    for _ in range(3):
+        datafile.readline()
+    
+    # Read and parse the rest of the file
+    for line in datafile:
+        datum = line.split()
+        data.append(datum)
 
-    # DEBUG
-    for datum in data:
-    print(datum)
+   # DEBUG
+   for datum in data:
+   print(datum)
+
+..
+
     The first thing that is different in this script is an initialized data variable; data = [] creates the variable data as an empty list which we will populate as we read the file. Python lists are a collection data type that are ordered and changeable - meaning you can call information out of the list by its index and you can add or delete elements to your list. Lists are denoted by square brackets, [].
 
     Then with the datafile open for reading capabilities, we are going to write two separate for loops. A for loop is used for iterating over a sequence (such as a list). It is important to note the syntax of Python for loops: the : at the end of for for line, the tab-indentation of all lines within the for loop, and perhaps the absence of an end for that is found in languages such as Matlab.
@@ -69,28 +74,42 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     Change the DEBUG section of our mysci.py script to:
 
-    # DEBUG
-    print(data[0])
-    print(data[9])
-    print(data[-1])
+.. code-block:: python
+
+   # DEBUG
+   print(data[0])
+   print(data[9])
+   print(data[-1])
+
+..
+
     Index your list by adding the number of your index in square brackets, [], after the name of the list. Python is 0-indexed so data[0] refers to the first index and [-1] refers to the last index.
 
 3.  Now, to practice slice indexing, get the first 10 rows in data.
     Change the DEBUG section of our mysci.py script to:
 
-    # DEBUG
-    for datum in data[0:10]:
-        print(datum)
+.. code-block:: python
+   # DEBUG
+   for datum in data[0:10]:
+      print(datum)
+    
+..
+
     Using a colon, :, between two index integers a and b, you get all indexes between a and b. See what happens when you print data[:10], data[0:10:2], and data[slice(0,10,2)]. What's the difference?
 
 4. Now, to practice nested indexing,get the 5th, first 5, and every other column of rows 8 in data.
 
     Change the DEBUG section of the mysci.py script to:
 
-    # DEBUG
-    print(data[8][4])
-    print(data[8][:5])
-    print(data[8][::2])
+.. code-block:: python
+
+   # DEBUG
+   print(data[8][4])
+   print(data[8][:5])
+   print(data[8][::2])
+
+..    
+    
     In nested list indexing, the first index determines the row, and the second determines the element from that row. Also try printing data[5:8][4], why doesn't this work?
 
 5. Clean up the file (remove DEBUG section), stage the changes, and commit.
@@ -105,49 +124,72 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     Change mysci.py to the following:
 
-    # Initialize my data variable
-    data = {'date': [],
-            'time': [],
-            'tempout': []}
+.. code-block:: python
 
-    # Read and parse the data file
-    filename = "data/wxobs20170821.txt"
-    with open(filename, 'r') as datafile:
+   # Initialize my data variable
+   data = {'date': [],
+        'time': [],
+        'tempout': []}
 
-        # Read the first three lines (header)
-        for _ in range(3):
-            datafile.readline()
-        
-        # Read and parse the rest of the file
-        for line in datafile:
-            split_line = line.split()
-            data['date'].append(split_line[0])
-            data['time'].append(split_line[1])
-            data['tempout'].append(split_line[2])
+   # Read and parse the data file
+   filename = "data/wxobs20170821.txt"
+   with open(filename, 'r') as datafile:
 
-    # DEBUG
-    print(data['time'])
+      # Read the first three lines (header)
+      for _ in range(3):
+         datafile.readline()
+    
+      # Read and parse the rest of the file
+      for line in datafile:
+         split_line = line.split()
+         data['date'].append(split_line[0])
+         data['time'].append(split_line[1])
+         data['tempout'].append(split_line[2])
+
+   # DEBUG
+   print(data['time'])
+    
+..    
+    
     First we'll initialize a dict, indicated by the curly brackets, {}. Dictionaries, like lists, are changeable, but they are unordered. They have keys, rather than positions, to point to their elements. Here you have created 3 elements of your dictionary, all currently empty lists, and specified by the keys date, time, and tempout. Keys act similarly to indexes: to pull out the tempout element from data you would type data['tempout'].
 
     Grab date (the first column of each line), time (the second column of each line), and temperature data (the third column), from each line and append it to the list associated with each of these data variables.
 
 7. Clean up (remove DEBUG section), stage, and commit(git commit -m "Parsing select time-series")
 
+..
+
+
 8. Now it's easy to get the time-series informationfor each column that we are interested in grabbing, and we can get each column by name. However, everything read fromthe text file is a str. What if we want to do math on this data, then we need it to be a different data type!
 
     So, let's convert the tempout time-series to be a float by changing the line:
+.. code-block:: python
 
-            data['tempout'].append(split_line[2])   
+   data['tempout'].append(split_line[2])   
+    
+..
+
     to:
 
-            data['tempout'].append(float(split_line[2]))
+.. code-block:: python
+   
+   data['tempout'].append(float(split_line[2]))
+    
+..
+
     The float datatype refers to floating point real values - the datatype of any numbers with values after a decimal point. You could also change the datatype to int, which will round the values down to the closest full integer.
 
 9. Add a DEBUG section at the end and see whatdata['tempout'] now looks like.
 
     Do you see a difference?It should now be a list of floats.
 
+..
+
+
 10.  Clean up (remove DEBUG section), stage, and commit (git commit -m "Converting tempout to floats")
+
+..
+
 
 11. This seems great, so far! But what if you want to read more columns to our data later? You would have to change the initialization of the data variable (at the top of mysci.py) and have to add the appropriate line in the "read and parse" section. Essentially, that means you need to maintain 2 parts of the code and make sure that both remain consistent with each other.
 
@@ -155,36 +197,41 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     Change mysci.py to:
 
-    # Column names and column indices to read
-    columns = {'date': 0, 'time': 1, 'tempout': 2}
+.. code-block:: python
 
-    # Data types for each column (only if non-string)
-    types = {'tempout': float}
+   # Column names and column indices to read
+   columns = {'date': 0, 'time': 1, 'tempout': 2}
 
-    # Initialize my data variable
-    data = {}
-    for column in columns:
-        data[column] = []
+   # Data types for each column (only if non-string)
+   types = {'tempout': float}
 
-    # Read and parse the data file
-    filename = "data/wxobs20170821.txt"
-    with open(filename, 'r') as datafile:
+   # Initialize my data variable
+   data = {}
+   for column in columns:
+      data[column] = []
 
-        # Read the first three lines (header)
-        for _ in range(3):
-            datafile.readline()
+   # Read and parse the data file
+   filename = "data/wxobs20170821.txt"
+   with open(filename, 'r') as datafile:
 
-        # Read and parse the rest of the file
-        for line in datafile:
-            split_line = line.split()
-            for column in columns:
-                i = columns[column]
-                t = types.get(column, str)
-                value = t(split_line[i])
-                data[column].append(value)
+      # Read the first three lines (header)
+      for _ in range(3):
+         datafile.readline()
 
-    # DEBUG
-    print(data['tempout'])
+      # Read and parse the rest of the file
+      for line in datafile:
+         split_line = line.split()
+         for column in columns:
+            i = columns[column]
+            t = types.get(column, str)
+            value = t(split_line[i])
+            data[column].append(value)
+
+   # DEBUG
+   print(data['tempout'])
+
+..
+
     You have now created a columns dictionary that points each data variable to its column-index. And a types dictionary, that indicates what type to convert the data when necessary. When you want new variables pulled out of the datafile, change these two variables.
 
     Initializing the data dictionary now includes a for loop, where for each variable specified in columns that key is initialized pointing to an empty list. This is the first time you have looped over a dict and added key-value pairs to a dict via assignment.
@@ -193,7 +240,12 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 12. Clean up (remove DEBUG section), stage, and commit (git commit -m "Refactoring data parsing code")
 
+..
 
+
+..
+..
+..
 
 
 That concludes the second lesson of this virtual tutorial.

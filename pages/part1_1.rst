@@ -204,7 +204,7 @@ Open a terminal to begin:
 
    And remember to close your datafile.
 
-   Comments in Python are indicated with a hash, as you can see in the first line # Read the data file. Comments are ignored by the interpreter.
+   Comments in Python are indicated with a hash, as you can see in the first line `# Read the data file`. Comments are ignored by the interpreter.
 
 18. And test your script again by typing:
 
