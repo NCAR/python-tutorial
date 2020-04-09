@@ -204,7 +204,7 @@ Testing of your script with python mysci.py should be done every time you wish t
 
 Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll print(data). Print statements in python require parenthesis around the object you wish to print, here it is data.
 
-Try print('data') as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
+Try `print('data')` as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
 
 Don't forget to execute with python mysci.py
 
