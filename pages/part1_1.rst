@@ -114,7 +114,7 @@ Open a terminal to begin:
 
    By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type ``git add`` and then the name of the altered file to stage your change.
 
-10. Check your git status once again
+10. Check your git status once again:
 
    .. code-block:: bash 
 
@@ -273,8 +273,9 @@ Open a terminal to begin:
    Add the following to the DEBUG section of our script:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 6
 
+      # DEBUG
       print(type(data))
 
    ..

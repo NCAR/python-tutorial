@@ -78,7 +78,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
     Change the DEBUG section of our mysci.py script to:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 17
 
       # DEBUG
       print(data[0])
@@ -94,7 +94,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
    Change the DEBUG section of our mysci.py script to:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 17
 
       # DEBUG
       for datum in data[0:10]:
@@ -109,7 +109,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
     Change the DEBUG section of the mysci.py script to:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 17
 
       # DEBUG
       print(data[8][4])
@@ -173,7 +173,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
     So, let's convert the tempout time-series to be a ``float`` by changing the line:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 19
 
       data['tempout'].append(split_line[2])   
     
@@ -182,7 +182,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
     to:
 
    .. code-block:: python
-      :linenos:
+      :lineno-start: 19
    
       data['tempout'].append(float(split_line[2]))
     
