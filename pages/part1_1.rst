@@ -272,8 +272,8 @@ Open a terminal to begin:
 
    Add the following to the DEBUG section of our script:
 
-   .. code-block:: python
-      :lineno-start: 6
+   .. code:: python 
+      :number-lines: 10
 
       # DEBUG
       print(type(data))
