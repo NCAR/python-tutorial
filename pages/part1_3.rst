@@ -67,7 +67,7 @@ In this section you will compute wind chill index by writing your first function
          wci = a + (b * t) - (c * v16) + (d * t * v16)
          return wci
     
-  ..    
+   ..    
     
    To indicate a function in python you type def for define, the name of your function, and then in parenthesis the input arguments of that function, followed by a colon. On the next lines tab-indented is the code of your function, and your return value.
 
@@ -101,6 +101,7 @@ In this section you will compute wind chill index by writing your first function
 
 
 4. Clean up, stage, and commit 
+   
    (``git commit -m "Compute wind chill factor"``)
 
 5. Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a ``float``:
@@ -194,6 +195,7 @@ In this section you will compute wind chill index by writing your first function
     4. And click "Create Repository"
     
     5. Copy the link to your GitHub repository.
+       
        Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/NCAR_python_tutorial_2020.git"
 
     6. Then to set your remote repository, in your project terminal type:
@@ -202,7 +204,7 @@ In this section you will compute wind chill index by writing your first function
 
           $ git remote add origin <remote repository URL>
 
-          ..
+       ..
 
     7. And verify your remote repository:
 
@@ -210,7 +212,7 @@ In this section you will compute wind chill index by writing your first function
 
           $ git remote -v
     
-          ..
+       ..
 
     8. And finally push your project to GitHub:
 
@@ -218,7 +220,7 @@ In this section you will compute wind chill index by writing your first function
 
           $ git push origin master
 
-          ..
+       ..
 
     Think of GitHub as online storage for versions of your project, much like hosting your code in a Google Drive, but with better features specific to coding. A lot of GitHub's features show their usefulness when you are working collaboratively, sharing your code with other scientists, or if you wanted to display and easily visualize changes in your code between commits.
 
