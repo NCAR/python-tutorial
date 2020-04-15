@@ -124,37 +124,41 @@ Open a terminal to begin:
 
     Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
 
-11 Commit the file to the git repository:
+11. Commit the file to the git repository:
 
-   .. code-block:: bash 
+    .. code-block:: bash 
 
-      $ git commit -m "Adding sample data file"
+       $ git commit -m "Adding sample data file"
 
-   ..
+    ..
 
-   With ``git commit``, you've updated your repository with all the changes you staged, in this case just one file.
+    With ``git commit``, you've updated your repository with all the changes you staged, in this case just one file.
 
 12. Look at the git logs:
 
-   .. code-block:: bash 
+    .. code-block:: bash 
 
-      $ git log
+       $ git log
 
-   ..
+    ..
 
-   If you type ``git log`` you will show a log of all the commits, or changes made to your repository.
+    If you type ``git log`` you will show a log of all the commits, or changes made to your repository.
 
 13. Go back to the top-level directory:
 
-   .. code-block:: bash 
+    .. code-block:: bash 
 
-      $ cd ..
+       $ cd ..
+
+    ..
 
 14. And now that you've set up our workspace, create a blank Python script, called "mysci.py":
 
-  .. code-block:: bash 
+    .. code-block:: bash 
 
-      $ touch mysci.py
+       $ touch mysci.py
+
+    ..
 
 15. Edit the mysci.py file using nano, vim, or your favorite text editor:
 
@@ -180,7 +184,7 @@ Open a terminal to begin:
 
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
-   Change the mysci.py script to read:
+    Change the mysci.py script to read:
 
     .. code-block:: python
        :linenos:

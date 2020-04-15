@@ -184,41 +184,41 @@ In this section you will compute wind chill index by writing your first function
 
 10. Let's push to GitHub!
 
-    10.1 First you have to create a remote repository. Go to https://github.com/ and create or login to your account.
+    1. First you have to create a remote repository. Go to https://github.com/ and create or login to your account.
     
-    10.2 At the top right of any Github page, there is a '+' icon. Click that, then select 'New Repository'.
+    2. At the top right of any Github page, there is a '+' icon. Click that, then select 'New Repository'.
     
-    10.3 Name your repository, "NCAR_python_tutorial_2020".
-         It is best practice for your local project and GitHub repository to share a name.
+    3. Name your repository, "NCAR_python_tutorial_2020".
+       It is best practice for your local project and GitHub repository to share a name.
 
-    10.4 And click "Create Repository"
+    4. And click "Create Repository"
     
-    10.5 Copy the link to your GitHub repository.
-         Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/NCAR_python_tutorial_2020.git"
+    5. Copy the link to your GitHub repository.
+       Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/NCAR_python_tutorial_2020.git"
 
-    10.6 Then to set your remote repository, in your project terminal type:
+    6. Then to set your remote repository, in your project terminal type:
 
-         .. code-block:: bash
+       .. code-block:: bash
 
-            $ git remote add origin <remote repository URL>
+          $ git remote add origin <remote repository URL>
 
-         ..
+          ..
 
-    10.7 And verify your remote repository:
+    7. And verify your remote repository:
 
-         .. code-block:: bash
+       .. code-block:: bash
 
-            $ git remote -v
+          $ git remote -v
     
-         ..
+          ..
 
-    10.8 And finally push your project to GitHub:
+    8. And finally push your project to GitHub:
 
-         .. code-block:: bash
+       .. code-block:: bash
 
-            $ git push origin master
+          $ git push origin master
 
-         ..
+          ..
 
     Think of GitHub as online storage for versions of your project, much like hosting your code in a Google Drive, but with better features specific to coding. A lot of GitHub's features show their usefulness when you are working collaboratively, sharing your code with other scientists, or if you wanted to display and easily visualize changes in your code between commits.
 
