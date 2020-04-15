@@ -49,4 +49,6 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
 -----------------
 
-`Begin Tutorial <link://slug/welcome>`_
+`Begin Tutorial <link://slug/part1_1>`_
+
+`Return to Outline <link://slug/index>`_
