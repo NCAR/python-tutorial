@@ -48,8 +48,13 @@ In this section you will compute wind chill index by writing your first function
 
 
 2. Great! Save this in your git repo. Stage and commit 
-    
-   (git commit -m "Reading windspeed as well").
+
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Reading windspeed as well"
+
+   ..
 
 3. Now, let's write our first function to computethe wind chill factor. We'll add this function to the bottom of the file.
 
@@ -102,7 +107,13 @@ In this section you will compute wind chill index by writing your first function
 
 4. Clean up, stage, and commit 
    
-   (``git commit -m "Compute wind chill factor"``)
+
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Compute wind chill factor"
+
+   ..
 
 5. Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a ``float``:
 
@@ -146,7 +157,12 @@ In this section you will compute wind chill index by writing your first function
 
 6. Clean up, stage, and commit 
 
-   (git commit -m "Compare wind chill factors")
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Compare wind chill factors"
+
+   ..
 
 7. Now, format the output so that it's easy to understand and rename this script to something indicative of what it actually does.
 
@@ -172,7 +188,12 @@ In this section you will compute wind chill index by writing your first function
 
 8. DON'T CLEAN UP! Just stage and commit
 
-   (git commit -m "Output formatting comparison data")
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Output formatting comparison data"
+
+   ..
 
 9. Let's rename this script to something meaningful and indicative of the computation inside.
 
@@ -231,3 +252,4 @@ That concludes Part 1 of this virtual tutorial where you learned to write your f
 
 In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the ``zip()`` command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your repository to GitHub.
 
+`Return to Outline <link://slug/index>`_

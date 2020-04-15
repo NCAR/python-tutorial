@@ -122,7 +122,13 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 5. Clean up the file (remove DEBUG section), stage the changes, and commit.
 
-   (i.e., git add mysci.py and git commit -m "Parsing file")
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Parsing file"
+
+   ..
+   
 
 6. Can you remember which column is which? Is time the first column or the second? Which column is the temperature?
 
@@ -166,7 +172,12 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 7. Clean up (remove DEBUG section), stage, and commit
     
-   (git commit -m "Parsing select time-series").
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Parsing select time-series"
+
+   ..
 
 8. Now it's easy to get the time-series informationfor each column that we are interested in grabbing, and we can get each column by name. However, everything read fromthe text file is a str. What if we want to do math on this data, then we need it to be a different data type!
 
@@ -194,7 +205,14 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    Do you see a difference?It should now be a list of floats.
 
-10.  Clean up (remove DEBUG section), stage, and commit (git commit -m "Converting tempout to floats")
+10.  Clean up (remove DEBUG section), stage, and commit 
+
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Converting tempout to floats"
+
+   ..
 
 11. This seems great, so far! But what if you want to read more columns to our data later? You would have to change the initialization of the data variable (at the top of ``mysci.py``) and have to add the appropriate line in the "read and parse" section. Essentially, that means you need to maintain 2 parts of the code and make sure that both remain consistent with each other.
 
@@ -244,7 +262,14 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     When reading and parsing the file, you created your first nested ``for`` loop. For every line of the datafile, split that line - and then for every desired variable in the columns ``dict`` (date, time, tempout): grab the datum from the current split line with the specified index (0, 1, 2), use the ``dict.get()`` method to find the desired datatype if specired (avoiding ``key-not-found`` errors and defaulting to ``str`` if unspecified), convert the datum to the desired datatype, and ``append`` the datum to the ``list`` associated with each column key within the data ``dict``.
 
-12. Clean up (remove DEBUG section), stage, and commit (``git commit -m "Refactoring data parsing code"``)
+12. Clean up (remove DEBUG section), stage, and commit 
+
+   .. code-block: bash
+
+      $ git add mysci.py
+      $ git commit -m "Refactoring data parsing code"
+
+   ..
 
 -----
 
@@ -255,3 +280,5 @@ In this section you saved the variables of date, time, and tempout in a data dic
 You should now be familiar with the data structures ``list``s (as well as list indexing, nested lists, and the command ``list.append()``), ``dict``s (their keys and the command ``dict.get()``), and ``range``s. You also learned to write ``for`` loops, about the ``float`` datatype, and using the Python commands ``str.split()``.
 
 Please continue to `Part 1.3 <link://slug/part1_3>`_.
+
+`Return to Outline <link://slug/index>`_
