@@ -7,6 +7,7 @@
 .. description: 
 .. type: text
 .. hidetitle: True
+.. has_math: True
 
 ======================================================
 Part 1c - Writing Function to Compute Wind Chill Index
@@ -19,8 +20,6 @@ In this section you will compute wind chill index by writing your first function
 1. Okay, now that you've read the data in a way thatis easy to modify later, it is time to actually do something with the data.
 
    Compute the wind chill factor, which is the cooleing effect of the wind. As wind speed increases the rate at which a body loses heat increases. The formula for this is:
-
-   :math:`WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})`
 
    .. math::
 
