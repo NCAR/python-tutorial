@@ -3,20 +3,39 @@
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Information about past and future NCAR Python Tutorials">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NCAR Python Tutorials</title>
+<title>index | NCAR Python Tutorials</title>
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#AAAAAA">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://ncar.github.io/ncar-python-tutorial/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/fall-2019-tutorial/" type="text/html">
+<link rel="canonical" href="https://ncar.github.io/python-tutorial/">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><meta name="author" content="NCAR Xdev Team">
+<meta property="og:site_name" content="NCAR Python Tutorials">
+<meta property="og:title" content="index">
+<meta property="og:url" content="https://ncar.github.io/python-tutorial/">
+<meta property="og:description" content="Zero-to-Thirty Beginner Python Tutorial
+Introduction
+Requirements and Installation
+
+First Python Script
+
+1.1 Reading in a .txt File
+
+
+Workspace Setup:
+
+Creating a directory
+Creating a conda environmen">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-04-08T13:25:35-06:00">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -27,7 +46,7 @@
 navbar-dark bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://ncar.github.io/ncar-python-tutorial/">
+        <a class="navbar-brand" href="https://ncar.github.io/python-tutorial/">
 
             <span id="blog-title">NCAR Python Tutorials</span>
         </a>
@@ -48,40 +67,110 @@ navbar-dark bg-dark
         
         
         
-
-    
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fall-2019-tutorial/" class="u-url">Fall 2019 NCAR Python Tutorial</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                NCAR Xdev Team
-            </span></p>
-            <p class="dateline">
-            <a href="posts/fall-2019-tutorial/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-09-18T08:00:00-07:00" itemprop="datePublished" title="2019-09-18 08:00">2019-09-18 08:00</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Announcing the Fall 2019 NCAR Python Tutorial (September 18-20)!</p>
-<p class="more"><a href="posts/fall-2019-tutorial/">Read more…</a></p>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div class="section" id="zero-to-thirty-beginner-python-tutorial">
+<h2>Zero-to-Thirty Beginner Python Tutorial</h2>
+<p><a class="reference external" href="welcome/">Introduction</a></p>
+<p><a class="reference external" href="requirements/">Requirements and Installation</a></p>
+<ol class="arabic">
+<li>
+<p>First Python Script</p>
+<dl class="simple">
+<dt>1.1 <a class="reference external" href="part1_1/">Reading in a .txt File</a>
+</dt>
+<dd><ul class="simple">
+<li><dl class="simple">
+<dt>Workspace Setup:</dt>
+<dd><ul>
+<li><p>Creating a directory</p></li>
+<li><p>Creating a conda environment</p></li>
+<li><p>Creating a git repository</p></li>
+<li><p>Downloading a file</p></li>
+</ul></dd>
+</dl></li>
+<li><dl class="simple">
+<dt>Python Concepts:</dt>
+<dd><ul>
+<li><p>the <code class="docutils literal">str</code> datatype</p></li>
+<li><p><code class="docutils literal">print()</code></p></li>
+<li><p><code class="docutils literal">open()</code></p></li>
+<li><p><code class="docutils literal">readline()</code></p></li>
+<li><p><code class="docutils literal">read()</code></p></li>
+<li><p><code class="docutils literal">close()</code></p></li>
+<li><p>the <code class="docutils literal">with</code> context manager</p></li>
+</ul></dd>
+</dl></li>
+<li><dl class="simple">
+<dt>Git Fundamentals</dt>
+<dd><ul>
+<li><p><code class="docutils literal">git status</code></p></li>
+<li><p><code class="docutils literal">git add</code></p></li>
+<li><p><code class="docutils literal">git commit</code></p></li>
+<li><p><code class="docutils literal">git logs</code></p></li>
+</ul></dd>
+</dl></li>
+</ul></dd>
+<dt>1.2 <a class="reference external" href="part1_2/">Creating a Data Dictionary</a>
+</dt>
+<dd><ul class="simple">
+<li><dl class="simple">
+<dt>Python Data Structures</dt>
+<dd><ul>
+<li><dl class="simple">
+<dt><code class="docutils literal">list</code></dt>
+<dd><ul>
+<li><p><code class="docutils literal">list.append()</code></p></li>
+<li><p><code class="docutils literal">list</code> indexing</p></li>
+<li><p>nested <code class="docutils literal">list</code> s</p></li>
+</ul></dd>
+</dl></li>
+<li><p><code class="docutils literal">range</code></p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal">dict</code></dt>
+<dd><ul>
+<li><p>key/value pairs</p></li>
+<li><p><code class="docutils literal">dict.get()</code></p></li>
+</ul></dd>
+</dl></li>
+</ul></dd>
+</dl></li>
+<li><dl class="simple">
+<dt>Other Python Concepts</dt>
+<dd><ul>
+<li><p>initializing data variables</p></li>
+<li><p><code class="docutils literal">str.split()</code></p></li>
+<li><p>the <code class="docutils literal">float</code> datatype.</p></li>
+</ul></dd>
+</dl></li>
+</ul></dd>
+<dt>1.3 <a class="reference external" href="part1_3/">Writing a Function to Compute Wind Chill Index</a>
+</dt>
+<dd><ul class="simple">
+<li><dl class="simple">
+<dt>Python Concepts:</dt>
+<dd><ul>
+<li><p>functions</p></li>
+<li><p>math operators</p></li>
+<li><p><code class="docutils literal">zip()</code></p></li>
+<li><p>the <code class="docutils literal">tuple</code> data structure</p></li>
+<li><p>f-string formatting</p></li>
+</ul></dd>
+</dl></li>
+<li><dl class="simple">
+<dt>Git:</dt>
+<dd><ul>
+<li><p>pushing a local repository to GitHub</p></li>
+</ul></dd>
+</dl></li>
+</ul></dd>
+</dl>
+</li>
+</ol>
 </div>
     </div>
-    </article>
-</div>
+    
 
-
-
-
-
-
-
-        <!--End of body content-->
-
-        <footer id="footer">
+</article><!--End of body content--><footer id="footer">
             Contents © 2020         <a href="mailto:xdev@ucar.edu">NCAR Xdev Team</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
             
