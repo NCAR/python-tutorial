@@ -366,10 +366,10 @@ In this section you set up a workspace by creating your directory, conda environ
 
 Suggested resources:
 
-   - `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
-   - `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
-   - `The open() function <https://docs.python.org/3/library/functions.html#open>`_
-   - `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+- `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
+- `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
+- `The open() function <https://docs.python.org/3/library/functions.html#open>`_
+- `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
 -----
 
