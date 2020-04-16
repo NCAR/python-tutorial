@@ -68,52 +68,52 @@ navbar-dark bg-dark
 <p>One big string isn't very useful, so use <code class="docutils literal">str.split()</code> to parse the data file into a data structure you can use.</p>
 <p>Change the <code class="docutils literal">mysci.py</code> script to read:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-1"> 1</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-2"> 2</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-3"> 3</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-4"> 4</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-5"> 5</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-6"> 6</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-7"> 7</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-8"> 8</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-9"> 9</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-10">10</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-11">11</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-12">12</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-13">13</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-14">14</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-15">15</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-16">16</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-17">17</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-18">18</a>
-<a href="#rest_code_53f2219c55784540a81c16666c7c5fb3-19">19</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_53f2219c55784540a81c16666c7c5fb3-1"></a><span class="c1"># Initialize my data variable</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-3"></a>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-4"></a><span class="c1"># Read and parse the data file</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-5"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-7"></a>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-8"></a> <span class="c1"># Read the first three lines (header)</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-9"></a> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-10"></a>    <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-11"></a>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-12"></a> <span class="c1"># Read and parse the rest of the file</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-13"></a> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-14"></a>    <span class="n">datum</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-15"></a>    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-16"></a>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-17"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-18"></a><span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-<a name="rest_code_53f2219c55784540a81c16666c7c5fb3-19"></a>   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-1"> 1</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-2"> 2</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-3"> 3</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-4"> 4</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-5"> 5</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-6"> 6</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-7"> 7</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-8"> 8</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-9"> 9</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-10">10</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-11">11</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-12">12</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-13">13</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-14">14</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-15">15</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-16">16</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-17">17</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-18">18</a>
+<a href="#rest_code_1883c5db431149ab90ad85b7991fdeb3-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-1"></a><span class="c1"># Initialize my data variable</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-3"></a>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-4"></a><span class="c1"># Read and parse the data file</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-5"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-7"></a>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-8"></a> <span class="c1"># Read the first three lines (header)</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-9"></a> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-10"></a>    <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-11"></a>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-12"></a> <span class="c1"># Read and parse the rest of the file</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-13"></a> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-14"></a>    <span class="n">datum</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-15"></a>    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-16"></a>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-17"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-18"></a><span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<a name="rest_code_1883c5db431149ab90ad85b7991fdeb3-19"></a>   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>The first thing that is different in this script is an initialized data variable; <code class="docutils literal">data = []</code> creates the variable data as an empty list which we will populate as we read the file. Python lists are a collection data type that are ordered and changeable - meaning you can call information out of the list by its index and you can add or delete elements to your list. Lists are denoted by square brackets, <code class="docutils literal">[]</code>.</p>
 <p>Then with the datafile open for reading capabilities, we are going to write two separate <code class="docutils literal">for</code> loops. A <code class="docutils literal">for</code> loop is used for iterating over a sequence (such as a list). It is important to note the syntax of Python <code class="docutils literal">for</code> loops: the <code class="docutils literal">:</code> at the end of for <code class="docutils literal">for</code> line, the tab-indentation of all lines within the <code class="docutils literal">for</code> loop, and perhaps the absence of an <code class="docutils literal">end for</code> that is found in languages such as Matlab.</p>
 <p>In your first <code class="docutils literal">for</code> loop, loop through the dummy variable <code class="docutils literal">_</code> in <code class="docutils literal">range(3)</code>. <code class="docutils literal">range</code> returns a sequence of numbers, starting at 0 and incrementing by 1 (by default), ending at the specified length. Here if you were to <code class="docutils literal">print(_)</code> on each line of the for loop you would see:</p>
-<pre class="code python"><a name="rest_code_4135d95dabc748199a302542fb4e483d-1"></a><span class="mi">0</span>
-<a name="rest_code_4135d95dabc748199a302542fb4e483d-2"></a><span class="mi">1</span>
-<a name="rest_code_4135d95dabc748199a302542fb4e483d-3"></a><span class="mi">2</span>
+<pre class="code python"><a name="rest_code_3c474fe6aff440c09d8bbfa460669df7-1"></a><span class="mi">0</span>
+<a name="rest_code_3c474fe6aff440c09d8bbfa460669df7-2"></a><span class="mi">1</span>
+<a name="rest_code_3c474fe6aff440c09d8bbfa460669df7-3"></a><span class="mi">2</span>
 </pre>
 <!--  -->
 <p>Try it out if you are unsure of how this works. Here the <code class="docutils literal">_</code> variable is a placeholder, meaning the variable is never called within the loop.</p>
@@ -129,14 +129,14 @@ navbar-dark bg-dark
 <p>Now, to practice list indexing, get the first, 10th, and last row in data.</p>
 <p>Change the DEBUG section of our <code class="docutils literal">mysci.py</code> script to:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_6dddee366f6a4235a6bb18316cc767f2-17">17</a>
-<a href="#rest_code_6dddee366f6a4235a6bb18316cc767f2-18">18</a>
-<a href="#rest_code_6dddee366f6a4235a6bb18316cc767f2-19">19</a>
-<a href="#rest_code_6dddee366f6a4235a6bb18316cc767f2-20">20</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_6dddee366f6a4235a6bb18316cc767f2-17"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_6dddee366f6a4235a6bb18316cc767f2-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<a name="rest_code_6dddee366f6a4235a6bb18316cc767f2-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
-<a name="rest_code_6dddee366f6a4235a6bb18316cc767f2-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_4a4c84425e634d0a9e53d363c9f9ead4-17">17</a>
+<a href="#rest_code_4a4c84425e634d0a9e53d363c9f9ead4-18">18</a>
+<a href="#rest_code_4a4c84425e634d0a9e53d363c9f9ead4-19">19</a>
+<a href="#rest_code_4a4c84425e634d0a9e53d363c9f9ead4-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_4a4c84425e634d0a9e53d363c9f9ead4-17"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_4a4c84425e634d0a9e53d363c9f9ead4-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a name="rest_code_4a4c84425e634d0a9e53d363c9f9ead4-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+<a name="rest_code_4a4c84425e634d0a9e53d363c9f9ead4-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Index your list by adding the number of your index in square brackets, <code class="docutils literal">[]</code>, after the name of the <code class="docutils literal">list</code>. Python is 0-indexed so <code class="docutils literal">data[0]</code> refers to the first index and <code class="docutils literal"><span class="pre">[-1]</span></code> refers to the last index.</p>
@@ -145,12 +145,12 @@ navbar-dark bg-dark
 <p>Now, to practice slice indexing, get the first 10 rows in data.</p>
 <p>Change the DEBUG section of our <code class="docutils literal">mysci.py</code> script to:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f7d93f5ed8354a84842e57780dffeb4d-17">17</a>
-<a href="#rest_code_f7d93f5ed8354a84842e57780dffeb4d-18">18</a>
-<a href="#rest_code_f7d93f5ed8354a84842e57780dffeb4d-19">19</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_f7d93f5ed8354a84842e57780dffeb4d-17"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_f7d93f5ed8354a84842e57780dffeb4d-18"></a><span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
-<a name="rest_code_f7d93f5ed8354a84842e57780dffeb4d-19"></a>   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_47676250edcd4cc6968a1190acf62611-17">17</a>
+<a href="#rest_code_47676250edcd4cc6968a1190acf62611-18">18</a>
+<a href="#rest_code_47676250edcd4cc6968a1190acf62611-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_47676250edcd4cc6968a1190acf62611-17"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_47676250edcd4cc6968a1190acf62611-18"></a><span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
+<a name="rest_code_47676250edcd4cc6968a1190acf62611-19"></a>   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Using a colon, <code class="docutils literal">:</code>, between two index integers <code class="docutils literal">a</code> and <code class="docutils literal">b</code>, you get all indexes between a and b. See what happens when you print <code class="docutils literal"><span class="pre">data[:10]</span></code>, <code class="docutils literal">data[0:10:2]</code>, and <code class="docutils literal">data[slice(0,10,2)]</code>. What's the difference?</p>
@@ -159,14 +159,14 @@ navbar-dark bg-dark
 <p>Now, to practice nested indexing,get the 5th, first 5, and every other column of rows 8 in data.</p>
 <p>Change the DEBUG section of the <code class="docutils literal">mysci.py</code> script to:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9819b28061eb4ad59a07f75b4b0f5086-17">17</a>
-<a href="#rest_code_9819b28061eb4ad59a07f75b4b0f5086-18">18</a>
-<a href="#rest_code_9819b28061eb4ad59a07f75b4b0f5086-19">19</a>
-<a href="#rest_code_9819b28061eb4ad59a07f75b4b0f5086-20">20</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_9819b28061eb4ad59a07f75b4b0f5086-17"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_9819b28061eb4ad59a07f75b4b0f5086-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
-<a name="rest_code_9819b28061eb4ad59a07f75b4b0f5086-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
-<a name="rest_code_9819b28061eb4ad59a07f75b4b0f5086-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][::</span><span class="mi">2</span><span class="p">])</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d387d8dad98640298d534ae5ddf2d352-17">17</a>
+<a href="#rest_code_d387d8dad98640298d534ae5ddf2d352-18">18</a>
+<a href="#rest_code_d387d8dad98640298d534ae5ddf2d352-19">19</a>
+<a href="#rest_code_d387d8dad98640298d534ae5ddf2d352-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d387d8dad98640298d534ae5ddf2d352-17"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_d387d8dad98640298d534ae5ddf2d352-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
+<a name="rest_code_d387d8dad98640298d534ae5ddf2d352-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+<a name="rest_code_d387d8dad98640298d534ae5ddf2d352-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][::</span><span class="mi">2</span><span class="p">])</span>
 </pre></td>
 </tr></table>
 <!--  --><p>In nested <code class="docutils literal">list</code> indexing, the first index determines the row, and the second determines the element from that row. Also try printing <code class="docutils literal"><span class="pre">data[5:8][4]</span></code>, why doesn't this work?</p>
@@ -185,50 +185,50 @@ $ git commit -m "Parsing file" -->
 <p>Let's get our data into a more convenient named-column format.</p>
 <p>Change <code class="docutils literal">mysci.py</code> to the following:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-1"> 1</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-2"> 2</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-3"> 3</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-4"> 4</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-5"> 5</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-6"> 6</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-7"> 7</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-8"> 8</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-9"> 9</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-10">10</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-11">11</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-12">12</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-13">13</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-14">14</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-15">15</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-16">16</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-17">17</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-18">18</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-19">19</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-20">20</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-21">21</a>
-<a href="#rest_code_035b22e7d17a47ddad0d8f5797923a4f-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-1"></a><span class="c1"># Initialize my data variable</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">[],</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-3"></a>  <span class="s1">'time'</span><span class="p">:</span> <span class="p">[],</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-4"></a>  <span class="s1">'tempout'</span><span class="p">:</span> <span class="p">[]}</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-5"></a>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-6"></a><span class="c1"># Read and parse the data file</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-7"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-8"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-9"></a>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-10"></a>   <span class="c1"># Read the first three lines (header)</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-11"></a>   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-12"></a>      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-13"></a>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-14"></a>   <span class="c1"># Read and parse the rest of the file</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-15"></a>   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-16"></a>      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-17"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-18"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-19"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-20"></a>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-21"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_035b22e7d17a47ddad0d8f5797923a4f-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">])</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3cdc66c1de41425a93634f851fd75963-1"> 1</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-2"> 2</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-3"> 3</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-4"> 4</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-5"> 5</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-6"> 6</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-7"> 7</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-8"> 8</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-9"> 9</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-10">10</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-11">11</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-12">12</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-13">13</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-14">14</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-15">15</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-16">16</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-17">17</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-18">18</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-19">19</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-20">20</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-21">21</a>
+<a href="#rest_code_3cdc66c1de41425a93634f851fd75963-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3cdc66c1de41425a93634f851fd75963-1"></a><span class="c1"># Initialize my data variable</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="p">[],</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-3"></a>  <span class="s1">'time'</span><span class="p">:</span> <span class="p">[],</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-4"></a>  <span class="s1">'tempout'</span><span class="p">:</span> <span class="p">[]}</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-5"></a>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-6"></a><span class="c1"># Read and parse the data file</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-7"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-8"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-9"></a>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-10"></a>   <span class="c1"># Read the first three lines (header)</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-11"></a>   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-12"></a>      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-13"></a>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-14"></a>   <span class="c1"># Read and parse the rest of the file</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-15"></a>   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-16"></a>      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-17"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-18"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-19"></a>      <span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-20"></a>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-21"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_3cdc66c1de41425a93634f851fd75963-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">])</span>
 </pre></td>
 </tr></table>
 <!--  --><p>First we'll initialize a dictionary, <code class="docutils literal">dict</code>, indicated by the curly brackets, <code class="docutils literal">{}</code>. Dictionaries, like <code class="docutils literal"><span class="pre">list``s,</span> are changeable, but they are unordered. They have keys, rather than positions, to point to their elements. Here you have created 3 elements of your dictionary, all currently empty <span class="pre">``list``s,</span> and specified by the keys ``date</code>, <code class="docutils literal">time</code>, and <code class="docutils literal">tempout</code>. Keys act similarly to indexes: to pull out the <code class="docutils literal">tempout</code> element from data you would type <code class="docutils literal"><span class="pre">data['tempout']</span></code>.</p>
@@ -247,14 +247,14 @@ $ git commit -m "Parsing select time-series" -->
 <p>Now it's easy to get the time-series informationfor each column that we are interested in grabbing, and we can get each column by name. However, everything read fromthe text file is a str. What if we want to do math on this data, then we need it to be a different data type!</p>
 <p>So, let's convert the tempout time-series to be a <code class="docutils literal">float</code> by changing the line:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_34d78aace0264ea58a11b176b28e5d56-19">19</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_34d78aace0264ea58a11b176b28e5d56-19"></a><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_83df4df80aeb4c5a97cef700f0ef2cd0-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_83df4df80aeb4c5a97cef700f0ef2cd0-19"></a><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></td>
 </tr></table>
 <!--  --><p>to:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b1a732f91edd486e82fbc98d5c7553b0-19">19</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_b1a732f91edd486e82fbc98d5c7553b0-19"></a><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_6633207a4c964c17b51cc1613b20e666-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_6633207a4c964c17b51cc1613b20e666-19"></a><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 </pre></td>
 </tr></table>
 <!--  --><p>The <code class="docutils literal">float</code> datatype refers to floating point real values - the datatype of any numbers with values after a decimal point. You could also change the datatype to <code class="docutils literal">int</code>, which will round the values down to the closest full integer.</p>
@@ -279,66 +279,66 @@ $ git commit -m "Converting tempout to floats" -->
 <p>This is generally not good practice. Ideally, you want to be able to change only one part of the code and know that the rest of the code will remain consistent. So, let's fix this.</p>
 <p>Change <code class="docutils literal">mysci.py</code> to:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-1"> 1</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-2"> 2</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-3"> 3</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-4"> 4</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-5"> 5</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-6"> 6</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-7"> 7</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-8"> 8</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-9"> 9</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-10">10</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-11">11</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-12">12</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-13">13</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-14">14</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-15">15</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-16">16</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-17">17</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-18">18</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-19">19</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-20">20</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-21">21</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-22">22</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-23">23</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-24">24</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-25">25</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-26">26</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-27">27</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-28">28</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-29">29</a>
-<a href="#rest_code_3dc4d8500c1440cda43e2f48f8b234e8-30">30</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-1"></a><span class="c1"># Column names and column indices to read</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-3"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-4"></a><span class="c1"># Data types for each column (only if non-string)</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-5"></a><span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tempout'</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-6"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-7"></a><span class="c1"># Initialize my data variable</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-8"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-9"></a><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-10"></a>   <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-11"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-12"></a><span class="c1"># Read and parse the data file</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-13"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-15"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-16"></a>   <span class="c1"># Read the first three lines (header)</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-17"></a>   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-18"></a>      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-19"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-20"></a>   <span class="c1"># Read and parse the rest of the file</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-21"></a>   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-22"></a>      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-23"></a>      <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-24"></a>         <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-25"></a>         <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-26"></a>         <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-27"></a>         <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-28"></a>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-29"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_3dc4d8500c1440cda43e2f48f8b234e8-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">])</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-1"> 1</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-2"> 2</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-3"> 3</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-4"> 4</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-5"> 5</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-6"> 6</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-7"> 7</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-8"> 8</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-9"> 9</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-10">10</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-11">11</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-12">12</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-13">13</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-14">14</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-15">15</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-16">16</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-17">17</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-18">18</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-19">19</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-20">20</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-21">21</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-22">22</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-23">23</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-24">24</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-25">25</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-26">26</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-27">27</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-28">28</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-29">29</a>
+<a href="#rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-30">30</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-1"></a><span class="c1"># Column names and column indices to read</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-3"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-4"></a><span class="c1"># Data types for each column (only if non-string)</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-5"></a><span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tempout'</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-6"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-7"></a><span class="c1"># Initialize my data variable</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-8"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-9"></a><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-10"></a>   <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-11"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-12"></a><span class="c1"># Read and parse the data file</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-13"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-15"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-16"></a>   <span class="c1"># Read the first three lines (header)</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-17"></a>   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-18"></a>      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-19"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-20"></a>   <span class="c1"># Read and parse the rest of the file</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-21"></a>   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-22"></a>      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-23"></a>      <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-24"></a>         <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-25"></a>         <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-26"></a>         <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-27"></a>         <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-28"></a>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-29"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_41ce6dcc7adb4ea49022ff4ac19ff6ce-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">])</span>
 </pre></td>
 </tr></table>
 <!--  --><p>You have now created a columns <code class="docutils literal">dict</code> that points each data variable to its column-index. And a types <code class="docutils literal">dict</code>, that indicates what type to convert the data when necessary. When you want new variables pulled out of the datafile, change these two variables.</p>
