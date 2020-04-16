@@ -20,7 +20,13 @@ In this section you will compute wind chill index by writing your first function
 
    Compute the wind chill factor, which is the cooleing effect of the wind. As wind speed increases the rate at which a body loses heat increases. The formula for this is:
 
-   $$ WCI = a + (b * t) - (c * v^2) + (d * t * v^2)$$
+   :math:`WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})`
+
+   .. math::
+
+      WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})
+   
+   ..
 
    Where ``WCI`` refers to the Wind Chill in degrees F, ``t`` is temperature in degrees F, ``v`` is wind speed in mph, and the other variables are as follows: ``a`` = 35.74, ``b`` = 0.6215, ``c`` = 35.75, and ``d`` = 0.4275. Wind Chill Index is only defined for temperatures within the range -45 to +45 degrees F.
 
