@@ -19,7 +19,7 @@ NCAR Zero-to-Thirty Beginner Python Tutorial
 
 1. First Python Script
 
-    1.1 `Reading in a .txt File <link://slug/part1_1>`_
+   1.1 `Reading in a .txt File <link://slug/part1_1>`_
         - Workspace Setup:
             - Creating a directory
             - Creating a conda environment
@@ -41,7 +41,7 @@ NCAR Zero-to-Thirty Beginner Python Tutorial
             - ``git commit``
             - ``git logs``
 
-    1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
+   1.2 `Creating a Data Dictionary <link://slug/part1_2>`_
         -  Python Data Structures
             - ``list`` 
                 - ``list.append()``
@@ -56,7 +56,7 @@ NCAR Zero-to-Thirty Beginner Python Tutorial
             - ``str.split()``
             - the ``float`` datatype.
 
-    1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
+   1.3 `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
         - Python Concepts:
             - functions
             - math operators
