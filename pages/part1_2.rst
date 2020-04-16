@@ -290,8 +290,8 @@ You should now be familiar with the data structures ``list``s (as well as list i
 
 Suggested resources:
 
-`For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
-`Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+   - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
+   - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
 -----
 
