@@ -286,13 +286,15 @@ In this section you saved the variables of date, time, and tempout in a data dic
 
 You should now be familiar with the data structures ``list``s (as well as list indexing, nested lists, and the command ``list.append()``), ``dict``s (their keys and the command ``dict.get()``), and ``range``s. You also learned to write ``for`` loops, about the ``float`` datatype, and using the Python commands ``str.split()``.
 
-Please continue to `Part 1.3 <link://slug/part1_3>`_.
+-----
 
-----------
 Suggested resources:
 
 `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
 `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
---------
+-----
+
+Please continue to `Part 1.3 <link://slug/part1_3>`_.
+
 `Return to Outline <link://slug/index>`_

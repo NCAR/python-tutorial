@@ -261,12 +261,14 @@ That concludes Part 1 of this virtual tutorial where you learned to write your f
 
 In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the ``zip()`` command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your repository to GitHub.
 
----------
+-----
+
 Suggested resources:
 
 `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
 `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
 
-----------
+-----
+
 `Return to Outline <link://slug/index>`_
