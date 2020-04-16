@@ -8,9 +8,9 @@
 .. type: text
 .. hidetitle: True
 
-============================================
-NCAR Zero-to-Thirty Beginner Python Tutorial
-============================================
+=======================================
+Zero-to-Thirty Beginner Python Tutorial
+=======================================
 
 `Introduction <link://slug/welcome>`_
 

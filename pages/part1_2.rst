@@ -71,7 +71,10 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    When you print each datum in data, you'll see that each datum is a ``list`` of ``string`` values.
 
-   We just covered a lot of Python nuances in a very little bit a code! So please reach out if you are confused at this step.
+   We just covered a lot of Python nuances in a very little bit a code!
+
+   `More information on for-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
+   `More information on Python lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
 2. Now, to practice list indexing, get the first, 10th, and last row in data.
 
@@ -170,6 +173,8 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    Grab date (the first column of each line), time (the second column of each line), and temperature data (the third column), from each line and ``append`` it to the ``list`` associated with each of these data variables.
 
+   `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+
 7. Clean up (remove DEBUG section), stage, and commit
     
    .. code-block: bash
@@ -201,9 +206,11 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    The ``float`` datatype refers to floating point real values - the datatype of any numbers with values after a decimal point. You could also change the datatype to ``int``, which will round the values down to the closest full integer.
 
+   `More on Python numeric types (int, float, complex) <https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex>`_
+
 9. Add a DEBUG section at the end and see what ``data['tempout']`` now looks like.
 
-   Do you see a difference?It should now be a list of floats.
+   Do you see a difference? It should now be a list of floats.
 
 10.  Clean up (remove DEBUG section), stage, and commit 
 
@@ -216,7 +223,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 11. This seems great, so far! But what if you want to read more columns to our data later? You would have to change the initialization of the data variable (at the top of ``mysci.py``) and have to add the appropriate line in the "read and parse" section. Essentially, that means you need to maintain 2 parts of the code and make sure that both remain consistent with each other.
 
-    This is generally not good practice. Ideally, you want to be able to change only 1 part of the code and know that the rest of the code will remain consistent. So, let's fix this.
+    This is generally not good practice. Ideally, you want to be able to change only one part of the code and know that the rest of the code will remain consistent. So, let's fix this.
 
     Change mysci.py to:
 
@@ -281,4 +288,11 @@ You should now be familiar with the data structures ``list``s (as well as list i
 
 Please continue to `Part 1.3 <link://slug/part1_3>`_.
 
+----------
+Suggested resources:
+
+`For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
+`Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+
+--------
 `Return to Outline <link://slug/index>`_

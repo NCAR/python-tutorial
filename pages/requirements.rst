@@ -28,7 +28,7 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
    .. code-block:: bash    
 
-      $ conda update
+      $ conda update -n base conda
 
    ..    
    

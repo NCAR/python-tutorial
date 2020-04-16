@@ -14,9 +14,9 @@
 
 This section of the Zero to Thirty tutorial will focus on teaching you Python through the creation of your first script. 
 
-You will learn about syntax and the reasoning behind why things are done the way they done along the way. 
+You will learn about syntax and the reasoning behind why things are done the way they are done along the way. 
 
-We will also incorporate lessons on the use of git because we highly you recommend version controling your work.
+We will also incorporate lessons on the use of Git because we highly recommend you version controling your work.
 
 We are assuming you are familiar with bash and terminal commands. If not `here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
 
@@ -32,7 +32,7 @@ Open a terminal to begin:
 
    .. code-block:: bash 
 
-      $ mkdir ncar_python_tutorial
+      $ mkdir python_tutorial
 
    ..
 
@@ -42,21 +42,23 @@ Open a terminal to begin:
 
    .. code-block:: bash 
 
-      $ cd ncar_python_tutorial
+      $ cd python_tutorial
 
 3. Create a virtual environment for this project:
 
    .. code-block:: bash 
 
-     $ conda create --name ncar_python_tutorial python
+     $ conda create --name python_tutorial python
     
    ..
 
-   A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "ncar_python_tutorial," and then specify that you are using python to create a virtual environment for this project.
+   A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "python_tutorial," and then specify that you are using python to create a virtual environment for this project.
 
    It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
 
-4. Make the directory a git repository:
+   `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
+
+4. Make the directory a Git repository:
 
    .. code-block:: bash 
 
@@ -67,6 +69,8 @@ Open a terminal to begin:
    A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
 
    This command adds version control to this new ncar_python_tutorial directory and all of its contents.
+
+   `More information on Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
 
 5. Create a data directory:
 
@@ -104,7 +108,7 @@ Open a terminal to begin:
 
    You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
 
-9. Add the file to the git staging area:
+9. Add the file to the Git staging area:
 
    .. code-block:: bash 
 
@@ -112,7 +116,7 @@ Open a terminal to begin:
 
    ..
 
-   By adding this datafile to your directory, you have made a change that is not yet reflected in our git repository. Type ``git add`` and then the name of the altered file to stage your change.
+   By adding this datafile to your directory, you have made a change that is not yet reflected in our Git repository. Type ``git add`` and then the name of the altered file to stage your change.
 
 10. Check your git status once again:
 
@@ -124,7 +128,7 @@ Open a terminal to begin:
 
     Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
 
-11. Commit the file to the git repository:
+11. Commit the file to the Git repository:
 
     .. code-block:: bash 
 
@@ -134,7 +138,7 @@ Open a terminal to begin:
 
     With ``git commit``, you've updated your repository with all the changes you staged, in this case just one file.
 
-12. Look at the git logs:
+12. Look at the Git logs:
 
     .. code-block:: bash 
 
@@ -214,6 +218,8 @@ Open a terminal to begin:
 
     Comments in Python are indicated with a hash, as you can see in the first line ``# Read the data file``. Comments are ignored by the interpreter.
 
+    `More information on the open() function <https://docs.python.org/3/library/functions.html#open>`_
+
 18. And test your script again by typing:
 
     .. code-block:: bash 
@@ -272,6 +278,8 @@ Open a terminal to begin:
 
     And execute with ``python mysci.py``.
 
+    `More information on context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+
 21. What did we just see? What is the data object? What type is data? How do we find out?
 
     Add the following to the DEBUG section of our script:
@@ -290,10 +298,10 @@ Open a terminal to begin:
 
     Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
 
-22. Now, clean up the script by removing the DEBUG section, before we commit this to git.
+22. Now, clean up the script by removing the DEBUG section, before we commit this to Git.
 
 
-23. Let's check the status of our git repository
+23. Let's check the status of our Git repository
 
     .. code-block:: bash 
 
@@ -311,7 +319,7 @@ Open a terminal to begin:
 
     ..
 
-25. Let's check the status of our git repository,again. What's different from the last time we checked the status?
+25. Let's check the status of our Git repository,again. What's different from the last time we checked the status?
 
     .. code-block:: bash 
 
@@ -329,7 +337,7 @@ Open a terminal to begin:
 
     Here a good commit message ``-m`` for our changes would be "Adding script file"
 
-27. Let's check the status of our git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
+27. Let's check the status of our Git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
 
     .. code-block:: bash 
 
@@ -337,7 +345,7 @@ Open a terminal to begin:
 
     ..
 
-28. Look at the git logs, again:
+28. Look at the Git logs, again:
 
     .. code-block:: bash 
 
@@ -356,5 +364,15 @@ That concludes the first lesson of this virtual tutorial.
 In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of ``open()``, ``readline()``, ``read()``, ``close()``, and ``print()``, as well as the context manager ``with``. You should be familiar with the ``str`` datatype. You also used fundamental git commands such as ``git init``, ``git status``, ``git add``, ``git commit``, and ``git logs``.
 
 Please continue to `Part 1.2 <link://slug/part1_2>`_. 
+
+----------
+Suggested resources:
+
+`Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
+`Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
+`The open() function <https://docs.python.org/3/library/functions.html#open>`_
+`Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+
+--------
 
 `Return to Outline <link://slug/index>`_

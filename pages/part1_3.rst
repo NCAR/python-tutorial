@@ -17,7 +17,7 @@ This is intended to pick off right where part 1b left off- you had just commited
 
 In this section you will compute wind chill index by writing your first function and learning about basic math operators.
 
-1. Okay, now that you've read the data in a way thatis easy to modify later, it is time to actually do something with the data.
+1. Okay, now that you've read the data in a way that is easy to modify later, it is time to actually do something with the data.
 
    Compute the wind chill factor, which is the cooleing effect of the wind. As wind speed increases the rate at which a body loses heat increases. The formula for this is:
 
@@ -52,7 +52,7 @@ In this section you will compute wind chill index by writing your first function
    ..
 
 
-2. Great! Save this in your git repo. Stage and commit 
+2. Great! Save this in your Git repo. Stage and commit 
 
    .. code-block: bash
 
@@ -80,6 +80,8 @@ In this section you will compute wind chill index by writing your first function
    ..    
     
    To indicate a function in python you type def for define, the name of your function, and then in parenthesis the input arguments of that function, followed by a colon. On the next lines tab-indented is the code of your function, and your return value.
+
+   `More on user defined functions <https://docs.python.org/2.0/ref/function.html>`_
 
    Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, ``**``, indicates an exponential. A backslash, ``/``, is for division, and a double backslash, ``//``, is for integer division.
 
@@ -158,6 +160,8 @@ In this section you will compute wind chill index by writing your first function
 
    Using ``f-string``s with float formatting you can determine the precision with which to print the values to. ``.5f`` means you want 5 places after the decimal point.
 
+   `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+
    Test the results. What do you see? Our computation isn't very good is it?
 
 6. Clean up, stage, and commit 
@@ -215,14 +219,14 @@ In this section you will compute wind chill index by writing your first function
     
     2. At the top right of any Github page, there is a '+' icon. Click that, then select 'New Repository'.
     
-    3. Name your repository, "NCAR_python_tutorial_2020".
+    3. Name your repository, "python_tutorial_2020".
        It is best practice for your local project and GitHub repository to share a name.
 
     4. And click "Create Repository"
     
     5. Copy the link to your GitHub repository.
        
-       Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/NCAR_python_tutorial_2020.git"
+       Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/python_tutorial_2020.git"
 
     6. Then to set your remote repository, in your project terminal type:
 
@@ -257,4 +261,12 @@ That concludes Part 1 of this virtual tutorial where you learned to write your f
 
 In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the ``zip()`` command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your repository to GitHub.
 
+---------
+Suggested resources:
+
+`User defined functions <https://docs.python.org/2.0/ref/function.html>`_
+`String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+
+
+----------
 `Return to Outline <link://slug/index>`_
