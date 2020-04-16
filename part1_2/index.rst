@@ -20,7 +20,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 1. One big string isn't very useful, so use ``str.split()`` to parse the data file into a data structure you can use.
 
-   Change the mysci.py script to read:
+   Change the ``mysci.py`` script to read:
 
    .. code-block:: python
       :linenos:
@@ -67,7 +67,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    Then in a second ``for`` loop, you loop through lines in the remainder of your datafile. On each line, split it along white space. The ``string.split()`` method splits a string into a list on a specified separator, the default being white space. You could use any character you like, but other useful options are ``/t`` for splitting along tabs or ``,`` along commmas.
 
-   Then you ``append`` this split line list to the end of your data ``list``. The ``list.append()`` method adds a single item to the end of your ``list``. After every line in your ``for`` loop iteration, the data ``list`` that was empty is one element longer. Now we have a ``list`` of ``list``s for our data variable - a ``list`` of the data in each line for multiple lines.
+   Then you ``append`` this split line list to the end of your data ``list``. The ``list.append()`` method adds a single item to the end of your ``list``. After every line in your ``for`` loop iteration, the data ``list`` that was empty is one element longer. Now we have a ``list`` of ``lists`` for our data variable - a ``list`` of the data in each line for multiple lines.
 
    When you print each datum in data, you'll see that each datum is a ``list`` of ``string`` values.
 
@@ -78,7 +78,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 2. Now, to practice list indexing, get the first, 10th, and last row in data.
 
-   Change the DEBUG section of our mysci.py script to:
+   Change the DEBUG section of our ``mysci.py`` script to:
 
    .. code:: python
       :number-lines: 17
@@ -94,7 +94,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 3. Now, to practice slice indexing, get the first 10 rows in data.
 
-   Change the DEBUG section of our mysci.py script to:
+   Change the DEBUG section of our ``mysci.py`` script to:
 
    .. code:: python
       :number-lines: 17
@@ -109,7 +109,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 4. Now, to practice nested indexing,get the 5th, first 5, and every other column of rows 8 in data.
 
-   Change the DEBUG section of the mysci.py script to:
+   Change the DEBUG section of the ``mysci.py`` script to:
 
    .. code:: python
       :number-lines: 17
@@ -139,7 +139,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    Let's get our data into a more convenient named-column format.
 
-   Change mysci.py to the following:
+   Change ``mysci.py`` to the following:
 
    .. code-block:: python
       :linenos:
@@ -225,7 +225,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     This is generally not good practice. Ideally, you want to be able to change only one part of the code and know that the rest of the code will remain consistent. So, let's fix this.
 
-    Change mysci.py to:
+    Change ``mysci.py`` to:
 
     .. code-block:: python
        :linenos:
@@ -295,6 +295,6 @@ Suggested resources:
 
 -----
 
-Please continue to `Part 1.3 <link://slug/part1_3>`_.
+Next: `Part 1.3 <link://slug/part1_3>`_.
 
 `Return to Outline <link://slug/index>`_
