@@ -365,7 +365,8 @@ In this section you set up a workspace by creating your directory, conda environ
 
 Please continue to `Part 1.2 <link://slug/part1_2>`_. 
 
-----------
+-----
+
 Suggested resources:
 
 `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
@@ -373,6 +374,6 @@ Suggested resources:
 `The open() function <https://docs.python.org/3/library/functions.html#open>`_
 `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
---------
+-----
 
 `Return to Outline <link://slug/index>`_

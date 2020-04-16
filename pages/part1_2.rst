@@ -288,11 +288,13 @@ You should now be familiar with the data structures ``list``s (as well as list i
 
 Please continue to `Part 1.3 <link://slug/part1_3>`_.
 
-----------
+-----
+
 Suggested resources:
 
 `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
 `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
---------
+-----
+
 `Return to Outline <link://slug/index>`_
