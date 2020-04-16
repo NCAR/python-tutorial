@@ -45,7 +45,7 @@ Here are some Python references we recommend:
 
 ----------------
 
-Begin `Tutorial Requirements & Installation <link://slug/requirements>`_
+`Tutorial Requirements & Installation <link://slug/requirements>`_
 
 ----------
 
