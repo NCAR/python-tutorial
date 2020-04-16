@@ -47,10 +47,8 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
    Git is a program that tracks changes made to files. This makes it easy to maintain access to multiple versions of your code as you improve it, and revert your code back to a previous version if you've made any mistakes.
 
 
------------------
+-----
 
 `Begin Tutorial <link://slug/part1_1>`_
-
--------------
 
 `Return to Outline <link://slug/index>`_
