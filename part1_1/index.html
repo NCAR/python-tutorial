@@ -73,19 +73,19 @@ navbar-dark bg-dark
 <ol class="arabic">
 <li>
 <p>Create a directory:</p>
-<pre class="code bash"><a name="rest_code_6760c6ec6f4e4e52805a62554324e3eb-1"></a>$ mkdir python_tutorial
+<pre class="code bash"><a name="rest_code_f9ad87ef82874406b9120c068e83b494-1"></a>$ mkdir python_tutorial
 </pre>
 <!--  -->
 <p>The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."</p>
 </li>
 <li>
 <p>Go into the directory:</p>
-<pre class="code bash"><a name="rest_code_64d23cde553441909172eed4f82d37ea-1"></a>$ <span class="nb">cd</span> python_tutorial
+<pre class="code bash"><a name="rest_code_5b072465e8d341e0a88c9c9d4a4d2442-1"></a>$ <span class="nb">cd</span> python_tutorial
 </pre>
 </li>
 <li>
 <p>Create a virtual environment for this project:</p>
-<pre class="code bash"><a name="rest_code_92cd42ecb40e4c259d7be78c49c47e2f-1"></a>$ conda create --name python_tutorial python
+<pre class="code bash"><a name="rest_code_4dc6c00f015d4e839bf22c75335ed3a0-1"></a>$ conda create --name python_tutorial python
 </pre>
 <!--  -->
 <p>A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "python_tutorial," and then specify that you are using python to create a virtual environment for this project.</p>
@@ -94,7 +94,7 @@ navbar-dark bg-dark
 </li>
 <li>
 <p>Make the directory a Git repository:</p>
-<pre class="code bash"><a name="rest_code_6058b69788dc4a03b9d927bc5c47451d-1"></a>$ git init .
+<pre class="code bash"><a name="rest_code_6178657209e54230b80b6f5f833f10fc-1"></a>$ git init .
 </pre>
 <!--  -->
 <p>A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.</p>
@@ -103,82 +103,82 @@ navbar-dark bg-dark
 </li>
 <li>
 <p>Create a data directory:</p>
-<pre class="code bash"><a name="rest_code_e22ec501b9c04c179e4b9dc6849c378d-1"></a>$ mkdir data
+<pre class="code bash"><a name="rest_code_4270a233698a4f9d82bf13c2cc05cc2d-1"></a>$ mkdir data
 </pre>
 <!--  -->
 <p>And we'll make a directory for our data.</p>
 </li>
 <li>
 <p>Go into the data directory:</p>
-<pre class="code bash"><a name="rest_code_eb2cc7ad1b444b27b02b4e515ff99693-1"></a>$ <span class="nb">cd</span> data
+<pre class="code bash"><a name="rest_code_48b227bae93341728d130b4404a86a57-1"></a>$ <span class="nb">cd</span> data
 </pre>
 </li>
 <li>
 <p>Download sample data from the CU Boulder weather station:</p>
-<pre class="code bash"><a name="rest_code_6de2c5292da24416a0a991fb3cd74c8d-1"></a>$ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+<pre class="code bash"><a name="rest_code_90867b881e3f459fa595ba273917778e-1"></a>$ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 </pre>
 <!--  -->
 <p>This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.</p>
 </li>
 <li>
 <p>Check the status of your repository</p>
-<pre class="code bash"><a name="rest_code_76e8bc06042f4e8590dbf35a475cf3ef-1"></a>$ git status
+<pre class="code bash"><a name="rest_code_d4068d14c4ce4040858cce49ed409809-1"></a>$ git status
 </pre>
 <!--  -->
 <p>You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:</p>
 </li>
 <li>
 <p>Add the file to the Git staging area:</p>
-<pre class="code bash"><a name="rest_code_43c39d85288449c28a0538efa185c204-1"></a>$ git add wxobs20170821.txt
+<pre class="code bash"><a name="rest_code_55be8df576f5465799881be302f85ff2-1"></a>$ git add wxobs20170821.txt
 </pre>
 <!--  -->
 <p>By adding this datafile to your directory, you have made a change that is not yet reflected in our Git repository. Type <code class="docutils literal">git add</code> and then the name of the altered file to stage your change.</p>
 </li>
 <li>
 <p>Check your git status once again:</p>
-<pre class="code bash"><a name="rest_code_7dbad33f9b6248ddad0db46b22654224-1"></a>$ git status
+<pre class="code bash"><a name="rest_code_2fbb657418a642f0a62db0c5c51cf933-1"></a>$ git status
 </pre>
 <!--  -->
 <p>Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.</p>
 </li>
 <li>
 <p>Commit the file to the Git repository:</p>
-<pre class="code bash"><a name="rest_code_8d2baefce38f47d4b600c8c5f46b0781-1"></a>$ git commit -m <span class="s2">"Adding sample data file"</span>
+<pre class="code bash"><a name="rest_code_40283524f73644f098339d914fe713dc-1"></a>$ git commit -m <span class="s2">"Adding sample data file"</span>
 </pre>
 <!--  -->
 <p>With <code class="docutils literal">git commit</code>, you've updated your repository with all the changes you staged, in this case just one file.</p>
 </li>
 <li>
 <p>Look at the Git logs:</p>
-<pre class="code bash"><a name="rest_code_b7c78c347c8c423ca015f9b16fa0b1e8-1"></a>$ git log
+<pre class="code bash"><a name="rest_code_56e73f799f064aef8cface4707f373bc-1"></a>$ git log
 </pre>
 <!--  -->
 <p>If you type <code class="docutils literal">git log</code> you will show a log of all the commits, or changes made to your repository.</p>
 </li>
 <li>
 <p>Go back to the top-level directory:</p>
-<pre class="code bash"><a name="rest_code_cd72cd94e725418e983e90d84bd0b12d-1"></a>$ <span class="nb">cd</span> ..
+<pre class="code bash"><a name="rest_code_c1116101037a4e019f33b73157a0c0cb-1"></a>$ <span class="nb">cd</span> ..
 </pre>
 <!--  -->
 </li>
 <li>
 <p>And now that you've set up our workspace, create a blank Python script, called "mysci.py":</p>
-<pre class="code bash"><a name="rest_code_ab3d5985a7394e5cb8983f9b77638e9f-1"></a>$ touch mysci.py
+<pre class="code bash"><a name="rest_code_3bc4c2435f8e4fc2b74dd48923a98b1a-1"></a>$ touch mysci.py
 </pre>
 <!--  -->
 </li>
 <li>
 <p>Edit the <code class="docutils literal">mysci.py</code> file using nano, vim, or your favorite text editor:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_c094a5bc9feb4a11847752b5d9e18f09-1">1</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_c094a5bc9feb4a11847752b5d9e18f09-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, world!"</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3aa7d4f8cf554030871aa99f84c28c93-1">1</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3aa7d4f8cf554030871aa99f84c28c93-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, world!"</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Your classic first command will be to print "Hello World".</p>
 </li>
 <li>
 <p>Try testing the script by typing "python" and then the name of your script:</p>
-<pre class="code bash"><a name="rest_code_47f3c39ea30f47eeb764d1c4b5af4c07-1"></a>$ python mysci.py
+<pre class="code bash"><a name="rest_code_ba6a152254fc4911b76da6399c3941fa-1"></a>$ python mysci.py
 </pre>
 <!--  -->
 <p><strong>Yay!</strong> You've just created your first Python script.</p>
@@ -187,26 +187,26 @@ navbar-dark bg-dark
 <p>You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.</p>
 <p>Change the <code class="docutils literal">mysci.py</code> script to read:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-1"> 1</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-2"> 2</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-3"> 3</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-4"> 4</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-5"> 5</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-6"> 6</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-7"> 7</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-8"> 8</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-9"> 9</a>
-<a href="#rest_code_3608c6086d0c440b83629a7066ad87f8-10">10</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_3608c6086d0c440b83629a7066ad87f8-1"></a><span class="c1"># Read the data file</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-3"></a><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-4"></a>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-9"></a>
-<a name="rest_code_3608c6086d0c440b83629a7066ad87f8-10"></a><span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-1"> 1</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-2"> 2</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-3"> 3</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-4"> 4</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-5"> 5</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-6"> 6</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-7"> 7</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-8"> 8</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-9"> 9</a>
+<a href="#rest_code_1180f28d483341388a3ffec30d28ae9a-10">10</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1180f28d483341388a3ffec30d28ae9a-1"></a><span class="c1"># Read the data file</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-3"></a><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-4"></a>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-9"></a>
+<a name="rest_code_1180f28d483341388a3ffec30d28ae9a-10"></a><span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <!--  --><p>First create a variable for your datafile name, which is a string - this can be in single or double quotes.</p>
@@ -219,7 +219,7 @@ navbar-dark bg-dark
 </li>
 <li>
 <p>And test your script again by typing:</p>
-<pre class="code bash"><a name="rest_code_6711fd6b6d6f49ed861140dabd17678f-1"></a>$ python mysci.py
+<pre class="code bash"><a name="rest_code_152c4837ba974551a75793f9269fb6be-1"></a>$ python mysci.py
 </pre>
 <!--  -->
 <p>Testing of your script with <code class="docutils literal">python mysci.py</code> should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.</p>
@@ -227,28 +227,28 @@ navbar-dark bg-dark
 <li>
 <p>Change the <code class="docutils literal">mysci.py</code> script to read your whole data file:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-1"> 1</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-2"> 2</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-3"> 3</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-4"> 4</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-5"> 5</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-6"> 6</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-7"> 7</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-8"> 8</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-9"> 9</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-10">10</a>
-<a href="#rest_code_5f2800ead0e447448c4be363bbe1b592-11">11</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_5f2800ead0e447448c4be363bbe1b592-1"></a><span class="c1"># Read the data file</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-3"></a><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-4"></a>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-6"></a>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-7"></a><span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-8"></a>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-9"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a name="rest_code_5f2800ead0e447448c4be363bbe1b592-11"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-1"> 1</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-2"> 2</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-3"> 3</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-4"> 4</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-5"> 5</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-6"> 6</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-7"> 7</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-8"> 8</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-9"> 9</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-10">10</a>
+<a href="#rest_code_a6bcf19494af48c4b5f66319aa329110-11">11</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_a6bcf19494af48c4b5f66319aa329110-1"></a><span class="c1"># Read the data file</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-3"></a><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-4"></a>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-6"></a>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-7"></a><span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-8"></a>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-9"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a name="rest_code_a6bcf19494af48c4b5f66319aa329110-11"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll <code class="docutils literal">print(data)</code>. Print statements in python require parenthesis around the object you wish to print, here it is data.</p>
@@ -258,20 +258,20 @@ navbar-dark bg-dark
 <li>
 <p>Change the <code class="docutils literal">mysci.py</code> script to read your whole data file using a context manager with:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_710d1de229a846eab796c578df976357-1">1</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-2">2</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-3">3</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-4">4</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-5">5</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-6">6</a>
-<a href="#rest_code_710d1de229a846eab796c578df976357-7">7</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_710d1de229a846eab796c578df976357-1"></a><span class="c1"># Read the data file</span>
-<a name="rest_code_710d1de229a846eab796c578df976357-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
-<a name="rest_code_710d1de229a846eab796c578df976357-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
-<a name="rest_code_710d1de229a846eab796c578df976357-4"></a>   <span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a name="rest_code_710d1de229a846eab796c578df976357-5"></a>
-<a name="rest_code_710d1de229a846eab796c578df976357-6"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_710d1de229a846eab796c578df976357-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-1">1</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-2">2</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-3">3</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-4">4</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-5">5</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-6">6</a>
+<a href="#rest_code_845c36eaf7e04b5bb451d68f120a7698-7">7</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-1"></a><span class="c1"># Read the data file</span>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-2"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">"data/wxobs20170821.txt"</span>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-4"></a>   <span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-5"></a>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-6"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_845c36eaf7e04b5bb451d68f120a7698-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.</p>
@@ -284,10 +284,10 @@ navbar-dark bg-dark
 <p>What did we just see? What is the data object? What type is data? How do we find out?</p>
 <p>Add the following to the DEBUG section of our script:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9b851ce6986844eca92d4e3264c50bbe-10">10</a>
-<a href="#rest_code_9b851ce6986844eca92d4e3264c50bbe-11">11</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_9b851ce6986844eca92d4e3264c50bbe-10"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_9b851ce6986844eca92d4e3264c50bbe-11"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_6c52a9e6a4fa438b9439adf436106406-10">10</a>
+<a href="#rest_code_6c52a9e6a4fa438b9439adf436106406-11">11</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_6c52a9e6a4fa438b9439adf436106406-10"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_6c52a9e6a4fa438b9439adf436106406-11"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></td>
 </tr></table>
 <!--  --><p>And execute with <code class="docutils literal">python mysci.py</code></p>
@@ -297,39 +297,39 @@ navbar-dark bg-dark
 <li><p>Now, clean up the script by removing the DEBUG section, before we commit this to Git.</p></li>
 <li>
 <p>Let's check the status of our Git repository</p>
-<pre class="code bash"><a name="rest_code_3812c62e5a6146a49ff0009510f948ce-1"></a>$ git status
+<pre class="code bash"><a name="rest_code_dfb1c1352a9244e88c2942e59fcf7c75-1"></a>$ git status
 </pre>
 <!--  -->
 <p>Note what files have been changed in the repository.</p>
 </li>
 <li>
 <p>Stage these changes:</p>
-<pre class="code bash"><a name="rest_code_9b5cf20bcd6045089b4315ef1eaca3a9-1"></a>$ git add mysci.py
+<pre class="code bash"><a name="rest_code_138ccfe267b54b439408e5cd9e991a33-1"></a>$ git add mysci.py
 </pre>
 <!--  -->
 </li>
 <li>
 <p>Let's check the status of our Git repository,again. What's different from the last time we checked the status?</p>
-<pre class="code bash"><a name="rest_code_c1f1854463004afc8c0560d4f512893c-1"></a>$ git status
+<pre class="code bash"><a name="rest_code_76eac3d53c3e4148b0a98262214cf375-1"></a>$ git status
 </pre>
 <!--  -->
 </li>
 <li>
 <p>Commit these changes:</p>
-<pre class="code bash"><a name="rest_code_cc74900cd54848319d51db0109e98c64-1"></a>$ git commit -m <span class="s2">"Adding script file"</span>
+<pre class="code bash"><a name="rest_code_3c1b7ba07f8440e1939e3e78d633be95-1"></a>$ git commit -m <span class="s2">"Adding script file"</span>
 </pre>
 <!--  -->
 <p>Here a good commit message <code class="docutils literal"><span class="pre">-m</span></code> for our changes would be "Adding script file"</p>
 </li>
 <li>
 <p>Let's check the status of our Git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'</p>
-<pre class="code bash"><a name="rest_code_b2a4caf9f0f2477bb12868c1d442e21e-1"></a>$ git status
+<pre class="code bash"><a name="rest_code_fa54a43ec1384b52af3641a21b9a57d8-1"></a>$ git status
 </pre>
 <!--  -->
 </li>
 <li>
 <p>Look at the Git logs, again:</p>
-<pre class="code bash"><a name="rest_code_f89ca647eb8e4044b2fd5fb0c7d707a0-1"></a>$ git log
+<pre class="code bash"><a name="rest_code_15ed5cf6c9ac4bb59e0ca065e957ee18-1"></a>$ git log
 </pre>
 <!--  -->
 <p>You can also print simplified logs with the <code class="docutils literal"><span class="pre">--oneline</span></code> option.</p>
