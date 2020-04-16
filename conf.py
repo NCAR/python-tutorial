@@ -20,7 +20,7 @@ BLOG_AUTHOR = "NCAR Xdev Team"  # (translatable)
 BLOG_TITLE = "NCAR Python Tutorials"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://ncar.github.io/ncar-python-tutorial/"
+SITE_URL = "https://ncar.github.io/python-tutorial/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://ncar.github.io/ncar-python-tutorials/"
@@ -217,19 +217,22 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
-POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.html", "posts", "post.tmpl"),
-)
+# you can also keep the current content of POSTS if you want a blog with your site
+POSTS = ()
+
+# remove destination directory to generate pages in the root directory
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "page.tmpl"),
 )
 
+# And to avoid a conflict because blogs try to generate /index.html
+#INDEX_PATH = "blog"
+# Or you can disable blog indexes altogether:
+DISABLE_INDEXES = True
 
 # Below this point, everything is optional
 
@@ -1030,6 +1033,7 @@ PRETTY_URLS = True
 # If True, use the scheduling rule to all posts (not pages!) by default
 # SCHEDULE_ALL = False
 
+#USE_KATEX = True
 # Do you want a add a Mathjax config file?
 # MATHJAX_CONFIG = ""
 
