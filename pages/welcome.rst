@@ -15,7 +15,7 @@ Welcome to the Python 0 to 30 for Scientists tutorial. In this self-paced course
 
 Part 1 is designed to take one work day, but you may move through the content much slower or more quickly.
 
-Through these instructions you will develop scripts and use git and GitHub to save and organize your work.
+Through these instructions you will develop scripts and use Git and GitHub to save and organize your work.
 
 At the end of this tutorial you will have a grasp of how to begin building your own library of Python tools for your scientific analysis workflows.
 
@@ -45,6 +45,8 @@ Here are some Python references we recommend:
 
 ----------------
 
-Begin `Tutorial Part 1.1 <link://slug/requirements>`_
+Begin `Tutorial Requirements & Installation <link://slug/requirements>`_
+
+----------
 
 `Return to Outline <link://slug/index>`_
