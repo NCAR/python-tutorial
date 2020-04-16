@@ -364,11 +364,6 @@ In this section you set up a workspace by creating your directory, conda environ
 
 -----
 
-<<<<<<< HEAD
------
-
-=======
->>>>>>> feb45c39669d865c425a589f2bc8804d8182111b
 Suggested resources:
 
 `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
