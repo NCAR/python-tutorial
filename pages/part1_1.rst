@@ -56,7 +56,7 @@ Open a terminal to begin:
 
    It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
 
-   `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
+   `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
 
 4. Make the directory a Git repository:
 
@@ -371,7 +371,7 @@ In this section you set up a workspace by creating your directory, conda environ
 >>>>>>> feb45c39669d865c425a589f2bc8804d8182111b
 Suggested resources:
 
-`Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
+`Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
 `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
 `The open() function <https://docs.python.org/3/library/functions.html#open>`_
 `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
