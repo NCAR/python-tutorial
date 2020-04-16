@@ -47,6 +47,6 @@ Here are some Python references we recommend:
 
 -----
 
-`Tutorial Requirements & Installation <link://slug/requirements>`_
+Next: `Tutorial Requirements & Installation <link://slug/requirements>`_
 
 `Return to Outline <link://slug/index>`_
