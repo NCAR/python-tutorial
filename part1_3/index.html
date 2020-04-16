@@ -75,10 +75,10 @@ WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})
 <p>You've read the temperature data into the tempout variable, but to do this calculation, you also needto read the windspeed variable from column 7.</p>
 <p>Modify the columns variable to read:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_46af95e571af47d28b9b400c7a30cb66-1">1</a>
-<a href="#rest_code_46af95e571af47d28b9b400c7a30cb66-2">2</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_46af95e571af47d28b9b400c7a30cb66-1"></a><span class="c1"># Column names and column indices to read</span>
-<a name="rest_code_46af95e571af47d28b9b400c7a30cb66-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9cf1c45931594c61ac51219d9378537d-1">1</a>
+<a href="#rest_code_9cf1c45931594c61ac51219d9378537d-2">2</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9cf1c45931594c61ac51219d9378537d-1"></a><span class="c1"># Column names and column indices to read</span>
+<a name="rest_code_9cf1c45931594c61ac51219d9378537d-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
 </pre></td>
 </tr></table>
 <!--  --><p>and modify the types variable to be:</p>
@@ -100,26 +100,26 @@ $ git commit -m "Reading windspeed as well" -->
 <li>
 <p>Now, let's write our first function to computethe wind chill factor. We'll add this function to the bottom of the file.</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-29">29</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-30">30</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-31">31</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-32">32</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-33">33</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-34">34</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-35">35</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-36">36</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-37">37</a>
-<a href="#rest_code_1ea75c5da4b146fbb6f24eb32713c915-38">38</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-29"></a><span class="c1"># Compute the wind chill temperature</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-30"></a><span class="k">def</span> <span class="nf">compute_windchill</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-31"></a>   <span class="n">a</span> <span class="o">=</span> <span class="mf">35.74</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-32"></a>   <span class="n">b</span> <span class="o">=</span> <span class="mf">0.6215</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-33"></a>   <span class="n">c</span> <span class="o">=</span> <span class="mf">35.75</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-34"></a>   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.4275</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-35"></a>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-36"></a>   <span class="n">v16</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mf">0.16</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-37"></a>   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span>
-<a name="rest_code_1ea75c5da4b146fbb6f24eb32713c915-38"></a>   <span class="k">return</span> <span class="n">wci</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-29">29</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-30">30</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-31">31</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-32">32</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-33">33</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-34">34</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-35">35</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-36">36</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-37">37</a>
+<a href="#rest_code_ac437c7995a94bbf871f1cc090fb1c06-38">38</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-29"></a><span class="c1"># Compute the wind chill temperature</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-30"></a><span class="k">def</span> <span class="nf">compute_windchill</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-31"></a>   <span class="n">a</span> <span class="o">=</span> <span class="mf">35.74</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-32"></a>   <span class="n">b</span> <span class="o">=</span> <span class="mf">0.6215</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-33"></a>   <span class="n">c</span> <span class="o">=</span> <span class="mf">35.75</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-34"></a>   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.4275</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-35"></a>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-36"></a>   <span class="n">v16</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mf">0.16</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-37"></a>   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span>
+<a name="rest_code_ac437c7995a94bbf871f1cc090fb1c06-38"></a>   <span class="k">return</span> <span class="n">wci</span>
 </pre></td>
 </tr></table>
 <!--  --><p>To indicate a function in python you type def for define, the name of your function, and then in parenthesis the input arguments of that function, followed by a colon. On the next lines tab-indented is the code of your function, and your return value.</p>
@@ -127,24 +127,24 @@ $ git commit -m "Reading windspeed as well" -->
 <p>Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, <code class="docutils literal">**</code>, indicates an exponential. A backslash, <code class="docutils literal">/</code>, is for division, and a double backslash, <code class="docutils literal">//</code>, is for integer division.</p>
 <p>And then let's compute a new list with windchill data atthe bottom of mysci.py:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_dda8a9fb0ead4d45b1bdfea3491de721-40">40</a>
-<a href="#rest_code_dda8a9fb0ead4d45b1bdfea3491de721-41">41</a>
-<a href="#rest_code_dda8a9fb0ead4d45b1bdfea3491de721-42">42</a>
-<a href="#rest_code_dda8a9fb0ead4d45b1bdfea3491de721-43">43</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_dda8a9fb0ead4d45b1bdfea3491de721-40"></a><span class="c1"># Let's actually compute the wind chill factor</span>
-<a name="rest_code_dda8a9fb0ead4d45b1bdfea3491de721-41"></a><span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_dda8a9fb0ead4d45b1bdfea3491de721-42"></a><span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'windspeed'</span><span class="p">]):</span>
-<a name="rest_code_dda8a9fb0ead4d45b1bdfea3491de721-43"></a>   <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0cea1b8d5b9240b29d2ac489247fd882-40">40</a>
+<a href="#rest_code_0cea1b8d5b9240b29d2ac489247fd882-41">41</a>
+<a href="#rest_code_0cea1b8d5b9240b29d2ac489247fd882-42">42</a>
+<a href="#rest_code_0cea1b8d5b9240b29d2ac489247fd882-43">43</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0cea1b8d5b9240b29d2ac489247fd882-40"></a><span class="c1"># Let's actually compute the wind chill factor</span>
+<a name="rest_code_0cea1b8d5b9240b29d2ac489247fd882-41"></a><span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_0cea1b8d5b9240b29d2ac489247fd882-42"></a><span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'tempout'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'windspeed'</span><span class="p">]):</span>
+<a name="rest_code_0cea1b8d5b9240b29d2ac489247fd882-43"></a>   <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Now we'll call our function. Initialize a <code class="docutils literal">list</code> for wind chill with empty square brackets, <code class="docutils literal">[]</code>. And in a <code class="docutils literal">for</code> loop, loop through our temperature and wind speed data, applying the function to each <code class="docutils literal">tuple</code> data pair. <code class="docutils literal"><span class="pre">tuple``s</span> are ordered like <span class="pre">``list``s,</span> but they are indicated by parenthesis, <span class="pre">``()</span></code>, instead of square brackets and cannot be changed or appended. <code class="docutils literal">tuple</code> s are generally faster than <code class="docutils literal">list</code> s.</p>
 <p>We use the <code class="docutils literal">zip</code> function in Python to automatically unravel the <code class="docutils literal"><span class="pre">tuple``s.</span> Take a look at <span class="pre">``zip([1,2],</span> [3,4,5])</code>. What is the result?</p>
 <p>And finally, add a DEBUG section to see theresults:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8e9ff7a793404a6289fe5f3d95e2df46-45">45</a>
-<a href="#rest_code_8e9ff7a793404a6289fe5f3d95e2df46-46">46</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_8e9ff7a793404a6289fe5f3d95e2df46-45"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_8e9ff7a793404a6289fe5f3d95e2df46-46"></a><span class="nb">print</span><span class="p">(</span><span class="n">windchill</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b7fa2c3f2388492b87511392218cd1a0-45">45</a>
+<a href="#rest_code_b7fa2c3f2388492b87511392218cd1a0-46">46</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_b7fa2c3f2388492b87511392218cd1a0-45"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_b7fa2c3f2388492b87511392218cd1a0-46"></a><span class="nb">print</span><span class="p">(</span><span class="n">windchill</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  -->
@@ -161,31 +161,31 @@ $ git commit -m "Compute wind chill factor" -->
 <p>Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a <code class="docutils literal">float</code>:</p>
 <p>Edit the columns and types <code class="docutils literal">dict</code>:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_43da795a488f4239b9686339d77a9ef6-1">1</a>
-<a href="#rest_code_43da795a488f4239b9686339d77a9ef6-2">2</a>
-<a href="#rest_code_43da795a488f4239b9686339d77a9ef6-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_43da795a488f4239b9686339d77a9ef6-1"></a><span class="c1"># Column names and column indices to read</span>
-<a name="rest_code_43da795a488f4239b9686339d77a9ef6-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-<a name="rest_code_43da795a488f4239b9686339d77a9ef6-3"></a>  <span class="s1">'windchill'</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_dee1ea26b74e4fd197e45617f33fb249-1">1</a>
+<a href="#rest_code_dee1ea26b74e4fd197e45617f33fb249-2">2</a>
+<a href="#rest_code_dee1ea26b74e4fd197e45617f33fb249-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_dee1ea26b74e4fd197e45617f33fb249-1"></a><span class="c1"># Column names and column indices to read</span>
+<a name="rest_code_dee1ea26b74e4fd197e45617f33fb249-2"></a><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'date'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'time'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'tempout'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+<a name="rest_code_dee1ea26b74e4fd197e45617f33fb249-3"></a>  <span class="s1">'windchill'</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
 </pre></td>
 </tr></table>
 <!--  --><p><strong>NOTE:</strong> the line continuation indentation</p>
 <p>and</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3b0e63b28a42491593b17d6d61c0b640-5">5</a>
-<a href="#rest_code_3b0e63b28a42491593b17d6d61c0b640-6">6</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_3b0e63b28a42491593b17d6d61c0b640-5"></a><span class="c1"># Data types for each column (only if non-string)</span>
-<a name="rest_code_3b0e63b28a42491593b17d6d61c0b640-6"></a><span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tempout'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">'windchill'</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_c1973b3a9c6145d9a7b40990e8fbd2fc-5">5</a>
+<a href="#rest_code_c1973b3a9c6145d9a7b40990e8fbd2fc-6">6</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_c1973b3a9c6145d9a7b40990e8fbd2fc-5"></a><span class="c1"># Data types for each column (only if non-string)</span>
+<a name="rest_code_c1973b3a9c6145d9a7b40990e8fbd2fc-6"></a><span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'tempout'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">'windspeed'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">'windchill'</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Then, in a DEBUG section at the end of your script to compare the two different values (from data and computed by our function):</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_6665a85a8162408e943412ce848f6ca2-46">46</a>
-<a href="#rest_code_6665a85a8162408e943412ce848f6ca2-47">47</a>
-<a href="#rest_code_6665a85a8162408e943412ce848f6ca2-48">48</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_6665a85a8162408e943412ce848f6ca2-46"></a><span class="c1"># DEBUG</span>
-<a name="rest_code_6665a85a8162408e943412ce848f6ca2-47"></a><span class="k">for</span> <span class="n">wc_data</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'windchill'</span><span class="p">],</span> <span class="n">windchill</span><span class="p">):</span>
-<a name="rest_code_6665a85a8162408e943412ce848f6ca2-48"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">wc_data</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_data</span> <span class="o">-</span> <span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2e5960b820ff4fc6b13e2ce8763c1663-46">46</a>
+<a href="#rest_code_2e5960b820ff4fc6b13e2ce8763c1663-47">47</a>
+<a href="#rest_code_2e5960b820ff4fc6b13e2ce8763c1663-48">48</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_2e5960b820ff4fc6b13e2ce8763c1663-46"></a><span class="c1"># DEBUG</span>
+<a name="rest_code_2e5960b820ff4fc6b13e2ce8763c1663-47"></a><span class="k">for</span> <span class="n">wc_data</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'windchill'</span><span class="p">],</span> <span class="n">windchill</span><span class="p">):</span>
+<a name="rest_code_2e5960b820ff4fc6b13e2ce8763c1663-48"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">wc_data</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_data</span> <span class="o">-</span> <span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Using <code class="docutils literal"><span class="pre">f-string``s</span> with float formatting you can determine the precision with which to print the values to. <span class="pre">``.5f</span></code> means you want 5 places after the decimal point.</p>
@@ -204,18 +204,18 @@ $ git commit -m "Compare wind chill factors" -->
 <p>Now, format the output so that it's easy to understand and rename this script to something indicative of what it actually does.</p>
 <p>To the end of the file, add:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-46">46</a>
-<a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-47">47</a>
-<a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-48">48</a>
-<a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-49">49</a>
-<a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-50">50</a>
-<a href="#rest_code_ba7a69f723b14e5cae669f69af7e5059-51">51</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-46"></a><span class="c1"># Output comparison of data</span>
-<a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-47"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'                ORIGINAL  COMPUTED'</span><span class="p">)</span>
-<a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-48"></a><span class="nb">print</span><span class="p">(</span><span class="s1">' DATE    TIME  WINDCHILL WINDCHILL DIFFERENCE'</span><span class="p">)</span>
-<a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-49"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'------- ------ --------- --------- ----------'</span><span class="p">)</span>
-<a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-50"></a><span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">wc_orig</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'date'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'windchill'</span><span class="p">],</span> <span class="n">windchill</span><span class="p">):</span>
-<a name="rest_code_ba7a69f723b14e5cae669f69af7e5059-51"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="o">-</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_104ad80f954048b9a9c2133209186570-46">46</a>
+<a href="#rest_code_104ad80f954048b9a9c2133209186570-47">47</a>
+<a href="#rest_code_104ad80f954048b9a9c2133209186570-48">48</a>
+<a href="#rest_code_104ad80f954048b9a9c2133209186570-49">49</a>
+<a href="#rest_code_104ad80f954048b9a9c2133209186570-50">50</a>
+<a href="#rest_code_104ad80f954048b9a9c2133209186570-51">51</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_104ad80f954048b9a9c2133209186570-46"></a><span class="c1"># Output comparison of data</span>
+<a name="rest_code_104ad80f954048b9a9c2133209186570-47"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'                ORIGINAL  COMPUTED'</span><span class="p">)</span>
+<a name="rest_code_104ad80f954048b9a9c2133209186570-48"></a><span class="nb">print</span><span class="p">(</span><span class="s1">' DATE    TIME  WINDCHILL WINDCHILL DIFFERENCE'</span><span class="p">)</span>
+<a name="rest_code_104ad80f954048b9a9c2133209186570-49"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'------- ------ --------- --------- ----------'</span><span class="p">)</span>
+<a name="rest_code_104ad80f954048b9a9c2133209186570-50"></a><span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">wc_orig</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'date'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'time'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'windchill'</span><span class="p">],</span> <span class="n">windchill</span><span class="p">):</span>
+<a name="rest_code_104ad80f954048b9a9c2133209186570-51"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="o">-</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <!--  --><p>Here you used <code class="docutils literal"><span class="pre">f-string</span></code> formatting with more <code class="docutils literal"><span class="pre">f-string</span></code> formatting options. <code class="docutils literal">&gt;6</code> indicates that you'd like the characters of the string to be right-justified and to take up 6 spaces.</p>
@@ -232,8 +232,8 @@ $ git commit -m "Output formatting comparison data" -->
 </li>
 <li>
 <p>Let's rename this script to something meaningful and indicative of the computation inside.</p>
-<pre class="code bash"><a name="rest_code_83e2ea6f5a354c67ae6d143af47d557c-1"></a>$ git mv mysci.py windchillcomp.py
-<a name="rest_code_83e2ea6f5a354c67ae6d143af47d557c-2"></a>$ git commit -m <span class="s2">"Renaming first script"</span>
+<pre class="code bash"><a name="rest_code_15ff453a17af4590896c36c40a6630b7-1"></a>$ git mv mysci.py windchillcomp.py
+<a name="rest_code_15ff453a17af4590896c36c40a6630b7-2"></a>$ git commit -m <span class="s2">"Renaming first script"</span>
 </pre>
 <!--  -->
 </li>
@@ -251,19 +251,19 @@ It is best practice for your local project and GitHub repository to share a name
 </li>
 <li>
 <p>Then to set your remote repository, in your project terminal type:</p>
-<pre class="code bash"><a name="rest_code_94a40dfa62d84240a94410cf9b83cd0e-1"></a>$ git remote add origin &lt;remote repository URL&gt;
+<pre class="code bash"><a name="rest_code_e49236a37f194201b8043e89ff2a01ca-1"></a>$ git remote add origin &lt;remote repository URL&gt;
 </pre>
 <!--  -->
 </li>
 <li>
 <p>And verify your remote repository:</p>
-<pre class="code bash"><a name="rest_code_aa3a44c113e84c2aa4ae1409f671cc98-1"></a>$ git remote -v
+<pre class="code bash"><a name="rest_code_8fb7af07670d4445a7038da6695a7991-1"></a>$ git remote -v
 </pre>
 <!--  -->
 </li>
 <li>
 <p>And finally push your project to GitHub:</p>
-<pre class="code bash"><a name="rest_code_3cc957100d1446098ea843621a5f847c-1"></a>$ git push origin master
+<pre class="code bash"><a name="rest_code_7f22b870fd08461f878954a5aad964c3-1"></a>$ git push origin master
 </pre>
 <!--  -->
 </li>
