@@ -38,6 +38,7 @@ Zero-to-Thirty Beginner Python Tutorial
         - the ``with`` context manager
 
       - Git Fundamentals
+
         - ``git status``
         - ``git add``
         - ``git commit``
