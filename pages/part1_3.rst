@@ -85,7 +85,7 @@ In this section you will compute wind chill index by writing your first function
 
    Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, ``**``, indicates an exponential. A backslash, ``/``, is for division, and a double backslash, ``//``, is for integer division.
 
-   And then let's compute a new list with windchill data atthe bottom of mysci.py:
+   And then let's compute a new list with windchill data atthe bottom of ``mysci.py``:
 
    .. code:: python
       :number-lines: 40

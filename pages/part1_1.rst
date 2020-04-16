@@ -164,7 +164,7 @@ Open a terminal to begin:
 
     ..
 
-15. Edit the mysci.py file using nano, vim, or your favorite text editor:
+15. Edit the ``mysci.py`` file using nano, vim, or your favorite text editor:
 
     .. code-block:: python
        :linenos:
@@ -188,7 +188,7 @@ Open a terminal to begin:
 
 17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
 
-    Change the mysci.py script to read:
+    Change the ``mysci.py`` script to read:
 
     .. code-block:: python
        :linenos:
@@ -230,7 +230,7 @@ Open a terminal to begin:
 
     Testing of your script with ``python mysci.py`` should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
 
-19. Change the mysci.py script to read your whole data file:
+19. Change the ``mysci.py`` script to read your whole data file:
 
     .. code-block:: python
        :linenos:
@@ -255,7 +255,7 @@ Open a terminal to begin:
 
     Don't forget to execute with ``python mysci.py``.
 
-20. Change the mysci.py script to read your whole data file using a context manager with:
+20. Change the ``mysci.py`` script to read your whole data file using a context manager with:
 
     .. code-block:: python
        :linenos:
@@ -373,6 +373,6 @@ Suggested resources:
 
 -----
 
-Please continue to `Part 1.2 <link://slug/part1_2>`_. 
+Next: `Part 1.2 <link://slug/part1_2>`_. 
 
 `Return to Outline <link://slug/index>`_
