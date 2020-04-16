@@ -358,15 +358,17 @@ Open a terminal to begin:
 
 -----
 
-
 That concludes the first lesson of this virtual tutorial.
 
 In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of ``open()``, ``readline()``, ``read()``, ``close()``, and ``print()``, as well as the context manager ``with``. You should be familiar with the ``str`` datatype. You also used fundamental git commands such as ``git init``, ``git status``, ``git add``, ``git commit``, and ``git logs``.
 
-Please continue to `Part 1.2 <link://slug/part1_2>`_. 
-
 -----
 
+<<<<<<< HEAD
+-----
+
+=======
+>>>>>>> feb45c39669d865c425a589f2bc8804d8182111b
 Suggested resources:
 
 `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`ncar_python_tutorial
@@ -375,5 +377,7 @@ Suggested resources:
 `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
 -----
+
+Please continue to `Part 1.2 <link://slug/part1_2>`_. 
 
 `Return to Outline <link://slug/index>`_

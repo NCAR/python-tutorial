@@ -38,15 +38,14 @@ Open source -
 Python is a language designed for rapid prototyping and efficient programming. It is easy to write new code quickly with less typing.
 
 
-----------------
+-----
+
 Here are some Python references we recommend:
 - `Official Python 3 Documentation <https://docs.python.org/3/>`_
 - `Official GitHub Documentation <https://help.github.com/en>`_
 
-----------------
+-----
 
 `Tutorial Requirements & Installation <link://slug/requirements>`_
-
-----------
 
 `Return to Outline <link://slug/index>`_
