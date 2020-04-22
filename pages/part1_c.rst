@@ -1,5 +1,5 @@
-.. title: part1_3
-.. slug: part1_3
+.. title: part1_c
+.. slug: part1_c
 .. date: 2020-04-08 14:59:39 UTC-06:00
 .. tags: 
 .. category: 

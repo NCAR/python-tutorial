@@ -1,5 +1,5 @@
-.. title: part1_1
-.. slug: part1_1
+.. title: part1_a
+.. slug: part1_a
 .. date: 2020-04-08 14:38:38 UTC-06:00
 .. tags: 
 .. category: 
@@ -21,7 +21,7 @@ We will also incorporate lessons on the use of Git because we highly recommend y
 We are assuming you are familiar with bash and terminal commands. If not `here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
 
 ==============================
-Part 1.1 - Reading a .txt File
+Part 1a - Reading a .txt File
 ==============================
 
 In building your first Python script we will set up our workspace, read a .txt file, and learn git fundamentals.
@@ -373,6 +373,6 @@ Suggested resources:
 
 -----
 
-Next: `Part 1.2 <link://slug/part1_2>`_. 
+Next: `Part 1b <link://slug/part1_b>`_. 
 
 `Return to Outline <link://slug/index>`_

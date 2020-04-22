@@ -1,5 +1,5 @@
-.. title: part1_2
-.. slug: part1_2
+.. title: part1_b
+.. slug: part1_b
 .. date: 2020-04-08 14:58:42 UTC-06:00
 .. tags: 
 .. category: 
@@ -9,7 +9,7 @@
 .. hidetitle: True
 
 =====================================
-Part 1.2 - Creating a Data Dictionary
+Part 1b - Creating a Data Dictionary
 =====================================
 
 This is intended to pick off right where part 1.1 left off - you had just commited your new script file that reads in the data from file as a string.
@@ -295,6 +295,6 @@ Suggested resources:
 
 -----
 
-Next: `Part 1.3 <link://slug/part1_3>`_.
+Next: `Part 1c <link://slug/part1_c>`_.
 
 `Return to Outline <link://slug/index>`_
