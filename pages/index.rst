@@ -18,7 +18,7 @@ Zero-to-Thirty Beginner Python Tutorial
 
 1. First Python Script
 
-   a. `Reading in a .txt File <link://slug/part1_1>`_
+   a. `Reading in a .txt File <link://slug/part1_a>`_
 
       - Workspace Setup:
 
@@ -44,7 +44,7 @@ Zero-to-Thirty Beginner Python Tutorial
         - ``git commit``
         - ``git logs``
 
-   b. `Creating a Data Dictionary <link://slug/part1_2>`_
+   b. `Creating a Data Dictionary <link://slug/part1_b>`_
 
       - Python Data Structures
 
@@ -66,7 +66,7 @@ Zero-to-Thirty Beginner Python Tutorial
         - ``str.split()``
         - the ``float`` datatype.
 
-   c. `Writing a Function to Compute Wind Chill Index <link://slug/part1_3>`_
+   c. `Writing a Function to Compute Wind Chill Index <link://slug/part1_c>`_
 
       - Python Concepts:
 
