@@ -33,8 +33,8 @@ In this section you will compute wind chill index by writing your first function
 
    Modify the columns variable to read:
 
-   .. code-block:: python
-      :linenos:
+   .. code:: python
+      :number-lines: 
 
       # Column names and column indices to read
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7}
@@ -43,7 +43,7 @@ In this section you will compute wind chill index by writing your first function
 
    and modify the types variable to be:
 
-   .. code: python
+   .. code:: python
       :number-lines: 4
 
       # Data types for each column (only if non-string)
@@ -54,7 +54,7 @@ In this section you will compute wind chill index by writing your first function
 
 2. Great! Save this in your Git repo. Stage and commit 
 
-   .. code-block: bash
+   .. code:: bash
 
       $ git add mysci.py
       $ git commit -m "Reading windspeed as well"
