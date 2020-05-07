@@ -106,29 +106,153 @@
                       <div class="container">
                         <div id="accordion">
                             <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0 d-inline">
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                          Beginner
-                                        </button>
-                                     </h5>
+                                <div class="card-header" id="headingBeginner">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseBeginner" aria-expanded="true" aria-controls="collapseBeginner">
+                                         Beginner
+                                    </button>
                                 </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body" id="child1">
+                                
+                                <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
+                                    <div class="card-body" id="beginnerOutline">
+                                        
                                         <div class="card">
                                             <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseOneA">Part 1</a>
-                                            </div>
-                                            <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                                <a href="#">Welcome</a>
                                             </div>
                                         </div>
+                                        
                                         <div class="card">
                                             <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseOneB">Part 2</a>
+                                                <a href="#">Requirements</a>
                                             </div>
-                                            <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
-                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
+                                        </div>
+                                        
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart1">1. First Python Script</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
+                                                <div class="card-body" id="beginnerPart1">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">1.a Reading in a .txt File</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">1.b Creating a Data Directory</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">1.c Writing Functions</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart2">2. First Python Package </a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#beginnerOutline" id="collapseBeginnerPart2">
+                                                <div class="card-body" id="beginnerPart2">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2B</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart3">3. Using Common Python Packages </a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#beginnerOutline" id="collapseBeginnerPart3">
+                                                <div class="card-body" id="beginnerPart3">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part3A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part3B</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header" id="headingIntermediate">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseIntermediate" aria-expanded="false" aria-controls="collapseIntermediate">
+                                        Intermediate
+                                    </button>
+                                </div>
+                                        
+                                <div id="collapseIntermediate" class="collapse" aria-labelledby="headingIntermediate" data-parent="#accordion">
+                                    <div class="card-body" id="intermediateOutline">
+                                        
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" >Requirements</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseIntermediatePart1">Part 1</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#intermediateOutline" id="collapseIntermediatePart1">
+                                                <div class="card-body" id="intermediatePart1">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1B</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1C</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseIntermediatePart2">Part 2 </a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#intermediateOutline" id="collapseIntermediatePart2">
+                                                <div class="card-body" id="intermediatePart2">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2B</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -136,76 +260,69 @@
                             </div>
                             
                             <div class="card">
-                                <div class="card-header" id="headingInt">
-                                    <h5 class="mb-0 d-inline">
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                          Intermediate
-                                        </button>
-                                     </h5>
+                                <div class="card-header" id="headingAdvanced">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseAdvanced" aria-expanded="false" aria-controls="collapseAdvanced">
+                                        Advanced
+                                    </button>
                                 </div>
-                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body" id="child2">
+                                <div id="collapseAdvanced" class="collapse" aria-labelledby="headingAdvanced" data-parent="#accordion">
+                                    <div class="card-body" id="advancedOutline">
+                                        
                                         <div class="card">
                                             <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseTwoA">Part 1</a>
-                                            </div>
-                                            <div class="card-body collapse" data-parent="#child2" id="collapseTwoA">
-                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                                <a href="#">Requirements</a>
                                             </div>
                                         </div>
+                                        
                                         <div class="card">
                                             <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseTwoB">Part 2</a>
+                                                <a href="#" data-toggle="collapse" data-target="#collapseAdvancedPart1">Part 1</a>
                                             </div>
-                                            <div class="card-body collapse" data-parent="#child2" id="collapseTwoB">
-                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                                    <div class="card">
-                                <div class="card-header" id="headingInt">
-                                    <h5 class="mb-0 d-inline">
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                          Advanced
-                                        </button>
-                                     </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body" id="child3">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseThreeA">Part 1</a>
-                                            </div>
-                                            <div class="card-body collapse" data-parent="#child3" id="collapseThreeA">
-                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                            <div class="card-body collapse" data-parent="#advancedOutline" id="collapseAdvancedPart1">
+                                                <div class="card-body" id="advancedPart1">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1B</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part1C</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseThreeB">Part 2</a>
-                                            </div>
-                                            <div class="card-body collapse" data-parent="#child3" id="collapseThreeB">
-                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                     
-                       
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseAdvancedPart2">Part 2 </a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#advancedOutline" id="collapseAdvancedPart2">
+                                                <div class="card-body" id="advancedPart2">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2A</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a href="#">Part2B</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                      
-
-
-
- 
-
-
                   </li>
               </ul>
       
