@@ -17,6 +17,7 @@
   
   .nsf-text {
     width: 100%;
+    font-family: "Helvetica"
   }
 
   .full-ht {
@@ -60,6 +61,10 @@ a[data-toggle="collapse"] {
   }
 }
 
+.fab {
+  color: #fafafa
+}
+
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
@@ -76,7 +81,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: #C0C0C0;
 }
 
 a, a:hover, a:focus {
@@ -87,23 +92,23 @@ a, a:hover, a:focus {
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
-    color: #fff;
+    background: 	#A9A9A9;
+    color: #333;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #C0C0C0;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #C0C0C0;
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: #fafafa;
     padding: 10px;
 }
 
@@ -113,16 +118,17 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #C0C0C0;
+    background: #333;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    color: #333;
+    background: #C0C0C0;
 }
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #C0C0C0;
 }
+

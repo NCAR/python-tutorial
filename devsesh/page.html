@@ -21,7 +21,7 @@
 
   <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
         <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -75,7 +75,7 @@
                             <a href="#p1Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">1. First Python Script</a>
                             <ul class="collapse list-unstyled" id="p1Submenu">
                               <li>
-                                <a href="#">1.a Reading in a .txt File</a>
+                                <a href="#" >1.a Reading in a .txt File</a>
                               </li>
                               <li>
                                 <a href="#">1.b Creating a Data Dictionary</a>
@@ -93,31 +93,128 @@
                           </li>
                       </ul>
                       <a href="#intermediateSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Intermediate</a>
-                      <ul class="collapse list-unstyled" id="intermediateSubmenu">
+                      <ul class="collapse list-unstyled accordian" id="intermediateSubmenu">
                           <li>
                             <a href="#">Welcome</a>
                           </li>
                           <li>
                             <a href="#">Requirements</a>
                           </li>
+                      </ul>
+
+
+                      <div class="container">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0 d-inline">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          Beginner
+                                        </button>
+                                     </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body" id="child1">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseOneA">Part 1</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
+                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseOneB">Part 2</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
+                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header" id="headingInt">
+                                    <h5 class="mb-0 d-inline">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                          Intermediate
+                                        </button>
+                                     </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body" id="child2">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseTwoA">Part 1</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child2" id="collapseTwoA">
+                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseTwoB">Part 2</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child2" id="collapseTwoB">
+                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                    <div class="card">
+                                <div class="card-header" id="headingInt">
+                                    <h5 class="mb-0 d-inline">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                          Advanced
+                                        </button>
+                                     </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body" id="child3">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseThreeA">Part 1</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child3" id="collapseThreeA">
+                                                Crunch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseThreeB">Part 2</a>
+                                            </div>
+                                            <div class="card-body collapse" data-parent="#child3" id="collapseThreeB">
+                                                Another flipp runch wolf moon tempor, sunt aliqua put a bird.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                       
+                            </div>
+                        </div>
+                    </div>
+                      
+
+
+
+ 
+
+
                   </li>
               </ul>
       
           </nav>
           <!-- Page Content -->
           <div id="content">
-      
-              <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-      
-                      <button type="button" id="sidebarCollapse" class="btn btn-info">
-                          <i class="fas fa-align-left"></i>
-                          <span>Toggle Sidebar</span>
-                      </button>
-                  </div>
-              </nav>
           </div>
       </div>
+
       </main>
 
       <footer class="text-light bg-dark pt-3">
