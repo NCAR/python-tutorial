@@ -177,3 +177,7 @@ ul ul a {
   font-size: medium;
   font-weight: lighter;
 }
+
+.fa, .fas {
+  color: #585858;
+}
