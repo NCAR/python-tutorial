@@ -31,13 +31,13 @@
 }
 
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 274px;
+  max-width: 274px;
   height: 100vh;
 }
 
 #sidebar.active {
-  margin-left: -250px;
+  margin-left: -274px;
 }
 
 a[data-toggle="collapse"] {
@@ -54,7 +54,7 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-      margin-left: -250px;
+      margin-left: -274px;
   }
   #sidebar.active {
       margin-left: 0;
@@ -176,13 +176,4 @@ ul ul a {
   padding-bottom: 0rem;
   font-size: medium;
   font-weight: lighter;
-}
-
-.expand_caret {
-  transform: scale(1.6);
-  margin-left: 8px;
-  margin-top: -4px;
-}
-a[aria-expanded='false'] > .expand_caret {
-  transform: scale(1.6) rotate(-90deg);
 }
