@@ -121,7 +121,9 @@ a, a:hover, a:focus {
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #333;
     background: #C0C0C0;
+    padding-right: 1.3rem !important;
 }
+
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
