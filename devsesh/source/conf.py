@@ -57,3 +57,7 @@ html_static_path = ['_static']
 
 # Let Sphinx know we want to generate the index page but with a different templaste.
 html_additional_pages = {'index': 'index.html'}
+
+# Add custom CSS
+def setup(app):
+    app.add_stylesheet('asssets/css/custom.css')
