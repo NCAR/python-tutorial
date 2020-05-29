@@ -37,3 +37,143 @@
   margin-left: 0;
   transition: 0.5s;
 }
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 274px;
+  max-width: 274px;
+  height: 100vh;
+}
+
+#sidebar.active {
+  margin-left: -274px;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -274px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  background: #C0C0C0;
+  color: #333;
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #C0C0C0;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+#sidebar ul p {
+  color: #fafafa;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #C0C0C0;
+  background: #333;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #333;
+  background: #C0C0C0;
+  padding-right: 1.3rem !important;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #C0C0C0;
+}
+
+.card {
+  border: none;
+}
+
+.card-header {
+  color: #333;
+  background-color: #C0C0C0;
+  padding: 0rem 0rem;
+  padding-left: 1rem;
+  border: none;
+  font-size: small;
+  font-weight: lighter;
+}
+
+.card-header:first-child {
+  border-radius: 0;
+}
+
+.card-body {
+  padding: .25rem 1rem;
+  padding-right: 0rem;
+}
+
+.accordian-sidebar {
+  padding-top: .25rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordian-tier3 {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.collapse {
+  background-color: #C0C0C0;
+  padding-right: 0rem;
+}
+
+.btn {
+  color: #333;
+  font-size: medium;
+}
+
+.fa, .fas {
+  color: #585858;
+}
