@@ -1,58 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'index.html' %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="_static/css/style.css" type=text/css>
-
-    <title>NCAR Python Tutorial</title>
-    <script src="https://kit.fontawesome.com/be4ef5002e.js" crossorigin="anonymous"></script>
-
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style2.css">
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-  </head>
-
-  <body>
-    
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Tutorials
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Beginner</a>
-              <a class="dropdown-item" href="#">Intermediate</a>
-              <a class="dropdown-item" href="#">Advanced</a>
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#"><i class="fab fa-github"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-
+{% block main %}
     <main>
       <div class="wrapper">
         <!-- Sidebar -->
@@ -60,7 +8,7 @@
           <div class="sidebar-header">
             <h4>Tutorials</h4>
           </div>
-              
+
             <div class="container accordian md-accordian accordian-sidebar">
               <div id="accordion">
                 <div class="card">
@@ -69,27 +17,27 @@
                         Beginner
                       </button>
                     </div>
-                              
+
                     <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
                       <div class="card-body" id="beginnerOutline">
-                                      
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#">Welcome</a>
                           </div>
                         </div>
-                                      
+
                         <div class="card">
-                          <div class="card-header">                                                
+                          <div class="card-header">
                             <a href="#">Requirements</a>
                           </div>
                         </div>
-                                      
+
                         <div class="card">
                           <div class="card-header">
-                            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1">   
+                            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1">
                               1. First Python Script
-                            </a> 
+                            </a>
                           </div>
                           <div class="card-body collapse" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
                             <div class="card-body accordian-tier3" id="beginnerPart1">
@@ -101,7 +49,7 @@
                               <div class="card">
                                 <div class="card-header">
                                   <a href="#">1.b Creating a Data Directory</a>
-                                </div>                                                    
+                                </div>
                               </div>
                               <div class="card">
                                 <div class="card-header">
@@ -111,10 +59,10 @@
                             </div>
                           </div>
                         </div>
-                    
+
                         <div class="card">
                           <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart2">2. First Python Package</a> 
+                            <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart2">2. First Python Package</a>
                           </div>
                           <div class="card-body collapse" data-parent="#beginnerOutline" id="collapseBeginnerPart2">
                             <div class="card-body" id="beginnerPart2">
@@ -130,7 +78,7 @@
                               </div>
                             </div>
                           </div>
-                                            
+
                           <div class="card">
                             <div class="card-header">
                               <a href="#" data-toggle="collapse" data-target="#collapseBeginnerPart3">3. Using Common Python Packages</a>
@@ -149,28 +97,28 @@
                               </div>
                             </div>
                           </div>
-                                            
+
                         </div>
                       </div>
                     </div>
                   </div>
-                            
+
                   <div class="card">
                     <div class="card-header btn-primary-outline" id="headingIntermediate">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseIntermediate" aria-expanded="false" aria-controls="collapseIntermediate">
                         Intermediate
                       </button>
                     </div>
-                                        
+
                     <div id="collapseIntermediate" class="collapse" aria-labelledby="headingIntermediate" data-parent="#accordion">
                       <div class="card-body" id="intermediateOutline">
-                                      
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#" >Requirements</a>
                           </div>
                         </div>
-                                        
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapseIntermediatePart1">Part 1</a>
@@ -195,7 +143,7 @@
                             </div>
                           </div>
                         </div>
-                    
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapseIntermediatePart2">Part 2 </a>
@@ -218,7 +166,7 @@
                       </div>
                     </div>
                   </div>
-                            
+
                   <div class="card">
                     <div class="card-header btn-primary-outline"" id="headingAdvanced">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseAdvanced" aria-expanded="false" aria-controls="collapseAdvanced">
@@ -227,13 +175,13 @@
                     </div>
                     <div id="collapseAdvanced" class="collapse" aria-labelledby="headingAdvanced" data-parent="#accordion">
                       <div class="card-body" id="advancedOutline">
-                                        
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#">Requirements</a>
                           </div>
                         </div>
-                                        
+
                         <div class="card">
                           <div class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapseAdvancedPart1">Part 1</a>
@@ -258,7 +206,7 @@
                           </div>
                         </div>
                       </div>
-                    
+
                       <div class="card">
                         <div class="card-header">
                           <a href="#" data-toggle="collapse" data-target="#collapseAdvancedPart2">Part 2 </a>
@@ -285,7 +233,7 @@
             </div>
           </li>
         </ul>
-      
+
         </nav>
         <!-- Page Content -->
         <div id="content">
@@ -293,43 +241,4 @@
       </div>
 
     </main>
-
-    <footer class="text-light bg-dark pt-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md">
-            <a href="https://www2.cisl.ucar.edu/"><img src="_static/img/CISL-contemp-logo-white.svg" alt="CISL" class="ncar-logo"></a>
-          </div>
-          <div class="col-12 col-md-auto">
-            <p class="copyright"><a href="https://www.ucar.edu/">University Corporation for Atmospheric Research</a> &copy; 2020<br>
-              Proudly published with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><br>
-              Apache 2.0
-            </p>
-          </div>
-        </div>
-        <div class="row pt-3 border-top">
-          <div class="col-auto">
-            <a href="https://nsf.gov/"><img src="_static/img/footer-logo-nsf.png" alt="NSF" class="nsf-logo"></a>
-          </div>
-          <div class="col">
-            <p class="nsf-text">This material is based upon work supported by the National Center for Atmospheric Research, a major facility
-              sponsored by the National Science Foundation and managed by the University Corporation for Atmospheric Research. Any opinions,
-              findings and conclusions or recommendations expressed in this material do not necessarily reflect the views of the National
-              Science Foundation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-  </body>
-</html>
+{% endblock main %}

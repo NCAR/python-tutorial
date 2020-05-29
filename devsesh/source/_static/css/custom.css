@@ -1,20 +1,39 @@
-body {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: #c3d7ee;
-    background-image: url(../img/background.png)!important;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+.fab {
+  font-size: 1.6rem;
 }
 
-a.u-url {
-    color: #212529;
+.ncar-logo {
+  display: block;
+  margin-right: auto;
+  width: 409px;
+  padding-bottom: 15px;
 }
 
-dd {
-    padding-left: 2rem;
+.copyright {
+  margin-right: auto;
 }
 
-.bg-dark {
-    background-color: #00797c!important;
+.nsf-logo {
+  display: block;
+  width: 70px;
+  padding-bottom: 15px;
+}
+
+.footer-text {
+  width: 100%;
+  font-family: "Helvetica";
+  font-size: 0.9rem;
+}
+
+.full-ht {
+  min-height: 100vh;
+}
+
+.dropdown-toggle[aria-expanded="false"]:after {
+  transform: rotate(90deg);
+}
+
+.dropdown-toggle:after {
+  margin-left: 0;
+  transition: 0.5s;
 }

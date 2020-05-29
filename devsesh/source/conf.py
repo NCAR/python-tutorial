@@ -55,9 +55,11 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# Let Sphinx know we want to generate the index page but with a different templaste.
+# Let Sphinx know we want to generate the index page
+# but with a different template.
 html_additional_pages = {'index': 'index.html', 'page': 'page.html'}
+
 
 # Add custom CSS
 def setup(app):
-    app.add_stylesheet('css/style.css')
+    app.add_stylesheet('css/custom.css')

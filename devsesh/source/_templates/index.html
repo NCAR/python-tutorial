@@ -1,102 +1,105 @@
 <!doctype html>
 <html lang="en">
+
+{% block head %}
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="_static/css/style.css" type=text/css>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="_static/css/custom.css" type=text/css>
 
     <title>NCAR Python Tutorial</title>
+
     <script src="https://kit.fontawesome.com/be4ef5002e.js" crossorigin="anonymous"></script>
   </head>
+{% endblock head %}
 
   <body>
-    
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
+{% block navbar %}
+    <nav class="navbar navbar-expand navbar-dark sticky-top bg-dark">
+      <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Tutorials
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Beginner</a>
-              <a class="dropdown-item" href="#">Intermediate</a>
-              <a class="dropdown-item" href="#">Advanced</a>
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#"><i class="fab fa-github"></i></a>
-          </li>
-        </ul>
-      </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Beginner</a>
+            <a class="dropdown-item" href="#">Intermediate</a>
+            <a class="dropdown-item" href="#">Advanced</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
     </nav>
+{% endblock navbar %}
 
-      <main>
-        <div class="container-fluid px-0 full-ht">
-          <div class="jumbotron">
-            <div class="container">
-              <h1>NCAR Python Tutorial</h1>
-              <p>Let's learn</p>
-              
-              <a class="btn btn-primary btn-lg text-light" href="page.html">Start Beginner Tutorial</a>
-
-            </div>
-          </div>
-
+{% block main %}
+    <main>
+      <div class="container-fluid px-0 full-ht">
+        <div class="jumbotron">
           <div class="container">
-            <h2>About Xdev</h2>
-            <p>Our mission ...</p>
+            <h1>NCAR Python Tutorial</h1>
+            <p>Let's learn</p>
+            <a class="btn btn-primary btn-lg text-light" href="page.html">Start Beginner Tutorial</a>
           </div>
         </div>
-      </main>
 
-      <footer class="text-light bg-dark pt-3">
         <div class="container">
-          <div class="row">
-            <div class="col-12 col-md">
-              <a href="https://www2.cisl.ucar.edu/"><img src="_static/img/CISL-contemp-logo-white.svg" alt="CISL" class="ncar-logo"></a>
-            </div>
-            <div class="col-12 col-md-auto">
-              <p class="copyright"><a href="https://www.ucar.edu/">University Corporation for Atmospheric Research</a> &copy; 2020<br>
-              Proudly published with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><br>
-              Apache 2.0</p>
-            </div>
+          <h2>About Xdev</h2>
+          <p>Our mission ...</p>
+        </div>
+      </div>
+    </main>
+{% endblock main %}
+
+{% block footer %}
+    <footer class="text-light bg-dark pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="https://www2.cisl.ucar.edu/"><img src="_static/img/CISL-contemp-logo-white.svg" alt="CISL" class="ncar-logo"></a>
           </div>
-          <div class="row pt-3 border-top">
-            <div class="col-auto">
-              <a href="https://nsf.gov/"><img src="_static/img/footer-logo-nsf.png" alt="NSF" class="nsf-logo"></a>
-            </div>
-            <div class="col">
-              <p class="nsf-text">This material is based upon work supported by the National Center for Atmospheric Research, a major facility
-              sponsored by the National Science Foundation and managed by the University Corporation for Atmospheric Research. Any opinions,
-              findings and conclusions or recommendations expressed in this material do not necessarily reflect the views of the National
-              Science Foundation.</p>
-            </div>
+          <div class="col-12 col-md-auto">
+            <p class="footer-text copyright"><a href="https://www.ucar.edu/">University Corporation for Atmospheric Research</a> &copy; 2020<br>
+            Proudly published with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><br>
+            Apache 2.0</p>
           </div>
         </div>
-      </footer>
+        <div class="row pt-3 border-top">
+          <div class="col-auto">
+            <a href="https://nsf.gov/"><img src="_static/img/footer-logo-nsf.png" alt="NSF" class="nsf-logo"></a>
+          </div>
+          <div class="col">
+            <p class="footer-text">This material is based upon work supported by the National Center for Atmospheric Research, a major facility
+            sponsored by the National Science Foundation and managed by the University Corporation for Atmospheric Research. Any opinions,
+            findings and conclusions or recommendations expressed in this material do not necessarily reflect the views of the National
+            Science Foundation.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+{% endblock footer %}
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
   </body>
 </html>
 

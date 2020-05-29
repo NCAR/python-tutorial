@@ -3,26 +3,26 @@
     margin-right: auto;
     width: 409px;
     padding-bottom: 15px;
-  }
-  
-  .copyright {
-    width: 100%;
-    margin-right: auto;
-  }
-  
-  .nsf-logo {
-    display: block;
-    width: 70px;
-  }
-  
-  .nsf-text {
-    width: 100%;
-    font-family: "Helvetica"
-  }
+}
 
-  .full-ht {
-    min-height: 100vh;
-  }
+.copyright {
+  width: 100%;
+  margin-right: auto;
+}
+
+.nsf-logo {
+  display: block;
+  width: 70px;
+}
+
+.nsf-text {
+  width: 100%;
+  font-family: "Helvetica"
+}
+
+.full-ht {
+  min-height: 100vh;
+}
 
 
 .wrapper {
@@ -169,11 +169,7 @@ ul ul a {
 
 .btn {
   color: #333;
-  padding-right: 0rem;
-  padding-left: 0rem;
-  padding-bottom: 0rem;
   font-size: medium;
-  font-weight: lighter;
 }
 
 .expand_caret {
@@ -181,6 +177,7 @@ ul ul a {
   margin-left: 8px;
   margin-top: -4px;
 }
+
 a[aria-expanded='false'] > .expand_caret {
   transform: scale(1.6) rotate(-90deg);
 }
