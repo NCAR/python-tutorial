@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'NCAR Python Tutorial'
-copyright = '2020, Julia Kent'
+copyright = '2020, University Corporation for Atmospheric Research'
 author = 'Julia Kent'
 
 # The full version, including alpha/beta/rc tags
