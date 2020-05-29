@@ -10,6 +10,12 @@ Welcome to NCAR Python Tutorial's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   pages/beginner/welcome
+   pages/beginner/requirements
+   pages/beginner/part1/part1_a
+   pages/beginner/part1/part1_b
+   pages/beginner/part1/part1_c
+
 
 
 Indices and tables
