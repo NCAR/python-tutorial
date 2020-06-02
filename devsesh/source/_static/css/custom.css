@@ -1,3 +1,7 @@
+.container-fluid {
+  padding: 0;
+}
+
 .fab {
   font-size: 1.6rem;
 }
@@ -35,7 +39,7 @@
 
 .dropdown-toggle:after {
   margin-left: 0;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .wrapper {
@@ -89,26 +93,18 @@ a, a:hover, a:focus {
 #sidebar {
   background: #C0C0C0;
   color: #333;
-  transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
+  padding: 15px;
   background: #C0C0C0;
-}
-
-#sidebar ul.components {
-  padding: 20px 0;
-  border-bottom: 1px solid #C0C0C0;
 }
 
 #sidebar ul p {
   color: #fafafa;
-  padding: 10px;
 }
 
 #sidebar ul li a {
-  padding: 10px;
   font-size: 1.1em;
   display: block;
 }
@@ -121,13 +117,6 @@ a, a:hover, a:focus {
 #sidebar ul li.active > a, a[aria-expanded="true"] {
   color: #333;
   background: #C0C0C0;
-  padding-right: 1.3rem !important;
-}
-
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: #C0C0C0;
 }
 
 .card {
@@ -137,8 +126,7 @@ ul ul a {
 .card-header {
   color: #333;
   background-color: #C0C0C0;
-  padding: 0rem 0rem;
-  padding-left: 1rem;
+  padding: 0;
   border: none;
   font-size: small;
   font-weight: lighter;
@@ -149,13 +137,19 @@ ul ul a {
 }
 
 .card-body {
-  padding: .25rem 1rem;
-  padding-right: 0rem;
+  padding: 0;
+}
+
+.tier1 {
+  padding-left: 1.25rem;
+}
+
+.tier2 {
+  padding-left: 2.25rem;
 }
 
 .accordian-sidebar {
-  padding-top: .25rem;
-  padding-left: 0;
+  padding-left: 15px;
   padding-right: 0;
 }
 
