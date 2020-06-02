@@ -57,7 +57,7 @@ html_static_path = ['_static']
 
 # Let Sphinx know we want to generate the index page
 # but with a different template.
-html_additional_pages = {'index': 'index.html', 'page': 'page.html'}
+html_additional_pages = {'index': 'index.html'}
 
 
 # Add custom CSS
