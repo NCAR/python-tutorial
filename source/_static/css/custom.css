@@ -82,6 +82,7 @@ p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
+  margin-left: 1rem;
 }
 
 a, a:hover, a:focus {
@@ -180,11 +181,15 @@ a, a:hover, a:focus {
   opacity: 0;
 }
 
-p {
-  margin-left: 1rem;
-}
 
 dd {
   margin-left: 0.7rem;
   font-size: smaller;
+}
+
+.highlight-bash {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-left: 0.5rem;
+  background: #D3D3D3;
 }
