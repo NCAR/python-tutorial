@@ -187,9 +187,17 @@ dd {
   font-size: smaller;
 }
 
-.highlight-bash {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.highlight {
+  margin-right: 3rem;
   padding-left: 0.5rem;
   background: #D3D3D3;
+}
+
+.highlight-bash {
+  margin-left: 3rem;
+}
+
+.linenodiv {
+  margin-left: 2rem;
+  margin-right: .3rem;
 }
