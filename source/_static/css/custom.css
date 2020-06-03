@@ -50,7 +50,7 @@
 #sidebar {
   min-width: 274px;
   max-width: 274px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #sidebar.active {
