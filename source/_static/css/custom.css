@@ -181,7 +181,6 @@ a, a:hover, a:focus {
   opacity: 0;
 }
 
-
 dd {
   margin-left: 0.7rem;
   font-size: smaller;
@@ -200,4 +199,8 @@ dd {
 .linenodiv {
   margin-left: 2rem;
   margin-right: .3rem;
+}
+
+a.reference.external {
+  color: #007bff;
 }
