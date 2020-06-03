@@ -171,3 +171,7 @@ a, a:hover, a:focus {
 .fa, .fas {
   color: #585858;
 }
+
+.content {
+  padding: 1rem;
+}
