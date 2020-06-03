@@ -173,5 +173,18 @@ a, a:hover, a:focus {
 }
 
 .content {
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.headerlink {
+  opacity: 0;
+}
+
+p {
+  margin-left: 1rem;
+}
+
+dd {
+  margin-left: 0.7rem;
+  font-size: smaller;
 }
