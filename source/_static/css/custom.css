@@ -116,7 +116,7 @@ a, a:hover, a:focus {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
   color: #333;
-  background: #C0C0C0;
+  background: #A9A9A9;;
 }
 
 .card {
