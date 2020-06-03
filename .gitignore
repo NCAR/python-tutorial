@@ -4,4 +4,4 @@ output
 .doit.*
 .vscode
 
-devsesh/build
+build
