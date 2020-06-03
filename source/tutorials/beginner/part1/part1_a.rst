@@ -373,6 +373,6 @@ Suggested resources:
 
 -----
 
-Next: `Part 1b <link://slug/part1_b>`_. 
+Previous: `Tutorial Requirements & Installation<link://slug/part1_b>`_
+Next: `First Python Script- Creating a Data Directory <link://slug/part1_b>`_
 
-`Return to Outline <link://slug/index>`_

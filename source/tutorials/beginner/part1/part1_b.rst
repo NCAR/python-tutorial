@@ -295,6 +295,5 @@ Suggested resources:
 
 -----
 
-Next: `Part 1c <link://slug/part1_c>`_.
-
-`Return to Outline <link://slug/index>`_
+Previous: `First Python Script- Reading in a .txt File <link://slug/part1_a>`_.
+Next: `First Python Script- Writing Functions <link://slug/part1_c>`_.

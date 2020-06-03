@@ -271,4 +271,4 @@ Suggested resources:
 
 -----
 
-`Return to Outline <link://slug/index>`_
+Previous: `First Python Script- Creating a Data Directory <link://slug/part1_b>`_

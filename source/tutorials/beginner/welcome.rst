@@ -49,4 +49,3 @@ Here are some Python references we recommend:
 
 Next: `Tutorial Requirements & Installation <link://slug/requirements>`_
 
-`Return to Outline <link://slug/index>`_

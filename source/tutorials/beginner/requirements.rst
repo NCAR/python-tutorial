@@ -49,6 +49,6 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
 -----
 
-Next: `Tutorial 1a <link://slug/part1_a>`_
+Previous: `Welcome <link://slug/welcome>`_      
+Next: `First Python Script- Reading in a .txt File <link://slug/part1_a>`_
 
-`Return to Outline <link://slug/index>`_
