@@ -50,7 +50,8 @@
 #sidebar {
   min-width: 274px;
   max-width: 274px;
-  min-height: 100vh;
+  height: 100vh;
+  position: fixed;
 }
 
 #sidebar.active {
@@ -175,6 +176,7 @@ a, a:hover, a:focus {
 
 .content {
   padding: 2rem;
+  padding-left: 300px;
 }
 
 .headerlink {
