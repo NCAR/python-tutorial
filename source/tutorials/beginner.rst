@@ -8,7 +8,6 @@
 .. type: text
 .. hidetitle: True
 
-.. _link-target: welcome
 
 ==========================
 Python 0-30 for Scientists
@@ -49,7 +48,6 @@ Here are some Python references we recommend:
 
 -----
 
-.. _link-target: requirements
 
 ===========================
 Requirements & Installation
@@ -92,8 +90,6 @@ If you don't have conda installed at all, `please install it. <https://docs.cond
 
 -----
 
-.. _link-target: part1a
-
 =========================
 1 - First Python Script
 =========================
@@ -107,7 +103,7 @@ We will also incorporate lessons on the use of Git because we highly recommend y
 We are assuming you are familiar with bash and terminal commands. If not `here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
 
 ==============================
-Part 1a - Reading a .txt File
+Part 1.a - Reading a .txt File
 ==============================
 
 In building your first Python script we will set up our workspace, read a .txt file, and learn git fundamentals.
@@ -459,13 +455,12 @@ Suggested resources:
 
 -----
 
-.. _link-target: part1b
 
 =====================================
-Part 1b - Creating a Data Dictionary
+Part 1.b - Creating a Data Dictionary
 =====================================
 
-This is intended to pick off right where part 1.1 left off - you had just commited your new script file that reads in the data from file as a string.
+This is intended to pick off right where part 1.a left off - you had just commited your new script file that reads in the data from file as a string.
 
 You will now manipulate your data into a more usable format - a dictionary.
 
@@ -748,13 +743,12 @@ Suggested resources:
 
 -----
 
-.. _link-target: part1c
 
 ======================================================
-Part 1c - Writing Function to Compute Wind Chill Index
+Part 1.c - Writing Functions
 ======================================================
 
-This is intended to pick off right where part 1b left off- you had just commited your new script that reads the file, saving the variables of date, time, and tempout in a data dictionary.
+This is intended to pick off right where part 1.b left off- you had just commited your new script that reads the file, saving the variables of date, time, and tempout in a data dictionary.
 
 In this section you will compute wind chill index by writing your first function and learning about basic math operators.
 
@@ -1008,6 +1002,3 @@ Suggested resources:
 
 - `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
 - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
-
-
------
