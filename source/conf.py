@@ -67,6 +67,7 @@ def setup(app):
 
 
 mathjax_config = {
-    'extensions': ['tex2jax.js'],
     'jax': ['input/TeX', 'output/HTML-CSS'],
 }
+
+mathjax_path="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
