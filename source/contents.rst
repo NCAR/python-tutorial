@@ -10,11 +10,7 @@ NCAR Python Tutorials
    :maxdepth: 2
    :caption: Contents:
 
-   tutorials/beginner/welcome
-   tutorials/beginner/requirements
-   tutorials/beginner/part1/part1_a
-   tutorials/beginner/part1/part1_b
-   tutorials/beginner/part1/part1_c
+   tutorials/beginner
 
 
 Indices and tables
