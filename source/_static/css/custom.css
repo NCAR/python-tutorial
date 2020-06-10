@@ -78,7 +78,7 @@ footer {
  ************************************************/
 
 .headerlink {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .highlight {
@@ -123,6 +123,13 @@ footer {
   color: #A9A9A9;
 }
 
+.section[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -4.5rem;
+  height: 4.5rem;
+}
+
 a.reference.external {
   color: #007bff;
 }
@@ -139,7 +146,7 @@ a.reference.external {
 
 .content {
   padding: 2rem;
-  margin-left: 274px;
+  margin-left: 16rem;
 }
 
 @media (max-width: 768px) {
@@ -175,7 +182,7 @@ a.reference.external {
 }
 
 .sidebar {
-  width: 274px;
+  width: 16rem;
   height: 100vh;
   position: fixed;
   z-index: 1;
