@@ -1,10 +1,10 @@
 .. title: beginner
 .. slug: beginner
 .. date: 2020-04-08 14:29:40 UTC-06:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 .. hidetitle: True
 .. has_math: True
@@ -14,32 +14,64 @@
 ==============================
 Beginner Python for Scientists
 ==============================
-Welcome to the Beginner Python for Scientists tutorial. In this self-paced course you will learn how to write Python code using Python best practices.
+Welcome to the Beginner Python for Scientists tutorial. In this self-paced
+course you will learn how to write Python code using Python best practices.
 
-Part 1 is designed to take one work day, but you may move through the content much slower or more quickly.
+Part 1 is designed to take one work day, but you may move through the content
+much slower or more quickly.
 
-Through these instructions you will develop scripts and use Git and GitHub to save and organize your work.
+Through these instructions you will develop scripts and use Git and GitHub to
+save and organize your work.
 
-At the end of this tutorial you will have a grasp of how to begin building your own library of Python tools for your scientific analysis workflows.
+At the end of this tutorial you will have a grasp of how to begin building
+your own library of Python tools for your scientific analysis workflows.
 
 Why Python?
 -----------
-You're already here because you want to learn to use Python for your data analysis and visualizations. Python can be compared to other high-level, interpreted, object-oriented languages, but is especially great because it is free and open source!
+You're already here because you want to learn to use Python for your data
+analysis and visualizations. Python can be compared to other high-level,
+interpreted, object-oriented languages, but is especially great because it is
+free and open source!
 
-High level languages -
-    Other high level languages include MatLab, IDL, and NCL. The advantage of high level languages is that they provide functions, data structures, and other utilities that are commonly used, which means it takes less code to get real work done. The disadvantage of high level languages is that they tend to obscure the low level aspects of the machine such as: memory use, how many floating point operations are happening, and other information related to performance. C and C++ are all examples of lower level languages. The "higher" the level of language, the more computing fundamentals are abstracted.
+High level languages:
+    Other high level languages include MatLab, IDL, and NCL. The advantage of
+    high level languages is that they provide functions, data structures, and
+    other utilities that are commonly used, which means it takes less code to
+    get real work done. The disadvantage of high level languages is that they
+    tend to obscure the low level aspects of the machine such as: memory use,
+    how many floating point operations are happening, and other information
+    related to performance. C and C++ are all examples of lower level
+    languages. The "higher" the level of language, the more computing
+    fundamentals are abstracted.
 
-Interpreted languages -
-    Most of your work is probably already in interpreted languages if you've ever used IDL, NCL, or MatLab (interpreted languages are typically also high level). So you are already familiar with the advantages of this: you don't have to worry about compiling or machine compatability (it is portable). And you are probably familiar with their deficiencies: sometimes they can be slower than compiled languages and potentially more memory intensive than. 
+Interpreted languages:
+    Most of your work is probably already in interpreted languages if you've
+    ever used IDL, NCL, or MatLab (interpreted languages are typically also
+    high level). So you are already familiar with the advantages of this: you
+    don't have to worry about compiling or machine compatability (it is
+    portable). And you are probably familiar with their deficiencies: sometimes
+    they can be slower than compiled languages and potentially more memory
+    intensive than.
 
-Objected Oriented languages -
-    Objects are custom datatypes. For every custom datatypes, you usually have a set of operations you might want to conduct. For example, if you have an object that is a list of numbers you might want to apply a mathematical operation, such as sum, onto this list object in bulk. Not every  function can be applied to every datatype; it wouldn't make sense to apply a logarithm to a string of letters or to capitalize a list of numbers. Data and the operations applied to them are grouped together into one object. 
+Objected Oriented languages:
+    Objects are custom datatypes. For every custom datatypes, you usually have
+    a set of operations you might want to conduct. For example, if you have an
+    object that is a list of numbers you might want to apply a mathematical
+    operation, such as sum, onto this list object in bulk. Not every  function
+    can be applied to every datatype; it wouldn't make sense to apply a
+    logarithm to a string of letters or to capitalize a list of numbers. Data
+    and the operations applied to them are grouped together into one object.
 
-Open source -
-    Python as a language is open source which means that there is a community of developers behind its codebase. Anyone can join the developer community and contribute to deciding the future of the language. When someone identifies gaps to Python's abilities, they can write up the code to fill these gaps. The open source nature of Python means that Python as a language is very adaptable to shifting needs of the user community.
+Open source:
+    Python as a language is open source which means that there is a community
+    of developers behind its codebase. Anyone can join the developer community
+    and contribute to deciding the future of the language. When someone
+    identifies gaps to Python's abilities, they can write up the code to fill
+    these gaps. The open source nature of Python means that Python as a
+    language is very adaptable to shifting needs of the user community.
 
-Python is a language designed for rapid prototyping and efficient programming. It is easy to write new code quickly with less typing.
-
+Python is a language designed for rapid prototyping and efficient programming.
+It is easy to write new code quickly with less typing.
 
 -----
 
@@ -50,115 +82,137 @@ Here are some Python references we recommend:
 
 -----
 
-
-===========================
+---------------------------
 Requirements & Installation
-===========================
+---------------------------
 
-If you don't have conda installed at all, `please install it. <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`_
+If you don't have conda installed at all,
+`please install it. <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`_
 
-1. Check that you have conda or miniconda installed on your OS by checking your conda version: 
+1. Check that you have conda or miniconda installed on your OS by checking your
+   conda version:
 
-   .. code-block:: bash    
+   .. code-block:: bash
 
-      $ conda --version 
+      $ conda --version
 
    ..
-   
-   At the time of writing this, the latest version of conda is 4.8. If you have an old version of conda installed, update it. \
+
+   At the time of writing this, the latest version of conda is 4.8. If you have
+   an old version of conda installed, update it.
 
 2. If necessary, update:
 
-   .. code-block:: bash    
+   .. code-block:: bash
 
       $ conda update -n base conda
 
-   ..    
-   
-   **NOTE** If you have a REALLY old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list to see if there are any environments you created and want to save.
+   ..
+
+   **NOTE** If you have a REALLY old version of conda it might be easier to
+   delete it and then reinstall it. But before doing this you have to check
+   your env-list to see if there are any environments you created and want to save.
 
 3. Check your conda version again.
 
-   .. code-block:: bash     
+   .. code-block:: bash
 
       $ conda --version
 
 
 
-4. `Install Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_   
-   
-   Git is a program that tracks changes made to files. This makes it easy to maintain access to multiple versions of your code as you improve it, and revert your code back to a previous version if you've made any mistakes.
+4. `Install Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+
+   Git is a program that tracks changes made to files. This makes it easy to
+   maintain access to multiple versions of your code as you improve it, and
+   revert your code back to a previous version if you've made any mistakes.
 
 
 -----
 
-=========================
-1 - First Python Script
-=========================
+-------------------------
+First Python Script
+-------------------------
 
-This section of the Zero to Thirty tutorial will focus on teaching you Python through the creation of your first script. 
+This section of the Zero to Thirty tutorial will focus on teaching you Python
+through the creation of your first script.
 
-You will learn about syntax and the reasoning behind why things are done the way they are done along the way. 
+You will learn about syntax and the reasoning behind why things are done the
+way they are done along the way.
 
-We will also incorporate lessons on the use of Git because we highly recommend you version controling your work.
+We will also incorporate lessons on the use of Git because we highly recommend
+you version controling your work.
 
-We are assuming you are familiar with bash and terminal commands. If not `here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
+We are assuming you are familiar with bash and terminal commands. If not
+`here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
 
-==============================
-Part 1.a - Reading a .txt File
-==============================
+~~~~~~~~~~~~~~~~~~~
+Reading a .txt File
+~~~~~~~~~~~~~~~~~~~
 
-In building your first Python script we will set up our workspace, read a .txt file, and learn git fundamentals.
+In building your first Python script we will set up our workspace, read a
+``.txt`` file, and learn git fundamentals.
 
 Open a terminal to begin:
 
 1. Create a directory:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ mkdir python_tutorial
 
    ..
 
-   The first thing we have to do is create a directory to store our work. Let's call it "ncar_python_tutorial."
+   The first thing we have to do is create a directory to store our work.
+   Let's call it ``ncar_python_tutorial``.
 
 2. Go into the directory:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ cd python_tutorial
 
 3. Create a virtual environment for this project:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
      $ conda create --name python_tutorial python
-    
+
    ..
 
-   A conda environment is a directory that contains a collection of packages or libraries that you would like installed and accessible for this workflow. Type conda create --name , the name of your project, here that is "python_tutorial," and then specify that you are using python to create a virtual environment for this project.
+   A conda environment is a directory that contains a collection of packages
+   or libraries that you would like installed and accessible for this workflow.
+   Type conda create --name , the name of your project, here that is
+   ``python_tutorial``, and then specify that you are using python to create a
+   virtual environment for this project.
 
-   It is a good idea to create new environments for different projects because since Python is open source, new versions of the tools you use may become available. This is a way of guaranteeing that your script will use the same versions of packages and libraries and should run the same as you expect it to.
+   It is a good idea to create new environments for different projects because
+   since Python is open source, new versions of the tools you use may become
+   available. This is a way of guaranteeing that your script will use the same
+   versions of packages and libraries and should run the same as you expect it
+   to.
 
    `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
 
 4. Make the directory a Git repository:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ git init .
 
    ..
 
-   A Git repository tracks changes made to files within your project. It looks like a .git/ folder inside that project.
+   A Git repository tracks changes made to files within your project. It looks
+   like a ``.git/`` folder inside that project.
 
-   This command adds version control to this new ncar_python_tutorial directory and all of its contents.
+   This command adds version control to this new ncar_python_tutorial directory
+   and all of its contents.
 
    `More information on Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
 
 5. Create a data directory:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ mkdir data
 
@@ -168,81 +222,93 @@ Open a terminal to begin:
 
 6. Go into the data directory:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ cd data
 
 7. Download sample data from the CU Boulder weather station:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
    ..
 
-   This weather station is a Davis Instruments wireless Vantage Pro2 located on the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft elevation). The station is monitored by the Atmospheric and Oceanic Sciences (ATOC) department and is part of the larger University of Colorado ATOC Weather Network.
+   This weather station is a Davis Instruments wireless Vantage Pro2 located on
+   the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft
+   elevation). The station is monitored by the Atmospheric and Oceanic Sciences
+   (ATOC) department and is part of the larger University of Colorado ATOC
+   Weather Network.
 
 8. Check the status of your repository
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ git status
 
    ..
 
-   You will see the newly downloaded file listed as an "untracked file." Git status will tell you what to do to untracked files. Those instructions mirror the next 2 steps:
+   You will see the newly downloaded file listed as an "untracked file." Git
+   status will tell you what to do to untracked files. Those instructions
+   mirror the next 2 steps:
 
 9. Add the file to the Git staging area:
 
-   .. code-block:: bash 
+   .. code-block:: bash
 
       $ git add wxobs20170821.txt
 
    ..
 
-   By adding this datafile to your directory, you have made a change that is not yet reflected in our Git repository. Type ``git add`` and then the name of the altered file to stage your change.
+   By adding this datafile to your directory, you have made a change that is
+   not yet reflected in our Git repository. Type ``git add`` and then the name
+   of the altered file to stage your change.
 
 10. Check your git status once again:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git status
 
     ..
 
-    Now this file is listed as a "change to be commited," i.e. staged. Staged changes can now be commited to your repository history.
+    Now this file is listed as a "change to be commited," i.e. staged. Staged
+    changes can now be commited to your repository history.
 
 11. Commit the file to the Git repository:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git commit -m "Adding sample data file"
 
     ..
 
-    With ``git commit``, you've updated your repository with all the changes you staged, in this case just one file.
+    With ``git commit``, you've updated your repository with all the changes
+    you staged, in this case just one file.
 
 12. Look at the Git logs:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git log
 
     ..
 
-    If you type ``git log`` you will show a log of all the commits, or changes made to your repository.
+    If you type ``git log`` you will show a log of all the commits, or changes
+    made to your repository.
 
 13. Go back to the top-level directory:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ cd ..
 
     ..
 
-14. And now that you've set up our workspace, create a blank Python script, called "mysci.py":
+14. And now that you've set up our workspace, create a blank Python script,
+    called ``mysci.py``:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ touch mysci.py
 
@@ -257,11 +323,11 @@ Open a terminal to begin:
 
     ..
 
-    Your classic first command will be to print "Hello World".
+    Your classic first command will be to print ``Hello, world!``.
 
 16. Try testing the script by typing "python" and then the name of your script:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ python mysci.py
 
@@ -270,7 +336,9 @@ Open a terminal to begin:
     **Yay!** You've just created your first Python script.
 
 
-17. You probably won't need to run your Hello World script again, so delete the print("Hello, world!") line and start over with something more useful - we'll read the first 4 lines from our datafile.
+17. You probably won't need to run your Hello World script again, so delete the
+    ``print("Hello, world!")`` line and start over with something more useful -
+    we'll read the first 4 lines from our datafile.
 
     Change the ``mysci.py`` script to read:
 
@@ -290,29 +358,37 @@ Open a terminal to begin:
 
     ..
 
-    First create a variable for your datafile name, which is a string - this can be in single or double quotes.
+    First create a variable for your datafile name, which is a string - this
+    can be in single or double quotes.
 
-    Then create a variable associated with the opened file, here it is called ``datafile``.
+    Then create a variable associated with the opened file, here it is called
+    ``datafile``.
 
-    The 'r' argument in the open command indicates that we are opening the file for reading capabilities. Other input arguments for open include 'w', for example, if you wanted to write to the file.
+    The 'r' argument in the open command indicates that we are opening the
+    file for reading capabilities. Other input arguments for open include
+    ``'w'``, for example, if you wanted to write to the file.
 
-    The readline command moves through the open file, always reading the next line.
+    The readline command moves through the open file, always reading the next
+    line.
 
     And remember to close your datafile.
 
-    Comments in Python are indicated with a hash, as you can see in the first line ``# Read the data file``. Comments are ignored by the interpreter.
+    Comments in Python are indicated with a hash, as you can see in the first
+    line ``# Read the data file``. Comments are ignored by the interpreter.
 
     `More information on the open() function <https://docs.python.org/3/library/functions.html#open>`_
 
 18. And test your script again by typing:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ python mysci.py
 
     ..
 
-    Testing of your script with ``python mysci.py`` should be done every time you wish to execute the script. This will no longer be specified as a unique step in between every change to our script.
+    Testing of your script with ``python mysci.py`` should be done every time
+    you wish to execute the script. This will no longer be specified as a
+    unique step in between every change to our script.
 
 19. Change the ``mysci.py`` script to read your whole data file:
 
@@ -322,9 +398,9 @@ Open a terminal to begin:
        # Read the data file
        filename = "data/wxobs20170821.txt"
        datafile = open(filename, 'r')
-      
+
        data = datafile.read()
-      
+
        datafile.close()
 
        # DEBUG
@@ -333,13 +409,18 @@ Open a terminal to begin:
 
     ..
 
-    Our code is similar to the before, but now we've read the entire file. To test that this worked. We'll ``print(data)``. Print statements in python require parenthesis around the object you wish to print, here it is data.
+    Our code is similar to the before, but now we've read the entire file. To
+    test that this worked. We'll ``print(data)``. Print statements in python
+    require parenthesis around the object you wish to print, here it is data.
 
-    Try ``print('data')`` as well, now Python will print the string 'data', as it did for the hello world function, instead of the information stored in the variable data.
+    Try ``print('data')`` as well, now Python will print the string 'data', as
+    it did for the hello world function, instead of the information stored in
+    the variable data.
 
     Don't forget to execute with ``python mysci.py``.
 
-20. Change the ``mysci.py`` script to read your whole data file using a context manager with:
+20. Change the ``mysci.py`` script to read your whole data file using a context
+    manager with:
 
     .. code-block:: python
        :linenos:
@@ -354,22 +435,29 @@ Open a terminal to begin:
 
     ..
 
-    Again this is a similar method of opening the datafile, but we now use with open. The with statement is a context manager that provides clean-up and assures that the file is automatically closed after you've read it.
+    Again this is a similar method of opening the datafile, but we now use with
+    open. The with statement is a context manager that provides clean-up and
+    assures that the file is automatically closed after you've read it.
 
-    The indendation of the line ``data = datafile.read()`` is very important. Python is sensitive to white space and will not work if you mix spaces and tabs (Python does not know your tab width). It is best practice to use spaces as opposed to tabs (tab width is not consistent between editors).
+    The indendation of the line ``data = datafile.read()`` is very important.
+    Python is sensitive to white space and will not work if you mix spaces and
+    tabs (Python does not know your tab width). It is best practice to use
+    spaces as opposed to tabs (tab width is not consistent between editors).
 
-    Combined these two lines mean: with the datafile opened, I'd like to read it.
+    Combined these two lines mean: with the datafile opened, I'd like to read
+    it.
 
     And execute with ``python mysci.py``.
 
     `More information on context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
-21. What did we just see? What is the data object? What type is data? How do we find out?
+21. What did we just see? What is the data object? What type is data? How do we
+    find out?
 
     Add the following to the DEBUG section of our script:
 
-    .. code:: python 
-       :number-lines: 10
+    .. code-block:: python
+       :lineno-start: 10
 
        # DEBUG
        print(type(data))
@@ -378,16 +466,19 @@ Open a terminal to begin:
 
     And execute with ``python mysci.py``
 
-    Object types refer to 'float' 'integer' 'string' or other types that you can create.
+    Object types refer to 'float' 'integer' 'string' or other types that you
+    can create.
 
-    Python is a dynamically typed language, which means you don't have to explicitly specify the datatype when you name a variable, Python will automatically figure it out by the nature of the data.
+    Python is a dynamically typed language, which means you don't have to
+    explicitly specify the datatype when you name a variable, Python will
+    automatically figure it out by the nature of the data.
 
-22. Now, clean up the script by removing the DEBUG section, before we commit this to Git.
-
+22. Now, clean up the script by removing the DEBUG section, before we commit
+    this to Git.
 
 23. Let's check the status of our Git repository
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git status
 
@@ -397,15 +488,16 @@ Open a terminal to begin:
 
 24. Stage these changes:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git add mysci.py
 
     ..
 
-25. Let's check the status of our Git repository,again. What's different from the last time we checked the status?
+25. Let's check the status of our Git repository,again. What's different from
+    the last time we checked the status?
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git status
 
@@ -413,17 +505,20 @@ Open a terminal to begin:
 
 26. Commit these changes:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git commit -m "Adding script file"
 
     ..
 
-    Here a good commit message ``-m`` for our changes would be "Adding script file"
+    Here a good commit message ``-m`` for our changes would be
+    ``"Adding script file"``
 
-27. Let's check the status of our Git repository, now. It should tell you that there are no changes made to your repository (i.e., your repository is up-to-date with the state of the code in your directory).'
+27. Let's check the status of our Git repository, now. It should tell you that
+    there are no changes made to your repository (i.e., your repository is
+    up-to-date with the state of the code in your directory).
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git status
 
@@ -431,7 +526,7 @@ Open a terminal to begin:
 
 28. Look at the Git logs, again:
 
-    .. code-block:: bash 
+    .. code-block:: bash
 
        $ git log
 
@@ -444,7 +539,13 @@ Open a terminal to begin:
 
 That concludes the first lesson of this virtual tutorial.
 
-In this section you set up a workspace by creating your directory, conda environment, and git repository. You downloaded a .txt file and read it using the Python commands of ``open()``, ``readline()``, ``read()``, ``close()``, and ``print()``, as well as the context manager ``with``. You should be familiar with the ``str`` datatype. You also used fundamental git commands such as ``git init``, ``git status``, ``git add``, ``git commit``, and ``git logs``.
+In this section you set up a workspace by creating your directory, conda
+environment, and git repository. You downloaded a .txt file and read it using
+the Python commands of ``open()``, ``readline()``, ``read()``, ``close()``,
+and ``print()``, as well as the context manager ``with``. You should be
+familiar with the ``str`` datatype. You also used fundamental git commands
+such as ``git init``, ``git status``, ``git add``, ``git commit``, and
+``git log``.
 
 -----
 
@@ -458,17 +559,20 @@ Suggested resources:
 -----
 
 
-=====================================
-Part 1.b - Creating a Data Dictionary
-=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a Data Dictionary
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.a left off - you had just commited your new script file that reads in the data from file as a string.
+This is intended to pick off right where part 1.a left off - you had just
+commited your new script file that reads in the data from file as a string.
 
 You will now manipulate your data into a more usable format - a dictionary.
 
-In doing so you will learn how to write iterative for loops and about Python data structures.
+In doing so you will learn how to write iterative for loops and about Python
+data structures.
 
-1. One big string isn't very useful, so use ``str.split()`` to parse the data file into a data structure you can use.
+1. One big string isn't very useful, so use ``str.split()`` to parse the data
+   file into a data structure you can use.
 
    Change the ``mysci.py`` script to read:
 
@@ -477,7 +581,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
       # Initialize my data variable
       data = []
-   
+
       # Read and parse the data file
       filename = "data/wxobs20170821.txt"
       with open(filename, 'r') as datafile:
@@ -485,7 +589,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
        # Read the first three lines (header)
        for _ in range(3):
           datafile.readline()
-    
+
        # Read and parse the rest of the file
        for line in datafile:
           datum = line.split()
@@ -497,29 +601,56 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    ..
 
-   The first thing that is different in this script is an initialized data variable; ``data = []`` creates the variable data as an empty list which we will populate as we read the file. Python lists are a collection data type that are ordered and changeable - meaning you can call information out of the list by its index and you can add or delete elements to your list. Lists are denoted by square brackets, ``[]``.
+   The first thing that is different in this script is an initialized data
+   variable; ``data = []`` creates the variable data as an empty list which we
+   will populate as we read the file. Python lists are a collection data type
+   that are ordered and changeable - meaning you can call information out of
+   the list by its index and you can add or delete elements to your list. Lists
+   are denoted by square brackets, ``[]``.
 
-   Then with the datafile open for reading capabilities, we are going to write two separate ``for`` loops. A ``for`` loop is used for iterating over a sequence (such as a list). It is important to note the syntax of Python ``for`` loops: the ``:`` at the end of for ``for`` line, the tab-indentation of all lines within the ``for`` loop, and perhaps the absence of an ``end for`` that is found in languages such as Matlab.
+   Then with the datafile open for reading capabilities, we are going to write
+   two separate ``for`` loops. A ``for`` loop is used for iterating over a
+   sequence (such as a list). It is important to note the syntax of Python
+   ``for`` loops: the ``:`` at the end of for ``for`` line, the tab-indentation
+   of all lines within the ``for`` loop, and perhaps the absence of an
+   ``end for`` that is found in languages such as Matlab.
 
-   In your first ``for`` loop, loop through the dummy variable ``_`` in ``range(3)``. ``range`` returns a sequence of numbers, starting at 0 and incrementing by 1 (by default), ending at the specified length. Here if you were to ``print(_)`` on each line of the for loop you would see:
+   In your first ``for`` loop, loop through the dummy variable ``_`` in
+   ``range(3)``. ``range`` returns a sequence of numbers, starting at 0 and
+   incrementing by 1 (by default), ending at the specified length. Here if you
+   were to ``print(_)`` on each line of the for loop you would see:
 
    .. code-block:: python
-    
+
       0
       1
       2
 
    ..
 
-   Try it out if you are unsure of how this works. Here the ``_`` variable is a placeholder, meaning the variable is never called within the loop.
+   Try it out if you are unsure of how this works. Here the ``_`` variable is a
+   placeholder, meaning the variable is never called within the loop.
 
-   So again, in the first ``for`` loop, you execute the ``readline`` command (which you will remember moves down to the next line each time it is consecutively called) 3 times to read through the file header (which is 3 lines long). **Yay!** You have just written your first ``for`` loop!
+   So again, in the first ``for`` loop, you execute the ``readline`` command
+   (which you will remember moves down to the next line each time it is
+   consecutively called) 3 times to read through the file header (which is 3
+   lines long). **Yay!** You have just written your first ``for`` loop!
 
-   Then in a second ``for`` loop, you loop through lines in the remainder of your datafile. On each line, split it along white space. The ``string.split()`` method splits a string into a list on a specified separator, the default being white space. You could use any character you like, but other useful options are ``/t`` for splitting along tabs or ``,`` along commmas.
+   Then in a second ``for`` loop, you loop through lines in the remainder of
+   your datafile. On each line, split it along white space. The
+   ``string.split()`` method splits a string into a list on a specified
+   separator, the default being white space. You could use any character you
+   like, but other useful options are ``/t`` for splitting along tabs or
+   ``,`` along commmas.
 
-   Then you ``append`` this split line list to the end of your data ``list``. The ``list.append()`` method adds a single item to the end of your ``list``. After every line in your ``for`` loop iteration, the data ``list`` that was empty is one element longer. Now we have a ``list`` of ``lists`` for our data variable - a ``list`` of the data in each line for multiple lines.
+   Then you ``append`` this split line list to the end of your data ``list``.
+   The ``list.append()`` method adds a single item to the end of your ``list``.
+   After every line in your ``for`` loop iteration, the data ``list`` that was
+   empty is one element longer. Now we have a ``list`` of ``lists`` for our
+   data variable - a ``list`` of the data in each line for multiple lines.
 
-   When you print each datum in data, you'll see that each datum is a ``list`` of ``string`` values.
+   When you print each datum in data, you'll see that each datum is a ``list``
+   of ``string`` values.
 
    We just covered a lot of Python nuances in a very little bit a code!
 
@@ -530,8 +661,8 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    Change the DEBUG section of our ``mysci.py`` script to:
 
-   .. code:: python
-      :number-lines: 17
+   .. code-block:: python
+      :lineno-start: 17
 
       # DEBUG
       print(data[0])
@@ -540,52 +671,63 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
    ..
 
-   Index your list by adding the number of your index in square brackets, ``[]``, after the name of the ``list``. Python is 0-indexed so ``data[0]`` refers to the first index and ``[-1]`` refers to the last index.
+   Index your list by adding the number of your index in square brackets,
+   ``[]``, after the name of the ``list``. Python is 0-indexed so ``data[0]``
+   refers to the first index and ``[-1]`` refers to the last index.
 
 3. Now, to practice slice indexing, get the first 10 rows in data.
 
    Change the DEBUG section of our ``mysci.py`` script to:
 
-   .. code:: python
-      :number-lines: 17
+   .. code-block:: python
+      :lineno-start: 17
 
       # DEBUG
       for datum in data[0:10]:
          print(datum)
-    
+
    ..
 
-   Using a colon, ``:``, between two index integers ``a`` and ``b``, you get all indexes between a and b. See what happens when you print ``data[:10]``, ``data[0:10:2]``, and ``data[slice(0,10,2)]``. What's the difference?
+   Using a colon, ``:``, between two index integers ``a`` and ``b``, you get
+   all indexes between a and b. See what happens when you print ``data[:10]``,
+   ``data[0:10:2]``, and ``data[slice(0,10,2)]``.  What's the difference?
 
-4. Now, to practice nested indexing,get the 5th, first 5, and every other column of rows 8 in data.
+4. Now, to practice nested indexing,get the 5th, first 5, and every other
+   column of rows 8 in data.
 
    Change the DEBUG section of the ``mysci.py`` script to:
 
-   .. code:: python
-      :number-lines: 17
+   .. code-block:: python
+      :lineno-start: 17
 
       # DEBUG
       print(data[8][4])
       print(data[8][:5])
       print(data[8][::2])
 
-   ..    
-    
-   In nested ``list`` indexing, the first index determines the row, and the second determines the element from that row. Also try printing ``data[5:8][4]``, why doesn't this work?
+   ..
+
+   In nested ``list`` indexing, the first index determines the row, and the
+   second determines the element from that row. Also try printing
+   ``data[5:8][4]``, why doesn't this work?
 
 5. Clean up the file (remove DEBUG section), stage the changes, and commit.
 
-   .. code-block: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Parsing file"
 
    ..
-   
 
-6. Can you remember which column is which? Is time the first column or the second? Which column is the temperature?
 
-   Each column is a time-series of data. We would ideally like each time-series easily accessible, which is not the case when data is row-column ordered (like it currently is). (Remember what happens when you try to do something like ``data[:][4]``!)
+6. Can you remember which column is which? Is time the first column or the
+   second? Which column is the temperature?
+
+   Each column is a time-series of data. We would ideally like each time-series
+   easily accessible, which is not the case when data is row-column ordered
+   (like it currently is). (Remember what happens when you try to do something
+   like ``data[:][4]``!)
 
    Let's get our data into a more convenient named-column format.
 
@@ -606,7 +748,7 @@ In doing so you will learn how to write iterative for loops and about Python dat
          # Read the first three lines (header)
          for _ in range(3):
             datafile.readline()
-    
+
          # Read and parse the rest of the file
          for line in datafile:
             split_line = line.split()
@@ -616,64 +758,87 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
       # DEBUG
       print(data['time'])
-    
-   ..    
-    
-   First we'll initialize a dictionary, ``dict``, indicated by the curly brackets, ``{}``. Dictionaries, like ``list``s, are changeable, but they are unordered. They have keys, rather than positions, to point to their elements. Here you have created 3 elements of your dictionary, all currently empty ``list``s, and specified by the keys ``date``, ``time``, and ``tempout``. Keys act similarly to indexes: to pull out the ``tempout`` element from data you would type ``data['tempout']``.
 
-   Grab date (the first column of each line), time (the second column of each line), and temperature data (the third column), from each line and ``append`` it to the ``list`` associated with each of these data variables.
+   ..
+
+   First we'll initialize a dictionary, ``dict``, indicated by the curly
+   brackets, ``{}``. Dictionaries, like ``list``s, are changeable, but they
+   are unordered. They have keys, rather than positions, to point to their
+   elements. Here you have created 3 elements of your dictionary, all currently
+   empty ``list``s, and specified by the keys ``date``, ``time``, and
+   ``tempout``. Keys act similarly to indexes: to pull out the ``tempout``
+   element from data you would type ``data['tempout']``.
+
+   Grab date (the first column of each line), time (the second column of each
+   line), and temperature data (the third column), from each line and
+   ``append`` it to the ``list`` associated with each of these data variables.
 
    `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 7. Clean up (remove DEBUG section), stage, and commit
-    
-   .. code-block: bash
+
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Parsing select time-series"
 
    ..
 
-8. Now it's easy to get the time-series informationfor each column that we are interested in grabbing, and we can get each column by name. However, everything read fromthe text file is a str. What if we want to do math on this data, then we need it to be a different data type!
+8. Now it's easy to get the time-series informationfor each column that we are
+   interested in grabbing, and we can get each column by name. However,
+   everything read fromthe text file is a str. What if we want to do math on
+   this data, then we need it to be a different data type!
 
-   So, let's convert the tempout time-series to be a ``float`` by changing the line:
+   So, let's convert the tempout time-series to be a ``float`` by changing the
+   line:
 
-   .. code:: python
-      :number-lines: 19
+   .. code-block:: python
+      :lineno-start: 19
 
-      data['tempout'].append(split_line[2])   
-    
+      data['tempout'].append(split_line[2])
+
    ..
 
    to:
 
-   .. code:: python
-      :number-lines: 19
-   
+   .. code-block:: python
+      :lineno-start: 19
+
       data['tempout'].append(float(split_line[2]))
-    
+
    ..
 
-   The ``float`` datatype refers to floating point real values - the datatype of any numbers with values after a decimal point. You could also change the datatype to ``int``, which will round the values down to the closest full integer.
+   The ``float`` datatype refers to floating point real values - the datatype
+   of any numbers with values after a decimal point. You could also change the
+   datatype to ``int``, which will round the values down to the closest full
+   integer.
 
    `More on Python numeric types (int, float, complex) <https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex>`_
 
-9. Add a DEBUG section at the end and see what ``data['tempout']`` now looks like.
+9. Add a DEBUG section at the end and see what ``data['tempout']`` now looks
+   like.
 
    Do you see a difference? It should now be a list of floats.
 
-10.  Clean up (remove DEBUG section), stage, and commit 
+10.  Clean up (remove DEBUG section), stage, and commit
 
-   .. code-block: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Converting tempout to floats"
 
    ..
 
-11. This seems great, so far! But what if you want to read more columns to our data later? You would have to change the initialization of the data variable (at the top of ``mysci.py``) and have to add the appropriate line in the "read and parse" section. Essentially, that means you need to maintain 2 parts of the code and make sure that both remain consistent with each other.
+11. This seems great, so far! But what if you want to read more columns to our
+    data later? You would have to change the initialization of the data
+    variable (at the top of ``mysci.py``) and have to add the appropriate line
+    in the "read and parse" section. Essentially, that means you need to
+    maintain 2 parts of the code and make sure that both remain consistent with
+    each other.
 
-    This is generally not good practice. Ideally, you want to be able to change only one part of the code and know that the rest of the code will remain consistent. So, let's fix this.
+    This is generally not good practice. Ideally, you want to be able to change
+    only one part of the code and know that the rest of the code will remain
+    consistent. So, let's fix this.
 
     Change ``mysci.py`` to:
 
@@ -713,15 +878,29 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
     ..
 
-    You have now created a columns ``dict`` that points each data variable to its column-index. And a types ``dict``, that indicates what type to convert the data when necessary. When you want new variables pulled out of the datafile, change these two variables.
+    You have now created a columns ``dict`` that points each data variable to
+    its column-index. And a types ``dict``, that indicates what type to convert
+    the data when necessary. When you want new variables pulled out of the
+    datafile, change these two variables.
 
-    Initializing the data ``dict`` now includes a ``for`` loop, where for each variable specified in columns that key is initialized pointing to an empty ``list``. This is the first time you have looped over a ``dict`` and added key-value pairs to a ``dict`` via assignment.
+    Initializing the data ``dict`` now includes a ``for`` loop, where for each
+    variable specified in columns that key is initialized pointing to an empty
+    ``list``. This is the first time you have looped over a ``dict`` and added
+    key-value pairs to a ``dict`` via assignment.
 
-    When reading and parsing the file, you created your first nested ``for`` loop. For every line of the datafile, split that line - and then for every desired variable in the columns ``dict`` (date, time, tempout): grab the datum from the current split line with the specified index (0, 1, 2), use the ``dict.get()`` method to find the desired datatype if specired (avoiding ``key-not-found`` errors and defaulting to ``str`` if unspecified), convert the datum to the desired datatype, and ``append`` the datum to the ``list`` associated with each column key within the data ``dict``.
+    When reading and parsing the file, you created your first nested ``for``
+    loop. For every line of the datafile, split that line - and then for every
+    desired variable in the columns ``dict`` (date, time, tempout): grab the
+    datum from the current split line with the specified index (0, 1, 2), use
+    the ``dict.get()`` method to find the desired datatype if specired
+    (avoiding ``key-not-found`` errors and defaulting to ``str`` if
+    unspecified), convert the datum to the desired datatype, and ``append``
+    the datum to the ``list`` associated with each column key within the data
+    ``dict``.
 
-12. Clean up (remove DEBUG section), stage, and commit 
+12. Clean up (remove DEBUG section), stage, and commit
 
-   .. code-block: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Refactoring data parsing code"
@@ -732,9 +911,14 @@ In doing so you will learn how to write iterative for loops and about Python dat
 
 That concludes the second lesson of this virtual tutorial.
 
-In this section you saved the variables of date, time, and tempout in a data dictionary.
+In this section you saved the variables of date, time, and tempout in a data
+dictionary.
 
-You should now be familiar with the data structures ``list``s (as well as list indexing, nested lists, and the command ``list.append()``), ``dict``s (their keys and the command ``dict.get()``), and ``range``s. You also learned to write ``for`` loops, about the ``float`` datatype, and using the Python commands ``str.split()``.
+You should now be familiar with the data structures ``list``s (as well as list
+indexing, nested lists, and the command ``list.append()``), ``dict``s (their
+keys and the command ``dict.get()``), and ``range``s. You also learned to write
+``for`` loops, about the ``float`` datatype, and using the Python commands
+``str.split()``.
 
 -----
 
@@ -746,32 +930,43 @@ Suggested resources:
 -----
 
 
-======================================================
-Part 1.c - Writing Functions
-======================================================
+~~~~~~~~~~~~~~~~~
+Writing Functions
+~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.b left off- you had just commited your new script that reads the file, saving the variables of date, time, and tempout in a data dictionary.
+This is intended to pick off right where part 1.b left off- you had just
+commited your new script that reads the file, saving the variables of date,
+time, and tempout in a data dictionary.
 
-In this section you will compute wind chill index by writing your first function and learning about basic math operators.
+In this section you will compute wind chill index by writing your first
+function and learning about basic math operators.
 
-1. Okay, now that you've read the data in a way that is easy to modify later, it is time to actually do something with the data.
+1. Okay, now that you've read the data in a way that is easy to modify later,
+   it is time to actually do something with the data.
 
-   Compute the wind chill factor, which is the cooling effect of the wind. As wind speed increases the rate at which a body loses heat increases. The formula for this is:
+   Compute the wind chill factor, which is the cooling effect of the wind. As
+   wind speed increases the rate at which a body loses heat increases. The
+   formula for this is:
 
    .. math::
 
       WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})
-   
+
    ..
 
-   Where ``WCI`` refers to the Wind Chill in degrees F, ``t`` is temperature in degrees F, ``v`` is wind speed in mph, and the other variables are as follows: ``a`` = 35.74, ``b`` = 0.6215, ``c`` = 35.75, and ``d`` = 0.4275. Wind Chill Index is only defined for temperatures within the range -45 to +45 degrees F.
+   Where ``WCI`` refers to the Wind Chill in degrees F, ``t`` is temperature in
+   degrees F, ``v`` is wind speed in mph, and the other variables are as
+   follows: ``a`` = 35.74, ``b`` = 0.6215, ``c`` = 35.75, and ``d`` = 0.4275.
+   Wind Chill Index is only defined for temperatures within the range -45 to
+   +45 degrees F.
 
-   You've read the temperature data into the tempout variable, but to do this calculation, you also needto read the windspeed variable from column 7.
+   You've read the temperature data into the tempout variable, but to do this
+   calculation, you also needto read the windspeed variable from column 7.
 
    Modify the columns variable to read:
 
-   .. code:: python
-      :number-lines: 
+   .. code-block:: python
+      :linenos:
 
       # Column names and column indices to read
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7}
@@ -780,8 +975,8 @@ In this section you will compute wind chill index by writing your first function
 
    and modify the types variable to be:
 
-   .. code:: python
-      :number-lines: 4
+   .. code-block:: python
+      :lineno-start: 4
 
       # Data types for each column (only if non-string)
       types = {'tempout': float, 'windspeed': float}
@@ -789,19 +984,20 @@ In this section you will compute wind chill index by writing your first function
    ..
 
 
-2. Great! Save this in your Git repo. Stage and commit 
+2. Great! Save this in your Git repo. Stage and commit
 
-   .. code:: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Reading windspeed as well"
 
    ..
 
-3. Now, let's write our first function to computethe wind chill factor. We'll add this function to the bottom of the file.
+3. Now, let's write our first function to computethe wind chill factor. We'll
+   add this function to the bottom of the file.
 
-   .. code:: python
-      :number-lines: 29
+   .. code-block:: python
+      :lineno-start: 29
 
       # Compute the wind chill temperature
       def compute_windchill(t, v):
@@ -813,19 +1009,26 @@ In this section you will compute wind chill index by writing your first function
          v16 = v ** 0.16
          wci = a + (b * t) - (c * v16) + (d * t * v16)
          return wci
-    
-   ..    
-    
-   To indicate a function in python you type def for define, the name of your function, and then in parenthesis the input arguments of that function, followed by a colon. On the next lines tab-indented is the code of your function, and your return value.
+
+   ..
+
+   To indicate a function in python you type def for define, the name of your
+   function, and then in parenthesis the input arguments of that function,
+   followed by a colon. On the next lines tab-indented is the code of your
+   function, and your return value.
 
    `More on user defined functions <https://docs.python.org/2.0/ref/function.html>`_
 
-   Here is your first introduction math operators in Python. Addition, subtraction, and multiplication look much like you'd expect. A double astericks, ``**``, indicates an exponential. A backslash, ``/``, is for division, and a double backslash, ``//``, is for integer division.
+   Here is your first introduction math operators in Python. Addition,
+   subtraction, and multiplication look much like you'd expect. A double
+   astericks, ``**``, indicates an exponential. A backslash, ``/``, is for
+   division, and a double backslash, ``//``, is for integer division.
 
-   And then let's compute a new list with windchill data atthe bottom of ``mysci.py``:
+   And then let's compute a new list with windchill data atthe bottom of
+   ``mysci.py``:
 
-   .. code:: python
-      :number-lines: 40
+   .. code-block:: python
+      :lineno-start: 40
 
       # Let's actually compute the wind chill factor
       windchill = []
@@ -834,14 +1037,20 @@ In this section you will compute wind chill index by writing your first function
 
    ..
 
-   Now we'll call our function. Initialize a ``list`` for wind chill with empty square brackets, ``[]``. And in a ``for`` loop, loop through our temperature and wind speed data, applying the function to each ``tuple`` data pair. ``tuple``s are ordered like ``list``s, but they are indicated by parenthesis, ``()``, instead of square brackets and cannot be changed or appended. ``tuple`` s are generally faster than ``list`` s.
+   Now we'll call our function. Initialize a ``list`` for wind chill with empty
+   square brackets, ``[]``. And in a ``for`` loop, loop through our temperature
+   and wind speed data, applying the function to each ``tuple`` data pair.
+   ``tuple`` s are ordered like ``list`` s, but they are indicated by
+   parenthesis, ``()``, instead of square brackets and cannot be changed or
+   appended. ``tuple`` s are generally faster than ``list`` s.
 
-   We use the ``zip`` function in Python to automatically unravel the ``tuple``s. Take a look at ``zip([1,2], [3,4,5])``. What is the result?
+   We use the ``zip`` function in Python to automatically unravel the
+   ``tuple`` s. Take a look at ``zip([1,2], [3,4,5])``. What is the result?
 
    And finally, add a DEBUG section to see theresults:
 
-   .. code:: python
-      :number-lines: 45
+   .. code-block:: python
+      :lineno-start: 45
 
       # DEBUG
       print(windchill)
@@ -849,17 +1058,19 @@ In this section you will compute wind chill index by writing your first function
    ..
 
 
-4. Clean up, stage, and commit 
-   
+4. Clean up, stage, and commit
 
-   .. code-block: bash
+
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Compute wind chill factor"
 
    ..
 
-5. Now, the wind chill factor is actually in the datafile, so we can read it from the file and compare that value to our computed values. To do this, we need to read the windchill from column 12 as a ``float``:
+5. Now, the wind chill factor is actually in the datafile, so we can read it
+   from the file and compare that value to our computed values. To do this, we
+   need to read the windchill from column 12 as a ``float``:
 
    Edit the columns and types ``dict``:
 
@@ -868,80 +1079,91 @@ In this section you will compute wind chill index by writing your first function
 
       # Column names and column indices to read
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'windspeed': 7,
-        'windchill': 12}
+                 'windchill': 12}
 
-   ..    
-    
+   ..
+
    **NOTE:** the line continuation indentation
 
    and
 
-   .. code:: python
-      :number-lines: 5
+   .. code-block:: python
+      :lineno-start: 5
 
       # Data types for each column (only if non-string)
       types = {'tempout': float, 'windspeed': float, 'windchill': float}
-    
-   ..    
 
-   Then, in a DEBUG section at the end of your script to compare the two different values (from data and computed by our function):
+   ..
 
-   .. code:: python
-      :number-lines: 46
+   Then, in a DEBUG section at the end of your script to compare the two
+   different values (from data and computed by our function):
+
+   .. code-block:: python
+      :lineno-start: 46
 
       # DEBUG
       for wc_data, wc_comp in zip(data['windchill'], windchill):
          print(f'{wc_data:.5f}   {wc_comp:.5f}   {wc_data - wc_comp:.5f}')
-    
-   ..    
 
-   Using ``f-string``s with float formatting you can determine the precision with which to print the values to. ``.5f`` means you want 5 places after the decimal point.
+   ..
+
+   Using ``f-string`` s with float formatting you can determine the precision
+   with which to print the values to. ``.5f`` means you want 5 places after the
+   decimal point.
 
    `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
    Test the results. What do you see? Our computation isn't very good is it?
 
-6. Clean up, stage, and commit 
+6. Clean up, stage, and commit
 
-   .. code-block: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Compare wind chill factors"
 
    ..
 
-7. Now, format the output so that it's easy to understand and rename this script to something indicative of what it actually does.
+7. Now, format the output so that it's easy to understand and rename this
+   script to something indicative of what it actually does.
 
    To the end of the file, add:
 
-   .. code:: python
-      :number-lines: 46
+   .. code-block:: python
+      :lineno-start: 46
 
       # Output comparison of data
       print('                ORIGINAL  COMPUTED')
       print(' DATE    TIME  WINDCHILL WINDCHILL DIFFERENCE')
       print('------- ------ --------- --------- ----------')
-      for date, time, wc_orig, wc_comp in zip(data['date'], data['time'], data['windchill'], windchill):
-         print(f'{date} {time:>6} {wc_orig:9.6f} {wc_comp:9.6f} {wc_orig-wc_comp:10.6f}')
-    
-   ..    
-    
-   Here you used ``f-string`` formatting with more ``f-string`` formatting options. ``>6`` indicates that you'd like the characters of the string to be right-justified and to take up 6 spaces.
+      zip_data = zip(data['date'], data['time'], data['windchill'], windchill)
+      for date, time, wc_orig, wc_comp in zip_data:
+         wc_diff = wc_orig - wc_comp
+         print(f'{date} {time:>6} {wc_orig:9.6f} {wc_comp:9.6f} {wc_diff:10.6f}')
 
-   ``9f`` specifies that you want the value to fill 9 spaces, so ``9.6f`` indicates you'd like the value to fill 9 spaces with 6 of them being after the decimal point. Same concept for ``10.6f``.
+   ..
+
+   Here you used ``f-string`` formatting with more ``f-string`` formatting
+   options. ``>6`` indicates that you'd like the characters of the string to be
+   right-justified and to take up 6 spaces.
+
+   ``9f`` specifies that you want the value to fill 9 spaces, so ``9.6f``
+   indicates you'd like the value to fill 9 spaces with 6 of them being after
+   the decimal point. Same concept for ``10.6f``.
 
    You now have your first complete Python script!
 
 8. DON'T CLEAN UP! Just stage and commit
 
-   .. code-block: bash
+   .. code-block:: bash
 
       $ git add mysci.py
       $ git commit -m "Output formatting comparison data"
 
    ..
 
-9. Let's rename this script to something meaningful and indicative of the computation inside.
+9. Let's rename this script to something meaningful and indicative of the
+   computation inside.
 
    .. code-block:: bash
 
@@ -952,18 +1174,24 @@ In this section you will compute wind chill index by writing your first function
 
 10. Let's push to GitHub!
 
-    1. First you have to create a remote repository. Go to https://github.com/ and create or login to your account.
-    
-    2. At the top right of any Github page, there is a '+' icon. Click that, then select 'New Repository'.
-    
+    1. First you have to create a remote repository. Go to `GitHub <https://github.com/>`_
+       and create or login to your account.
+
+    2. At the top right of any Github page, there is a '+' icon. Click that,
+       then select 'New Repository'.
+
     3. Name your repository, "python_tutorial_2020".
-       It is best practice for your local project and GitHub repository to share a name.
+       It is best practice for your local project and GitHub repository to
+       share a name.
 
     4. And click "Create Repository"
-    
+
     5. Copy the link to your GitHub repository.
-       
-       Typically this will have the form: Copy the link in the input right beneath the title, it should look something like this: "https://github.com/<user_name>/python_tutorial_2020.git"
+
+       Typically this will have the form: Copy the link in the input right
+       beneath the title, it should look something like this:
+
+           https://github.com/<user_name>/python_tutorial_2020.git
 
     6. Then to set your remote repository, in your project terminal type:
 
@@ -978,7 +1206,7 @@ In this section you will compute wind chill index by writing your first function
        .. code-block:: bash
 
           $ git remote -v
-    
+
        ..
 
     8. And finally push your project to GitHub:
@@ -989,14 +1217,23 @@ In this section you will compute wind chill index by writing your first function
 
        ..
 
-    Think of GitHub as online storage for versions of your project, much like hosting your code in a Google Drive, but with better features specific to coding. A lot of GitHub's features show their usefulness when you are working collaboratively, sharing your code with other scientists, or if you wanted to display and easily visualize changes in your code between commits.
+    Think of GitHub as online storage for versions of your project, much like
+    hosting your code in a Google Drive, but with better features specific to
+    coding. A lot of GitHub's features show their usefulness when you are
+    working collaboratively, sharing your code with other scientists, or if
+    you wanted to display and easily visualize changes in your code between
+    commits.
 
 
 -----
 
-That concludes Part 1 of this virtual tutorial where you learned to write your first Python script.
+That concludes the first part of this virtual tutorial where you learned to
+write your first Python script.
 
-In this section you calculated wind chill index by writing and calling your first function. You also learned about Python math operators, the ``zip()`` command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your repository to GitHub.
+In this section you calculated wind chill index by writing and calling your
+first function. You also learned about Python math operators, the ``zip()``
+command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your
+repository to GitHub.
 
 -----
 
