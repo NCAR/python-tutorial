@@ -63,7 +63,7 @@ html_additional_pages = {'index': 'index.html'}
 
 # Add custom CSS
 def setup(app):
-    app.add_stylesheet('css/custom.css')
+    app.add_css_file('css/custom.css')
 
 
 mathjax_config = {
