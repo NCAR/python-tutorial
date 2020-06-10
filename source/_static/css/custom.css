@@ -1,9 +1,141 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+/************************************************
+ HTML
+ ************************************************/
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+footer {
+  z-index: 2;
+  position: relative;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  margin-left: 1rem;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+dd {
+  margin-left: 0.7rem;
+  font-size: smaller;
+}
+
+/************************************************
+ BOOTSTRAP v4.0
+ ************************************************/
+
 .container-fluid {
   padding: 0;
 }
 
+.dropdown-toggle[aria-expanded="false"]:after {
+  transform: rotate(90deg);
+}
+
+.dropdown-toggle:after {
+  margin-left: 0;
+  transition: 0.3s;
+}
+
+.card {
+  border: none;
+}
+
+.card-header {
+  color: #333;
+  background-color: #C0C0C0;
+  padding: 0;
+  border: none;
+  font-size: small;
+  font-weight: lighter;
+}
+
+.card-header:first-child {
+  border-radius: 0;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.collapse {
+  background-color: #C0C0C0;
+  padding-right: 0rem;
+}
+
+.btn {
+  color: #333;
+  font-size: medium;
+}
+
+/************************************************
+ FONTAWESOME
+ ************************************************/
+
+.fa, .fas {
+  color: #585858;
+}
+
 .fab {
   font-size: 1.6rem;
+}
+
+/************************************************
+ SPHINX
+ ************************************************/
+
+ .headerlink {
+  opacity: 0;
+}
+
+.highlight {
+  margin-right: 3rem;
+  padding-left: 0.5rem;
+  background: #D3D3D3;
+}
+
+.highlight-bash {
+  margin-left: 3rem;
+}
+
+.linenodiv {
+  margin-left: 2rem;
+  margin-right: .3rem;
+}
+
+a.reference.external {
+  color: #007bff;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+/************************************************
+ CUSTOM
+ ************************************************/
+
+.footer-text {
+  width: 100%;
+  font-size: 0.9rem;
 }
 
 .ncar-logo {
@@ -23,28 +155,8 @@
   padding-bottom: 15px;
 }
 
-footer {
-  z-index: 2;
-  position: relative;
-}
-
-.footer-text {
-  width: 100%;
-  font-family: "Helvetica";
-  font-size: 0.9rem;
-}
-
 .full-ht {
   min-height: 100vh;
-}
-
-.dropdown-toggle[aria-expanded="false"]:after {
-  transform: rotate(90deg);
-}
-
-.dropdown-toggle:after {
-  margin-left: 0;
-  transition: 0.3s;
 }
 
 .wrapper {
@@ -71,31 +183,6 @@ footer {
   .sidebar.active {
       margin-left: 0;
   }
-}
-
-a[data-toggle="collapse"] {
-  position: relative;
-}
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  margin-left: 1rem;
-}
-
-a, a:hover, a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
 }
 
 .sidebar {
@@ -128,27 +215,6 @@ a, a:hover, a:focus {
   background: #A9A9A9;;
 }
 
-.card {
-  border: none;
-}
-
-.card-header {
-  color: #333;
-  background-color: #C0C0C0;
-  padding: 0;
-  border: none;
-  font-size: small;
-  font-weight: lighter;
-}
-
-.card-header:first-child {
-  border-radius: 0;
-}
-
-.card-body {
-  padding: 0;
-}
-
 .tier1 {
   padding-left: 1.25rem;
 }
@@ -160,25 +226,6 @@ a, a:hover, a:focus {
 .accordian-sidebar {
   padding-left: 15px;
   padding-right: 0;
-}
-
-.accordian-tier3 {
-  padding-left: 0rem;
-  padding-right: 0rem;
-}
-
-.collapse {
-  background-color: #C0C0C0;
-  padding-right: 0rem;
-}
-
-.btn {
-  color: #333;
-  font-size: medium;
-}
-
-.fa, .fas {
-  color: #585858;
 }
 
 .content {
