@@ -4,10 +4,6 @@
  HTML
  ************************************************/
 
-a[data-toggle="collapse"] {
-  position: relative;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa;
@@ -85,6 +81,10 @@ dd {
   font-size: medium;
 }
 
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
 /************************************************
  FONTAWESOME
  ************************************************/
@@ -122,11 +122,6 @@ dd {
 
 a.reference.external {
   color: #007bff;
-}
-
-.navbar {
-  position: fixed;
-  width: 100%;
 }
 
 /************************************************
