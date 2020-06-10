@@ -53,8 +53,8 @@ footer {
 }
 
 #sidebar {
-  min-width: 274px;
-  max-width: 274px;
+  min-width: 260px;
+  max-width: 260px;
   height: 100vh;
   position: fixed;
   z-index: 1;
@@ -105,6 +105,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
   padding: 15px;
+  padding-top: 85px;
   background: #C0C0C0;
 }
 
@@ -183,6 +184,8 @@ a, a:hover, a:focus {
 .content {
   padding: 2rem;
   padding-left: 300px;
+  padding-top: 90px;
+
 }
 
 .headerlink {
@@ -213,3 +216,7 @@ a.reference.external {
   color: #007bff;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+}
