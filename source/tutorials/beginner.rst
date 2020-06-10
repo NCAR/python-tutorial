@@ -11,10 +11,10 @@
 
 
 
-==========================
-Python 0-30 for Scientists
-==========================
-Welcome to the Python 0 to 30 for Scientists tutorial. In this self-paced course you will learn how to write Python code using Python best practices.
+==============================
+Beginner Python for Scientists
+==============================
+Welcome to the Beginner Python for Scientists tutorial. In this self-paced course you will learn how to write Python code using Python best practices.
 
 Part 1 is designed to take one work day, but you may move through the content much slower or more quickly.
 

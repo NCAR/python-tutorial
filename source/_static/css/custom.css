@@ -203,3 +203,7 @@ a.reference.external {
   font-size: 1.0rem;
   font-weight: 400;
 }
+
+.jumbotron {
+  padding-top: 8rem;
+}
