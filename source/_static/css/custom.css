@@ -82,18 +82,44 @@ footer {
 }
 
 .highlight {
-  margin-right: 3rem;
-  padding-left: 0.5rem;
-  background: #D3D3D3;
+  background: #F3F3F3;
+  border: 1px solid #C9C9C9;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.highlight pre {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .highlight-bash {
-  margin-left: 3rem;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+}
+
+.highlight-python {
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+}
+
+.highlighttable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.linenos {
+  width: 2rem;
 }
 
 .linenodiv {
-  margin-left: 2rem;
-  margin-right: .3rem;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.linenodiv pre {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 a.reference.external {
@@ -137,7 +163,7 @@ a.reference.external {
 .ncar-logo {
   display: block;
   margin-right: auto;
-  width: 409px;
+  max-width: 409px;
   padding-bottom: 15px;
 }
 
@@ -202,8 +228,4 @@ a.reference.external {
   padding-left: 2.25rem;
   font-size: 1.0rem;
   font-weight: 400;
-}
-
-.jumbotron {
-  padding-top: 8rem;
 }

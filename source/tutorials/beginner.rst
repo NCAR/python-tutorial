@@ -820,14 +820,14 @@ data structures.
 
    Do you see a difference? It should now be a list of floats.
 
-10.  Clean up (remove DEBUG section), stage, and commit
+10. Clean up (remove DEBUG section), stage, and commit
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-      $ git add mysci.py
-      $ git commit -m "Converting tempout to floats"
+       $ git add mysci.py
+       $ git commit -m "Converting tempout to floats"
 
-   ..
+    ..
 
 11. This seems great, so far! But what if you want to read more columns to our
     data later? You would have to change the initialization of the data
@@ -900,12 +900,12 @@ data structures.
 
 12. Clean up (remove DEBUG section), stage, and commit
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-      $ git add mysci.py
-      $ git commit -m "Refactoring data parsing code"
+       $ git add mysci.py
+       $ git commit -m "Refactoring data parsing code"
 
-   ..
+    ..
 
 -----
 
@@ -1047,7 +1047,7 @@ function and learning about basic math operators.
    We use the ``zip`` function in Python to automatically unravel the
    ``tuple`` s. Take a look at ``zip([1,2], [3,4,5])``. What is the result?
 
-   And finally, add a DEBUG section to see theresults:
+   And finally, add a DEBUG section to see the results:
 
    .. code-block:: python
       :lineno-start: 45
@@ -1056,7 +1056,6 @@ function and learning about basic math operators.
       print(windchill)
 
    ..
-
 
 4. Clean up, stage, and commit
 
@@ -1188,10 +1187,10 @@ function and learning about basic math operators.
 
     5. Copy the link to your GitHub repository.
 
-       Typically this will have the form: Copy the link in the input right
-       beneath the title, it should look something like this:
+       Copy the link in the input right beneath the title, it should look
+       something like this:
 
-           https://github.com/<user_name>/python_tutorial_2020.git
+       ``https://github.com/<user_name>/<repo>.git``
 
     6. Then to set your remote repository, in your project terminal type:
 
