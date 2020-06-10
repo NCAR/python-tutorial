@@ -4,24 +4,6 @@
  HTML
  ************************************************/
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-}
-
-footer {
-  z-index: 2;
-  position: relative;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  margin-left: 1rem;
-}
-
 a, a:hover, a:focus {
   color: inherit;
   text-decoration: none;
@@ -33,9 +15,38 @@ dd {
   font-size: smaller;
 }
 
+footer {
+  z-index: 2;
+  position: relative;
+}
+
 /************************************************
  BOOTSTRAP v4.0
  ************************************************/
+
+.btn {
+  font-size: medium;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-header {
+  color: #333;
+  background-color: #C0C0C0;
+  padding: 0;
+  border: none;
+}
+
+.card-header:first-child {
+  border: none;
+  border-radius: 0;
+}
 
 .container-fluid {
   padding: 0;
@@ -48,41 +59,6 @@ dd {
 .dropdown-toggle:after {
   margin-left: 0;
   transition: 0.3s;
-}
-
-.card {
-  border: none;
-}
-
-.card-header {
-  color: #333;
-  background-color: #C0C0C0;
-  padding: 0;
-  border: none;
-  font-size: small;
-  font-weight: lighter;
-}
-
-.card-header:first-child {
-  border-radius: 0;
-}
-
-.card-body {
-  padding: 0;
-}
-
-.collapse {
-  background-color: #C0C0C0;
-  padding-right: 0rem;
-}
-
-.btn {
-  color: #333;
-  font-size: medium;
-}
-
-a[data-toggle="collapse"] {
-  position: relative;
 }
 
 /************************************************
@@ -101,7 +77,7 @@ a[data-toggle="collapse"] {
  SPHINX
  ************************************************/
 
- .headerlink {
+.headerlink {
   opacity: 0;
 }
 
@@ -125,12 +101,37 @@ a.reference.external {
 }
 
 /************************************************
- CUSTOM
+ CUSTOM CLASSES
  ************************************************/
+
+.accordian-sidebar {
+  padding-left: 15px;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.content {
+  padding: 2rem;
+  margin-left: 274px;
+}
+
+@media (max-width: 768px) {
+  .content {
+      margin-left: 0;
+  }
+}
+
+.copyright {
+  margin-right: auto;
+}
 
 .footer-text {
   width: 100%;
   font-size: 0.9rem;
+}
+
+.full-ht {
+  min-height: 100vh;
 }
 
 .ncar-logo {
@@ -140,54 +141,29 @@ a.reference.external {
   padding-bottom: 15px;
 }
 
-.copyright {
-  margin-right: auto;
-}
-
 .nsf-logo {
   display: block;
   width: 70px;
   padding-bottom: 15px;
 }
 
-.full-ht {
-  min-height: 100vh;
-}
-
-.wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
 .sidebar {
-  min-width: 260px;
-  max-width: 260px;
+  width: 274px;
   height: 100vh;
   position: fixed;
   z-index: 1;
-}
-
-.sidebar.active {
-  margin-left: -274px;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-      margin-left: -274px;
-  }
-  .sidebar.active {
-      margin-left: 0;
-  }
-}
-
-.sidebar {
   background: #C0C0C0;
   color: #333;
 }
 
-.sidebar .sidebar-header {
+@media (max-width: 768px) {
+  .sidebar {
+      display: none;
+  }
+}
+
+.sidebar-header {
   padding: 15px;
-  padding-top: 85px;
   background: #C0C0C0;
 }
 
@@ -210,55 +186,20 @@ a.reference.external {
   background: #A9A9A9;;
 }
 
+.tier0 {
+  padding-left: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
 .tier1 {
-  padding-left: 1.25rem;
+  padding-left: 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .tier2 {
   padding-left: 2.25rem;
-}
-
-.accordian-sidebar {
-  padding-left: 15px;
-  padding-right: 0;
-}
-
-.content {
-  padding: 2rem;
-  padding-left: 300px;
-  padding-top: 90px;
-
-}
-
-.headerlink {
-  opacity: 0;
-}
-
-dd {
-  margin-left: 0.7rem;
-  font-size: smaller;
-}
-
-.highlight {
-  margin-right: 3rem;
-  padding-left: 0.5rem;
-  background: #D3D3D3;
-}
-
-.highlight-bash {
-  margin-left: 3rem;
-}
-
-.linenodiv {
-  margin-left: 2rem;
-  margin-right: .3rem;
-}
-
-a.reference.external {
-  color: #007bff;
-}
-
-.navbar {
-  position: fixed;
-  width: 100%;
+  font-size: 1.0rem;
+  font-weight: 400;
 }
