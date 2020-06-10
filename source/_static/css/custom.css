@@ -262,3 +262,7 @@ a.reference.external {
   position: fixed;
   width: 100%;
 }
+
+.jumbotron {
+  padding-top: 8rem;
+}
