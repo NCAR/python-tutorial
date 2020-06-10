@@ -64,10 +64,3 @@ html_additional_pages = {'index': 'index.html'}
 # Add custom CSS
 def setup(app):
     app.add_css_file('css/custom.css')
-
-
-mathjax_config = {
-    'jax': ['input/TeX', 'output/HTML-CSS'],
-}
-
-mathjax_path="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
