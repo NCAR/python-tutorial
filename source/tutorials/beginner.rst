@@ -9,7 +9,11 @@
 .. hidetitle: True
 .. has_math: True
 
+.. role:: bash(code)
+   :language: bash
 
+.. role:: python(code)
+   :language: python
 
 ==============================
 Beginner Python for Scientists
@@ -120,8 +124,7 @@ If you don't have conda installed at all,
       $ conda --version
 
 
-
-4. `Install Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+4. `Install Git. <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 
    Git is a program that tracks changes made to files. This makes it easy to
    maintain access to multiple versions of your code as you improve it, and
@@ -151,7 +154,7 @@ Reading a .txt File
 ~~~~~~~~~~~~~~~~~~~
 
 In building your first Python script we will set up our workspace, read a
-``.txt`` file, and learn git fundamentals.
+:code:`.txt` file, and learn git fundamentals.
 
 Open a terminal to begin:
 
@@ -164,7 +167,7 @@ Open a terminal to begin:
    ..
 
    The first thing we have to do is create a directory to store our work.
-   Let's call it ``ncar_python_tutorial``.
+   Let's call it :code:`ncar_python_tutorial`.
 
 2. Go into the directory:
 
@@ -183,7 +186,7 @@ Open a terminal to begin:
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
    Type conda create --name , the name of your project, here that is
-   ``python_tutorial``, and then specify that you are using python to create a
+   :code:`python_tutorial`, and then specify that you are using python to create a
    virtual environment for this project.
 
    It is a good idea to create new environments for different projects because
@@ -203,7 +206,7 @@ Open a terminal to begin:
    ..
 
    A Git repository tracks changes made to files within your project. It looks
-   like a ``.git/`` folder inside that project.
+   like a :code:`.git/` folder inside that project.
 
    This command adds version control to this new ncar_python_tutorial directory
    and all of its contents.
@@ -261,7 +264,7 @@ Open a terminal to begin:
    ..
 
    By adding this datafile to your directory, you have made a change that is
-   not yet reflected in our Git repository. Type ``git add`` and then the name
+   not yet reflected in our Git repository. Type :bash:`git add` and then the name
    of the altered file to stage your change.
 
 10. Check your git status once again:
@@ -283,7 +286,7 @@ Open a terminal to begin:
 
     ..
 
-    With ``git commit``, you've updated your repository with all the changes
+    With :bash:`git commit`, you've updated your repository with all the changes
     you staged, in this case just one file.
 
 12. Look at the Git logs:
@@ -294,7 +297,7 @@ Open a terminal to begin:
 
     ..
 
-    If you type ``git log`` you will show a log of all the commits, or changes
+    If you type :bash:`git log` you will show a log of all the commits, or changes
     made to your repository.
 
 13. Go back to the top-level directory:
@@ -306,7 +309,7 @@ Open a terminal to begin:
     ..
 
 14. And now that you've set up our workspace, create a blank Python script,
-    called ``mysci.py``:
+    called :code:`mysci.py`:
 
     .. code-block:: bash
 
@@ -314,7 +317,7 @@ Open a terminal to begin:
 
     ..
 
-15. Edit the ``mysci.py`` file using nano, vim, or your favorite text editor:
+15. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
 
     .. code-block:: python
        :linenos:
@@ -323,9 +326,9 @@ Open a terminal to begin:
 
     ..
 
-    Your classic first command will be to print ``Hello, world!``.
+    Your classic first command will be to print :python:`Hello, world!`.
 
-16. Try testing the script by typing "python" and then the name of your script:
+16. Try testing the script by typing :bash:`python` and then the name of your script:
 
     .. code-block:: bash
 
@@ -337,10 +340,10 @@ Open a terminal to begin:
 
 
 17. You probably won't need to run your Hello World script again, so delete the
-    ``print("Hello, world!")`` line and start over with something more useful -
+    :python:`print("Hello, world!")` line and start over with something more useful -
     we'll read the first 4 lines from our datafile.
 
-    Change the ``mysci.py`` script to read:
+    Change the :code:`mysci.py` script to read:
 
     .. code-block:: python
        :linenos:
@@ -362,11 +365,11 @@ Open a terminal to begin:
     can be in single or double quotes.
 
     Then create a variable associated with the opened file, here it is called
-    ``datafile``.
+    :python:`datafile`.
 
     The 'r' argument in the open command indicates that we are opening the
     file for reading capabilities. Other input arguments for open include
-    ``'w'``, for example, if you wanted to write to the file.
+    :python:`'w'`, for example, if you wanted to write to the file.
 
     The readline command moves through the open file, always reading the next
     line.
@@ -374,7 +377,7 @@ Open a terminal to begin:
     And remember to close your datafile.
 
     Comments in Python are indicated with a hash, as you can see in the first
-    line ``# Read the data file``. Comments are ignored by the interpreter.
+    line :python:`# Read the data file`. Comments are ignored by the interpreter.
 
     `More information on the open() function <https://docs.python.org/3/library/functions.html#open>`_
 
@@ -386,11 +389,11 @@ Open a terminal to begin:
 
     ..
 
-    Testing of your script with ``python mysci.py`` should be done every time
+    Testing of your script with :bash:`python mysci.py` should be done every time
     you wish to execute the script. This will no longer be specified as a
     unique step in between every change to our script.
 
-19. Change the ``mysci.py`` script to read your whole data file:
+19. Change the :code:`mysci.py` script to read your whole data file:
 
     .. code-block:: python
        :linenos:
@@ -410,16 +413,16 @@ Open a terminal to begin:
     ..
 
     Our code is similar to the before, but now we've read the entire file. To
-    test that this worked. We'll ``print(data)``. Print statements in python
+    test that this worked. We'll :python:`print(data)`. Print statements in python
     require parenthesis around the object you wish to print, here it is data.
 
-    Try ``print('data')`` as well, now Python will print the string 'data', as
+    Try :python:`print('data')` as well, now Python will print the string 'data', as
     it did for the hello world function, instead of the information stored in
     the variable data.
 
-    Don't forget to execute with ``python mysci.py``.
+    Don't forget to execute with :bash:`python mysci.py`.
 
-20. Change the ``mysci.py`` script to read your whole data file using a context
+20. Change the :code:`mysci.py` script to read your whole data file using a context
     manager with:
 
     .. code-block:: python
@@ -439,7 +442,7 @@ Open a terminal to begin:
     open. The with statement is a context manager that provides clean-up and
     assures that the file is automatically closed after you've read it.
 
-    The indendation of the line ``data = datafile.read()`` is very important.
+    The indendation of the line :python:`data = datafile.read()` is very important.
     Python is sensitive to white space and will not work if you mix spaces and
     tabs (Python does not know your tab width). It is best practice to use
     spaces as opposed to tabs (tab width is not consistent between editors).
@@ -447,7 +450,7 @@ Open a terminal to begin:
     Combined these two lines mean: with the datafile opened, I'd like to read
     it.
 
-    And execute with ``python mysci.py``.
+    And execute with :bash:`python mysci.py`.
 
     `More information on context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
@@ -464,10 +467,10 @@ Open a terminal to begin:
 
     ..
 
-    And execute with ``python mysci.py``
+    And execute with :bash:`python mysci.py`
 
-    Object types refer to 'float' 'integer' 'string' or other types that you
-    can create.
+    Object types refer to :python:`float`, :python:`integer`, :python:`string`
+    or other types that you can create.
 
     Python is a dynamically typed language, which means you don't have to
     explicitly specify the datatype when you name a variable, Python will
@@ -511,8 +514,8 @@ Open a terminal to begin:
 
     ..
 
-    Here a good commit message ``-m`` for our changes would be
-    ``"Adding script file"``
+    Here a good commit message :code:`-m` for our changes would be
+    :code:`"Adding script file"`
 
 27. Let's check the status of our Git repository, now. It should tell you that
     there are no changes made to your repository (i.e., your repository is
@@ -532,7 +535,7 @@ Open a terminal to begin:
 
     ..
 
-    You can also print simplified logs with the ``--oneline`` option.
+    You can also print simplified logs with the :code:`--oneline` option.
 
 
 -----
@@ -541,11 +544,11 @@ That concludes the first lesson of this virtual tutorial.
 
 In this section you set up a workspace by creating your directory, conda
 environment, and git repository. You downloaded a .txt file and read it using
-the Python commands of ``open()``, ``readline()``, ``read()``, ``close()``,
-and ``print()``, as well as the context manager ``with``. You should be
-familiar with the ``str`` datatype. You also used fundamental git commands
-such as ``git init``, ``git status``, ``git add``, ``git commit``, and
-``git log``.
+the Python commands of :python:`open()`, :python:`readline()`, :python:`read()`,
+:python:`close()`, and :python:`print()`, as well as the context manager
+:python:`with`. You should be familiar with the :python:`str` datatype. You
+also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
+:bash:`git add`, :bash:`git commit`, and :bash:`git log`.
 
 -----
 
@@ -571,10 +574,10 @@ You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
 
-1. One big string isn't very useful, so use ``str.split()`` to parse the data
+1. One big string isn't very useful, so use :python:`str.split()` to parse the data
    file into a data structure you can use.
 
-   Change the ``mysci.py`` script to read:
+   Change the :code:`mysci.py` script to read:
 
    .. code-block:: python
       :linenos:
@@ -602,23 +605,24 @@ data structures.
    ..
 
    The first thing that is different in this script is an initialized data
-   variable; ``data = []`` creates the variable data as an empty list which we
+   variable; :python:`data = []` creates the variable data as an empty list which we
    will populate as we read the file. Python lists are a collection data type
    that are ordered and changeable - meaning you can call information out of
    the list by its index and you can add or delete elements to your list. Lists
-   are denoted by square brackets, ``[]``.
+   are denoted by square brackets, :python:`[]`.
 
    Then with the datafile open for reading capabilities, we are going to write
-   two separate ``for`` loops. A ``for`` loop is used for iterating over a
-   sequence (such as a list). It is important to note the syntax of Python
-   ``for`` loops: the ``:`` at the end of for ``for`` line, the tab-indentation
-   of all lines within the ``for`` loop, and perhaps the absence of an
-   ``end for`` that is found in languages such as Matlab.
+   two separate :python:`for` loops. A :python:`for` loop is used for iterating
+   over a sequence (such as a list). It is important to note the syntax of Python
+   :python:`for` loops: the :python:`:` at the end of for :python:`for` line, the
+   tab-indentation of all lines within the :python:`for` loop, and perhaps the
+   absence of an :code:`end for` that is found in languages such as Matlab.
 
-   In your first ``for`` loop, loop through the dummy variable ``_`` in
-   ``range(3)``. ``range`` returns a sequence of numbers, starting at 0 and
-   incrementing by 1 (by default), ending at the specified length. Here if you
-   were to ``print(_)`` on each line of the for loop you would see:
+   In your first :python:`for` loop, loop through the dummy variable :python:`_`
+   in :python:`range(3)`. The :python:`range` function returns a sequence of
+   numbers, starting at 0 and incrementing by 1 (by default), ending at the
+   specified length. Here if you were to :python:`print(_)` on each line of the
+   for loop you would see:
 
    .. code-block:: python
 
@@ -628,29 +632,29 @@ data structures.
 
    ..
 
-   Try it out if you are unsure of how this works. Here the ``_`` variable is a
-   placeholder, meaning the variable is never called within the loop.
+   Try it out if you are unsure of how this works. Here the :python:`_` variable
+   is a placeholder, meaning the variable is never called within the loop.
 
-   So again, in the first ``for`` loop, you execute the ``readline`` command
-   (which you will remember moves down to the next line each time it is
+   So again, in the first :python:`for` loop, you execute the :python:`readline`
+   command (which you will remember moves down to the next line each time it is
    consecutively called) 3 times to read through the file header (which is 3
-   lines long). **Yay!** You have just written your first ``for`` loop!
+   lines long). **Yay!** You have just written your first :python:`for` loop!
 
-   Then in a second ``for`` loop, you loop through lines in the remainder of
+   Then in a second :python:`for` loop, you loop through lines in the remainder of
    your datafile. On each line, split it along white space. The
-   ``string.split()`` method splits a string into a list on a specified
+   :python:`string.split()` method splits a string into a list on a specified
    separator, the default being white space. You could use any character you
-   like, but other useful options are ``/t`` for splitting along tabs or
-   ``,`` along commmas.
+   like, but other useful options are :python:`/t` for splitting along tabs or
+   :python:`,` along commmas.
 
-   Then you ``append`` this split line list to the end of your data ``list``.
-   The ``list.append()`` method adds a single item to the end of your ``list``.
-   After every line in your ``for`` loop iteration, the data ``list`` that was
-   empty is one element longer. Now we have a ``list`` of ``lists`` for our
-   data variable - a ``list`` of the data in each line for multiple lines.
+   Then you :python:`append` this split line list to the end of your data :python:`list`.
+   The :python:`list.append()` method adds a single item to the end of your :python:`list`.
+   After every line in your :python:`for` loop iteration, the data :python:`list` that was
+   empty is one element longer. Now we have a :python:`list` of :python:`list`\s for our
+   data variable - a :python:`list` of the data in each line for multiple lines.
 
-   When you print each datum in data, you'll see that each datum is a ``list``
-   of ``string`` values.
+   When you print each datum in data, you'll see that each datum is a :python:`list`
+   of :python:`string` values.
 
    We just covered a lot of Python nuances in a very little bit a code!
 
@@ -659,7 +663,7 @@ data structures.
 
 2. Now, to practice list indexing, get the first, 10th, and last row in data.
 
-   Change the DEBUG section of our ``mysci.py`` script to:
+   Change the DEBUG section of our :code:`mysci.py` script to:
 
    .. code-block:: python
       :lineno-start: 17
@@ -672,12 +676,13 @@ data structures.
    ..
 
    Index your list by adding the number of your index in square brackets,
-   ``[]``, after the name of the ``list``. Python is 0-indexed so ``data[0]``
-   refers to the first index and ``[-1]`` refers to the last index.
+   :python:`[]`, after the name of the :python:`list`. Python is 0-indexed so
+   :python:`data[0]` refers to the first index and :python:`[-1]` refers to
+   the last index.
 
 3. Now, to practice slice indexing, get the first 10 rows in data.
 
-   Change the DEBUG section of our ``mysci.py`` script to:
+   Change the DEBUG section of our :code:`mysci.py` script to:
 
    .. code-block:: python
       :lineno-start: 17
@@ -688,14 +693,15 @@ data structures.
 
    ..
 
-   Using a colon, ``:``, between two index integers ``a`` and ``b``, you get
-   all indexes between a and b. See what happens when you print ``data[:10]``,
-   ``data[0:10:2]``, and ``data[slice(0,10,2)]``.  What's the difference?
+   Using a colon, :python:`:`, between two index integers :python:`a` and
+   :python:`b`, you get all indexes between :python:`a` and :python:`b`. See
+   what happens when you print :python:`data[:10]`, :python:`data[0:10:2]`, and
+   :python:`data[slice(0,10,2)]`.  What's the difference?
 
 4. Now, to practice nested indexing,get the 5th, first 5, and every other
    column of rows 8 in data.
 
-   Change the DEBUG section of the ``mysci.py`` script to:
+   Change the DEBUG section of the :code:`mysci.py` script to:
 
    .. code-block:: python
       :lineno-start: 17
@@ -707,9 +713,9 @@ data structures.
 
    ..
 
-   In nested ``list`` indexing, the first index determines the row, and the
+   In nested :python:`list` indexing, the first index determines the row, and the
    second determines the element from that row. Also try printing
-   ``data[5:8][4]``, why doesn't this work?
+   :python:`data[5:8][4]`, why doesn't this work?
 
 5. Clean up the file (remove DEBUG section), stage the changes, and commit.
 
@@ -727,11 +733,11 @@ data structures.
    Each column is a time-series of data. We would ideally like each time-series
    easily accessible, which is not the case when data is row-column ordered
    (like it currently is). (Remember what happens when you try to do something
-   like ``data[:][4]``!)
+   like :python:`data[:][4]`!)
 
    Let's get our data into a more convenient named-column format.
 
-   Change ``mysci.py`` to the following:
+   Change :code:`mysci.py` to the following:
 
    .. code-block:: python
       :linenos:
@@ -761,17 +767,17 @@ data structures.
 
    ..
 
-   First we'll initialize a dictionary, ``dict``, indicated by the curly
-   brackets, ``{}``. Dictionaries, like ``list``s, are changeable, but they
+   First we'll initialize a dictionary, :python:`dict`, indicated by the curly
+   brackets, :python:`{}`. Dictionaries, like :python:`list`\s, are changeable, but they
    are unordered. They have keys, rather than positions, to point to their
    elements. Here you have created 3 elements of your dictionary, all currently
-   empty ``list``s, and specified by the keys ``date``, ``time``, and
-   ``tempout``. Keys act similarly to indexes: to pull out the ``tempout``
-   element from data you would type ``data['tempout']``.
+   empty :python:`list`\s, and specified by the keys :python:`date`, :python:`time`, and
+   :python:`tempout`. Keys act similarly to indexes: to pull out the :python:`tempout`
+   element from data you would type :python:`data['tempout']`.
 
    Grab date (the first column of each line), time (the second column of each
    line), and temperature data (the third column), from each line and
-   ``append`` it to the ``list`` associated with each of these data variables.
+   :python:`append` it to the :python:`list` associated with each of these data variables.
 
    `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
@@ -789,7 +795,7 @@ data structures.
    everything read fromthe text file is a str. What if we want to do math on
    this data, then we need it to be a different data type!
 
-   So, let's convert the tempout time-series to be a ``float`` by changing the
+   So, let's convert the tempout time-series to be a :python:`float` by changing the
    line:
 
    .. code-block:: python
@@ -808,14 +814,14 @@ data structures.
 
    ..
 
-   The ``float`` datatype refers to floating point real values - the datatype
+   The :python:`float` datatype refers to floating point real values - the datatype
    of any numbers with values after a decimal point. You could also change the
-   datatype to ``int``, which will round the values down to the closest full
+   datatype to :python:`int`, which will round the values down to the closest full
    integer.
 
    `More on Python numeric types (int, float, complex) <https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex>`_
 
-9. Add a DEBUG section at the end and see what ``data['tempout']`` now looks
+9. Add a DEBUG section at the end and see what :python:`data['tempout']` now looks
    like.
 
    Do you see a difference? It should now be a list of floats.
@@ -831,7 +837,7 @@ data structures.
 
 11. This seems great, so far! But what if you want to read more columns to our
     data later? You would have to change the initialization of the data
-    variable (at the top of ``mysci.py``) and have to add the appropriate line
+    variable (at the top of :code:`mysci.py`) and have to add the appropriate line
     in the "read and parse" section. Essentially, that means you need to
     maintain 2 parts of the code and make sure that both remain consistent with
     each other.
@@ -840,7 +846,7 @@ data structures.
     only one part of the code and know that the rest of the code will remain
     consistent. So, let's fix this.
 
-    Change ``mysci.py`` to:
+    Change :code:`mysci.py` to:
 
     .. code-block:: python
        :linenos:
@@ -878,25 +884,25 @@ data structures.
 
     ..
 
-    You have now created a columns ``dict`` that points each data variable to
-    its column-index. And a types ``dict``, that indicates what type to convert
+    You have now created a columns :python:`dict` that points each data variable to
+    its column-index. And a types :python:`dict`, that indicates what type to convert
     the data when necessary. When you want new variables pulled out of the
     datafile, change these two variables.
 
-    Initializing the data ``dict`` now includes a ``for`` loop, where for each
+    Initializing the data :python:`dict` now includes a :python:`for` loop, where for each
     variable specified in columns that key is initialized pointing to an empty
-    ``list``. This is the first time you have looped over a ``dict`` and added
-    key-value pairs to a ``dict`` via assignment.
+    :python:`list`. This is the first time you have looped over a :python:`dict` and added
+    key-value pairs to a :python:`dict` via assignment.
 
-    When reading and parsing the file, you created your first nested ``for``
+    When reading and parsing the file, you created your first nested :python:`for`
     loop. For every line of the datafile, split that line - and then for every
-    desired variable in the columns ``dict`` (date, time, tempout): grab the
+    desired variable in the columns :python:`dict` (date, time, tempout): grab the
     datum from the current split line with the specified index (0, 1, 2), use
-    the ``dict.get()`` method to find the desired datatype if specired
-    (avoiding ``key-not-found`` errors and defaulting to ``str`` if
-    unspecified), convert the datum to the desired datatype, and ``append``
-    the datum to the ``list`` associated with each column key within the data
-    ``dict``.
+    the :python:`dict.get()` method to find the desired datatype if specired
+    (avoiding :python:`key-not-found` errors and defaulting to :python:`str` if
+    unspecified), convert the datum to the desired datatype, and :python:`append`
+    the datum to the :python:`list` associated with each column key within the data
+    :python:`dict`.
 
 12. Clean up (remove DEBUG section), stage, and commit
 
@@ -914,11 +920,11 @@ That concludes the second lesson of this virtual tutorial.
 In this section you saved the variables of date, time, and tempout in a data
 dictionary.
 
-You should now be familiar with the data structures ``list``s (as well as list
-indexing, nested lists, and the command ``list.append()``), ``dict``s (their
-keys and the command ``dict.get()``), and ``range``s. You also learned to write
-``for`` loops, about the ``float`` datatype, and using the Python commands
-``str.split()``.
+You should now be familiar with the data structures :python:`list`\s (as well as list
+indexing, nested lists, and the command :python:`list.append()`), :python:`dict`\s (their
+keys and the command :python:`dict.get()`), and :python:`range`\s. You also learned to write
+:python:`for` loops, about the :python:`float` datatype, and using the Python commands
+:python:`str.split()`.
 
 -----
 
@@ -954,9 +960,9 @@ function and learning about basic math operators.
 
    ..
 
-   Where ``WCI`` refers to the Wind Chill in degrees F, ``t`` is temperature in
-   degrees F, ``v`` is wind speed in mph, and the other variables are as
-   follows: ``a`` = 35.74, ``b`` = 0.6215, ``c`` = 35.75, and ``d`` = 0.4275.
+   Where *WCI* refers to the Wind Chill in degrees F, *t* is temperature in
+   degrees F, *v* is wind speed in mph, and the other variables are as
+   follows: *a* = 35.74, *b* = 0.6215, *c* = 35.75, and *d* = 0.4275.
    Wind Chill Index is only defined for temperatures within the range -45 to
    +45 degrees F.
 
@@ -1021,11 +1027,11 @@ function and learning about basic math operators.
 
    Here is your first introduction math operators in Python. Addition,
    subtraction, and multiplication look much like you'd expect. A double
-   astericks, ``**``, indicates an exponential. A backslash, ``/``, is for
-   division, and a double backslash, ``//``, is for integer division.
+   astericks, :python:`**`, indicates an exponential. A backslash, :python:`/`,
+   is for division, and a double backslash, :python:`//`, is for integer division.
 
    And then let's compute a new list with windchill data atthe bottom of
-   ``mysci.py``:
+   :code:`mysci.py`:
 
    .. code-block:: python
       :lineno-start: 40
@@ -1037,15 +1043,15 @@ function and learning about basic math operators.
 
    ..
 
-   Now we'll call our function. Initialize a ``list`` for wind chill with empty
-   square brackets, ``[]``. And in a ``for`` loop, loop through our temperature
-   and wind speed data, applying the function to each ``tuple`` data pair.
-   ``tuple`` s are ordered like ``list`` s, but they are indicated by
-   parenthesis, ``()``, instead of square brackets and cannot be changed or
-   appended. ``tuple`` s are generally faster than ``list`` s.
+   Now we'll call our function. Initialize a :python:`list` for wind chill with empty
+   square brackets, :python:`[]`. And in a :python:`for` loop, loop through our temperature
+   and wind speed data, applying the function to each :python:`tuple` data pair.
+   :python:`tuple`\s are ordered like :python:`list`\s, but they are indicated by
+   parenthesis, :python:`()`, instead of square brackets and cannot be changed or
+   appended. :python:`tuple`\s are generally faster than :python:`list`\s.
 
-   We use the ``zip`` function in Python to automatically unravel the
-   ``tuple`` s. Take a look at ``zip([1,2], [3,4,5])``. What is the result?
+   We use the :python:`zip` function in Python to automatically unravel the
+   :python:`tuple`\s. Take a look at :python:`zip([1,2], [3,4,5])`. What is the result?
 
    And finally, add a DEBUG section to see the results:
 
@@ -1069,9 +1075,9 @@ function and learning about basic math operators.
 
 5. Now, the wind chill factor is actually in the datafile, so we can read it
    from the file and compare that value to our computed values. To do this, we
-   need to read the windchill from column 12 as a ``float``:
+   need to read the windchill from column 12 as a :python:`float`:
 
-   Edit the columns and types ``dict``:
+   Edit the columns and types :python:`dict`:
 
    .. code-block:: python
       :linenos:
@@ -1106,8 +1112,8 @@ function and learning about basic math operators.
 
    ..
 
-   Using ``f-string`` s with float formatting you can determine the precision
-   with which to print the values to. ``.5f`` means you want 5 places after the
+   Using *f-*:python:`\string`\s with float formatting you can determine the precision
+   with which to print the values to. The :python:`.5f` means you want 5 places after the
    decimal point.
 
    `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
@@ -1142,13 +1148,13 @@ function and learning about basic math operators.
 
    ..
 
-   Here you used ``f-string`` formatting with more ``f-string`` formatting
-   options. ``>6`` indicates that you'd like the characters of the string to be
+   Here you used *f-*:python:`string` formatting with more *f-*:python:`string` formatting
+   options. The :python:`>6` indicates that you'd like the characters of the string to be
    right-justified and to take up 6 spaces.
 
-   ``9f`` specifies that you want the value to fill 9 spaces, so ``9.6f``
+   The :python:`9f` specifies that you want the value to fill 9 spaces, so :python:`9.6f`
    indicates you'd like the value to fill 9 spaces with 6 of them being after
-   the decimal point. Same concept for ``10.6f``.
+   the decimal point. Same concept for :python:`10.6f`.
 
    You now have your first complete Python script!
 
@@ -1190,7 +1196,7 @@ function and learning about basic math operators.
        Copy the link in the input right beneath the title, it should look
        something like this:
 
-       ``https://github.com/<user_name>/<repo>.git``
+       :code:`https://github.com/<user_name>/<repo>.git`
 
     6. Then to set your remote repository, in your project terminal type:
 
@@ -1230,8 +1236,8 @@ That concludes the first part of this virtual tutorial where you learned to
 write your first Python script.
 
 In this section you calculated wind chill index by writing and calling your
-first function. You also learned about Python math operators, the ``zip()``
-command, ``tuple`` datastructure, ``f-string`` formatting, and how to push your
+first function. You also learned about Python math operators, the :python:`zip()`
+command, :python:`tuple` datastructure, *f-*:python:`string` formatting, and how to push your
 repository to GitHub.
 
 -----
