@@ -79,10 +79,14 @@ It is easy to write new code quickly with less typing.
 
 -----
 
-Here are some Python references we recommend:
+.. seealso::
 
-- `Official Python 3 Documentation <https://docs.python.org/3/>`_
-- `Official GitHub Documentation <https://help.github.com/en>`_
+   Here are some Python references we recommend:
+
+   - `Official Python 3 Documentation <https://docs.python.org/3/>`_
+   - `Official GitHub Documentation <https://help.github.com/en>`_
+
+..
 
 -----
 
@@ -113,9 +117,10 @@ If you don't have conda installed at all,
 
    ..
 
-   **NOTE** If you have a REALLY old version of conda it might be easier to
-   delete it and then reinstall it. But before doing this you have to check
-   your env-list to see if there are any environments you created and want to save.
+   .. note::
+      If you have a REALLY old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list to see if there are any environments you created and want to save.
+
+   ..
 
 3. Check your conda version again.
 
@@ -195,7 +200,11 @@ Open a terminal to begin:
    versions of packages and libraries and should run the same as you expect it
    to.
 
-   `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
+   .. seealso::
+
+      `More information on Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
+
+   ..
 
 4. Make the directory a Git repository:
 
@@ -211,7 +220,11 @@ Open a terminal to begin:
    This command adds version control to this new ncar_python_tutorial directory
    and all of its contents.
 
-   `More information on Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
+   .. seealso::
+
+      `More information on Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
+
+   ..
 
 5. Create a data directory:
 
@@ -379,7 +392,11 @@ Open a terminal to begin:
     Comments in Python are indicated with a hash, as you can see in the first
     line :python:`# Read the data file`. Comments are ignored by the interpreter.
 
-    `More information on the open() function <https://docs.python.org/3/library/functions.html#open>`_
+    .. seealso::
+
+       `More information on the open() function <https://docs.python.org/3/library/functions.html#open>`_
+
+    ..
 
 18. And test your script again by typing:
 
@@ -452,7 +469,11 @@ Open a terminal to begin:
 
     And execute with :bash:`python mysci.py`.
 
-    `More information on context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+    .. seealso::
+
+       `More information on context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+
+    ..
 
 21. What did we just see? What is the data object? What type is data? How do we
     find out?
@@ -487,7 +508,11 @@ Open a terminal to begin:
 
     ..
 
-    Note what files have been changed in the repository.
+    .. note::
+    
+       Which files have been changed in the repository.
+
+    ..
 
 24. Stage these changes:
 
@@ -551,13 +576,16 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 :bash:`git add`, :bash:`git commit`, and :bash:`git log`.
 
 -----
+.. seealso::
 
-Suggested resources:
+   Suggested resources:
 
-- `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
-- `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
-- `The open() function <https://docs.python.org/3/library/functions.html#open>`_
-- `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+   - `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
+   - `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
+   - `The open() function <https://docs.python.org/3/library/functions.html#open>`_
+   - `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
+
+..
 
 -----
 
@@ -658,8 +686,12 @@ data structures.
 
    We just covered a lot of Python nuances in a very little bit a code!
 
-   `More information on for-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
-   `More information on Python lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+   .. seealso::
+      
+      `More information on for-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
+      `More information on Python lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+
+   ..
 
 2. Now, to practice list indexing, get the first, 10th, and last row in data.
 
@@ -778,8 +810,12 @@ data structures.
    Grab date (the first column of each line), time (the second column of each
    line), and temperature data (the third column), from each line and
    :python:`append` it to the :python:`list` associated with each of these data variables.
+   
+   .. seealso::
+   
+      `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
-   `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+   ..
 
 7. Clean up (remove DEBUG section), stage, and commit
 
@@ -819,7 +855,11 @@ data structures.
    datatype to :python:`int`, which will round the values down to the closest full
    integer.
 
-   `More on Python numeric types (int, float, complex) <https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex>`_
+   .. seealso::
+
+      `More on Python numeric types (int, float, complex) <https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex>`_
+
+   ..
 
 9. Add a DEBUG section at the end and see what :python:`data['tempout']` now looks
    like.
@@ -928,10 +968,14 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
 -----
 
-Suggested resources:
+.. seealso::
 
-- `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
-- `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+   Suggested resources:
+
+   - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
+   - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+
+..
 
 -----
 
@@ -1023,7 +1067,11 @@ function and learning about basic math operators.
    followed by a colon. On the next lines tab-indented is the code of your
    function, and your return value.
 
-   `More on user defined functions <https://docs.python.org/2.0/ref/function.html>`_
+   .. seealso::
+
+      `More on user defined functions <https://docs.python.org/2.0/ref/function.html>`_
+
+   ..
 
    Here is your first introduction math operators in Python. Addition,
    subtraction, and multiplication look much like you'd expect. A double
@@ -1088,7 +1136,10 @@ function and learning about basic math operators.
 
    ..
 
-   **NOTE:** the line continuation indentation
+   ..
+
+   .. note::
+      the line continuation indentation.
 
    and
 
@@ -1115,8 +1166,12 @@ function and learning about basic math operators.
    Using *f-*:python:`\string`\s with float formatting you can determine the precision
    with which to print the values to. The :python:`.5f` means you want 5 places after the
    decimal point.
+   
+   .. seealso::
 
-   `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+      `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+
+   ..
 
    Test the results. What do you see? Our computation isn't very good is it?
 
@@ -1242,7 +1297,11 @@ repository to GitHub.
 
 -----
 
-Suggested resources:
+.. seealso::
 
-- `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
-- `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+   Suggested resources:
+   
+   - `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
+   - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
+
+..
