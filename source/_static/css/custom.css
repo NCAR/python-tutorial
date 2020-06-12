@@ -78,6 +78,7 @@ footer {
  ************************************************/
 .admonition {
   border: 1px solid #CCC;
+  margin: 10px;
   padding: 10px;
 }
 
@@ -86,7 +87,7 @@ footer {
 }
 
 div.note {
-  background-color: #4e9a06;
+  background-color: #A7CD83;
 }
 
 div.seealso {
