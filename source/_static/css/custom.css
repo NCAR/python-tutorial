@@ -76,15 +76,21 @@ footer {
 /************************************************
  SPHINX
  ************************************************/
+.admonition {
+  border: 1px solid #CCC;
+  padding: 10px;
+}
+
+.admonition-title {
+  font-weight: bold;
+}
 
 div.note {
-  background-color: #EEE;
-  border: 1px solid #CCC;
+  background-color: #4e9a06;
 }
 
 div.seealso {
   background-color: #EEE;
-  border: 1px solid #CCC;
 }
 
 .headerlink {
