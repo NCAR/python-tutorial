@@ -81,8 +81,6 @@ It is easy to write new code quickly with less typing.
 
 .. seealso::
 
-   Here are some Python references we recommend:
-
    - `Official Python 3 Documentation <https://docs.python.org/3/>`_
    - `Official GitHub Documentation <https://help.github.com/en>`_
 
@@ -578,8 +576,6 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 -----
 .. seealso::
 
-   Suggested resources:
-
    - `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
    - `Git repositories <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_
    - `The open() function <https://docs.python.org/3/library/functions.html#open>`_
@@ -970,8 +966,6 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
 .. seealso::
 
-   Suggested resources:
-
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
    - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
@@ -1298,8 +1292,6 @@ repository to GitHub.
 -----
 
 .. seealso::
-
-   Suggested resources:
    
    - `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
    - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
