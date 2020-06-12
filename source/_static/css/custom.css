@@ -77,6 +77,16 @@ footer {
  SPHINX
  ************************************************/
 
+div.note {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+}
+
+div.seealso {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+}
+
 .headerlink {
   visibility: hidden;
 }
