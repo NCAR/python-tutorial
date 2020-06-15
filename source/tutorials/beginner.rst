@@ -574,6 +574,7 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 :bash:`git add`, :bash:`git commit`, and :bash:`git log`.
 
 -----
+
 .. seealso::
 
    - `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_
