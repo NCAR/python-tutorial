@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <main role="main">
+      <div class="container-fluid px-0 full-ht">
+        <div class="jumbotron">
+          <div class="container">
+            <h1>NCAR Python Tutorial</h1>
+            <p>Let's learn</p>
+            <a class="btn btn-primary btn-lg text-light" href="{{ pathto('tutorials/beginner') }}">Start Beginner Tutorial</a>
+          </div>
+        </div>
+
+        <div class="container">
+          <h2>About Xdev</h2>
+          <p>
+            These tutorials are supported by the NCAR Xdev team. 
+            Xdev works to make curiosity-driven analysis of "big" scientific data a day-to-day reality. 
+            This goal has two components: the first is advancing technology 
+            and the second is helping scientists understand the evolving tools available to them. 
+            More information on Xdev can be found on 
+            <a class="reference external" href="https://ncar.github.io/xdev/posts/we-are-xdev"> our blog site. </a>
+          </p>
+        </div>
+      </div>
+    </main>
+{% endblock main %}

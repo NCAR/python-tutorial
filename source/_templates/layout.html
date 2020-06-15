@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="container-fluid">
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h4>Tutorials</h4>
+        </div>
+
+        <div class="container accordian md-accordian accordian-sidebar">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingBeginner">
+                <div class="tier0" data-toggle="collapse" data-target="#collapseBeginner" aria-expanded="true" aria-controls="collapseBeginner">
+                  <a href="#">Beginner <i class="fas fa-angle-down rotate-icon"></i></a>
+                </div>
+              </div>
+
+              <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
+                <div class="card-body" id="beginnerOutline">
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#beginner-python-for-scientists">Welcome</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#requirements-installation">Requirements</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingBeginnerPart1">
+                      <div class="tier1 collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1"  aria-expanded="false" aria-controls="collapseBeginnerPart1">
+                        <a href="#first-python-script">
+                          First Python Script <i class="fas fa-angle-down rotate-icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body collapse" aria-labelledby="headingBeginnerPart1" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
+                      <div class="card-body accordian-tier3" id="beginnerPart1">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#reading-a-txt-file">
+                                Reading in a .txt File
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#creating-a-data-dictionary">
+                                Creating a Data Directory
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#writing-functions">
+                                Writing Functions
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <main role="main" class="content">
+        {% block body %}{% endblock %}
+      </main>
+
+    </div>
+{% endblock main %}
