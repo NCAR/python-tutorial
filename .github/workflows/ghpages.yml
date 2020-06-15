@@ -1,4 +1,4 @@
-name: publish-docs
+name: publish
 
 on:
   push:
@@ -51,4 +51,4 @@ jobs:
           FOLDER: build/html
           CLEAN: true
           SSH: true
-          COMMIT_MESSAGE: "[skip ci] Deploy Docs to GitHub Pages"
+          COMMIT_MESSAGE: "[skip ci] Deploy to GitHub Pages"
