@@ -116,7 +116,7 @@ If you don't have conda installed at all,
    ..
 
    .. note::
-      If you have a _really_ old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with :bash:`conda env list` to see if there are any environments you created and want to save.
+      If you have a *really* old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with :bash:`conda env list` to see if there are any environments you created and want to save.
 
    ..
 
