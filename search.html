@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="_static/css/custom.css" type=text/css>
+    <link rel="stylesheet" href="_static/pygments.css" type=text/css>
+
+    <title>NCAR Python Tutorial</title>
+
+    <script src="https://kit.fontawesome.com/be4ef5002e.js" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
+
+
+    <nav class="navbar navbar-expand navbar-dark sticky-top bg-dark">
+      <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="tutorials/beginner.html">Beginner</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+
+
+    <div class="container-fluid">
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h4>Tutorials</h4>
+        </div>
+
+        <div class="container accordian md-accordian accordian-sidebar">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingBeginner">
+                <div class="tier0" data-toggle="collapse" data-target="#collapseBeginner" aria-expanded="true" aria-controls="collapseBeginner">
+                  <a href="#">Beginner <i class="fas fa-angle-down rotate-icon"></i></a>
+                </div>
+              </div>
+
+              <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
+                <div class="card-body" id="beginnerOutline">
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#beginner-python-for-scientists">Welcome</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#requirements-installation">Requirements</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingBeginnerPart1">
+                      <div class="tier1 collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1"  aria-expanded="false" aria-controls="collapseBeginnerPart1">
+                        <a href="#first-python-script">
+                          First Python Script <i class="fas fa-angle-down rotate-icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body collapse" aria-labelledby="headingBeginnerPart1" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
+                      <div class="card-body accordian-tier3" id="beginnerPart1">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#reading-a-txt-file">
+                                Reading in a .txt File
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#creating-a-data-dictionary">
+                                Creating a Data Directory
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#writing-functions">
+                                Writing Functions
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <main role="main" class="content">
+        
+  <h1 id="search-documentation">Search</h1>
+  <div id="fallback" class="admonition warning">
+  <script>$('#fallback').hide();</script>
+  <p>
+    Please activate JavaScript to enable the search
+    functionality.
+  </p>
+  </div>
+  <p>
+    Searching for multiple words only shows matches that contain
+    all words.
+  </p>
+  <form action="" method="get">
+    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
+    <input type="submit" value="search" />
+    <span id="search-progress" style="padding-left: 10px"></span>
+  </form>
+  
+  <div id="search-results">
+  
+  </div>
+
+      </main>
+
+    </div>
+
+
+
+    <footer class="text-light bg-dark pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="https://www2.cisl.ucar.edu/"><img src="_static/img/CISL-contemp-logo-white.svg" alt="CISL" class="ncar-logo"></a>
+          </div>
+          <div class="col-12 col-md-auto">
+            <p class="footer-text copyright"><a href="https://www.ucar.edu/">University Corporation for Atmospheric Research</a> &copy; 2020<br>
+            Proudly published with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><br>
+            Apache 2.0</p>
+          </div>
+        </div>
+        <div class="row pt-3 border-top">
+          <div class="col-auto">
+            <a href="https://nsf.gov/"><img src="_static/img/footer-logo-nsf.png" alt="NSF" class="nsf-logo"></a>
+          </div>
+          <div class="col">
+            <p class="footer-text">This material is based upon work supported by the National Center for Atmospheric Research, a major facility
+            sponsored by the National Science Foundation and managed by the University Corporation for Atmospheric Research. Any opinions,
+            findings and conclusions or recommendations expressed in this material do not necessarily reflect the views of the National
+            Science Foundation.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+  </body>
+</html>

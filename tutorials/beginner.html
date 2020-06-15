@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../_static/css/custom.css" type=text/css>
+    <link rel="stylesheet" href="../_static/pygments.css" type=text/css>
+
+    <title>NCAR Python Tutorial</title>
+
+    <script src="https://kit.fontawesome.com/be4ef5002e.js" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
+
+
+    <nav class="navbar navbar-expand navbar-dark sticky-top bg-dark">
+      <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tutorials
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Beginner</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+
+
+    <div class="container-fluid">
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h4>Tutorials</h4>
+        </div>
+
+        <div class="container accordian md-accordian accordian-sidebar">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingBeginner">
+                <div class="tier0" data-toggle="collapse" data-target="#collapseBeginner" aria-expanded="true" aria-controls="collapseBeginner">
+                  <a href="#">Beginner <i class="fas fa-angle-down rotate-icon"></i></a>
+                </div>
+              </div>
+
+              <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
+                <div class="card-body" id="beginnerOutline">
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#beginner-python-for-scientists">Welcome</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#requirements-installation">Requirements</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingBeginnerPart1">
+                      <div class="tier1 collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1"  aria-expanded="false" aria-controls="collapseBeginnerPart1">
+                        <a href="#first-python-script">
+                          First Python Script <i class="fas fa-angle-down rotate-icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body collapse" aria-labelledby="headingBeginnerPart1" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
+                      <div class="card-body accordian-tier3" id="beginnerPart1">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#reading-a-txt-file">
+                                Reading in a .txt File
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#creating-a-data-dictionary">
+                                Creating a Data Directory
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#writing-functions">
+                                Writing Functions
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <main role="main" class="content">
+        
+  <div class="section" id="beginner-python-for-scientists">
+<h1>Beginner Python for Scientists<a class="headerlink" href="#beginner-python-for-scientists" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the Beginner Python for Scientists tutorial. In this self-paced
+course you will learn how to write Python code using Python best practices.</p>
+<p>Part 1 is designed to take one work day, but you may move through the content
+much slower or more quickly.</p>
+<p>Through these instructions you will develop scripts and use Git and GitHub to
+save and organize your work.</p>
+<p>At the end of this tutorial you will have a grasp of how to begin building
+your own library of Python tools for your scientific analysis workflows.</p>
+<div class="section" id="why-python">
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
+<p>You’re already here because you want to learn to use Python for your data
+analysis and visualizations. Python can be compared to other high-level,
+interpreted, object-oriented languages, but is especially great because it is
+free and open source!</p>
+<dl class="simple">
+<dt>High level languages:</dt><dd><p>Other high level languages include MatLab, IDL, and NCL. The advantage of
+high level languages is that they provide functions, data structures, and
+other utilities that are commonly used, which means it takes less code to
+get real work done. The disadvantage of high level languages is that they
+tend to obscure the low level aspects of the machine such as: memory use,
+how many floating point operations are happening, and other information
+related to performance. C and C++ are all examples of lower level
+languages. The “higher” the level of language, the more computing
+fundamentals are abstracted.</p>
+</dd>
+<dt>Interpreted languages:</dt><dd><p>Most of your work is probably already in interpreted languages if you’ve
+ever used IDL, NCL, or MatLab (interpreted languages are typically also
+high level). So you are already familiar with the advantages of this: you
+don’t have to worry about compiling or machine compatability (it is
+portable). And you are probably familiar with their deficiencies: sometimes
+they can be slower than compiled languages and potentially more memory
+intensive than.</p>
+</dd>
+<dt>Objected Oriented languages:</dt><dd><p>Objects are custom datatypes. For every custom datatypes, you usually have
+a set of operations you might want to conduct. For example, if you have an
+object that is a list of numbers you might want to apply a mathematical
+operation, such as sum, onto this list object in bulk. Not every  function
+can be applied to every datatype; it wouldn’t make sense to apply a
+logarithm to a string of letters or to capitalize a list of numbers. Data
+and the operations applied to them are grouped together into one object.</p>
+</dd>
+<dt>Open source:</dt><dd><p>Python as a language is open source which means that there is a community
+of developers behind its codebase. Anyone can join the developer community
+and contribute to deciding the future of the language. When someone
+identifies gaps to Python’s abilities, they can write up the code to fill
+these gaps. The open source nature of Python means that Python as a
+language is very adaptable to shifting needs of the user community.</p>
+</dd>
+</dl>
+<p>Python is a language designed for rapid prototyping and efficient programming.
+It is easy to write new code quickly with less typing.</p>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/">Official Python 3 Documentation</a></p></li>
+<li><p><a class="reference external" href="https://help.github.com/en">Official GitHub Documentation</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="requirements-installation">
+<h3>Requirements &amp; Installation<a class="headerlink" href="#requirements-installation" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t have conda installed at all,
+<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">please install it.</a></p>
+<ol class="arabic">
+<li><p>Check that you have conda or miniconda installed on your OS by checking your
+conda version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda --version
+</pre></div>
+</div>
+<p>At the time of writing this, the latest version of conda is 4.8. If you have
+an old version of conda installed, update it.</p>
+</li>
+<li><p>If necessary, update:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda update -n base conda
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have a _really_ old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with <code class="code bash docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see if there are any environments you created and want to save.</p>
+</div>
+</li>
+<li><p>Check your conda version again.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda --version
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git.</a></p>
+<p>Git is a program that tracks changes made to files. This makes it easy to
+maintain access to multiple versions of your code as you improve it, and
+revert your code back to a previous version if you’ve made any mistakes.</p>
+</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="first-python-script">
+<h3>First Python Script<a class="headerlink" href="#first-python-script" title="Permalink to this headline">¶</a></h3>
+<p>This section of the Zero to Thirty tutorial will focus on teaching you Python
+through the creation of your first script.</p>
+<p>You will learn about syntax and the reasoning behind why things are done the
+way they are done along the way.</p>
+<p>We will also incorporate lessons on the use of Git because we highly recommend
+you version controling your work.</p>
+<p>We are assuming you are familiar with bash and terminal commands. If not
+<a class="reference external" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/">here is a cheat sheet</a></p>
+<div class="section" id="reading-a-txt-file">
+<h4>Reading a .txt File<a class="headerlink" href="#reading-a-txt-file" title="Permalink to this headline">¶</a></h4>
+<p>In building your first Python script we will set up our workspace, read a
+<code class="code docutils literal notranslate"><span class="pre">.txt</span></code> file, and learn git fundamentals.</p>
+<p>Open a terminal to begin:</p>
+<ol class="arabic">
+<li><p>Create a directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir python_tutorial
+</pre></div>
+</div>
+<p>The first thing we have to do is create a directory to store our work.
+Let’s call it <code class="code docutils literal notranslate"><span class="pre">ncar_python_tutorial</span></code>.</p>
+</li>
+<li><p>Go into the directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> python_tutorial
+</pre></div>
+</div>
+</li>
+<li><p>Create a virtual environment for this project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create --name python_tutorial python
+</pre></div>
+</div>
+<p>A conda environment is a directory that contains a collection of packages
+or libraries that you would like installed and accessible for this workflow.
+Type conda create –name , the name of your project, here that is
+<code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>, and then specify that you are using python to create a
+virtual environment for this project.</p>
+<p>It is a good idea to create new environments for different projects because
+since Python is open source, new versions of the tools you use may become
+available. This is a way of guaranteeing that your script will use the same
+versions of packages and libraries and should run the same as you expect it
+to.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">More information on Conda environments</a></p>
+</div>
+</li>
+<li><p>Make the directory a Git repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init .
+</pre></div>
+</div>
+<p>A Git repository tracks changes made to files within your project. It looks
+like a <code class="code docutils literal notranslate"><span class="pre">.git/</span></code> folder inside that project.</p>
+<p>This command adds version control to this new ncar_python_tutorial directory
+and all of its contents.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">More information on Git repositories</a></p>
+</div>
+</li>
+<li><p>Create a data directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir data
+</pre></div>
+</div>
+<p>And we’ll make a directory for our data.</p>
+</li>
+<li><p>Go into the data directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> data
+</pre></div>
+</div>
+</li>
+<li><p>Download sample data from the CU Boulder weather station:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+</pre></div>
+</div>
+<p>This weather station is a Davis Instruments wireless Vantage Pro2 located on
+the CU-Boulder east campus at the SEEC building (40.01 N, 05.24 W, 5250 ft
+elevation). The station is monitored by the Atmospheric and Oceanic Sciences
+(ATOC) department and is part of the larger University of Colorado ATOC
+Weather Network.</p>
+</li>
+<li><p>Check the status of your repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<p>You will see the newly downloaded file listed as an “untracked file.” Git
+status will tell you what to do to untracked files. Those instructions
+mirror the next 2 steps:</p>
+</li>
+<li><p>Add the file to the Git staging area:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add wxobs20170821.txt
+</pre></div>
+</div>
+<p>By adding this datafile to your directory, you have made a change that is
+not yet reflected in our Git repository. Type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then the name
+of the altered file to stage your change.</p>
+</li>
+<li><p>Check your git status once again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<p>Now this file is listed as a “change to be commited,” i.e. staged. Staged
+changes can now be commited to your repository history.</p>
+</li>
+<li><p>Commit the file to the Git repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Adding sample data file&quot;</span>
+</pre></div>
+</div>
+<p>With <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, you’ve updated your repository with all the changes
+you staged, in this case just one file.</p>
+</li>
+<li><p>Look at the Git logs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+<p>If you type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> you will show a log of all the commits, or changes
+made to your repository.</p>
+</li>
+<li><p>Go back to the top-level directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+</pre></div>
+</div>
+</li>
+<li><p>And now that you’ve set up our workspace, create a blank Python script,
+called <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch mysci.py
+</pre></div>
+</div>
+</li>
+<li><p>Edit the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> file using nano, vim, or your favorite text editor:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Your classic first command will be to print <code class="code python docutils literal notranslate"><span class="name"><span class="pre">Hello</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">world</span></span><span class="error"><span class="pre">!</span></span></code>.</p>
+</li>
+<li><p>Try testing the script by typing <code class="code bash docutils literal notranslate"><span class="pre">python</span></code> and then the name of your script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python mysci.py
+</pre></div>
+</div>
+<p><strong>Yay!</strong> You’ve just created your first Python script.</p>
+</li>
+<li><p>You probably won’t need to run your Hello World script again, so delete the
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string double"><span class="pre">“Hello,</span> <span class="pre">world!”</span></span><span class="punctuation"><span class="pre">)</span></span></code> line and start over with something more useful -
+we’ll read the first 4 lines from our datafile.</p>
+<p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Read the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+
+<span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>First create a variable for your datafile name, which is a string - this
+can be in single or double quotes.</p>
+<p>Then create a variable associated with the opened file, here it is called
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">datafile</span></span></code>.</p>
+<p>The ‘r’ argument in the open command indicates that we are opening the
+file for reading capabilities. Other input arguments for open include
+<code class="code python docutils literal notranslate"><span class="literal string single"><span class="pre">‘w’</span></span></code>, for example, if you wanted to write to the file.</p>
+<p>The readline command moves through the open file, always reading the next
+line.</p>
+<p>And remember to close your datafile.</p>
+<p>Comments in Python are indicated with a hash, as you can see in the first
+line <code class="code python docutils literal notranslate"><span class="comment single"><span class="pre">#</span> <span class="pre">Read</span> <span class="pre">the</span> <span class="pre">data</span> <span class="pre">file</span></span></code>. Comments are ignored by the interpreter.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/functions.html#open">More information on the open() function</a></p>
+</div>
+</li>
+<li><p>And test your script again by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python mysci.py
+</pre></div>
+</div>
+<p>Testing of your script with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code> should be done every time
+you wish to execute the script. This will no longer be specified as a
+unique step in between every change to our script.</p>
+</li>
+<li><p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read your whole data file:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Read the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Our code is similar to the before, but now we’ve read the entire file. To
+test that this worked. We’ll <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">)</span></span></code>. Print statements in python
+require parenthesis around the object you wish to print, here it is data.</p>
+<p>Try <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string single"><span class="pre">‘data’</span></span><span class="punctuation"><span class="pre">)</span></span></code> as well, now Python will print the string ‘data’, as
+it did for the hello world function, instead of the information stored in
+the variable data.</p>
+<p>Don’t forget to execute with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code>.</p>
+</li>
+<li><p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read your whole data file using a context
+manager with:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Read the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+   <span class="n">data</span> <span class="o">=</span> <span class="n">datafile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Again this is a similar method of opening the datafile, but we now use with
+open. The with statement is a context manager that provides clean-up and
+assures that the file is automatically closed after you’ve read it.</p>
+<p>The indendation of the line <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">datafile</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">read</span></span><span class="punctuation"><span class="pre">()</span></span></code> is very important.
+Python is sensitive to white space and will not work if you mix spaces and
+tabs (Python does not know your tab width). It is best practice to use
+spaces as opposed to tabs (tab width is not consistent between editors).</p>
+<p>Combined these two lines mean: with the datafile opened, I’d like to read
+it.</p>
+<p>And execute with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://book.pythontips.com/en/latest/context_managers.html">More information on context managers</a></p>
+</div>
+</li>
+<li><p>What did we just see? What is the data object? What type is data? How do we
+find out?</p>
+<p>Add the following to the DEBUG section of our script:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>And execute with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code></p>
+<p>Object types refer to <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">integer</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code>
+or other types that you can create.</p>
+<p>Python is a dynamically typed language, which means you don’t have to
+explicitly specify the datatype when you name a variable, Python will
+automatically figure it out by the nature of the data.</p>
+</li>
+<li><p>Now, clean up the script by removing the DEBUG section, before we commit
+this to Git.</p></li>
+<li><p>Let’s check the status of our Git repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Take a look at which files have been changed in the repository!</p>
+</div>
+</li>
+<li><p>Stage these changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+</pre></div>
+</div>
+</li>
+<li><p>Let’s check the status of our Git repository,again. What’s different from
+the last time we checked the status?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+</li>
+<li><p>Commit these changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Adding script file&quot;</span>
+</pre></div>
+</div>
+<p>Here a good commit message <code class="code docutils literal notranslate"><span class="pre">-m</span></code> for our changes would be
+<code class="code docutils literal notranslate"><span class="pre">&quot;Adding</span> <span class="pre">script</span> <span class="pre">file&quot;</span></code></p>
+</li>
+<li><p>Let’s check the status of our Git repository, now. It should tell you that
+there are no changes made to your repository (i.e., your repository is
+up-to-date with the state of the code in your directory).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+</li>
+<li><p>Look at the Git logs, again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+<p>You can also print simplified logs with the <code class="code docutils literal notranslate"><span class="pre">--oneline</span></code> option.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the first lesson of this virtual tutorial.</p>
+<p>In this section you set up a workspace by creating your directory, conda
+environment, and git repository. You downloaded a .txt file and read it using
+the Python commands of <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">open</span></span><span class="punctuation"><span class="pre">()</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">readline</span></span><span class="punctuation"><span class="pre">()</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">read</span></span><span class="punctuation"><span class="pre">()</span></span></code>,
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">close</span></span><span class="punctuation"><span class="pre">()</span></span></code>, and <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">()</span></span></code>, as well as the context manager
+<code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">with</span></span></code>. You should be familiar with the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span></code> datatype. You
+also used fundamental git commands such as <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>, <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>,
+<code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda environments</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Git repositories</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#open">The open() function</a></p></li>
+<li><p><a class="reference external" href="https://book.pythontips.com/en/latest/context_managers.html">Context managers</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="creating-a-data-dictionary">
+<h4>Creating a Data Dictionary<a class="headerlink" href="#creating-a-data-dictionary" title="Permalink to this headline">¶</a></h4>
+<p>This is intended to pick off right where part 1.a left off - you had just
+commited your new script file that reads in the data from file as a string.</p>
+<p>You will now manipulate your data into a more usable format - a dictionary.</p>
+<p>In doing so you will learn how to write iterative for loops and about Python
+data structures.</p>
+<ol class="arabic">
+<li><p>One big string isn’t very useful, so use <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">split</span></span><span class="punctuation"><span class="pre">()</span></span></code> to parse the data
+file into a data structure you can use.</p>
+<p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Initialize my data variable</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Read and parse the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+ <span class="c1"># Read the first three lines (header)</span>
+ <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+ <span class="c1"># Read and parse the rest of the file</span>
+ <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+    <span class="n">datum</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+
+<span class="c1"># DEBUG</span>
+<span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The first thing that is different in this script is an initialized data
+variable; <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span> <span class="operator"><span class="pre">=</span></span> <span class="punctuation"><span class="pre">[]</span></span></code> creates the variable data as an empty list which we
+will populate as we read the file. Python lists are a collection data type
+that are ordered and changeable - meaning you can call information out of
+the list by its index and you can add or delete elements to your list. Lists
+are denoted by square brackets, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[]</span></span></code>.</p>
+<p>Then with the datafile open for reading capabilities, we are going to write
+two separate <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops. A <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop is used for iterating
+over a sequence (such as a list). It is important to note the syntax of Python
+<code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops: the <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">:</span></span></code> at the end of for <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> line, the
+tab-indentation of all lines within the <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, and perhaps the
+absence of an <code class="code docutils literal notranslate"><span class="pre">end</span> <span class="pre">for</span></code> that is found in languages such as Matlab.</p>
+<p>In your first <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, loop through the dummy variable <code class="code python docutils literal notranslate"><span class="name"><span class="pre">_</span></span></code>
+in <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">range</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">)</span></span></code>. The <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">range</span></span></code> function returns a sequence of
+numbers, starting at 0 and incrementing by 1 (by default), ending at the
+specified length. Here if you were to <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">_</span></span><span class="punctuation"><span class="pre">)</span></span></code> on each line of the
+for loop you would see:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+</pre></div>
+</div>
+<p>Try it out if you are unsure of how this works. Here the <code class="code python docutils literal notranslate"><span class="name"><span class="pre">_</span></span></code> variable
+is a placeholder, meaning the variable is never called within the loop.</p>
+<p>So again, in the first <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, you execute the <code class="code python docutils literal notranslate"><span class="name"><span class="pre">readline</span></span></code>
+command (which you will remember moves down to the next line each time it is
+consecutively called) 3 times to read through the file header (which is 3
+lines long). <strong>Yay!</strong> You have just written your first <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop!</p>
+<p>Then in a second <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, you loop through lines in the remainder of
+your datafile. On each line, split it along white space. The
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">split</span></span><span class="punctuation"><span class="pre">()</span></span></code> method splits a string into a list on a specified
+separator, the default being white space. You could use any character you
+like, but other useful options are <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">/</span></span><span class="name"><span class="pre">t</span></span></code> for splitting along tabs or
+<code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">,</span></span></code> along commmas.</p>
+<p>Then you <code class="code python docutils literal notranslate"><span class="name"><span class="pre">append</span></span></code> this split line list to the end of your data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>.
+The <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">append</span></span><span class="punctuation"><span class="pre">()</span></span></code> method adds a single item to the end of your <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>.
+After every line in your <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop iteration, the data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> that was
+empty is one element longer. Now we have a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> of <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s for our
+data variable - a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> of the data in each line for multiple lines.</p>
+<p>When you print each datum in data, you’ll see that each datum is a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>
+of <code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> values.</p>
+<p>We just covered a lot of Python nuances in a very little bit a code!</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://book.pythontips.com/en/latest/for_-_else.html">More information on for-loops</a>
+<a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">More information on Python lists</a></p>
+</div>
+</li>
+<li><p>Now, to practice list indexing, get the first, 10th, and last row in data.</p>
+<p>Change the DEBUG section of our <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>Index your list by adding the number of your index in square brackets,
+<code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[]</span></span></code>, after the name of the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>. Python is 0-indexed so
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">]</span></span></code> refers to the first index and <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[</span></span><span class="operator"><span class="pre">-</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">]</span></span></code> refers to
+the last index.</p>
+</li>
+<li><p>Now, to practice slice indexing, get the first 10 rows in data.</p>
+<p>Change the DEBUG section of our <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="k">for</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Using a colon, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">:</span></span></code>, between two index integers <code class="code python docutils literal notranslate"><span class="name"><span class="pre">a</span></span></code> and
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">b</span></span></code>, you get all indexes between <code class="code python docutils literal notranslate"><span class="name"><span class="pre">a</span></span></code> and <code class="code python docutils literal notranslate"><span class="name"><span class="pre">b</span></span></code>. See
+what happens when you print <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[:</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">]</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">]</span></span></code>, and
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name builtin"><span class="pre">slice</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">)]</span></span></code>.  What’s the difference?</p>
+</li>
+<li><p>Now, to practice nested indexing,get the 5th, first 5, and every other
+column of rows 8 in data.</p>
+<p>Change the DEBUG section of the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">][::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>In nested <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> indexing, the first index determines the row, and the
+second determines the element from that row. Also try printing
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">8</span></span><span class="punctuation"><span class="pre">][</span></span><span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">]</span></span></code>, why doesn’t this work?</p>
+</li>
+<li><p>Clean up the file (remove DEBUG section), stage the changes, and commit.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Parsing file&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Can you remember which column is which? Is time the first column or the
+second? Which column is the temperature?</p>
+<p>Each column is a time-series of data. We would ideally like each time-series
+easily accessible, which is not the case when data is row-column ordered
+(like it currently is). (Remember what happens when you try to do something
+like <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[:][</span></span><span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">]</span></span></code>!)</p>
+<p>Let’s get our data into a more convenient named-column format.</p>
+<p>Change <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> to the following:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Initialize my data variable</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+<span class="c1"># Read and parse the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+   <span class="c1"># Read the first three lines (header)</span>
+   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+   <span class="c1"># Read and parse the rest of the file</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+      <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+      <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>First we’ll initialize a dictionary, <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>, indicated by the curly
+brackets, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{}</span></span></code>. Dictionaries, like <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s, are changeable, but they
+are unordered. They have keys, rather than positions, to point to their
+elements. Here you have created 3 elements of your dictionary, all currently
+empty <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s, and specified by the keys <code class="code python docutils literal notranslate"><span class="name"><span class="pre">date</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">time</span></span></code>, and
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">tempout</span></span></code>. Keys act similarly to indexes: to pull out the <code class="code python docutils literal notranslate"><span class="name"><span class="pre">tempout</span></span></code>
+element from data you would type <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘tempout’</span></span><span class="punctuation"><span class="pre">]</span></span></code>.</p>
+<p>Grab date (the first column of each line), time (the second column of each
+line), and temperature data (the third column), from each line and
+<code class="code python docutils literal notranslate"><span class="name"><span class="pre">append</span></span></code> it to the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> associated with each of these data variables.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">More on Python dictionaries</a></p>
+</div>
+</li>
+<li><p>Clean up (remove DEBUG section), stage, and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Parsing select time-series&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now it’s easy to get the time-series informationfor each column that we are
+interested in grabbing, and we can get each column by name. However,
+everything read fromthe text file is a str. What if we want to do math on
+this data, then we need it to be a different data type!</p>
+<p>So, let’s convert the tempout time-series to be a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code> by changing the
+line:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code> datatype refers to floating point real values - the datatype
+of any numbers with values after a decimal point. You could also change the
+datatype to <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">int</span></span></code>, which will round the values down to the closest full
+integer.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">More on Python numeric types (int, float, complex)</a></p>
+</div>
+</li>
+<li><p>Add a DEBUG section at the end and see what <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘tempout’</span></span><span class="punctuation"><span class="pre">]</span></span></code> now looks
+like.</p>
+<p>Do you see a difference? It should now be a list of floats.</p>
+</li>
+<li><p>Clean up (remove DEBUG section), stage, and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Converting tempout to floats&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>This seems great, so far! But what if you want to read more columns to our
+data later? You would have to change the initialization of the data
+variable (at the top of <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code>) and have to add the appropriate line
+in the “read and parse” section. Essentially, that means you need to
+maintain 2 parts of the code and make sure that both remain consistent with
+each other.</p>
+<p>This is generally not good practice. Ideally, you want to be able to change
+only one part of the code and know that the rest of the code will remain
+consistent. So, let’s fix this.</p>
+<p>Change <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+
+<span class="c1"># Initialize my data variable</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+   <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Read and parse the data file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/wxobs20170821.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+   <span class="c1"># Read the first three lines (header)</span>
+   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+   <span class="c1"># Read and parse the rest of the file</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+      <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+         <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+         <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+         <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+         <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>You have now created a columns <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> that points each data variable to
+its column-index. And a types <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>, that indicates what type to convert
+the data when necessary. When you want new variables pulled out of the
+datafile, change these two variables.</p>
+<p>Initializing the data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> now includes a <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, where for each
+variable specified in columns that key is initialized pointing to an empty
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>. This is the first time you have looped over a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> and added
+key-value pairs to a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> via assignment.</p>
+<p>When reading and parsing the file, you created your first nested <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code>
+loop. For every line of the datafile, split that line - and then for every
+desired variable in the columns <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> (date, time, tempout): grab the
+datum from the current split line with the specified index (0, 1, 2), use
+the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">get</span></span><span class="punctuation"><span class="pre">()</span></span></code> method to find the desired datatype if specired
+(avoiding <code class="code python docutils literal notranslate"><span class="name"><span class="pre">key</span></span><span class="operator"><span class="pre">-</span></span><span class="operator word"><span class="pre">not</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">found</span></span></code> errors and defaulting to <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span></code> if
+unspecified), convert the datum to the desired datatype, and <code class="code python docutils literal notranslate"><span class="name"><span class="pre">append</span></span></code>
+the datum to the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> associated with each column key within the data
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>.</p>
+</li>
+<li><p>Clean up (remove DEBUG section), stage, and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Refactoring data parsing code&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the second lesson of this virtual tutorial.</p>
+<p>In this section you saved the variables of date, time, and tempout in a data
+dictionary.</p>
+<p>You should now be familiar with the data structures <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s (as well as list
+indexing, nested lists, and the command <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">append</span></span><span class="punctuation"><span class="pre">()</span></span></code>), <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>s (their
+keys and the command <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">get</span></span><span class="punctuation"><span class="pre">()</span></span></code>), and <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">range</span></span></code>s. You also learned to write
+<code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops, about the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code> datatype, and using the Python commands
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">split</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://book.pythontips.com/en/latest/for_-_else.html">For-loops</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Lists</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="writing-functions">
+<h4>Writing Functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline">¶</a></h4>
+<p>This is intended to pick off right where part 1.b left off- you had just
+commited your new script that reads the file, saving the variables of date,
+time, and tempout in a data dictionary.</p>
+<p>In this section you will compute wind chill index by writing your first
+function and learning about basic math operators.</p>
+<ol class="arabic">
+<li><p>Okay, now that you’ve read the data in a way that is easy to modify later,
+it is time to actually do something with the data.</p>
+<p>Compute the wind chill factor, which is the cooling effect of the wind. As
+wind speed increases the rate at which a body loses heat increases. The
+formula for this is:</p>
+<div class="math notranslate nohighlight">
+\[WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})\]</div>
+<p>Where <em>WCI</em> refers to the Wind Chill in degrees F, <em>t</em> is temperature in
+degrees F, <em>v</em> is wind speed in mph, and the other variables are as
+follows: <em>a</em> = 35.74, <em>b</em> = 0.6215, <em>c</em> = 35.75, and <em>d</em> = 0.4275.
+Wind Chill Index is only defined for temperatures within the range -45 to
++45 degrees F.</p>
+<p>You’ve read the temperature data into the tempout variable, but to do this
+calculation, you also needto read the windspeed variable from column 7.</p>
+<p>Modify the columns variable to read:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>and modify the types variable to be:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Great! Save this in your Git repo. Stage and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Reading windspeed as well&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, let’s write our first function to computethe wind chill factor. We’ll
+add this function to the bottom of the file.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the wind chill temperature</span>
+<span class="k">def</span> <span class="nf">compute_windchill</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+   <span class="n">a</span> <span class="o">=</span> <span class="mf">35.74</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="mf">0.6215</span>
+   <span class="n">c</span> <span class="o">=</span> <span class="mf">35.75</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.4275</span>
+
+   <span class="n">v16</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mf">0.16</span>
+   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">wci</span>
+</pre></div>
+</td></tr></table></div>
+<p>To indicate a function in python you type def for define, the name of your
+function, and then in parenthesis the input arguments of that function,
+followed by a colon. On the next lines tab-indented is the code of your
+function, and your return value.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/2.0/ref/function.html">More on user defined functions</a></p>
+</div>
+<p>Here is your first introduction math operators in Python. Addition,
+subtraction, and multiplication look much like you’d expect. A double
+astericks, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">**</span></span></code>, indicates an exponential. A backslash, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">/</span></span></code>,
+is for division, and a double backslash, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">//</span></span></code>, is for integer division.</p>
+<p>And then let’s compute a new list with windchill data atthe bottom of
+<code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s actually compute the wind chill factor</span>
+<span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">]):</span>
+   <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now we’ll call our function. Initialize a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> for wind chill with empty
+square brackets, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[]</span></span></code>. And in a <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, loop through our temperature
+and wind speed data, applying the function to each <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code> data pair.
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code>s are ordered like <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s, but they are indicated by
+parenthesis, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">()</span></span></code>, instead of square brackets and cannot be changed or
+appended. <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code>s are generally faster than <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s.</p>
+<p>We use the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">zip</span></span></code> function in Python to automatically unravel the
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code>s. Take a look at <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">zip</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">],</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">])</span></span></code>. What is the result?</p>
+<p>And finally, add a DEBUG section to see the results:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">windchill</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Clean up, stage, and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Compute wind chill factor&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, the wind chill factor is actually in the datafile, so we can read it
+from the file and compare that value to our computed values. To do this, we
+need to read the windchill from column 12 as a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code>:</p>
+<p>Edit the columns and types <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+           <span class="s1">&#39;windchill&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python requires that you indent any continued lines.  Take note that we indented the continued line above to align it with the starting <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{</span></span></code>-symbol.</p>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windchill&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Then, in a DEBUG section at the end of your script to compare the two
+different values (from data and computed by our function):</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<span class="k">for</span> <span class="n">wc_data</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;windchill&#39;</span><span class="p">],</span> <span class="n">windchill</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wc_data</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_data</span> <span class="o">-</span> <span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Using <em>f-</em><code class="code python docutils literal notranslate"><span class="pre">\</span><span class="name"><span class="pre">string</span></span></code>s with float formatting you can determine the precision
+with which to print the values to. The <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">.</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="name"><span class="pre">f</span></span></code> means you want 5 places after the
+decimal point.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">More on string formatting</a></p>
+</div>
+<p>Test the results. What do you see? Our computation isn’t very good is it?</p>
+</li>
+<li><p>Clean up, stage, and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Compare wind chill factors&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, format the output so that it’s easy to understand and rename this
+script to something indicative of what it actually does.</p>
+<p>To the end of the file, add:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>46
+47
+48
+49
+50
+51
+52
+53</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Output comparison of data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;                ORIGINAL  COMPUTED&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; DATE    TIME  WINDCHILL WINDCHILL DIFFERENCE&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------- ------ --------- --------- ----------&#39;</span><span class="p">)</span>
+<span class="n">zip_data</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windchill&#39;</span><span class="p">],</span> <span class="n">windchill</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">wc_orig</span><span class="p">,</span> <span class="n">wc_comp</span> <span class="ow">in</span> <span class="n">zip_data</span><span class="p">:</span>
+   <span class="n">wc_diff</span> <span class="o">=</span> <span class="n">wc_orig</span> <span class="o">-</span> <span class="n">wc_comp</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_diff</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Here you used <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting with more <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting
+options. The <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">&gt;</span></span><span class="literal number integer"><span class="pre">6</span></span></code> indicates that you’d like the characters of the string to be
+right-justified and to take up 6 spaces.</p>
+<p>The <code class="code python docutils literal notranslate"><span class="literal number integer"><span class="pre">9</span></span><span class="name"><span class="pre">f</span></span></code> specifies that you want the value to fill 9 spaces, so <code class="code python docutils literal notranslate"><span class="literal number float"><span class="pre">9.6</span></span><span class="name"><span class="pre">f</span></span></code>
+indicates you’d like the value to fill 9 spaces with 6 of them being after
+the decimal point. Same concept for <code class="code python docutils literal notranslate"><span class="literal number float"><span class="pre">10.6</span></span><span class="name"><span class="pre">f</span></span></code>.</p>
+<p>You now have your first complete Python script!</p>
+</li>
+<li><p>DON’T CLEAN UP! Just stage and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mysci.py
+$ git commit -m <span class="s2">&quot;Output formatting comparison data&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Let’s rename this script to something meaningful and indicative of the
+computation inside.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git mv mysci.py windchillcomp.py
+$ git commit -m <span class="s2">&quot;Renaming first script&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Let’s push to GitHub!</p>
+<ol class="arabic">
+<li><p>First you have to create a remote repository. Go to <a class="reference external" href="https://github.com/">GitHub</a>
+and create or login to your account.</p></li>
+<li><p>At the top right of any Github page, there is a ‘+’ icon. Click that,
+then select ‘New Repository’.</p></li>
+<li><p>Name your repository, “python_tutorial_2020”.
+It is best practice for your local project and GitHub repository to
+share a name.</p></li>
+<li><p>And click “Create Repository”</p></li>
+<li><p>Copy the link to your GitHub repository.</p>
+<p>Copy the link in the input right beneath the title, it should look
+something like this:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">https://github.com/&lt;user_name&gt;/&lt;repo&gt;.git</span></code></p>
+</li>
+<li><p>Then to set your remote repository, in your project terminal type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add origin &lt;remote repository URL&gt;
+</pre></div>
+</div>
+</li>
+<li><p>And verify your remote repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+</pre></div>
+</div>
+</li>
+<li><p>And finally push your project to GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin master
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Think of GitHub as online storage for versions of your project, much like
+hosting your code in a Google Drive, but with better features specific to
+coding. A lot of GitHub’s features show their usefulness when you are
+working collaboratively, sharing your code with other scientists, or if
+you wanted to display and easily visualize changes in your code between
+commits.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the first part of this virtual tutorial where you learned to
+write your first Python script.</p>
+<p>In this section you calculated wind chill index by writing and calling your
+first function. You also learned about Python math operators, the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">zip</span></span><span class="punctuation"><span class="pre">()</span></span></code>
+command, <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code> datastructure, <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting, and how to push your
+repository to GitHub.</p>
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/2.0/ref/function.html">User defined functions</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">String formatting</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </main>
+
+    </div>
+
+
+
+    <footer class="text-light bg-dark pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="https://www2.cisl.ucar.edu/"><img src="../_static/img/CISL-contemp-logo-white.svg" alt="CISL" class="ncar-logo"></a>
+          </div>
+          <div class="col-12 col-md-auto">
+            <p class="footer-text copyright"><a href="https://www.ucar.edu/">University Corporation for Atmospheric Research</a> &copy; 2020<br>
+            Proudly published with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a><br>
+            Apache 2.0</p>
+          </div>
+        </div>
+        <div class="row pt-3 border-top">
+          <div class="col-auto">
+            <a href="https://nsf.gov/"><img src="../_static/img/footer-logo-nsf.png" alt="NSF" class="nsf-logo"></a>
+          </div>
+          <div class="col">
+            <p class="footer-text">This material is based upon work supported by the National Center for Atmospheric Research, a major facility
+            sponsored by the National Science Foundation and managed by the University Corporation for Atmospheric Research. Any opinions,
+            findings and conclusions or recommendations expressed in this material do not necessarily reflect the views of the National
+            Science Foundation.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+  </body>
+</html>

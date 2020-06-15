@@ -26,7 +26,7 @@
       <a class="navbar-brand" href="/">NCAR Python Tutorial</a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,29 +46,103 @@
 
 
 
-    <main role="main">
-      <div class="container-fluid px-0 full-ht">
-        <div class="jumbotron">
-          <div class="container">
-            <h1>NCAR Python Tutorial</h1>
-            <p>Let's learn</p>
-            <a class="btn btn-primary btn-lg text-light" href="tutorials/beginner.html">Start Beginner Tutorial</a>
-          </div>
+    <div class="container-fluid">
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h4>Tutorials</h4>
         </div>
 
-        <div class="container">
-          <h2>About Xdev</h2>
-          <p>
-            These tutorials are supported by the NCAR Xdev team. 
-            Xdev works to make curiosity-driven analysis of "big" scientific data a day-to-day reality. 
-            This goal has two components: the first is advancing technology 
-            and the second is helping scientists understand the evolving tools available to them. 
-            More information on Xdev can be found on 
-            <a class="reference external" href="https://ncar.github.io/xdev/posts/we-are-xdev"> our blog site. </a>
-          </p>
+        <div class="container accordian md-accordian accordian-sidebar">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingBeginner">
+                <div class="tier0" data-toggle="collapse" data-target="#collapseBeginner" aria-expanded="true" aria-controls="collapseBeginner">
+                  <a href="#">Beginner <i class="fas fa-angle-down rotate-icon"></i></a>
+                </div>
+              </div>
+
+              <div id="collapseBeginner" class="collapse show" aria-labelledby="headingBeginner" data-parent="#accordion">
+                <div class="card-body" id="beginnerOutline">
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#beginner-python-for-scientists">Welcome</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="tier1">
+                        <a href="#requirements-installation">Requirements</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingBeginnerPart1">
+                      <div class="tier1 collapsed" data-toggle="collapse" data-target="#collapseBeginnerPart1"  aria-expanded="false" aria-controls="collapseBeginnerPart1">
+                        <a href="#first-python-script">
+                          First Python Script <i class="fas fa-angle-down rotate-icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body collapse" aria-labelledby="headingBeginnerPart1" data-parent="#beginnerOutline" id="collapseBeginnerPart1">
+                      <div class="card-body accordian-tier3" id="beginnerPart1">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#reading-a-txt-file">
+                                Reading in a .txt File
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#creating-a-data-dictionary">
+                                Creating a Data Directory
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#writing-functions">
+                                Writing Functions
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </nav>
+
+      <!-- Page Content -->
+      <main role="main" class="content">
+        
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ 
+</div>
+
+
+      </main>
+
+    </div>
 
 
 
