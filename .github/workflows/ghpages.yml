@@ -29,9 +29,7 @@ jobs:
           pip install sphinx
           
       - name: Build Sphinx Documentation
-        run: |
-          cd docs
-          make html
+        run: make html
           
       - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.2.0
