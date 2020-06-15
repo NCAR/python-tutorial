@@ -1134,7 +1134,8 @@ function and learning about basic math operators.
    ..
 
    .. note::
-      the line continuation indentation.
+
+      Python requires that you indent any continued lines.  Take note that we indented the continued line above to align it with the starting :python:`{`-symbol.
 
    and
 
