@@ -508,7 +508,7 @@ Open a terminal to begin:
 
     .. note::
     
-       Which files have been changed in the repository.
+       Take a look at which files have been changed in the repository!
 
     ..
 
