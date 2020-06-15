@@ -77,7 +77,6 @@ footer {
  SPHINX
  ************************************************/
 .admonition {
-  border: 1px solid #CCC;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -88,11 +87,15 @@ footer {
 }
 
 div.note {
-  background-color: #A7CD83;
+  background-color: #EEE;
+  border: 1px solid #007bff;
+  border-radius: 10px;
 }
 
 div.seealso {
   background-color: #EEE;
+  border: 1px solid #007bff;
+  border-radius: 10px;
 }
 
 .headerlink {
