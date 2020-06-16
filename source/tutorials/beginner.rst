@@ -1064,7 +1064,7 @@ function and learning about basic math operators.
 
    .. seealso::
 
-      `More on user defined functions <https://docs.python.org/2.0/ref/function.html>`_
+      `More on user defined functions <https://docs.python.org/3/reference/compound_stmts.html#function-definitions>`_
 
    ..
 
@@ -1295,7 +1295,7 @@ repository to GitHub.
 
 .. seealso::
    
-   - `User defined functions <https://docs.python.org/2.0/ref/function.html>`_
+   - `User defined functions <https://docs.python.org/3/reference/compound_stmts.html#function-definitions>`_
    - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
 ..
