@@ -7,6 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ pathto('_static/img/apple-touch-icon.png', 1) }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ pathto('_static/img/favicon-32x32.png', 1) }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ pathto('_static/img/favicon-16x16.png', 1) }}">
+    <link rel="manifest" href="{{ pathto('_static/site.webmanifest', 1) }}">
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -25,9 +31,6 @@
     <nav class="navbar navbar-expand navbar-dark sticky-top bg-dark">
       <a class="navbar-brand" href="{{ pathto('index') }}">NCAR Python Tutorial</a>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ pathto('index') }}">Home<span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tutorials

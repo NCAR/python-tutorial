@@ -86,6 +86,10 @@ footer {
   font-weight: bold;
 }
 
+div.math {
+  overflow-x: auto;
+}
+
 div.note {
   background-color: #EEE;
   border: 1px solid #4E9A06;
