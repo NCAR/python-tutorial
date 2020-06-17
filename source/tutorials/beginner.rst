@@ -345,6 +345,10 @@ Open a terminal to begin:
 
     Your classic first command will be to print :python:`Hello, world!`.
 
+   .. note::
+
+      On a Windows machine, it is possible `nano` or `vim` are not recognized as text editors within your terminal. In this case simply try to run `mysci.py` to open a notepad editor.
+
 16. Try testing the script by typing :bash:`python` and then the name of your script:
 
     .. code-block:: bash
