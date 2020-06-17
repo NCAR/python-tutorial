@@ -16,6 +16,30 @@
    :language: python
 
 ==============================
+Tutorials
+==============================
+
+What makes this Python tutorial unique is that it has been designed specifically 
+to meet the needs of, and feedback from, atmospheric and oceanic scientists 
+making the transition with the NCAR-wide 
+`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
+In particular, this tutorial should be useful to any scientist who already knows how to program 
+in some other language but is taking up Python for the first time. By spending the 
+first course on pure Python without importing any additional packages, our beginner 
+tutorial addresses the concerns that most tutorials either pick up speed too quickly 
+by going into the intricacies of third-party packages before explaining how Python is 
+different from other languages, or get too bogged down in basic programming concepts 
+that anyone with programming experience already knows. This tutorial attempts to hit 
+the sweet spot between too high-level and too low-level. By using coding examples 
+with real atmospheric datasets and questions, the skills and techniques taught are 
+easily applied to actual atmospheric or oceanic workflows. The intermediate and 
+advanced tutorials were developed by working closely with scientists to transform their 
+old code into Python using the most up-to-date tools for advanced computing. 
+We hope that this tailored approach to teaching and sharing computational tools 
+effectively addresses the concerns and needs of the geoscience community.
+
+
+==============================
 Beginner Python for Scientists
 ==============================
 Welcome to the Beginner Python for Scientists tutorial. In this self-paced
