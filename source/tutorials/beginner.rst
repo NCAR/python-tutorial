@@ -161,6 +161,12 @@ In building your first Python script we will set up our workspace, read a
 
 Open a terminal to begin:
 
+.. note::
+   
+   On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
+
+..
+
 1. Create a directory:
 
    .. code-block:: bash
@@ -170,7 +176,7 @@ Open a terminal to begin:
    ..
 
    The first thing we have to do is create a directory to store our work.
-   Let's call it :code:`ncar_python_tutorial`.
+   Let's call it :code:`python_tutorial`.
 
 2. Go into the directory:
 
@@ -215,7 +221,7 @@ Open a terminal to begin:
    A Git repository tracks changes made to files within your project. It looks
    like a :code:`.git/` folder inside that project.
 
-   This command adds version control to this new ncar_python_tutorial directory
+   This command adds version control to this new python_tutorial directory
    and all of its contents.
 
    .. seealso::
@@ -328,6 +334,12 @@ Open a terminal to begin:
 
     ..
 
+    .. note::
+
+       If you are working on a Windows machine it is possible that 'touch' will not be recognized as an internal or external command. If this is the case, run `conda install m2-base` to enable unix commands such as `touch`.
+
+    ..
+
 15. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
 
     .. code-block:: python
@@ -338,6 +350,12 @@ Open a terminal to begin:
     ..
 
     Your classic first command will be to print :python:`Hello, world!`.
+
+    .. note::
+
+       On a Windows machine, it is possible `nano` or `vim` are not recognized as text editors within your terminal. In this case simply try to run `mysci.py` to open a notepad editor.
+
+    ..
 
 16. Try testing the script by typing :bash:`python` and then the name of your script:
 
