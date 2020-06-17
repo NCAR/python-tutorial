@@ -420,7 +420,7 @@ Open a terminal to begin:
     Then create a variable associated with the opened file, here it is called
     :python:`datafile`.
 
-    The 'r' argument in the open command indicates that we are opening the
+    The :python:`'r'` argument in the open command indicates that we are opening the
     file for reading capabilities. Other input arguments for open include
     :python:`'w'`, for example, if you wanted to write to the file.
 
@@ -518,10 +518,10 @@ Open a terminal to begin:
 21. What did we just see? What is the data object? What type is data? How do we
     find out?
 
-    Add the following to the DEBUG section of our script:
+    Change the DEBUG section of our script to:
 
     .. code-block:: python
-       :lineno-start: 10
+       :lineno-start: 6
 
        # DEBUG
        print(type(data))
@@ -712,7 +712,7 @@ data structures.
    :python:`string.split()` method splits a string into a list on a specified
    separator, the default being white space. You could use any character you
    like, but other useful options are :python:`/t` for splitting along tabs or
-   :python:`,` along commmas.
+   :python:`,` along commas.
 
    Then you :python:`append` this split line list to the end of your data :python:`list`.
    The :python:`list.append()` method adds a single item to the end of your :python:`list`.
@@ -865,9 +865,9 @@ data structures.
 
    ..
 
-8. Now it's easy to get the time-series informationfor each column that we are
+8. Now it's easy to get the time-series information for each column that we are
    interested in grabbing, and we can get each column by name. However,
-   everything read fromthe text file is a str. What if we want to do math on
+   everything read from the text file is a :python:`str`. What if we want to do math on
    this data, then we need it to be a different data type!
 
    So, let's convert the tempout time-series to be a :python:`float` by changing the
