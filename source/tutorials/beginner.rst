@@ -163,7 +163,7 @@ Open a terminal to begin:
 
 .. note::
    
-   On Windows, use **Anaconda Prompt** as your terminal. On a Mac or Linux machine, a regular terminal will work.
+   On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
 
 ..
 
