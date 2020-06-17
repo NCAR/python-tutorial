@@ -159,7 +159,7 @@ Reading a .txt File
 In building your first Python script we will set up our workspace, read a
 :code:`.txt` file, and learn git fundamentals.
 
-Open a terminal to begin:
+Open a regular or anaconda/miniconda terminal to begin:
 
 1. Create a directory:
 
