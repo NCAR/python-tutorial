@@ -170,7 +170,7 @@ Open a terminal to begin:
    ..
 
    The first thing we have to do is create a directory to store our work.
-   Let's call it :code:`ncar_python_tutorial`.
+   Let's call it :code:`python_tutorial`.
 
 2. Go into the directory:
 
@@ -215,7 +215,7 @@ Open a terminal to begin:
    A Git repository tracks changes made to files within your project. It looks
    like a :code:`.git/` folder inside that project.
 
-   This command adds version control to this new ncar_python_tutorial directory
+   This command adds version control to this new python_tutorial directory
    and all of its contents.
 
    .. seealso::
@@ -325,6 +325,12 @@ Open a terminal to begin:
     .. code-block:: bash
 
        $ touch mysci.py
+
+    ..
+
+    .. note::
+
+       If you are working on a Windows machine it is possible that 'touch' will not be recognized as an internal or external command. If this is the case, run `conda install m2-base` to enable unix commands such as `touch`.
 
     ..
 
