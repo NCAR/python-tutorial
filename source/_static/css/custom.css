@@ -206,6 +206,10 @@ a.reference.external {
   padding-bottom: 15px;
 }
 
+p {
+  text-align: justify;
+}
+
 .sidebar {
   width: 16rem;
   height: 100vh;
