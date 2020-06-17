@@ -338,6 +338,15 @@ Open a terminal to begin:
     With :bash:`git commit`, you've updated your repository with all the changes
     you staged, in this case just one file.
 
+    .. note::
+
+       On a Windows machine you may see the following :bash:`warning: LF will be replaced by CRLF in mysci.py. The file will have its original line endings in your working directory`.
+       Do not worry too much about this warning. CR refers to Carriage Return Line Feed and LF refers to Line Feed. Both are used to indicate line termination. 
+       In Windows both a CR and LF are required to note the end of a line, but in Linux/UNIX a LF is only required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
+       To silence this warning you can type :bash:`git config core.autocrlf false` in the terminal.
+
+    ..
+
 13. Look at the Git logs:
 
     .. code-block:: bash
