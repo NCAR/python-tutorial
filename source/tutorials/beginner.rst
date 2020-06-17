@@ -45,7 +45,7 @@ Beginner Python for Scientists
 Welcome to the Beginner Python for Scientists tutorial. In this self-paced
 course you will learn how to write Python code using Python best practices.
 
-Part 1 is designed to take one work day, but you may move through the content
+The "First Python Script" section is designed to take one work day, but you may move through the content
 much slower or more quickly.
 
 Through these instructions you will develop scripts and use Git and GitHub to
@@ -633,7 +633,7 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 Creating a Data Dictionary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.a left off - you had just
+This is intended to pick off right where "Reading in a .txt File" left off - you had just
 commited your new script file that reads in the data from file as a string.
 
 You will now manipulate your data into a more usable format - a dictionary.
@@ -1021,7 +1021,7 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 Writing Functions
 ~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.b left off- you had just
+This is intended to pick off right where "Creating a Data Dictionary" left off- you had just
 commited your new script that reads the file, saving the variables of date,
 time, and tempout in a data dictionary.
 
@@ -1325,7 +1325,7 @@ function and learning about basic math operators.
 
 -----
 
-That concludes the first part of this virtual tutorial where you learned to
+That concludes the "First Python Script" virtual tutorial where you learned to
 write your first Python script.
 
 In this section you calculated wind chill index by writing and calling your
