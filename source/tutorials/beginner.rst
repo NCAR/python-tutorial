@@ -234,7 +234,15 @@ Open a terminal to begin:
 
    ..
 
-4. Make the directory a Git repository:
+4. And activate your Conda environment:
+
+   .. code-block:: bash
+
+     $ conda activate python_tutorial
+
+   ..
+
+5. Make the directory a Git repository:
 
    .. code-block:: bash
 
@@ -254,7 +262,7 @@ Open a terminal to begin:
 
    ..
 
-5. Create a data directory:
+6. Create a data directory:
 
    .. code-block:: bash
 
@@ -264,13 +272,13 @@ Open a terminal to begin:
 
    And we'll make a directory for our data.
 
-6. Go into the data directory:
+7. Go into the data directory:
 
    .. code-block:: bash
 
       $ cd data
 
-7. Download sample data from the CU Boulder weather station:
+8. Download sample data from the CU Boulder weather station:
 
    .. code-block:: bash
 
@@ -284,7 +292,7 @@ Open a terminal to begin:
    (ATOC) department and is part of the larger University of Colorado ATOC
    Weather Network.
 
-8. Check the status of your repository
+9. Check the status of your repository
 
    .. code-block:: bash
 
@@ -296,19 +304,19 @@ Open a terminal to begin:
    status will tell you what to do to untracked files. Those instructions
    mirror the next 2 steps:
 
-9. Add the file to the Git staging area:
+10. Add the file to the Git staging area:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-      $ git add wxobs20170821.txt
+       $ git add wxobs20170821.txt
 
-   ..
+    ..
 
-   By adding this datafile to your directory, you have made a change that is
-   not yet reflected in our Git repository. Type :bash:`git add` and then the name
-   of the altered file to stage your change.
+    By adding this datafile to your directory, you have made a change that is
+    not yet reflected in our Git repository. Type :bash:`git add` and then the name
+    of the altered file to stage your change.
 
-10. Check your git status once again:
+11. Check your git status once again:
 
     .. code-block:: bash
 
@@ -319,7 +327,7 @@ Open a terminal to begin:
     Now this file is listed as a "change to be commited," i.e. staged. Staged
     changes can now be commited to your repository history.
 
-11. Commit the file to the Git repository:
+12. Commit the file to the Git repository:
 
     .. code-block:: bash
 
@@ -330,7 +338,7 @@ Open a terminal to begin:
     With :bash:`git commit`, you've updated your repository with all the changes
     you staged, in this case just one file.
 
-12. Look at the Git logs:
+13. Look at the Git logs:
 
     .. code-block:: bash
 
@@ -341,7 +349,7 @@ Open a terminal to begin:
     If you type :bash:`git log` you will show a log of all the commits, or changes
     made to your repository.
 
-13. Go back to the top-level directory:
+14. Go back to the top-level directory:
 
     .. code-block:: bash
 
@@ -349,7 +357,7 @@ Open a terminal to begin:
 
     ..
 
-14. And now that you've set up our workspace, create a blank Python script,
+15. And now that you've set up our workspace, create a blank Python script,
     called :code:`mysci.py`:
 
     .. code-block:: bash
@@ -364,7 +372,7 @@ Open a terminal to begin:
 
     ..
 
-15. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
+16. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
 
     .. code-block:: python
        :linenos:
@@ -381,7 +389,7 @@ Open a terminal to begin:
 
     ..
 
-16. Try testing the script by typing :bash:`python` and then the name of your script:
+17. Try testing the script by typing :bash:`python` and then the name of your script:
 
     .. code-block:: bash
 
@@ -392,7 +400,7 @@ Open a terminal to begin:
     **Yay!** You've just created your first Python script.
 
 
-17. You probably won't need to run your Hello World script again, so delete the
+18. You probably won't need to run your Hello World script again, so delete the
     :python:`print("Hello, world!")` line and start over with something more useful -
     we'll read the first 4 lines from our datafile.
 
@@ -438,7 +446,7 @@ Open a terminal to begin:
 
     ..
 
-18. And test your script again by typing:
+19. And test your script again by typing:
 
     .. code-block:: bash
 
@@ -450,7 +458,7 @@ Open a terminal to begin:
     you wish to execute the script. This will no longer be specified as a
     unique step in between every change to our script.
 
-19. Change the :code:`mysci.py` script to read your whole data file:
+20. Change the :code:`mysci.py` script to read your whole data file:
 
     .. code-block:: python
        :linenos:
@@ -479,7 +487,7 @@ Open a terminal to begin:
 
     Don't forget to execute with :bash:`python mysci.py`.
 
-20. Change the :code:`mysci.py` script to read your whole data file using a context
+21. Change the :code:`mysci.py` script to read your whole data file using a context
     manager with:
 
     .. code-block:: python
@@ -515,7 +523,7 @@ Open a terminal to begin:
 
     ..
 
-21. What did we just see? What is the data object? What type is data? How do we
+22. What did we just see? What is the data object? What type is data? How do we
     find out?
 
     Change the DEBUG section of our script to:
@@ -537,10 +545,10 @@ Open a terminal to begin:
     explicitly specify the datatype when you name a variable, Python will
     automatically figure it out by the nature of the data.
 
-22. Now, clean up the script by removing the DEBUG section, before we commit
+23. Now, clean up the script by removing the DEBUG section, before we commit
     this to Git.
 
-23. Let's check the status of our Git repository
+24. Let's check the status of our Git repository
 
     .. code-block:: bash
 
@@ -554,7 +562,7 @@ Open a terminal to begin:
 
     ..
 
-24. Stage these changes:
+25. Stage these changes:
 
     .. code-block:: bash
 
@@ -562,7 +570,7 @@ Open a terminal to begin:
 
     ..
 
-25. Let's check the status of our Git repository,again. What's different from
+26. Let's check the status of our Git repository,again. What's different from
     the last time we checked the status?
 
     .. code-block:: bash
@@ -571,7 +579,7 @@ Open a terminal to begin:
 
     ..
 
-26. Commit these changes:
+27. Commit these changes:
 
     .. code-block:: bash
 
@@ -582,7 +590,7 @@ Open a terminal to begin:
     Here a good commit message :code:`-m` for our changes would be
     :code:`"Adding script file"`
 
-27. Let's check the status of our Git repository, now. It should tell you that
+28. Let's check the status of our Git repository, now. It should tell you that
     there are no changes made to your repository (i.e., your repository is
     up-to-date with the state of the code in your directory).
 
@@ -592,7 +600,7 @@ Open a terminal to begin:
 
     ..
 
-28. Look at the Git logs, again:
+29. Look at the Git logs, again:
 
     .. code-block:: bash
 
