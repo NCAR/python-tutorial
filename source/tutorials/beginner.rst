@@ -16,12 +16,36 @@
    :language: python
 
 ==============================
+Tutorials
+==============================
+
+What makes this Python tutorial unique is that it has been designed specifically 
+to meet the needs of, and feedback from, atmospheric and oceanic scientists 
+making the transition with the NCAR-wide 
+`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
+In particular, this tutorial should be useful to any scientist who already knows how to program 
+in some other language but is taking up Python for the first time. By spending the 
+first course on pure Python without importing any additional packages, our beginner 
+tutorial addresses the concerns that most tutorials either pick up speed too quickly 
+by going into the intricacies of third-party packages before explaining how Python is 
+different from other languages, or get too bogged down in basic programming concepts 
+that anyone with programming experience already knows. This tutorial attempts to hit 
+the sweet spot between too high-level and too low-level. By using coding examples 
+with real atmospheric datasets and questions, the skills and techniques taught are 
+easily applied to actual atmospheric or oceanic workflows. The intermediate and 
+advanced tutorials were developed by working closely with scientists to transform their 
+old code into Python using the most up-to-date tools for advanced computing. 
+We hope that this tailored approach to teaching and sharing computational tools 
+effectively addresses the concerns and needs of the geoscience community.
+
+
+==============================
 Beginner Python for Scientists
 ==============================
 Welcome to the Beginner Python for Scientists tutorial. In this self-paced
 course you will learn how to write Python code using Python best practices.
 
-Part 1 is designed to take one work day, but you may move through the content
+The "First Python Script" section is designed to take one work day, but you may move through the content
 much slower or more quickly.
 
 Through these instructions you will develop scripts and use Git and GitHub to
@@ -609,7 +633,7 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 Creating a Data Dictionary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.a left off - you had just
+This is intended to pick off right where "Reading in a .txt File" left off - you had just
 commited your new script file that reads in the data from file as a string.
 
 You will now manipulate your data into a more usable format - a dictionary.
@@ -997,7 +1021,7 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 Writing Functions
 ~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where part 1.b left off- you had just
+This is intended to pick off right where "Creating a Data Dictionary" left off- you had just
 commited your new script that reads the file, saving the variables of date,
 time, and tempout in a data dictionary.
 
@@ -1301,7 +1325,7 @@ function and learning about basic math operators.
 
 -----
 
-That concludes the first part of this virtual tutorial where you learned to
+That concludes the "First Python Script" virtual tutorial where you learned to
 write your first Python script.
 
 In this section you calculated wind chill index by writing and calling your
