@@ -167,8 +167,8 @@ First Python Script
 This section of the Zero to Thirty tutorial will focus on teaching you Python
 through the creation of your first script.
 
-You will learn about syntax and the reasoning behind why things are done the
-way they are done along the way.
+Along the way, you will learn about syntax and the reasoning behind why things are done the
+way they are done.
 
 We will also incorporate lessons on the use of Git because we highly recommend
 you version controling your work.
