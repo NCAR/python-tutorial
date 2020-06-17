@@ -247,13 +247,17 @@ you version controling your work.</p>
 <p>In building your first Python script we will set up our workspace, read a
 <code class="code docutils literal notranslate"><span class="pre">.txt</span></code> file, and learn git fundamentals.</p>
 <p>Open a terminal to begin:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, open <strong>Anaconda Prompt</strong>. On a Mac or Linux machine, simply open <strong>Terminal</strong>.</p>
+</div>
 <ol class="arabic">
 <li><p>Create a directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir python_tutorial
 </pre></div>
 </div>
 <p>The first thing we have to do is create a directory to store our work.
-Let’s call it <code class="code docutils literal notranslate"><span class="pre">ncar_python_tutorial</span></code>.</p>
+Let’s call it <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>.</p>
 </li>
 <li><p>Go into the directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> python_tutorial
@@ -285,7 +289,7 @@ to.</p>
 </div>
 <p>A Git repository tracks changes made to files within your project. It looks
 like a <code class="code docutils literal notranslate"><span class="pre">.git/</span></code> folder inside that project.</p>
-<p>This command adds version control to this new ncar_python_tutorial directory
+<p>This command adds version control to this new python_tutorial directory
 and all of its contents.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -360,12 +364,20 @@ called <code class="code docutils literal notranslate"><span class="pre">mysci.p
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch mysci.py
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are working on a Windows machine it is possible that ‘touch’ will not be recognized as an internal or external command. If this is the case, run <cite>conda install m2-base</cite> to enable unix commands such as <cite>touch</cite>.</p>
+</div>
 </li>
 <li><p>Edit the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> file using nano, vim, or your favorite text editor:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Your classic first command will be to print <code class="code python docutils literal notranslate"><span class="name"><span class="pre">Hello</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">world</span></span><span class="error"><span class="pre">!</span></span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a Windows machine, it is possible <cite>nano</cite> or <cite>vim</cite> are not recognized as text editors within your terminal. In this case simply try to run <cite>mysci.py</cite> to open a notepad editor.</p>
+</div>
 </li>
 <li><p>Try testing the script by typing <code class="code bash docutils literal notranslate"><span class="pre">python</span></code> and then the name of your script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python mysci.py
