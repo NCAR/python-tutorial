@@ -79,7 +79,7 @@ Interpreted languages:
     don't have to worry about compiling or machine compatability (it is
     portable). And you are probably familiar with their deficiencies: sometimes
     they can be slower than compiled languages and potentially more memory
-    intensive than.
+    intensive.
 
 Objected Oriented languages:
     Objects are custom datatypes. For every custom datatypes, you usually have
