@@ -182,7 +182,7 @@ high level). So you are already familiar with the advantages of this: you
 don’t have to worry about compiling or machine compatability (it is
 portable). And you are probably familiar with their deficiencies: sometimes
 they can be slower than compiled languages and potentially more memory
-intensive than.</p>
+intensive.</p>
 </dd>
 <dt>Objected Oriented languages:</dt><dd><p>Objects are custom datatypes. For every custom datatypes, you usually have
 a set of operations you might want to conduct. For example, if you have an
@@ -314,6 +314,11 @@ to.</p>
 <p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">More information on Conda environments</a></p>
 </div>
 </li>
+<li><p>And activate your Conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate python_tutorial
+</pre></div>
+</div>
+</li>
 <li><p>Make the directory a Git repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init .
 </pre></div>
@@ -379,6 +384,13 @@ changes can now be commited to your repository history.</p>
 </div>
 <p>With <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, you’ve updated your repository with all the changes
 you staged, in this case just one file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a Windows machine you may see the following: <code class="code bash docutils literal notranslate"><span class="pre">warning:</span> <span class="pre">LF</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">replaced</span> <span class="pre">by</span> <span class="pre">CRLF</span> <span class="pre">in</span> <span class="pre">mysci.py.</span> <span class="pre">The</span> <span class="pre">file</span> <span class="pre">will</span> <span class="pre">have</span> <span class="pre">its</span> <span class="pre">original</span> <span class="pre">line</span> <span class="pre">endings</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">working</span> <span class="pre">directory</span></code>.
+Do not worry too much about this warning. CR refers to Carriage Return Line Feed and LF refers to Line Feed. Both are used to indicate line termination.
+In Windows both a CR and LF are required to note the end of a line, but in Linux/UNIX a LF is only required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
+To silence this warning you can type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="name builtin"><span class="pre">false</span></span></code> in the terminal.</p>
+</div>
 </li>
 <li><p>Look at the Git logs:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
@@ -536,9 +548,9 @@ it.</p>
 </li>
 <li><p>What did we just see? What is the data object? What type is data? How do we
 find out?</p>
-<p>Add the following to the DEBUG section of our script:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
+<p>Change the DEBUG section of our script to:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </td></tr></table></div>
@@ -695,7 +707,7 @@ your datafile. On each line, split it along white space. The
 <code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">split</span></span><span class="punctuation"><span class="pre">()</span></span></code> method splits a string into a list on a specified
 separator, the default being white space. You could use any character you
 like, but other useful options are <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">/</span></span><span class="name"><span class="pre">t</span></span></code> for splitting along tabs or
-<code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">,</span></span></code> along commmas.</p>
+<code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">,</span></span></code> along commas.</p>
 <p>Then you <code class="code python docutils literal notranslate"><span class="name"><span class="pre">append</span></span></code> this split line list to the end of your data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>.
 The <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">append</span></span><span class="punctuation"><span class="pre">()</span></span></code> method adds a single item to the end of your <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>.
 After every line in your <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop iteration, the data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> that was
@@ -836,9 +848,9 @@ $ git commit -m <span class="s2">&quot;Parsing select time-series&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p>Now it’s easy to get the time-series informationfor each column that we are
+<li><p>Now it’s easy to get the time-series information for each column that we are
 interested in grabbing, and we can get each column by name. However,
-everything read fromthe text file is a str. What if we want to do math on
+everything read from the text file is a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span></code>. What if we want to do math on
 this data, then we need it to be a different data type!</p>
 <p>So, let’s convert the tempout time-series to be a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code> by changing the
 line:</p>
