@@ -160,8 +160,8 @@ effectively addresses the concerns and needs of the geoscience community.</p>
 <h1>Beginner Python for Scientists<a class="headerlink" href="#beginner-python-for-scientists" title="Permalink to this headline">¶</a></h1>
 <p>Welcome to the Beginner Python for Scientists tutorial. In this self-paced
 course you will learn how to write Python code using Python best practices.</p>
-<p>The “First Python Script” section is designed to take one work day, but you may move through the content
-much slower or more quickly.</p>
+<p>The “First Python Script” section is designed to take one work day, but you
+may move through the content much slower or more quickly.</p>
 <p>Through these instructions you will develop scripts and use Git and GitHub to
 save and organize your work.</p>
 <p>At the end of this tutorial you will have a grasp of how to begin building
@@ -329,7 +329,7 @@ and all of its contents.</p>
 </div>
 </li>
 <li><p>Download sample data from the CU Boulder weather station:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -kO https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 </pre></div>
 </div>
 <p>This weather station is a Davis Instruments wireless Vantage Pro2 located on
@@ -338,13 +338,15 @@ elevation). The station is monitored by the Atmospheric and Oceanic Sciences
 (ATOC) department and is part of the larger University of Colorado ATOC
 Weather Network.</p>
 </li>
-<li><p>Check the status of your repository</p>
+<li><p>Check the status of your repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
-<p>You will see the newly downloaded file listed as an “untracked file.” Git
-status will tell you what to do to untracked files. Those instructions
-mirror the next 2 steps:</p>
+<p>You will see the newly created <code class="code bash docutils literal notranslate"><span class="pre">data</span></code> directory (which is listed as
+<code class="code bash docutils literal notranslate"><span class="pre">./</span></code>, since you are currently <em>in</em> that directory) is listed as
+“untracked,” which means all of the files you added to that directory are
+<em>also</em> untracked by git.  The <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command will tell you what
+to do with untracked files. Those instructions mirror the next 2 steps:</p>
 </li>
 <li><p>Add the file to the Git staging area:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add wxobs20170821.txt
