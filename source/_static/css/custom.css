@@ -20,6 +20,18 @@ footer {
   position: relative;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1rem;
+}
+
+h1:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  text-align: justify;
+}
+
 /************************************************
  BOOTSTRAP v4.0
  ************************************************/
@@ -77,13 +89,33 @@ footer {
  SPHINX
  ************************************************/
 .admonition {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 10px;
 }
 
 .admonition-title {
   font-weight: bold;
+}
+
+div.admonition dl,
+div.admonition ol,
+div.admonition ul {
+  margin-bottom: 0.7rem;
+}
+
+div.admonition dl:last-child,
+div.admonition ol:last-child,
+div.admonition ul:last-child {
+  margin-bottom: 0;
+}
+
+div.admonition p {
+  margin-bottom: 0.7em;
+}
+
+div.admonition p:last-child {
+  margin-bottom: 0;
 }
 
 div.math {
@@ -204,10 +236,6 @@ a.reference.external {
   display: block;
   width: 70px;
   padding-bottom: 15px;
-}
-
-p {
-  text-align: justify;
 }
 
 .sidebar {
