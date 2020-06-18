@@ -126,12 +126,14 @@ div.note {
   background-color: #EEE;
   border: 1px solid #4E9A06;
   border-radius: 10px;
+  text-align: left;
 }
 
 div.seealso {
   background-color: #EEE;
   border: 1px solid #007bff;
   border-radius: 10px;
+  text-align: left;
 }
 
 .headerlink {
