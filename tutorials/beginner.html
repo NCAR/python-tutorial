@@ -449,8 +449,8 @@ we’ll read the first 4 lines from our datafile.</p>
 can be in single or double quotes.</p>
 <p>Then create a variable associated with the opened file, here it is called
 <code class="code python docutils literal notranslate"><span class="name"><span class="pre">datafile</span></span></code>.</p>
-<p>The ‘r’ argument in the open command indicates that we are opening the
-file for reading capabilities. Other input arguments for open include
+<p>The <code class="code python docutils literal notranslate"><span class="literal string single"><span class="pre">‘r’</span></span></code> argument in the open command indicates that we are opening
+the file for reading capabilities. Other input arguments for open include
 <code class="code python docutils literal notranslate"><span class="literal string single"><span class="pre">‘w’</span></span></code>, for example, if you wanted to write to the file.</p>
 <p>The readline command moves through the open file, always reading the next
 line.</p>
@@ -497,9 +497,9 @@ unique step in between every change to our script.</p>
 <p>Our code is similar to the before, but now we’ve read the entire file. To
 test that this worked. We’ll <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">)</span></span></code>. Print statements in python
 require parenthesis around the object you wish to print, here it is data.</p>
-<p>Try <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string single"><span class="pre">‘data’</span></span><span class="punctuation"><span class="pre">)</span></span></code> as well, now Python will print the string ‘data’, as
-it did for the hello world function, instead of the information stored in
-the variable data.</p>
+<p>Try <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string single"><span class="pre">‘data’</span></span><span class="punctuation"><span class="pre">)</span></span></code> as well, now Python will print the string
+<code class="code docutils literal notranslate"><span class="pre">data</span></code>, as it did for the hello world function, instead of the
+information stored in the variable data.</p>
 <p>Don’t forget to execute with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code>.</p>
 </li>
 <li><p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read your whole data file using a context
@@ -1182,7 +1182,7 @@ $ git commit -m <span class="s2">&quot;Renaming first script&quot;</span>
 and create or login to your account.</p></li>
 <li><p>At the top right of any Github page, there is a ‘+’ icon. Click that,
 then select ‘New Repository’.</p></li>
-<li><p>Name your repository, “python_tutorial_2020”.
+<li><p>Name your repository <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>.
 It is best practice for your local project and GitHub repository to
 share a name.</p></li>
 <li><p>And click “Create Repository”</p></li>

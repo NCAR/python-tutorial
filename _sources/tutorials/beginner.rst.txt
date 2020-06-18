@@ -410,8 +410,8 @@ Open a terminal to begin.
     Then create a variable associated with the opened file, here it is called
     :python:`datafile`.
 
-    The 'r' argument in the open command indicates that we are opening the
-    file for reading capabilities. Other input arguments for open include
+    The :python:`'r'` argument in the open command indicates that we are opening
+    the file for reading capabilities. Other input arguments for open include
     :python:`'w'`, for example, if you wanted to write to the file.
 
     The readline command moves through the open file, always reading the next
@@ -463,9 +463,9 @@ Open a terminal to begin.
     test that this worked. We'll :python:`print(data)`. Print statements in python
     require parenthesis around the object you wish to print, here it is data.
 
-    Try :python:`print('data')` as well, now Python will print the string 'data', as
-    it did for the hello world function, instead of the information stored in
-    the variable data.
+    Try :python:`print('data')` as well, now Python will print the string
+    :code:`data`, as it did for the hello world function, instead of the
+    information stored in the variable data.
 
     Don't forget to execute with :bash:`python mysci.py`.
 
@@ -1261,7 +1261,7 @@ Let's begin.
     2. At the top right of any Github page, there is a '+' icon. Click that,
        then select 'New Repository'.
 
-    3. Name your repository, "python_tutorial_2020".
+    3. Name your repository :code:`python_tutorial`.
        It is best practice for your local project and GitHub repository to
        share a name.
 
