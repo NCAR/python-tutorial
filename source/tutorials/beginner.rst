@@ -16,46 +16,19 @@
    :language: python
 
 ==============================
-Tutorials
-==============================
-
-What makes this Python tutorial unique is that it has been designed specifically 
-to meet the needs of, and feedback from, atmospheric and oceanic scientists 
-making the transition with the NCAR-wide 
-`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
-In particular, this tutorial should be useful to any scientist who already knows how to program 
-in some other language but is taking up Python for the first time. By spending the 
-first course on pure Python without importing any additional packages, our beginner 
-tutorial addresses the concerns that most tutorials either pick up speed too quickly 
-by going into the intricacies of third-party packages before explaining how Python is 
-different from other languages, or get too bogged down in basic programming concepts 
-that anyone with programming experience already knows. This tutorial attempts to hit 
-the sweet spot between too high-level and too low-level. By using coding examples 
-with real atmospheric datasets and questions, the skills and techniques taught are 
-easily applied to actual atmospheric or oceanic workflows. The intermediate and 
-advanced tutorials were developed by working closely with scientists to transform their 
-old code into Python using the most up-to-date tools for advanced computing. 
-We hope that this tailored approach to teaching and sharing computational tools 
-effectively addresses the concerns and needs of the geoscience community.
-
-
-==============================
 Beginner Python for Scientists
 ==============================
-Welcome to the Beginner Python for Scientists tutorial. In this self-paced
+Welcome to the Beginner Python for Scientists tutorial! In this self-paced
 course you will learn how to write Python code using Python best practices.
+Through these instructions you will develop Python scripts and use Git and
+GitHub to save and organize your work.  At the end of this tutorial you will
+have a grasp of how to begin building your own library of Python tools for
+your scientific analysis workflows.
 
-The "First Python Script" section is designed to take one work day, but you may move through the content
-much slower or more quickly.
-
-Through these instructions you will develop scripts and use Git and GitHub to
-save and organize your work.
-
-At the end of this tutorial you will have a grasp of how to begin building
-your own library of Python tools for your scientific analysis workflows.
-
+-----------
 Why Python?
 -----------
+
 You're already here because you want to learn to use Python for your data
 analysis and visualizations. Python can be compared to other high-level,
 interpreted, object-oriented languages, but is especially great because it is
@@ -101,16 +74,34 @@ Open source:
 Python is a language designed for rapid prototyping and efficient programming.
 It is easy to write new code quickly with less typing.
 
------
+----------------------------
+Why another Python tutorial?
+----------------------------
+
+What makes this Python tutorial unique is that it has been designed specifically
+to meet the needs of, and feedback from, atmospheric and oceanic scientists
+making the transition with the NCAR-wide
+`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
+In particular, this tutorial should be useful to any scientist who already knows how to program
+in some other language but is taking up Python for the first time. By spending the
+first course on pure Python without importing any additional packages, our beginner
+tutorial addresses the concerns that most tutorials either pick up speed too quickly
+by going into the intricacies of third-party packages before explaining how Python is
+different from other languages, or get too bogged down in basic programming concepts
+that anyone with programming experience already knows. This tutorial attempts to hit
+the sweet spot between too high-level and too low-level. By using coding examples
+with real atmospheric datasets and questions, the skills and techniques taught are
+easily applied to actual atmospheric or oceanic workflows.
+We hope that this tailored approach to teaching and sharing computational tools
+effectively addresses the concerns and needs of the geoscience community.
 
 .. seealso::
 
    - `Official Python 3 Documentation <https://docs.python.org/3/>`_
    - `Official GitHub Documentation <https://help.github.com/en>`_
+   - `Official Git Documentation <https://git-scm.com/doc>`_
 
 ..
-
------
 
 ---------------------------
 Requirements & Installation
@@ -158,35 +149,30 @@ If you don't have conda installed at all,
    revert your code back to a previous version if you've made any mistakes.
 
 
------
-
 -------------------------
 First Python Script
 -------------------------
 
-This section of the Zero to Thirty tutorial will focus on teaching you Python
-through the creation of your first script.
-
-Along the way, you will learn about syntax and the reasoning behind why things are done the
-way they are done.
-
-We will also incorporate lessons on the use of Git because we highly recommend
-you version controling your work.
+This section of the tutorial will focus on teaching you Python through the
+creation of your first script.  You will learn about syntax and the reasoning
+behind why things are done the way they are done along the way.  We will also
+incorporate lessons on the use of Git because we highly recommend you version
+controling your work.
 
 We are assuming you are familiar with bash and terminal commands. If not
-`here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
+`here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_.
 
 ~~~~~~~~~~~~~~~~~~~
 Reading a .txt File
 ~~~~~~~~~~~~~~~~~~~
 
 In building your first Python script we will set up our workspace, read a
-:code:`.txt` file, and learn git fundamentals.
+:code:`.txt` file, and learn Git fundamentals.
 
-Open a terminal to begin:
+Open a terminal to begin.
 
 .. note::
-   
+
    On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
 
 ..
@@ -218,7 +204,7 @@ Open a terminal to begin:
 
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
-   Type conda create --name , the name of your project, here that is
+   Type :bash:`conda create --name` and the name of your project, here that is
    :code:`python_tutorial`, and then specify that you are using python to create a
    virtual environment for this project.
 
@@ -282,7 +268,7 @@ Open a terminal to begin:
 
    .. code-block:: bash
 
-      $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+      $ curl -kO https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
    ..
 
@@ -300,9 +286,11 @@ Open a terminal to begin:
 
    ..
 
-   You will see the newly downloaded file listed as an "untracked file." Git
-   status will tell you what to do to untracked files. Those instructions
-   mirror the next 2 steps:
+   You will see the newly created :bash:`data` directory (which is listed as
+   :bash:`./`, since you are currently *in* that directory) is listed as
+   "untracked," which means all of the files you added to that directory are
+   *also* untracked by Git.  The :bash:`git status` command will tell you what
+   to do with untracked files. Those instructions mirror the next 2 steps:
 
 10. Add the file to the Git staging area:
 
@@ -377,7 +365,9 @@ Open a terminal to begin:
 
     .. note::
 
-       If you are working on a Windows machine it is possible that 'touch' will not be recognized as an internal or external command. If this is the case, run `conda install m2-base` to enable unix commands such as `touch`.
+       If you are working on a Windows machine it is possible that :bash:`touch` will not be
+       recognized as an internal or external command. If this is the case, run
+       :bash:`conda install m2-base` to enable unix commands such as :bash:`touch`.
 
     ..
 
@@ -437,8 +427,8 @@ Open a terminal to begin:
     Then create a variable associated with the opened file, here it is called
     :python:`datafile`.
 
-    The :python:`'r'` argument in the open command indicates that we are opening the
-    file for reading capabilities. Other input arguments for open include
+    The :python:`'r'` argument in the open command indicates that we are opening
+    the file for reading capabilities. Other input arguments for open include
     :python:`'w'`, for example, if you wanted to write to the file.
 
     The readline command moves through the open file, always reading the next
@@ -490,9 +480,9 @@ Open a terminal to begin:
     test that this worked. We'll :python:`print(data)`. Print statements in python
     require parenthesis around the object you wish to print, here it is data.
 
-    Try :python:`print('data')` as well, now Python will print the string 'data', as
-    it did for the hello world function, instead of the information stored in
-    the variable data.
+    Try :python:`print('data')` as well, now Python will print the string
+    :code:`data`, as it did for the hello world function, instead of the
+    information stored in the variable data.
 
     Don't forget to execute with :bash:`python mysci.py`.
 
@@ -566,7 +556,7 @@ Open a terminal to begin:
     ..
 
     .. note::
-    
+
        Take a look at which files have been changed in the repository!
 
     ..
@@ -619,7 +609,6 @@ Open a terminal to begin:
 
     You can also print simplified logs with the :code:`--oneline` option.
 
-
 -----
 
 That concludes the first lesson of this virtual tutorial.
@@ -632,7 +621,6 @@ the Python commands of :python:`open()`, :python:`readline()`, :python:`read()`,
 also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 :bash:`git add`, :bash:`git commit`, and :bash:`git log`.
 
------
 
 .. seealso::
 
@@ -643,20 +631,18 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 
 ..
 
------
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Creating a Data Dictionary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where "Reading in a .txt File" left off - you had just
-commited your new script file that reads in the data from file as a string.
-
+This is intended to pick off right where "Reading in a .txt File" left off - you
+had just commited your new script file that reads in the data from file as a string.
 You will now manipulate your data into a more usable format - a dictionary.
-
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
+
+Let's begin.
 
 1. One big string isn't very useful, so use :python:`str.split()` to parse the data
    file into a data structure you can use.
@@ -743,7 +729,7 @@ data structures.
    We just covered a lot of Python nuances in a very little bit a code!
 
    .. seealso::
-      
+
       `More information on for-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
       `More information on Python lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
@@ -866,9 +852,9 @@ data structures.
    Grab date (the first column of each line), time (the second column of each
    line), and temperature data (the third column), from each line and
    :python:`append` it to the :python:`list` associated with each of these data variables.
-   
+
    .. seealso::
-   
+
       `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
    ..
@@ -1022,8 +1008,6 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 :python:`for` loops, about the :python:`float` datatype, and using the Python commands
 :python:`str.split()`.
 
------
-
 .. seealso::
 
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
@@ -1031,19 +1015,18 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
 ..
 
------
-
 
 ~~~~~~~~~~~~~~~~~
 Writing Functions
 ~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where "Creating a Data Dictionary" left off- you had just
-commited your new script that reads the file, saving the variables of date,
+This is intended to pick off right where "Creating a Data Dictionary" left off - you
+had just commited your new script that reads the file, saving the variables of date,
 time, and tempout in a data dictionary.
-
 In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.
+
+Let's begin.
 
 1. Okay, now that you've read the data in a way that is easy to modify later,
    it is time to actually do something with the data.
@@ -1221,7 +1204,7 @@ function and learning about basic math operators.
    Using *f-*:python:`\string`\s with float formatting you can determine the precision
    with which to print the values to. The :python:`.5f` means you want 5 places after the
    decimal point.
-   
+
    .. seealso::
 
       `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
@@ -1295,7 +1278,7 @@ function and learning about basic math operators.
     2. At the top right of any Github page, there is a '+' icon. Click that,
        then select 'New Repository'.
 
-    3. Name your repository, "python_tutorial_2020".
+    3. Name your repository :code:`python_tutorial`.
        It is best practice for your local project and GitHub repository to
        share a name.
 
@@ -1339,7 +1322,6 @@ function and learning about basic math operators.
     you wanted to display and easily visualize changes in your code between
     commits.
 
-
 -----
 
 That concludes the "First Python Script" virtual tutorial where you learned to
@@ -1350,10 +1332,8 @@ first function. You also learned about Python math operators, the :python:`zip()
 command, :python:`tuple` datastructure, *f-*:python:`string` formatting, and how to push your
 repository to GitHub.
 
------
-
 .. seealso::
-   
+
    - `User defined functions <https://docs.python.org/3/reference/compound_stmts.html#function-definitions>`_
    - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
