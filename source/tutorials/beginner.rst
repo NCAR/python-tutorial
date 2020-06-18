@@ -278,7 +278,7 @@ Open a terminal to begin.
    (ATOC) department and is part of the larger University of Colorado ATOC
    Weather Network.
 
-9. Check the status of your repository
+9. Check the status of your repository:
 
    .. code-block:: bash
 
