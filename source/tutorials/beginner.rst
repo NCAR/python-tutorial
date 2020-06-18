@@ -19,23 +19,23 @@
 Tutorials
 ==============================
 
-What makes this Python tutorial unique is that it has been designed specifically 
-to meet the needs of, and feedback from, atmospheric and oceanic scientists 
-making the transition with the NCAR-wide 
+What makes this Python tutorial unique is that it has been designed specifically
+to meet the needs of, and feedback from, atmospheric and oceanic scientists
+making the transition with the NCAR-wide
 `pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
-In particular, this tutorial should be useful to any scientist who already knows how to program 
-in some other language but is taking up Python for the first time. By spending the 
-first course on pure Python without importing any additional packages, our beginner 
-tutorial addresses the concerns that most tutorials either pick up speed too quickly 
-by going into the intricacies of third-party packages before explaining how Python is 
-different from other languages, or get too bogged down in basic programming concepts 
-that anyone with programming experience already knows. This tutorial attempts to hit 
-the sweet spot between too high-level and too low-level. By using coding examples 
-with real atmospheric datasets and questions, the skills and techniques taught are 
-easily applied to actual atmospheric or oceanic workflows. The intermediate and 
-advanced tutorials were developed by working closely with scientists to transform their 
-old code into Python using the most up-to-date tools for advanced computing. 
-We hope that this tailored approach to teaching and sharing computational tools 
+In particular, this tutorial should be useful to any scientist who already knows how to program
+in some other language but is taking up Python for the first time. By spending the
+first course on pure Python without importing any additional packages, our beginner
+tutorial addresses the concerns that most tutorials either pick up speed too quickly
+by going into the intricacies of third-party packages before explaining how Python is
+different from other languages, or get too bogged down in basic programming concepts
+that anyone with programming experience already knows. This tutorial attempts to hit
+the sweet spot between too high-level and too low-level. By using coding examples
+with real atmospheric datasets and questions, the skills and techniques taught are
+easily applied to actual atmospheric or oceanic workflows. The intermediate and
+advanced tutorials were developed by working closely with scientists to transform their
+old code into Python using the most up-to-date tools for advanced computing.
+We hope that this tailored approach to teaching and sharing computational tools
 effectively addresses the concerns and needs of the geoscience community.
 
 
@@ -45,8 +45,8 @@ Beginner Python for Scientists
 Welcome to the Beginner Python for Scientists tutorial. In this self-paced
 course you will learn how to write Python code using Python best practices.
 
-The "First Python Script" section is designed to take one work day, but you may move through the content
-much slower or more quickly.
+The "First Python Script" section is designed to take one work day, but you
+may move through the content much slower or more quickly.
 
 Through these instructions you will develop scripts and use Git and GitHub to
 save and organize your work.
@@ -186,7 +186,7 @@ In building your first Python script we will set up our workspace, read a
 Open a terminal to begin:
 
 .. note::
-   
+
    On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
 
 ..
@@ -274,7 +274,7 @@ Open a terminal to begin:
 
    .. code-block:: bash
 
-      $ curl -O https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
+      $ curl -kO https://sundowner.colorado.edu/weather/atoc8/wxobs20170821.txt
 
    ..
 
@@ -284,7 +284,7 @@ Open a terminal to begin:
    (ATOC) department and is part of the larger University of Colorado ATOC
    Weather Network.
 
-8. Check the status of your repository
+8. Check the status of your repository:
 
    .. code-block:: bash
 
@@ -292,9 +292,11 @@ Open a terminal to begin:
 
    ..
 
-   You will see the newly downloaded file listed as an "untracked file." Git
-   status will tell you what to do to untracked files. Those instructions
-   mirror the next 2 steps:
+   You will see the newly created :bash:`data` directory (which is listed as
+   :bash:`./`, since you are currently *in* that directory) is listed as
+   "untracked," which means all of the files you added to that directory are
+   *also* untracked by git.  The :bash:`git status` command will tell you what
+   to do with untracked files. Those instructions mirror the next 2 steps:
 
 9. Add the file to the Git staging area:
 
@@ -549,7 +551,7 @@ Open a terminal to begin:
     ..
 
     .. note::
-    
+
        Take a look at which files have been changed in the repository!
 
     ..
@@ -726,7 +728,7 @@ data structures.
    We just covered a lot of Python nuances in a very little bit a code!
 
    .. seealso::
-      
+
       `More information on for-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
       `More information on Python lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
@@ -849,9 +851,9 @@ data structures.
    Grab date (the first column of each line), time (the second column of each
    line), and temperature data (the third column), from each line and
    :python:`append` it to the :python:`list` associated with each of these data variables.
-   
+
    .. seealso::
-   
+
       `More on Python dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
    ..
@@ -1204,7 +1206,7 @@ function and learning about basic math operators.
    Using *f-*:python:`\string`\s with float formatting you can determine the precision
    with which to print the values to. The :python:`.5f` means you want 5 places after the
    decimal point.
-   
+
    .. seealso::
 
       `More on string formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
@@ -1336,7 +1338,7 @@ repository to GitHub.
 -----
 
 .. seealso::
-   
+
    - `User defined functions <https://docs.python.org/3/reference/compound_stmts.html#function-definitions>`_
    - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
