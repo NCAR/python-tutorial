@@ -16,46 +16,19 @@
    :language: python
 
 ==============================
-Tutorials
-==============================
-
-What makes this Python tutorial unique is that it has been designed specifically
-to meet the needs of, and feedback from, atmospheric and oceanic scientists
-making the transition with the NCAR-wide
-`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
-In particular, this tutorial should be useful to any scientist who already knows how to program
-in some other language but is taking up Python for the first time. By spending the
-first course on pure Python without importing any additional packages, our beginner
-tutorial addresses the concerns that most tutorials either pick up speed too quickly
-by going into the intricacies of third-party packages before explaining how Python is
-different from other languages, or get too bogged down in basic programming concepts
-that anyone with programming experience already knows. This tutorial attempts to hit
-the sweet spot between too high-level and too low-level. By using coding examples
-with real atmospheric datasets and questions, the skills and techniques taught are
-easily applied to actual atmospheric or oceanic workflows. The intermediate and
-advanced tutorials were developed by working closely with scientists to transform their
-old code into Python using the most up-to-date tools for advanced computing.
-We hope that this tailored approach to teaching and sharing computational tools
-effectively addresses the concerns and needs of the geoscience community.
-
-
-==============================
 Beginner Python for Scientists
 ==============================
-Welcome to the Beginner Python for Scientists tutorial. In this self-paced
+Welcome to the Beginner Python for Scientists tutorial! In this self-paced
 course you will learn how to write Python code using Python best practices.
+Through these instructions you will develop Python scripts and use Git and
+GitHub to save and organize your work.  At the end of this tutorial you will
+have a grasp of how to begin building your own library of Python tools for
+your scientific analysis workflows.
 
-The "First Python Script" section is designed to take one work day, but you
-may move through the content much slower or more quickly.
-
-Through these instructions you will develop scripts and use Git and GitHub to
-save and organize your work.
-
-At the end of this tutorial you will have a grasp of how to begin building
-your own library of Python tools for your scientific analysis workflows.
-
+-----------
 Why Python?
 -----------
+
 You're already here because you want to learn to use Python for your data
 analysis and visualizations. Python can be compared to other high-level,
 interpreted, object-oriented languages, but is especially great because it is
@@ -101,16 +74,36 @@ Open source:
 Python is a language designed for rapid prototyping and efficient programming.
 It is easy to write new code quickly with less typing.
 
------
+----------------------------
+Why another Python tutorial?
+----------------------------
+
+What makes this Python tutorial unique is that it has been designed specifically
+to meet the needs of, and feedback from, atmospheric and oceanic scientists
+making the transition with the NCAR-wide
+`pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
+In particular, this tutorial should be useful to any scientist who already knows how to program
+in some other language but is taking up Python for the first time. By spending the
+first course on pure Python without importing any additional packages, our beginner
+tutorial addresses the concerns that most tutorials either pick up speed too quickly
+by going into the intricacies of third-party packages before explaining how Python is
+different from other languages, or get too bogged down in basic programming concepts
+that anyone with programming experience already knows. This tutorial attempts to hit
+the sweet spot between too high-level and too low-level. By using coding examples
+with real atmospheric datasets and questions, the skills and techniques taught are
+easily applied to actual atmospheric or oceanic workflows. The intermediate and
+advanced tutorials were developed by working closely with scientists to transform their
+old code into Python using the most up-to-date tools for advanced computing.
+We hope that this tailored approach to teaching and sharing computational tools
+effectively addresses the concerns and needs of the geoscience community.
 
 .. seealso::
 
    - `Official Python 3 Documentation <https://docs.python.org/3/>`_
    - `Official GitHub Documentation <https://help.github.com/en>`_
+   - `Official Git Documentation <https://git-scm.com/doc>`_
 
 ..
-
------
 
 ---------------------------
 Requirements & Installation
@@ -157,8 +150,6 @@ If you don't have conda installed at all,
    maintain access to multiple versions of your code as you improve it, and
    revert your code back to a previous version if you've made any mistakes.
 
-
------
 
 -------------------------
 First Python Script
@@ -604,7 +595,6 @@ Open a terminal to begin:
 
     You can also print simplified logs with the :code:`--oneline` option.
 
-
 -----
 
 That concludes the first lesson of this virtual tutorial.
@@ -617,7 +607,6 @@ the Python commands of :python:`open()`, :python:`readline()`, :python:`read()`,
 also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 :bash:`git add`, :bash:`git commit`, and :bash:`git log`.
 
------
 
 .. seealso::
 
@@ -627,8 +616,6 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
    - `Context managers <https://book.pythontips.com/en/latest/context_managers.html>`_
 
 ..
-
------
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1007,16 +994,12 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 :python:`for` loops, about the :python:`float` datatype, and using the Python commands
 :python:`str.split()`.
 
------
-
 .. seealso::
 
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
    - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
 
 ..
-
------
 
 
 ~~~~~~~~~~~~~~~~~
@@ -1324,7 +1307,6 @@ function and learning about basic math operators.
     you wanted to display and easily visualize changes in your code between
     commits.
 
-
 -----
 
 That concludes the "First Python Script" virtual tutorial where you learned to
@@ -1334,8 +1316,6 @@ In this section you calculated wind chill index by writing and calling your
 first function. You also learned about Python math operators, the :python:`zip()`
 command, :python:`tuple` datastructure, *f-*:python:`string` formatting, and how to push your
 repository to GitHub.
-
------
 
 .. seealso::
 
