@@ -91,9 +91,7 @@ different from other languages, or get too bogged down in basic programming conc
 that anyone with programming experience already knows. This tutorial attempts to hit
 the sweet spot between too high-level and too low-level. By using coding examples
 with real atmospheric datasets and questions, the skills and techniques taught are
-easily applied to actual atmospheric or oceanic workflows. The intermediate and
-advanced tutorials were developed by working closely with scientists to transform their
-old code into Python using the most up-to-date tools for advanced computing.
+easily applied to actual atmospheric or oceanic workflows.
 We hope that this tailored approach to teaching and sharing computational tools
 effectively addresses the concerns and needs of the geoscience community.
 
@@ -155,26 +153,23 @@ If you don't have conda installed at all,
 First Python Script
 -------------------------
 
-This section of the Zero to Thirty tutorial will focus on teaching you Python
-through the creation of your first script.
-
-You will learn about syntax and the reasoning behind why things are done the
-way they are done along the way.
-
-We will also incorporate lessons on the use of Git because we highly recommend
-you version controling your work.
+This section of the tutorial will focus on teaching you Python through the
+creation of your first script.  You will learn about syntax and the reasoning
+behind why things are done the way they are done along the way.  We will also
+incorporate lessons on the use of Git because we highly recommend you version
+controling your work.
 
 We are assuming you are familiar with bash and terminal commands. If not
-`here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_
+`here is a cheat sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_.
 
 ~~~~~~~~~~~~~~~~~~~
 Reading a .txt File
 ~~~~~~~~~~~~~~~~~~~
 
 In building your first Python script we will set up our workspace, read a
-:code:`.txt` file, and learn git fundamentals.
+:code:`.txt` file, and learn Git fundamentals.
 
-Open a terminal to begin:
+Open a terminal to begin.
 
 .. note::
 
@@ -209,7 +204,7 @@ Open a terminal to begin:
 
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
-   Type conda create --name , the name of your project, here that is
+   Type :bash:`conda create --name` and the name of your project, here that is
    :code:`python_tutorial`, and then specify that you are using python to create a
    virtual environment for this project.
 
@@ -286,7 +281,7 @@ Open a terminal to begin:
    You will see the newly created :bash:`data` directory (which is listed as
    :bash:`./`, since you are currently *in* that directory) is listed as
    "untracked," which means all of the files you added to that directory are
-   *also* untracked by git.  The :bash:`git status` command will tell you what
+   *also* untracked by Git.  The :bash:`git status` command will tell you what
    to do with untracked files. Those instructions mirror the next 2 steps:
 
 9. Add the file to the Git staging area:
@@ -353,7 +348,9 @@ Open a terminal to begin:
 
     .. note::
 
-       If you are working on a Windows machine it is possible that 'touch' will not be recognized as an internal or external command. If this is the case, run `conda install m2-base` to enable unix commands such as `touch`.
+       If you are working on a Windows machine it is possible that :bash:`touch` will not be
+       recognized as an internal or external command. If this is the case, run
+       :bash:`conda install m2-base` to enable unix commands such as :bash:`touch`.
 
     ..
 
@@ -622,13 +619,13 @@ also used fundamental git commands such as :bash:`git init`, :bash:`git status`,
 Creating a Data Dictionary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where "Reading in a .txt File" left off - you had just
-commited your new script file that reads in the data from file as a string.
-
+This is intended to pick off right where "Reading in a .txt File" left off - you
+had just commited your new script file that reads in the data from file as a string.
 You will now manipulate your data into a more usable format - a dictionary.
-
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
+
+Let's begin.
 
 1. One big string isn't very useful, so use :python:`str.split()` to parse the data
    file into a data structure you can use.
@@ -1006,12 +1003,13 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 Writing Functions
 ~~~~~~~~~~~~~~~~~
 
-This is intended to pick off right where "Creating a Data Dictionary" left off- you had just
-commited your new script that reads the file, saving the variables of date,
+This is intended to pick off right where "Creating a Data Dictionary" left off - you
+had just commited your new script that reads the file, saving the variables of date,
 time, and tempout in a data dictionary.
-
 In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.
+
+Let's begin.
 
 1. Okay, now that you've read the data in a way that is easy to modify later,
    it is time to actually do something with the data.
