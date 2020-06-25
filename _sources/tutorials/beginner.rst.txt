@@ -54,8 +54,8 @@ Interpreted languages:
     they can be slower than compiled languages and potentially more memory
     intensive.
 
-Objected Oriented languages:
-    Objects are custom datatypes. For every custom datatypes, you usually have
+Object Oriented languages:
+    Objects are custom datatypes. For every custom datatype, you usually have
     a set of operations you might want to conduct. For example, if you have an
     object that is a list of numbers you might want to apply a mathematical
     operation, such as sum, onto this list object in bulk. Not every  function
@@ -301,8 +301,16 @@ Open a terminal to begin.
     ..
 
     By adding this datafile to your directory, you have made a change that is
-    not yet reflected in our Git repository. Type :bash:`git add` and then the name
-    of the altered file to stage your change.
+    not yet reflected in our Git repository. Every file in your working directory is classified 
+    by git as "untracked", "unmodified", "modified", or "staged."
+    Type :bash:`git add` and then the name of the altered file to stage your change, 
+    i.e. moving a file that is either untracked or modified to the staged category so they can be committed.
+
+    .. seealso::
+   
+       `More information on git add <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>`_
+
+    ..
 
 11. Check your git status once again:
 
@@ -329,8 +337,8 @@ Open a terminal to begin.
     .. note::
 
        On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF in mysci.py. The file will have its original line endings in your working directory`.
-       Do not worry too much about this warning. CR refers to Carriage Return Line Feed and LF refers to Line Feed. Both are used to indicate line termination. 
-       In Windows both a CR and LF are required to note the end of a line, but in Linux/UNIX a LF is only required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
+       Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination. 
+       In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
        To silence this warning you can type :bash:`git config --global core.autocrlf false` in the terminal.
 
     ..
@@ -476,11 +484,11 @@ Open a terminal to begin.
 
     ..
 
-    Our code is similar to the before, but now we've read the entire file. To
+    Our code is similar as before, but now we've read the entire file. To
     test that this worked. We'll :python:`print(data)`. Print statements in python
-    require parenthesis around the object you wish to print, here it is data.
+    require parenthesis around the object you wish to print, in this scenario the data object.
 
-    Try :python:`print('data')` as well, now Python will print the string
+    Try :python:`print('data')` as well. Now Python will print the string
     :code:`data`, as it did for the hello world function, instead of the
     information stored in the variable data.
 
@@ -502,8 +510,8 @@ Open a terminal to begin.
 
     ..
 
-    Again this is a similar method of opening the datafile, but we now use with
-    open. The with statement is a context manager that provides clean-up and
+    Again this is a similar method of opening the datafile, but we now use :python:`with open`. 
+    The :python:`with` statement is a context manager that provides clean-up and
     assures that the file is automatically closed after you've read it.
 
     The indendation of the line :python:`data = datafile.read()` is very important.
@@ -637,7 +645,7 @@ Creating a Data Dictionary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is intended to pick off right where "Reading in a .txt File" left off - you
-had just commited your new script file that reads in the data from file as a string.
+had just commited your new script file that reads in the data from a file as a string.
 You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
@@ -684,7 +692,7 @@ Let's begin.
    Then with the datafile open for reading capabilities, we are going to write
    two separate :python:`for` loops. A :python:`for` loop is used for iterating
    over a sequence (such as a list). It is important to note the syntax of Python
-   :python:`for` loops: the :python:`:` at the end of for :python:`for` line, the
+   :python:`for` loops: the :python:`:` at the end of the :python:`for` line, the
    tab-indentation of all lines within the :python:`for` loop, and perhaps the
    absence of an :code:`end for` that is found in languages such as Matlab.
 
@@ -772,8 +780,8 @@ Let's begin.
    what happens when you print :python:`data[:10]`, :python:`data[0:10:2]`, and
    :python:`data[slice(0,10,2)]`.  What's the difference?
 
-4. Now, to practice nested indexing,get the 5th, first 5, and every other
-   column of rows 8 in data.
+4. Now, to practice nested indexing, get the 5th, the first 5, and every other
+   column of row 8 in the data object.
 
    Change the DEBUG section of the :code:`mysci.py` script to:
 
@@ -972,7 +980,7 @@ Let's begin.
     datafile, change these two variables.
 
     Initializing the data :python:`dict` now includes a :python:`for` loop, where for each
-    variable specified in columns that key is initialized pointing to an empty
+    variable specified in columns, that key is initialized pointing to an empty
     :python:`list`. This is the first time you have looped over a :python:`dict` and added
     key-value pairs to a :python:`dict` via assignment.
 
@@ -980,7 +988,7 @@ Let's begin.
     loop. For every line of the datafile, split that line - and then for every
     desired variable in the columns :python:`dict` (date, time, tempout): grab the
     datum from the current split line with the specified index (0, 1, 2), use
-    the :python:`dict.get()` method to find the desired datatype if specired
+    the :python:`dict.get()` method to find the desired datatype if specified
     (avoiding :python:`key-not-found` errors and defaulting to :python:`str` if
     unspecified), convert the datum to the desired datatype, and :python:`append`
     the datum to the :python:`list` associated with each column key within the data
@@ -1012,6 +1020,7 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
    - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
+   - `Dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries`_
 
 ..
 
@@ -1048,7 +1057,7 @@ Let's begin.
    +45 degrees F.
 
    You've read the temperature data into the tempout variable, but to do this
-   calculation, you also needto read the windspeed variable from column 7.
+   calculation, you also need to read the windspeed variable from column 7.
 
    Modify the columns variable to read:
 
@@ -1099,10 +1108,10 @@ Let's begin.
 
    ..
 
-   To indicate a function in python you type def for define, the name of your
+   To indicate a function in python you type :python:`def` for define, the name of your
    function, and then in parenthesis the input arguments of that function,
-   followed by a colon. On the next lines tab-indented is the code of your
-   function, and your return value.
+   followed by a colon. The preceding lines,the code of your function, are all tab-indented.
+   If necessary specify your return value.
 
    .. seealso::
 
@@ -1110,12 +1119,12 @@ Let's begin.
 
    ..
 
-   Here is your first introduction math operators in Python. Addition,
+   Here is your first introduction to math operators in Python. Addition,
    subtraction, and multiplication look much like you'd expect. A double
    astericks, :python:`**`, indicates an exponential. A backslash, :python:`/`,
    is for division, and a double backslash, :python:`//`, is for integer division.
 
-   And then let's compute a new list with windchill data atthe bottom of
+   And then let's compute a new list with windchill data at the bottom of
    :code:`mysci.py`:
 
    .. code-block:: python
@@ -1189,8 +1198,8 @@ Let's begin.
 
    ..
 
-   Then, in a DEBUG section at the end of your script to compare the two
-   different values (from data and computed by our function):
+   Then, in a DEBUG section at the end of your script, compare the two
+   different values (one from data and one computed by our function):
 
    .. code-block:: python
       :lineno-start: 46
@@ -1201,7 +1210,7 @@ Let's begin.
 
    ..
 
-   Using *f-*:python:`\string`\s with float formatting you can determine the precision
+   Using :python:`f-string`s with float formatting you can determine the precision
    with which to print the values to. The :python:`.5f` means you want 5 places after the
    decimal point.
 
@@ -1296,6 +1305,12 @@ Let's begin.
        .. code-block:: bash
 
           $ git remote add origin <remote repository URL>
+
+       ..
+
+       .. note::
+          
+          Your remote repository URL is the link you copied in step 5!
 
        ..
 

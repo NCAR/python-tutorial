@@ -184,7 +184,7 @@ portable). And you are probably familiar with their deficiencies: sometimes
 they can be slower than compiled languages and potentially more memory
 intensive.</p>
 </dd>
-<dt>Objected Oriented languages:</dt><dd><p>Objects are custom datatypes. For every custom datatypes, you usually have
+<dt>Object Oriented languages:</dt><dd><p>Objects are custom datatypes. For every custom datatype, you usually have
 a set of operations you might want to conduct. For example, if you have an
 object that is a list of numbers you might want to apply a mathematical
 operation, such as sum, onto this list object in bulk. Not every  function
@@ -368,8 +368,14 @@ to do with untracked files. Those instructions mirror the next 2 steps:</p>
 </pre></div>
 </div>
 <p>By adding this datafile to your directory, you have made a change that is
-not yet reflected in our Git repository. Type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then the name
-of the altered file to stage your change.</p>
+not yet reflected in our Git repository. Every file in your working directory is classified
+by git as “untracked”, “unmodified”, “modified”, or “staged.”
+Type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then the name of the altered file to stage your change,
+i.e. moving a file that is either untracked or modified to the staged category so they can be committed.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">More information on git add</a></p>
+</div>
 </li>
 <li><p>Check your git status once again:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
@@ -387,8 +393,8 @@ you staged, in this case just one file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On a Windows machine you may see the following: <code class="code bash docutils literal notranslate"><span class="pre">warning:</span> <span class="pre">LF</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">replaced</span> <span class="pre">by</span> <span class="pre">CRLF</span> <span class="pre">in</span> <span class="pre">mysci.py.</span> <span class="pre">The</span> <span class="pre">file</span> <span class="pre">will</span> <span class="pre">have</span> <span class="pre">its</span> <span class="pre">original</span> <span class="pre">line</span> <span class="pre">endings</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">working</span> <span class="pre">directory</span></code>.
-Do not worry too much about this warning. CR refers to Carriage Return Line Feed and LF refers to Line Feed. Both are used to indicate line termination.
-In Windows both a CR and LF are required to note the end of a line, but in Linux/UNIX a LF is only required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
+Do not worry too much about this warning. CR refers to “Carriage Return Line Feed” and LF refers to “Line Feed.” Both are used to indicate line termination.
+In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
 To silence this warning you can type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="name builtin"><span class="pre">false</span></span></code> in the terminal.</p>
 </div>
 </li>
@@ -506,10 +512,10 @@ unique step in between every change to our script.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Our code is similar to the before, but now we’ve read the entire file. To
+<p>Our code is similar as before, but now we’ve read the entire file. To
 test that this worked. We’ll <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">)</span></span></code>. Print statements in python
-require parenthesis around the object you wish to print, here it is data.</p>
-<p>Try <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string single"><span class="pre">‘data’</span></span><span class="punctuation"><span class="pre">)</span></span></code> as well, now Python will print the string
+require parenthesis around the object you wish to print, in this scenario the data object.</p>
+<p>Try <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal string single"><span class="pre">‘data’</span></span><span class="punctuation"><span class="pre">)</span></span></code> as well. Now Python will print the string
 <code class="code docutils literal notranslate"><span class="pre">data</span></code>, as it did for the hello world function, instead of the
 information stored in the variable data.</p>
 <p>Don’t forget to execute with <code class="code bash docutils literal notranslate"><span class="pre">python</span> <span class="pre">mysci.py</span></code>.</p>
@@ -531,8 +537,8 @@ manager with:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Again this is a similar method of opening the datafile, but we now use with
-open. The with statement is a context manager that provides clean-up and
+<p>Again this is a similar method of opening the datafile, but we now use <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">with</span></span> <span class="name builtin"><span class="pre">open</span></span></code>.
+The <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">with</span></span></code> statement is a context manager that provides clean-up and
 assures that the file is automatically closed after you’ve read it.</p>
 <p>The indendation of the line <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">datafile</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">read</span></span><span class="punctuation"><span class="pre">()</span></span></code> is very important.
 Python is sensitive to white space and will not work if you mix spaces and
@@ -626,7 +632,7 @@ also used fundamental git commands such as <code class="code bash docutils liter
 <div class="section" id="creating-a-data-dictionary">
 <h3>Creating a Data Dictionary<a class="headerlink" href="#creating-a-data-dictionary" title="Permalink to this headline">¶</a></h3>
 <p>This is intended to pick off right where “Reading in a .txt File” left off - you
-had just commited your new script file that reads in the data from file as a string.
+had just commited your new script file that reads in the data from a file as a string.
 You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.</p>
@@ -683,7 +689,7 @@ are denoted by square brackets, <code class="code python docutils literal notran
 <p>Then with the datafile open for reading capabilities, we are going to write
 two separate <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops. A <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop is used for iterating
 over a sequence (such as a list). It is important to note the syntax of Python
-<code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops: the <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">:</span></span></code> at the end of for <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> line, the
+<code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops: the <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">:</span></span></code> at the end of the <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> line, the
 tab-indentation of all lines within the <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, and perhaps the
 absence of an <code class="code docutils literal notranslate"><span class="pre">end</span> <span class="pre">for</span></code> that is found in languages such as Matlab.</p>
 <p>In your first <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, loop through the dummy variable <code class="code python docutils literal notranslate"><span class="name"><span class="pre">_</span></span></code>
@@ -752,8 +758,8 @@ the last index.</p>
 what happens when you print <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[:</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">]</span></span></code>, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">]</span></span></code>, and
 <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name builtin"><span class="pre">slice</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">)]</span></span></code>.  What’s the difference?</p>
 </li>
-<li><p>Now, to practice nested indexing,get the 5th, first 5, and every other
-column of rows 8 in data.</p>
+<li><p>Now, to practice nested indexing, get the 5th, the first 5, and every other
+column of row 8 in the data object.</p>
 <p>Change the DEBUG section of the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
 18
@@ -956,14 +962,14 @@ its column-index. And a types <code class="code python docutils literal notransl
 the data when necessary. When you want new variables pulled out of the
 datafile, change these two variables.</p>
 <p>Initializing the data <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> now includes a <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop, where for each
-variable specified in columns that key is initialized pointing to an empty
+variable specified in columns, that key is initialized pointing to an empty
 <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>. This is the first time you have looped over a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> and added
 key-value pairs to a <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> via assignment.</p>
 <p>When reading and parsing the file, you created your first nested <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code>
 loop. For every line of the datafile, split that line - and then for every
 desired variable in the columns <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code> (date, time, tempout): grab the
 datum from the current split line with the specified index (0, 1, 2), use
-the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">get</span></span><span class="punctuation"><span class="pre">()</span></span></code> method to find the desired datatype if specired
+the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">get</span></span><span class="punctuation"><span class="pre">()</span></span></code> method to find the desired datatype if specified
 (avoiding <code class="code python docutils literal notranslate"><span class="name"><span class="pre">key</span></span><span class="operator"><span class="pre">-</span></span><span class="operator word"><span class="pre">not</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">found</span></span></code> errors and defaulting to <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span></code> if
 unspecified), convert the datum to the desired datatype, and <code class="code python docutils literal notranslate"><span class="name"><span class="pre">append</span></span></code>
 the datum to the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> associated with each column key within the data
@@ -990,6 +996,7 @@ keys and the command <code class="code python docutils literal notranslate"><spa
 <ul class="simple">
 <li><p><a class="reference external" href="https://book.pythontips.com/en/latest/for_-_else.html">For-loops</a></p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Lists</a></p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">`Dictionaries &lt;https://docs.python.org/3/tutorial/datastructures.html#dictionaries`_</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -1015,7 +1022,7 @@ follows: <em>a</em> = 35.74, <em>b</em> = 0.6215, <em>c</em> = 35.75, and <em>d<
 Wind Chill Index is only defined for temperatures within the range -45 to
 +45 degrees F.</p>
 <p>You’ve read the temperature data into the tempout variable, but to do this
-calculation, you also needto read the windspeed variable from column 7.</p>
+calculation, you also need to read the windspeed variable from column 7.</p>
 <p>Modify the columns variable to read:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
@@ -1058,19 +1065,19 @@ add this function to the bottom of the file.</p>
    <span class="k">return</span> <span class="n">wci</span>
 </pre></div>
 </td></tr></table></div>
-<p>To indicate a function in python you type def for define, the name of your
+<p>To indicate a function in python you type <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">def</span></span></code> for define, the name of your
 function, and then in parenthesis the input arguments of that function,
-followed by a colon. On the next lines tab-indented is the code of your
-function, and your return value.</p>
+followed by a colon. The preceding lines,the code of your function, are all tab-indented.
+If necessary specify your return value.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#function-definitions">More on user defined functions</a></p>
 </div>
-<p>Here is your first introduction math operators in Python. Addition,
+<p>Here is your first introduction to math operators in Python. Addition,
 subtraction, and multiplication look much like you’d expect. A double
 astericks, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">**</span></span></code>, indicates an exponential. A backslash, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">/</span></span></code>,
 is for division, and a double backslash, <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">//</span></span></code>, is for integer division.</p>
-<p>And then let’s compute a new list with windchill data atthe bottom of
+<p>And then let’s compute a new list with windchill data at the bottom of
 <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code>:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
 41
@@ -1123,8 +1130,8 @@ need to read the windchill from column 12 as a <code class="code python docutils
 <span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windchill&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Then, in a DEBUG section at the end of your script to compare the two
-different values (from data and computed by our function):</p>
+<p>Then, in a DEBUG section at the end of your script, compare the two
+different values (one from data and one computed by our function):</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>46
 47
 48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># DEBUG</span>
@@ -1132,8 +1139,8 @@ different values (from data and computed by our function):</p>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wc_data</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_data</span> <span class="o">-</span> <span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Using <em>f-</em><code class="code python docutils literal notranslate"><span class="pre">\</span><span class="name"><span class="pre">string</span></span></code>s with float formatting you can determine the precision
-with which to print the values to. The <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">.</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="name"><span class="pre">f</span></span></code> means you want 5 places after the
+<p>Using <code class="code python docutils literal notranslate"><span class="name"><span class="pre">f</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">string</span></span><span class="error"><span class="pre">`</span></span><span class="name"><span class="pre">s</span></span> <span class="keyword"><span class="pre">with</span></span> <span class="name builtin"><span class="pre">float</span></span> <span class="name"><span class="pre">formatting</span></span> <span class="name"><span class="pre">you</span></span> <span class="name"><span class="pre">can</span></span> <span class="name"><span class="pre">determine</span></span> <span class="name"><span class="pre">the</span></span> <span class="name"><span class="pre">precision</span></span>
+<span class="keyword"><span class="pre">with</span></span> <span class="name"><span class="pre">which</span></span> <span class="name"><span class="pre">to</span></span> <span class="name builtin"><span class="pre">print</span></span> <span class="name"><span class="pre">the</span></span> <span class="name"><span class="pre">values</span></span> <span class="name"><span class="pre">to</span></span><span class="operator"><span class="pre">.</span></span> <span class="name"><span class="pre">The</span></span> <span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">python</span></span><span class="punctuation"><span class="pre">:</span></span></code>.5f` means you want 5 places after the
 decimal point.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -1206,6 +1213,10 @@ something like this:</p>
 <li><p>Then to set your remote repository, in your project terminal type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add origin &lt;remote repository URL&gt;
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your remote repository URL is the link you copied in step 5!</p>
 </div>
 </li>
 <li><p>And verify your remote repository:</p>
