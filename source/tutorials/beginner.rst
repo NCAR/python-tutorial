@@ -58,7 +58,7 @@ Object Oriented languages:
     Objects are custom datatypes. For every custom datatype, you usually have
     a set of operations you might want to conduct. For example, if you have an
     object that is a list of numbers you might want to apply a mathematical
-    operation, such as sum, onto this list object in bulk. Not every  function
+    operation, such as sum, onto this list object in bulk. Not every function
     can be applied to every datatype; it wouldn't make sense to apply a
     logarithm to a string of letters or to capitalize a list of numbers. Data
     and the operations applied to them are grouped together into one object.
@@ -1020,7 +1020,7 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
    - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
-   - `Dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries`_
+   - `Dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ..
 
