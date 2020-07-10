@@ -15,9 +15,9 @@
 .. role:: python(code)
    :language: python
 
-==============================
+=========================================
 Your First Python Tutorial for Scientists
-==============================
+=========================================
 Welcome to Your First Python tutorial for scientists.! In this self-paced
 course you will learn how to write Python code using Python best practices.
 Through these instructions you will develop Python scripts and use Git and
