@@ -107,8 +107,15 @@ effectively addresses the concerns and needs of the geoscience community.
 Requirements & Installation
 ---------------------------
 
-If you don't have conda installed at all,
+We will be using the `Conda <https://docs.conda.io/en/latest/>`_ package manager in this tutorial.
+If you don't have Conda installed at all,
 `please install it. <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`_
+Conda is an excellent package manager for Python development, but it is capable of managing
+installations of more than just Python packages.
+
+We will also being doing all of the following in a :code:`bash` shell on MacOS.  You may have
+different experiences on other OSes, and you may even have problems on MacOS!  That's okay.  If
+you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.
 
 1. Check that you have conda or miniconda installed on your OS by checking your
    conda version:
@@ -130,6 +137,9 @@ If you don't have conda installed at all,
 
    ..
 
+   Updating your Conda package manager should not have any effect on your existing
+   Conda environments.
+
    .. note::
       If you have a *really* old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with :bash:`conda env list` to see if there are any environments you created and want to save.
 
@@ -142,7 +152,7 @@ If you don't have conda installed at all,
       $ conda --version
 
 
-4. `Install Git. <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+4. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
 
    Git is a program that tracks changes made to files. This makes it easy to
    maintain access to multiple versions of your code as you improve it, and
@@ -301,13 +311,13 @@ Open a terminal to begin.
     ..
 
     By adding this datafile to your directory, you have made a change that is
-    not yet reflected in our Git repository. Every file in your working directory is classified 
+    not yet reflected in our Git repository. Every file in your working directory is classified
     by git as "untracked", "unmodified", "modified", or "staged."
-    Type :bash:`git add` and then the name of the altered file to stage your change, 
+    Type :bash:`git add` and then the name of the altered file to stage your change,
     i.e. moving a file that is either untracked or modified to the staged category so they can be committed.
 
     .. seealso::
-   
+
        `More information on git add <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>`_
 
     ..
@@ -337,7 +347,7 @@ Open a terminal to begin.
     .. note::
 
        On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF in mysci.py. The file will have its original line endings in your working directory`.
-       Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination. 
+       Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination.
        In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
        To silence this warning you can type :bash:`git config --global core.autocrlf false` in the terminal.
 
@@ -510,7 +520,7 @@ Open a terminal to begin.
 
     ..
 
-    Again this is a similar method of opening the datafile, but we now use :python:`with open`. 
+    Again this is a similar method of opening the datafile, but we now use :python:`with open`.
     The :python:`with` statement is a context manager that provides clean-up and
     assures that the file is automatically closed after you've read it.
 
@@ -1309,7 +1319,7 @@ Let's begin.
        ..
 
        .. note::
-          
+
           Your remote repository URL is the link you copied in step 5!
 
        ..

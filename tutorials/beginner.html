@@ -232,8 +232,14 @@ effectively addresses the concerns and needs of the geoscience community.</p>
 </div>
 <div class="section" id="requirements-installation">
 <h2>Requirements &amp; Installation<a class="headerlink" href="#requirements-installation" title="Permalink to this headline">¶</a></h2>
-<p>If you don’t have conda installed at all,
-<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">please install it.</a></p>
+<p>We will be using the <a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a> package manager in this tutorial.
+If you don’t have Conda installed at all,
+<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">please install it.</a>
+Conda is an excellent package manager for Python development, but it is capable of managing
+installations of more than just Python packages.</p>
+<p>We will also being doing all of the following in a <code class="code docutils literal notranslate"><span class="pre">bash</span></code> shell on MacOS.  You may have
+different experiences on other OSes, and you may even have problems on MacOS!  That’s okay.  If
+you have a problem, please <a class="reference external" href="mailto:xdev&#37;&#52;&#48;ucar&#46;edu">let us know</a>.</p>
 <ol class="arabic">
 <li><p>Check that you have conda or miniconda installed on your OS by checking your
 conda version:</p>
@@ -247,6 +253,8 @@ an old version of conda installed, update it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda update -n base conda
 </pre></div>
 </div>
+<p>Updating your Conda package manager should not have any effect on your existing
+Conda environments.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have a <em>really</em> old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with <code class="code bash docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to see if there are any environments you created and want to save.</p>
@@ -257,7 +265,7 @@ an old version of conda installed, update it.</p>
 </pre></div>
 </div>
 </li>
-<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git.</a></p>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install</a> and <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">Configure</a> Git</p>
 <p>Git is a program that tracks changes made to files. This makes it easy to
 maintain access to multiple versions of your code as you improve it, and
 revert your code back to a previous version if you’ve made any mistakes.</p>
