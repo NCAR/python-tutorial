@@ -1,5 +1,5 @@
-.. title: beginner
-.. slug: beginner
+.. title: yourfirst
+.. slug: yourfirst
 .. date: 2020-04-08 14:29:40 UTC-06:00
 .. tags:
 .. category:
@@ -15,10 +15,10 @@
 .. role:: python(code)
    :language: python
 
-==============================
-Beginner Python for Scientists
-==============================
-Welcome to the Beginner Python for Scientists tutorial! In this self-paced
+=========================================
+Your First Python Tutorial for Scientists
+=========================================
+Welcome to Your First Python tutorial for scientists! In this self-paced
 course you will learn how to write Python code using Python best practices.
 Through these instructions you will develop Python scripts and use Git and
 GitHub to save and organize your work.  At the end of this tutorial you will
@@ -84,7 +84,7 @@ making the transition with the NCAR-wide
 `pivot-to-Python <https://www.ncl.ucar.edu/Document/Pivot_to_Python/>`_.
 In particular, this tutorial should be useful to any scientist who already knows how to program
 in some other language but is taking up Python for the first time. By spending the
-first course on pure Python without importing any additional packages, our beginner
+first course on pure Python without importing any additional packages, our "Your First"
 tutorial addresses the concerns that most tutorials either pick up speed too quickly
 by going into the intricacies of third-party packages before explaining how Python is
 different from other languages, or get too bogged down in basic programming concepts
