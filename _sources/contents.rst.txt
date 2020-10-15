@@ -10,7 +10,7 @@ NCAR Python Tutorials
    :maxdepth: 2
    :caption: Contents:
 
-   tutorials/beginner
+   tutorials/yourfirst
 
 
 Indices and tables
