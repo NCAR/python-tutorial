@@ -117,7 +117,7 @@ but we recommend trying to install `Miniconda <https://docs.conda.io/en/latest/m
 first.  Miniconda is the most lightweight solution, and it is the ideal solution when trying to
 install Conda on a remote system (i.e., with only SSH access).
 
-We will also being doing all of the following in a :code:`bash` shell on MacOS.  You may have
+We will also be doing all of the following in a :code:`bash` shell on MacOS.  You may have
 different experiences on other OSes, and you may even have problems on MacOS!  That's okay.  If
 you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.  We will try to work with you
 to find solutions on your OS, and we will post the solution here on this page.
@@ -166,7 +166,7 @@ to find solutions on your OS, and we will post the solution here on this page.
    make the :code:`conda` command available in your shell, and it will make the
    :code:`conda activate` command work.
 
-4. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
+5. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
 
    Git is a program that tracks changes made to files. This makes it easy to
    maintain access to multiple versions of your code as you improve it, and
