@@ -236,10 +236,15 @@ effectively addresses the concerns and needs of the geoscience community.</p>
 If you don’t have Conda installed at all,
 <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">please install it.</a>
 Conda is an excellent package manager for Python development, but it is capable of managing
-installations of more than just Python packages.</p>
+installations of more than just Python packages.  Both Miniconda (just <code class="code docutils literal notranslate"><span class="pre">conda</span></code>) and the full
+Anaconda (<code class="code docutils literal notranslate"><span class="pre">conda</span></code> plus a lot of pre-installed packages and tools) are acceptable,
+but we recommend trying to install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>
+first.  Miniconda is the most lightweight solution, and it is the ideal solution when trying to
+install Conda on a remote system (i.e., with only SSH access).</p>
 <p>We will also being doing all of the following in a <code class="code docutils literal notranslate"><span class="pre">bash</span></code> shell on MacOS.  You may have
 different experiences on other OSes, and you may even have problems on MacOS!  That’s okay.  If
-you have a problem, please <a class="reference external" href="mailto:xdev&#37;&#52;&#48;ucar&#46;edu">let us know</a>.</p>
+you have a problem, please <a class="reference external" href="mailto:xdev&#37;&#52;&#48;ucar&#46;edu">let us know</a>.  We will try to work with you
+to find solutions on your OS, and we will post the solution here on this page.</p>
 <ol class="arabic">
 <li><p>Check that you have conda or miniconda installed on your OS by checking your
 conda version:</p>
@@ -265,6 +270,16 @@ Conda environments.</p>
 </pre></div>
 </div>
 </li>
+<li><p>Initialize Conda to work with your shell (.e.g., <code class="code docutils literal notranslate"><span class="pre">bash</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda init
+</pre></div>
+</div>
+<p>This step may modify your shell configuration script (e.g., <code class="code docutils literal notranslate"><span class="pre">.bash_profile</span></code>) to
+make the <code class="code docutils literal notranslate"><span class="pre">conda</span></code> command available in your shell, and it will make the
+<code class="code docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> command work.</p>
+</li>
+</ol>
+<ol class="arabic" start="4">
 <li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install</a> and <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">Configure</a> Git</p>
 <p>Git is a program that tracks changes made to files. This makes it easy to
 maintain access to multiple versions of your code as you improve it, and
@@ -689,10 +704,10 @@ file into a data structure you can use.</p>
 </pre></div>
 </td></tr></table></div>
 <p>The first thing that is different in this script is an initialized data
-variable; <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span> <span class="operator"><span class="pre">=</span></span> <span class="punctuation"><span class="pre">[]</span></span></code> creates the variable data as an empty list which we
-will populate as we read the file. Python lists are a collection data type
-that are ordered and changeable - meaning you can call information out of
-the list by its index and you can add or delete elements to your list. Lists
+variable; <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span> <span class="operator"><span class="pre">=</span></span> <span class="punctuation"><span class="pre">[]</span></span></code> creates the variable data as an empty <code class="code docutils literal notranslate"><span class="pre">list</span></code> which we
+will populate as we read the file. Python <code class="code docutils literal notranslate"><span class="pre">list</span></code> objects are a collection data type
+that contain ordered and changeable - meaning you can call information out of
+the <code class="code docutils literal notranslate"><span class="pre">list</span></code> by its index and you can add or delete elements to your <code class="code docutils literal notranslate"><span class="pre">list</span></code>. Lists
 are denoted by square brackets, <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[]</span></span></code>.</p>
 <p>Then with the datafile open for reading capabilities, we are going to write
 two separate <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loops. A <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop is used for iterating
