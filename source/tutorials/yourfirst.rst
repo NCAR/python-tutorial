@@ -15,10 +15,10 @@
 .. role:: python(code)
    :language: python
 
-==============================
+=========================================
 Your First Python Tutorial for Scientists
-==============================
-Welcome to Your First Python tutorial for scientists.! In this self-paced
+=========================================
+Welcome to Your First Python tutorial for scientists! In this self-paced
 course you will learn how to write Python code using Python best practices.
 Through these instructions you will develop Python scripts and use Git and
 GitHub to save and organize your work.  At the end of this tutorial you will
@@ -301,13 +301,13 @@ Open a terminal to begin.
     ..
 
     By adding this datafile to your directory, you have made a change that is
-    not yet reflected in our Git repository. Every file in your working directory is classified 
+    not yet reflected in our Git repository. Every file in your working directory is classified
     by git as "untracked", "unmodified", "modified", or "staged."
-    Type :bash:`git add` and then the name of the altered file to stage your change, 
+    Type :bash:`git add` and then the name of the altered file to stage your change,
     i.e. moving a file that is either untracked or modified to the staged category so they can be committed.
 
     .. seealso::
-   
+
        `More information on git add <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>`_
 
     ..
@@ -337,7 +337,7 @@ Open a terminal to begin.
     .. note::
 
        On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF in mysci.py. The file will have its original line endings in your working directory`.
-       Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination. 
+       Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination.
        In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
        To silence this warning you can type :bash:`git config --global core.autocrlf false` in the terminal.
 
@@ -510,7 +510,7 @@ Open a terminal to begin.
 
     ..
 
-    Again this is a similar method of opening the datafile, but we now use :python:`with open`. 
+    Again this is a similar method of opening the datafile, but we now use :python:`with open`.
     The :python:`with` statement is a context manager that provides clean-up and
     assures that the file is automatically closed after you've read it.
 
@@ -1020,7 +1020,7 @@ keys and the command :python:`dict.get()`), and :python:`range`\s. You also lear
 
    - `For-loops <https://book.pythontips.com/en/latest/for_-_else.html>`_
    - `Lists <https://docs.python.org/3/tutorial/datastructures.html#more-on-lists>`_
-   - `Dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries`_
+   - `Dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ..
 
@@ -1309,7 +1309,7 @@ Let's begin.
        ..
 
        .. note::
-          
+
           Your remote repository URL is the link you copied in step 5!
 
        ..
