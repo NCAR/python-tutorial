@@ -58,7 +58,7 @@ Object Oriented languages:
     Objects are custom datatypes. For every custom datatype, you usually have
     a set of operations you might want to conduct. For example, if you have an
     object that is a list of numbers you might want to apply a mathematical
-    operation, such as sum, onto this list object in bulk. Not every  function
+    operation, such as sum, onto this list object in bulk. Not every function
     can be applied to every datatype; it wouldn't make sense to apply a
     logarithm to a string of letters or to capitalize a list of numbers. Data
     and the operations applied to them are grouped together into one object.
@@ -107,8 +107,15 @@ effectively addresses the concerns and needs of the geoscience community.
 Requirements & Installation
 ---------------------------
 
-If you don't have conda installed at all,
+We will be using the `Conda <https://docs.conda.io/en/latest/>`_ package manager in this tutorial.
+If you don't have Conda installed at all,
 `please install it. <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`_
+Conda is an excellent package manager for Python development, but it is capable of managing
+installations of more than just Python packages.
+
+We will also being doing all of the following in a :code:`bash` shell on MacOS.  You may have
+different experiences on other OSes, and you may even have problems on MacOS!  That's okay.  If
+you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.
 
 1. Check that you have conda or miniconda installed on your OS by checking your
    conda version:
@@ -130,6 +137,9 @@ If you don't have conda installed at all,
 
    ..
 
+   Updating your Conda package manager should not have any effect on your existing
+   Conda environments.
+
    .. note::
       If you have a *really* old version of conda it might be easier to delete it and then reinstall it. But before doing this you have to check your env-list with :bash:`conda env list` to see if there are any environments you created and want to save.
 
@@ -142,7 +152,7 @@ If you don't have conda installed at all,
       $ conda --version
 
 
-4. `Install Git. <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+4. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
 
    Git is a program that tracks changes made to files. This makes it easy to
    maintain access to multiple versions of your code as you improve it, and
