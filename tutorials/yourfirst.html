@@ -289,7 +289,7 @@ revert your code back to a previous version if you’ve made any mistakes.</p>
 <h2>First Python Script<a class="headerlink" href="#first-python-script" title="Permalink to this headline">¶</a></h2>
 <p>This section of the tutorial will focus on teaching you Python through the
 creation of your first script.  You will learn about syntax and the reasoning
-behind why things are done the way they are done along the way.  We will also
+behind why things are done the way they are along the way.  We will also
 incorporate lessons on the use of Git because we highly recommend you version
 controling your work.</p>
 <p>We are assuming you are familiar with bash and terminal commands. If not
@@ -323,8 +323,8 @@ Let’s call it <code class="code docutils literal notranslate"><span class="pre
 <p>A conda environment is a directory that contains a collection of packages
 or libraries that you would like installed and accessible for this workflow.
 Type <code class="code bash docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span></code> and the name of your project, here that is
-<code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>, and then specify that you are using python to create a
-virtual environment for this project.</p>
+<code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>, and then specify that you would like to install Python
+in the virtual environment for this project.</p>
 <p>It is a good idea to create new environments for different projects because
 since Python is open source, new versions of the tools you use may become
 available. This is a way of guaranteeing that your script will use the same
@@ -413,7 +413,7 @@ changes can now be commited to your repository history.</p>
 you staged, in this case just one file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On a Windows machine you may see the following: <code class="code bash docutils literal notranslate"><span class="pre">warning:</span> <span class="pre">LF</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">replaced</span> <span class="pre">by</span> <span class="pre">CRLF</span> <span class="pre">in</span> <span class="pre">mysci.py.</span> <span class="pre">The</span> <span class="pre">file</span> <span class="pre">will</span> <span class="pre">have</span> <span class="pre">its</span> <span class="pre">original</span> <span class="pre">line</span> <span class="pre">endings</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">working</span> <span class="pre">directory</span></code>.
+<p>On a Windows machine you may see the following: <code class="code bash docutils literal notranslate"><span class="pre">warning:</span> <span class="pre">LF</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">replaced</span> <span class="pre">by</span> <span class="pre">CRLF.</span></code> The file will have its original line endings in your working directory`.
 Do not worry too much about this warning. CR refers to “Carriage Return Line Feed” and LF refers to “Line Feed.” Both are used to indicate line termination.
 In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
 To silence this warning you can type <code class="code bash docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="name builtin"><span class="pre">false</span></span></code> in the terminal.</p>
@@ -780,7 +780,7 @@ what happens when you print <code class="code python docutils literal notranslat
 <code class="code python docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name builtin"><span class="pre">slice</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">,</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">)]</span></span></code>.  What’s the difference?</p>
 </li>
 <li><p>Now, to practice nested indexing, get the 5th, the first 5, and every other
-column of row 8 in the data object.</p>
+column of row 9 in the data object.</p>
 <p>Change the DEBUG section of the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
 18

@@ -18,6 +18,7 @@
 =========================================
 Your First Python Tutorial for Scientists
 =========================================
+
 Welcome to Your First Python tutorial for scientists! In this self-paced
 course you will learn how to write Python code using Python best practices.
 Through these instructions you will develop Python scripts and use Git and
@@ -179,7 +180,7 @@ First Python Script
 
 This section of the tutorial will focus on teaching you Python through the
 creation of your first script.  You will learn about syntax and the reasoning
-behind why things are done the way they are done along the way.  We will also
+behind why things are done the way they are along the way.  We will also
 incorporate lessons on the use of Git because we highly recommend you version
 controling your work.
 
@@ -229,8 +230,8 @@ Open a terminal to begin.
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
    Type :bash:`conda create --name` and the name of your project, here that is
-   :code:`python_tutorial`, and then specify that you are using python to create a
-   virtual environment for this project.
+   :code:`python_tutorial`, and then specify that you would like to install Python 
+   in the virtual environment for this project.
 
    It is a good idea to create new environments for different projects because
    since Python is open source, new versions of the tools you use may become
@@ -360,7 +361,7 @@ Open a terminal to begin.
 
     .. note::
 
-       On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF in mysci.py. The file will have its original line endings in your working directory`.
+       On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF.` The file will have its original line endings in your working directory`.
        Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination.
        In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
        To silence this warning you can type :bash:`git config --global core.autocrlf false` in the terminal.
@@ -805,7 +806,7 @@ Let's begin.
    :python:`data[slice(0,10,2)]`.  What's the difference?
 
 4. Now, to practice nested indexing, get the 5th, the first 5, and every other
-   column of row 8 in the data object.
+   column of row 9 in the data object.
 
    Change the DEBUG section of the :code:`mysci.py` script to:
 
