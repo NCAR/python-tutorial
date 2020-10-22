@@ -112,11 +112,16 @@ We will be using the `Conda <https://docs.conda.io/en/latest/>`_ package manager
 If you don't have Conda installed at all,
 `please install it. <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`_
 Conda is an excellent package manager for Python development, but it is capable of managing
-installations of more than just Python packages.
+installations of more than just Python packages.  Both Miniconda (just :code:`conda`) and the full
+Anaconda (:code:`conda` plus a lot of pre-installed packages and tools) are acceptable,
+but we recommend trying to install `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
+first.  Miniconda is the most lightweight solution, and it is the ideal solution when trying to
+install Conda on a remote system (i.e., with only SSH access).
 
-We will also being doing all of the following in a :code:`bash` shell on MacOS.  You may have
+We will also be doing all of the following in a :code:`bash` shell on MacOS.  You may have
 different experiences on other OSes, and you may even have problems on MacOS!  That's okay.  If
-you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.
+you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.  We will try to work with you
+to find solutions on your OS, and we will post the solution here on this page.
 
 1. Check that you have conda or miniconda installed on your OS by checking your
    conda version:
@@ -152,8 +157,17 @@ you have a problem, please `let us know <mailto:xdev@ucar.edu>`_.
 
       $ conda --version
 
+4. Initialize Conda to work with your shell (.e.g., :code:`bash`):
 
-4. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
+   .. code-block:: bash
+
+      $ conda init
+
+   This step may modify your shell configuration script (e.g., :code:`.bash_profile`) to
+   make the :code:`conda` command available in your shell, and it will make the
+   :code:`conda activate` command work.
+
+5. `Install <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_ and `Configure <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ Git
 
    Git is a program that tracks changes made to files. This makes it easy to
    maintain access to multiple versions of your code as you improve it, and
@@ -694,10 +708,10 @@ Let's begin.
    ..
 
    The first thing that is different in this script is an initialized data
-   variable; :python:`data = []` creates the variable data as an empty list which we
-   will populate as we read the file. Python lists are a collection data type
-   that are ordered and changeable - meaning you can call information out of
-   the list by its index and you can add or delete elements to your list. Lists
+   variable; :python:`data = []` creates the variable data as an empty :code:`list` which we
+   will populate as we read the file. Python :code:`list` objects are a collection data type
+   that contain ordered and changeable - meaning you can call information out of
+   the :code:`list` by its index and you can add or delete elements to your :code:`list`. Lists
    are denoted by square brackets, :python:`[]`.
 
    Then with the datafile open for reading capabilities, we are going to write
