@@ -1114,7 +1114,7 @@ Let's begin.
 
    ..
 
-3. Now, let's write our first function to computethe wind chill factor. We'll
+3. Now, let's write our first function to compute the wind chill factor. We'll
    add this function to the bottom of the file.
 
    .. code-block:: python
