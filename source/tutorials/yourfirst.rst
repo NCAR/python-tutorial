@@ -1127,8 +1127,8 @@ Let's begin.
          c = 35.75
          d = 0.4275
 
-         v16 = v ** 0.16
-         wci = a + (b * t) - (c * v16) + (d * t * v16)
+         v2 = v ** 2
+         wci = a + (b * t) - (c * v2) + (d * t * v2)
          return wci
 
    ..
