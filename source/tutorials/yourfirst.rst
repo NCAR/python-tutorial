@@ -1071,7 +1071,7 @@ Let's begin.
 
    .. math::
 
-      WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})
+      WCI = a + (b * t) - (c * v^{0.16}) + (d * t * v^{0.16})
 
    ..
 
