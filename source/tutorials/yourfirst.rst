@@ -230,7 +230,7 @@ Open a terminal to begin.
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
    Type :bash:`conda create --name` and the name of your project, here that is
-   :code:`python_tutorial`, and then specify that you would like to install Python 
+   :code:`python_tutorial`, and then specify that you would like to install Python
    in the virtual environment for this project.
 
    It is a good idea to create new environments for different projects because
@@ -1071,7 +1071,7 @@ Let's begin.
 
    .. math::
 
-      WCI = a + (b * t) - (c * v^{2}) + (d * t * v^{2})
+      WCI = a + (b * t) - (c * v^{0.16}) + (d * t * v^{0.16})
 
    ..
 
