@@ -230,7 +230,7 @@ Open a terminal to begin.
    A conda environment is a directory that contains a collection of packages
    or libraries that you would like installed and accessible for this workflow.
    Type :bash:`conda create --name` and the name of your project, here that is
-   :code:`python_tutorial`, and then specify that you would like to install Python 
+   :code:`python_tutorial`, and then specify that you would like to install Python
    in the virtual environment for this project.
 
    It is a good idea to create new environments for different projects because
@@ -1235,8 +1235,8 @@ Let's begin.
 
    ..
 
-   Using :python:`f-string`s with float formatting you can determine the precision
-   with which to print the values to. The :python:`.5f` means you want 5 places after the
+   Using a :python:`f-string` with float formatting you can determine the precision
+   to which to print the values. The :python:`.5f` means you want 5 places after the
    decimal point.
 
    .. seealso::
