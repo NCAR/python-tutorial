@@ -1235,8 +1235,8 @@ Let's begin.
 
    ..
 
-   Using :python:`f-string`s with float formatting you can determine the precision
-   with which to print the values to. The :python:`.5f` means you want 5 places after the
+   Using a :python:`f-string` with float formatting you can determine the precision
+   to which to print the values. The :python:`.5f` means you want 5 places after the
    decimal point.
 
    .. seealso::
