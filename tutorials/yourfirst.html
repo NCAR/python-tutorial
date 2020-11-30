@@ -1078,7 +1078,7 @@ $ git commit -m <span class="s2">&quot;Reading windspeed as well&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p>Now, let’s write our first function to computethe wind chill factor. We’ll
+<li><p>Now, let’s write our first function to compute the wind chill factor. We’ll
 add this function to the bottom of the file.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>29
 30
@@ -1096,8 +1096,8 @@ add this function to the bottom of the file.</p>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">35.75</span>
    <span class="n">d</span> <span class="o">=</span> <span class="mf">0.4275</span>
 
-   <span class="n">v16</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mf">0.16</span>
-   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span>
+   <span class="n">v2</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span>
+   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v2</span><span class="p">)</span>
    <span class="k">return</span> <span class="n">wci</span>
 </pre></div>
 </td></tr></table></div>
