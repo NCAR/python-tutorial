@@ -18,7 +18,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Python 3.7
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: '3.7'
 
@@ -32,7 +32,7 @@ jobs:
         run: make html
           
       - name: Install SSH Client
-        uses: webfactory/ssh-agent@v0.2.0
+        uses: webfactory/ssh-agent@v0.4.1
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
