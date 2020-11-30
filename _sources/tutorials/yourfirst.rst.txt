@@ -194,6 +194,13 @@ Reading a .txt File
 In building your first Python script we will set up our workspace, read a
 :code:`.txt` file, and learn Git fundamentals.
 
+.. seealso::
+
+   You can watch the `video recording of  Part I <https://drive.google.com/file/d/1PU6UxI1p0kCqQbHmSKuP-ox5rtoxPLtX/view?usp=sharing>`_
+   of this tutorial online, and we have a write-up of the `question and answer session following Part I, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
+
+..
+
 Open a terminal to begin.
 
 .. note::
@@ -361,7 +368,7 @@ Open a terminal to begin.
 
     .. note::
 
-       On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF.` The file will have its original line endings in your working directory`.
+       On a Windows machine you may see the following: :bash:`warning: LF will be replaced by CRLF.` The file will have its original line endings in your working directory.
        Do not worry too much about this warning. CR refers to "Carriage Return Line Feed" and LF refers to "Line Feed." Both are used to indicate line termination.
        In Windows both a Carriage Return and Line Feed are required to note the end of a line, but in Linux/UNIX only a Line Feed is required. Most text editors can account for line ending differences between opperating systems, but sometimes a conversion is necessary.
        To silence this warning you can type :bash:`git config --global core.autocrlf false` in the terminal.
@@ -674,6 +681,13 @@ had just commited your new script file that reads in the data from a file as a s
 You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
+
+.. seealso::
+
+   You can watch a video recording of `Part II <https://drive.google.com/file/d/1DwXaLQH28aqqR1NwOLEYzbR86zQNlTVk/view?usp=sharing>`_
+   of this tutorial online, and we have a write-up of the `question and answer session following Part II, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
+
+..
 
 Let's begin.
 
@@ -1059,6 +1073,13 @@ had just commited your new script that reads the file, saving the variables of d
 time, and tempout in a data dictionary.
 In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.
+
+.. seealso::
+
+   You can watch a video recording of `Part III <https://drive.google.com/file/d/1eyPn_GXmvKlWe-e7p97HxS4bRbsTbvyI/view?usp=sharing>`_
+   of this tutorial online, and we have a write-up of the `question and answer session following Part III, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
+
+..
 
 Let's begin.
 
