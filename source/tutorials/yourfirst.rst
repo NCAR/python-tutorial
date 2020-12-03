@@ -2108,7 +2108,7 @@ one at a time in order to reduce any confusion you may have about what each libr
    It is best practice to import modules at the beginning of the script.
 
    .. code-block::
-      lineno-start: 1
+      :lineno-start: 1
 
       import math
 
@@ -2119,7 +2119,7 @@ one at a time in order to reduce any confusion you may have about what each libr
    Then write the function to the bottom of :code:`computation.py`:
 
    .. code-block::
-      lineno-start: 100
+      :lineno-start: 100
 
       def compute_dewpoint(t, h):
          """
