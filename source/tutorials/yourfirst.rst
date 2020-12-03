@@ -2074,3 +2074,173 @@ You should now be familiar with modules, using the
 :code:`import` statement, some more :code:`f-string formatting options,
 :code:`__pycache__`, :code:`.gitignore`, :code:`.__init__`, and list 
 comprehensions.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using Your First External Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So far you have created a separate readdata, printing, and computation module 
+to remove redundant code blocks from your scripts. And you have combined these
+modules into a package that we imported into our scripts.
+
+You can import packages provided by other authors as well.
+There are many different libraries of code you can import and use. 
+This tutorial will only going to teach you the most commonly used libraries-- 
+one at a time in order to reduce any confusion you may have about what each library offers.
+
+1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
+
+2. Now we're going to add a function for calculating dew point temperature to your :code:`computation.py` module:
+
+   The formula for this is:
+
+   .. math::
+
+      Gamma = log(Humidity) + (b * Temperature) / (c + Temperature)
+
+      DPT = c * Gamma / (b - Gamma)
+
+   ..
+
+   Where *DPT* represents Dew Point Temperature in Degrees C, Humidity is in %, Temeprature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
+
+   In order to do a natural logorithm, we will need to import our first external module: :code:`math`.
+   It is best practice to import modules at the beginning of the script.
+
+   .. code-block::
+      lineno-start: 1
+
+      import math
+
+   ..
+
+   To access the logarithmic function within the module :code:`math` you would type :code:`math.log`.
+
+   Then write the function to the bottom of :code:`computation.py`:
+
+   .. code-block::
+      lineno-start: 100
+
+      def compute_dewpoint(t, h):
+         """
+         Compute the dew point temperature given the temperature and humidity
+
+         Parameters:
+            t: The temperature in units of F
+            h: The relative humidity in units of %
+         """
+
+         tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
+         rh = h / 100
+    
+         a = 6.112 # mbar
+         b = 18.678
+         c = 257.14 # deg C
+
+         gamma = math.log(rh) + (b * tempC) / (c + tempC)
+         tdp = c * gamma / (b - gamma)
+
+         tdp_F = 9 / 5 * tdp + 32 # Convert deg C to deg F
+         return tdp_F
+   ..
+
+   This function converts our input temperature to degrees Celsius and humidity to relative humidity,
+   specifies the constants, calculates the dew point temperature, and finally converta that temperature to degrees Farenheit.
+
+3. Git add and commit :code:`computation.py` 
+
+   .. code-block:: bash
+      
+      $ git add computation.py
+      $ git commit -m "Function for Computing DPT"
+
+   ..
+
+4. Make a copy of your second script with the new name `dewpointtempcomp.py`:
+
+   .. code-block:: bash
+
+      $ cp windchillcomp.py dewpointtempcomp.py
+
+   ..
+
+5. Git add and commit :code:`dewpointtempcomp.py` 
+
+   .. code-block:: bash
+   
+      $ git add dewpointtempcomp.py
+      $ git commit -m "Creating a 3rd Script or DPT calculation"
+
+   ..
+
+6. Edit :code:`dewpointtempcomp.py`:
+
+   Make changes to the import statements to include:
+
+   .. code-block:: python
+      :lineno-start: 1
+
+      from computation.py import compute_dewpoint
+
+   ..
+
+   And change your :code:`columns` and :code:`types` dictionaries to include :code:`dewpt`:
+
+   .. code-block:: python
+      :lineno-start: 4
+
+      # Columns names and column indices to read
+      columns = {'date':0 , 'time':1, 'tempout':2, 'humout':5, 'dewpt':6}
+
+      # Data types for each column (only if non-string)
+      types = {'tempout':float, 'humout':float, 'dewpt':float}
+
+   ..
+
+   And finally, make changes to the function calls:
+
+   .. code-block:: python
+      :lineno-start: 100
+
+      # Calculate dewpointtemp
+      dewpointtemp = [compute_dewpoint(t, h) for t, h in zip(data['tempout'], data['humout'])]
+
+      # Output comparison of data
+      print_comparison('DEW PT', data['date'], data['time'], data['dewpt'], dewpointtemp)
+
+   ..
+
+7. Git add and commit:
+
+   .. code-block:: bash
+
+      $ git add dewpointtempcomp.py
+      $ git commit -m "Computed dew point temperature"
+
+   ..
+
+8. Let's learn more about the math module!
+
+   Hopefully since you already imported code from your readdata, printing, and computation modules, importing from an external module math seemed a little less intimidating.
+
+   You only used the math.log function, but some other common methods within :code:`math` include:
+
+   :code:`math.pi` which is the value of pi
+   :code:`math.tan(x)` which returns the tangent of x radiance
+   :code:`math.radians(x)` which converts angle x from degrees to radians
+   :code:`math.log10()` which returns the base-10 logarithm of x
+   Just to name a few.
+
+-----
+
+That concludes the "Introduction to Importing External Packages" section of this tutorial.
+You should now be familiar with importing external modules and some methods within the :code:`math` module - 
+specifically the :code:`log` method.
+
+.. see-also:
+
+   You can read more about this module here: https://docs.python.org/3/library/math.html
+   
+..
+
+You should now be familiar with importing external modules and some methods within the math module - specifically the log method.
