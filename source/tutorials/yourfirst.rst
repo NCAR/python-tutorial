@@ -1406,7 +1406,7 @@ First Python Package
 -----------------------------
 
 In this section of the tutorial we will learn how to create a Python package 
-and the basics of how to use external packages :code:`math` and :code:`numpy`. This will prepare you 
+and the basics of how to use built-in packages :code:`math` and :code:`numpy`. This will prepare you 
 to learn any package you thik may be useful for your scientific analysis.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1982,7 +1982,7 @@ python_tutorial directory and have activated the corresponding environment.
     ..
 
 25. Stage everything (don't forget the 
-    `__init__.py` file!) and commit 
+    :code:`__init__.py` file!) and commit 
 
     .. code-block:: bash
 
@@ -1997,7 +1997,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     With this last change, our project should look 
     like this (ignoring the
-    `__pycache__` directories:
+    :code:`__pycache__` directories:
 
     .. code-block:: bash
 
@@ -2077,15 +2077,14 @@ You should now be familiar with modules, using the
 comprehensions.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Using Your First External Package
+Using a Built-In Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far you have created a separate readdata, printing, and computation module 
+So far you have created a separate :code:`readdata`, :code:`printing`, and :code:`computation` module 
 to remove redundant code blocks from your scripts. And you have combined these
 modules into a package that we imported into our scripts.
 
-You can import packages provided by other authors as well.
-There are many different libraries of code you can import and use. 
+There are many different libraries of code you can import and use, now we will teach you how to import a built-in package (it is already instaled in your environment - Yay!). 
 This tutorial will only going to teach you the most commonly used libraries-- 
 one at a time in order to reduce any confusion you may have about what each library offers.
 
@@ -2109,7 +2108,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity is in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
 
-   In order to do a natural logorithm, we will need to import our first external module: :code:`math`.
+   In order to do a natural logorithm, we will need to import our first built-in package: :code:`math`.
    It is best practice to import modules at the beginning of the script.
 
    .. code-block::
@@ -2226,9 +2225,9 @@ one at a time in order to reduce any confusion you may have about what each libr
 
 8. Let's learn more about the math module!
 
-   Hopefully since you already imported code from your readdata, printing, and computation modules, importing from an external module math seemed a little less intimidating.
+   Hopefully since you already imported code from your readdata, printing, and computation modules, importing from a built-in package :code:`math` seemed a little less intimidating.
 
-   You only used the math.log function, but some other common methods within :code:`math` include:
+   You only used the :code:`math.log` function, but some other common methods within :code:`math` include:
 
    :code:`math.pi` which is the value of pi
    :code:`math.tan(x)` which returns the tangent of x radiance
@@ -2238,8 +2237,8 @@ one at a time in order to reduce any confusion you may have about what each libr
 
 -----
 
-That concludes the "Introduction to Importing External Packages" section of this tutorial.
-You should now be familiar with importing external modules and some methods within the :code:`math` module - 
+That concludes the "Using a Built-In Package" section of this tutorial.
+You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module - 
 specifically the :code:`log` method.
 
 .. see-also:
@@ -2247,5 +2246,3 @@ specifically the :code:`log` method.
    You can read more about this module here: https://docs.python.org/3/library/math.html
    
 ..
-
-You should now be familiar with importing external modules and some methods within the math module - specifically the log method.
