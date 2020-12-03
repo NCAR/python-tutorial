@@ -1795,7 +1795,7 @@ python_tutorial directory and have activated the corresponding environment.
     And create a printing function (with docstring!):
    
     .. code:: python
-       lineno-start:1
+       :lineno-start:1
 
           def print_comparison(name, date, time, original_data, computed_data):
              """
@@ -1830,7 +1830,7 @@ python_tutorial directory and have activated the corresponding environment.
     2) Replace the printing output section at the bottom of each script with:
    
     .. code:: python
-       lineno-start: 100
+       :lineno-start: 100
        
           print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
   
@@ -1839,7 +1839,7 @@ python_tutorial directory and have activated the corresponding environment.
     or
    
     .. code:: python
-       lineno-start: 100
+       :lineno-start: 100
    
           print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
    
@@ -1875,7 +1875,7 @@ python_tutorial directory and have activated the corresponding environment.
     similar to the following:
    
     .. code:: python
-       lineno-start: 1
+       :lineno-start: 1
     
           def compute_windchill(t, v):
              """
@@ -1972,7 +1972,7 @@ python_tutorial directory and have activated the corresponding environment.
     automatically imported from the new package:
     
     .. code:: python
-       lineno-start: 1
+       :lineno-start: 1
     
           from mysci.readdata import read_data
           from mysci.printing import print_comparison
@@ -2022,7 +2022,7 @@ python_tutorial directory and have activated the corresponding environment.
     it looks like this:
    
     .. code :: python
-       lineno-start: 100
+       :lineno-start: 100
     
           windchill = []
           for temp, windspeed in zip(data['tempout'], data['windspeed']):
@@ -2041,7 +2041,7 @@ python_tutorial directory and have activated the corresponding environment.
     lines in the form of a "one-liner" like so:
     
     .. code:: python
-       lineno-start: 100
+       :lineno-start: 100
     
           windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
     
