@@ -1687,14 +1687,14 @@ python_tutorial directory and have activated the corresponding environment.
     ..
 
 12. Ammend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
-   
+
 13. Add the following import statement to the top of each script:
-   
+
     .. code-block:: python
        lineno-start: 1
 
        from readdata import read_data 
-   
+
     ..
 
     In python you can call up functionality from scripts outside of your active script using the 
@@ -1706,18 +1706,18 @@ python_tutorial directory and have activated the corresponding environment.
 
     .. code-block:: python
        lineno-start: 100
-             
+  
        # Read data from file
        data = read_data(columns, types=types)   
-   
+
     ..
-   
+
     Test out both of these scripts to make sure they still work!
 
 15. Do a :code:`git status` now.  
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
-   
+
     What is `__pycache__?
     When you run a python program with an :code:`import` 
     command, Python learns that you have written code 
@@ -1731,46 +1731,46 @@ python_tutorial directory and have activated the corresponding environment.
     However, you *don't* want to add this directory to 
     our project repository, so before you commit 
     anything, tell git to ignore it!
-   
+
     Create a new file (in the top-level directory 
     of your project) called :code:`.gitignore` 
-    
+
     .. code:: bash
-       
+
        $ touch .gitignore
 
     ..
-    
+
     with the following contents:
-   
+
     .. code:: bash
 
        __pycache__/
-    
+
     ..
-   
+
 16. Do another :code:`git status`.  What do you see?
-   
+
     Now, instead of :code:`__pycache__` being listed as 
     "untracked", you see :code:`.gitignore` being listed as 
     "untracked", and no mention of :code:`__pycache__`.
-   
+
 17. Stage and commit the new :code:`.gitignore` file.
-    
+
     .. code:: bash
 
        $ git add .gitignore
        $ git commit -m "Ignoring pycache"
-   
+
     ..
-   
+
     Do another :code:`git status`.  Notice that
     the edits you made to your two scripts have still 
     not been committed to the project repository!  
     Because they have not yet been staged.
-   
+
 18. Stage *both files* and commit all new changes in one commit:
-    
+
     .. code:: bash
 
        $ git add -a
@@ -1783,7 +1783,7 @@ python_tutorial directory and have activated the corresponding environment.
 19. There is still have some duplicated 
     code between the two scripts. Let's combine the final 
     output code and printing code.
-   
+
     Create another module file called :code:`printing.py` 
 
     .. code:: bash
@@ -1793,7 +1793,7 @@ python_tutorial directory and have activated the corresponding environment.
     ..
 
     And create a printing function (with docstring!):
-   
+
     .. code:: python
        :lineno-start:1
 
@@ -1820,35 +1820,35 @@ python_tutorial directory and have activated the corresponding environment.
     The only new functionality shown here is 
     :code:`string.upper()`, which capitalzes all lower case 
     letters in a string
-   
+
 20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
-   
+
     Try to do this on your own first, but if you are getting error messages the solution looks like:
-  
+
     1)  Add the :code:`from printing import print_comparison` line to the top of each script
 
     2) Replace the printing output section at the bottom of each script with:
-   
+
     .. code:: python
        :lineno-start: 100
-       
+
        print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
-  
+
     ..
-   
+
     or
-   
+
     .. code:: python
        :lineno-start: 100
-   
+
        print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
-   
+
     ..
 
 21. [git] Stage all changes and commit:
 
     .. code:: bash
-    
+   
        $ git add -a
        $ git commit -m "Creating printing module"
 
@@ -1861,22 +1861,22 @@ python_tutorial directory and have activated the corresponding environment.
     they represent.  In this case, you've separated 
     out the concepts of "data input" and "printing 
     output" into different modules.
-    
+
     Do the same thing with the computation functions, 
     `compute_windchill` and `compute_heatindex`.
-    
+
     Move these functions into a new module called 
     :code:`computation.py`, and modify the scripts to use 
     this new module.  Remember to add docstrings!
-    
+
     Try to do this on your own first!!
-    
+
     Your new `computation.py` module should look 
     similar to the following:
-   
+
     .. code:: python
        :lineno-start: 1
-    
+
        def compute_windchill(t, v):
           """
           Compute the wind chill factor given the temperature and wind speed
@@ -1920,13 +1920,13 @@ python_tutorial directory and have activated the corresponding environment.
           i = 0.00000199
 
           rh = h / 100
-             
+
           hi = a + (b * t) + (c * rh) + (d * t * rh) 
           + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
           + (h * t * rh**2) + (i * t**2 * rh**2)
           return hi
     ..
-   
+
     And then modified the scripts accordingly as in steps #12-14 and #18.
 
 23. Stage and commit everything:
@@ -1940,76 +1940,77 @@ python_tutorial directory and have activated the corresponding environment.
 24. Now, you've got quite a few Python 
     files in the main directory. Which ones are scripts?  
     Which ones are modules meant to be imported?
-   
+
     Typically, you should group all of the modules 
     meant for import only into another directory called 
     a *package*.  A *package* is a directory, often 
     with an :code:`__init__.py` file inside it.
-    
+
     Create a new directory called :code:`mysci` and 
     create an empty file in it called :code:`__init__.py`:
-    
+
     .. code:: bash
-    
+
        $ mkdir mysci
        $ cd mysci
        $ touch __init__.py
        $ cd ..
-    
+
     ..
-    
+
     Then, move 3 modules into this package:
-    
+
     .. code:: bash
-       
+
        $ git mv readdata.py mysci/
        $ git mv printing.py mysci/
        $ git mv computation.py mysci/
+
     ..
-    
+
     Then, let's modify the import statements at the 
     top of our two scripts so that the modules are 
     automatically imported from the new package:
-    
+
     .. code:: python
        :lineno-start: 1
-    
+
        from mysci.readdata import read_data
        from mysci.printing import print_comparison
        from mysci.computation import compute_heatindex
-    
+
     ..
 
 25. Stage everything (don't forget the 
     `__init__.py` file!) and commit 
-    
+
     .. code:: bash
        $ git add -a
        $ git commit -m "Creating mysci package"
 
     ..
-   
+
     Our commits are getting bigger, but that's okay.  
     Each commit corresponds to a *single* 
     (conceptually) change to the codebase.
-   
+
     With this last change, our project should look 
     like this (ignoring the
     `__pycache__` directories:
-   
+
     .. code:: bash
-    
+
        NCAR_python_tutorial_2020/
-    
+
           data/
              wxobs20170821.txt
-            
+
           mysci/
              __init__.py
              readdata.py
              printing.py
              computation.py
-            
+
           heatindexcomp.py
           windchillcomp.py
     ..
@@ -2017,47 +2018,47 @@ python_tutorial directory and have activated the corresponding environment.
 26. As a brief aside --
     look at the use of the computation
     functions in these scripts.  
-    
+
     In the case of the wind chill factor computation,
     it looks like this:
-   
+
     .. code :: python
        :lineno-start: 100
-    
+
        windchill = []
        for temp, windspeed in zip(data['tempout'], data['windspeed']):
           windchill.append(compute_windchill(temp, windspeed))
     ..
-    
+
     This divides the initialization of the :code:`windchill` 
     variable as an empty :code:`list` from the "filling" 
     of that :code:`list` with computed values.
-    
+
     Python gives you some shortcuts to doing this 
     via a concept called  "comprehensions", which 
     are ways of initializing containers (:code:`list`s,
     :code:`dict`s, etc.) with an *internal loop*.  For 
     example, we could have written the previous 3 
     lines in the form of a "one-liner" like so:
-    
+
     .. code:: python
        :lineno-start: 100
-    
+
        windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
-    
+
     ..
-    
+
     This is a *list comprehension*, and it 
     initializes the entire list with the computed 
     contents, rather than initializing an empy list 
     and appending values to it after the fact.  
     Computationally, this is actually *more efficient*.
-    
+
     Use list comprehensions to make the computation 
     steps in both of scripts one-liners.
 
 27. Do a final stage and commit changes 
-    
+
     .. code:: bash
 
        $ git add -a
