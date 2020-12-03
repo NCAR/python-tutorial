@@ -1691,7 +1691,7 @@ python_tutorial directory and have activated the corresponding environment.
 13. Add the following import statement to the top of each script:
 
     .. code-block:: python
-       lineno-start: 1
+       :lineno-start: 1
 
        from readdata import read_data 
 
@@ -1705,7 +1705,7 @@ python_tutorial directory and have activated the corresponding environment.
     deleted code with a function call:
 
     .. code-block:: python
-       lineno-start: 100
+       :lineno-start: 100
   
        # Read data from file
        data = read_data(columns, types=types)   
@@ -1795,7 +1795,7 @@ python_tutorial directory and have activated the corresponding environment.
     And create a printing function (with docstring!):
 
     .. code:: python
-       :lineno-start:1
+       :lineno-start: 1
 
        def print_comparison(name, date, time, original_data, computed_data):
           """
