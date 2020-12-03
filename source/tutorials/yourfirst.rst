@@ -2241,7 +2241,7 @@ That concludes the "Using a Built-In Package" section of this tutorial.
 You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module - 
 specifically the :code:`log` method.
 
-.. see-also:
+.. seealso::
 
    You can read more about this module here: https://docs.python.org/3/library/math.html
    
