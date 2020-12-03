@@ -1863,7 +1863,7 @@ python_tutorial directory and have activated the corresponding environment.
     output" into different modules.
 
     Do the same thing with the computation functions, 
-    `compute_windchill` and `compute_heatindex`.
+    :code:`compute_windchill` and :code:`compute_heatindex`.
 
     Move these functions into a new module called 
     :code:`computation.py`, and modify the scripts to use 
@@ -1871,7 +1871,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Try to do this on your own first!!
 
-    Your new `computation.py` module should look 
+    Your new :code:`computation.py` module should look 
     similar to the following:
 
     .. code-block:: python
@@ -1985,6 +1985,7 @@ python_tutorial directory and have activated the corresponding environment.
     `__init__.py` file!) and commit 
 
     .. code-block:: bash
+
        $ git add -a
        $ git commit -m "Creating mysci package"
 
@@ -2022,7 +2023,7 @@ python_tutorial directory and have activated the corresponding environment.
     In the case of the wind chill factor computation,
     it looks like this:
 
-    .. code :: python
+    .. code-block :: python
        :lineno-start: 100
 
        windchill = []
@@ -2036,8 +2037,8 @@ python_tutorial directory and have activated the corresponding environment.
 
     Python gives you some shortcuts to doing this 
     via a concept called  "comprehensions", which 
-    are ways of initializing containers (:code:`list`s,
-    :code:`dict`s, etc.) with an *internal loop*.  For 
+    are ways of initializing containers (:code:`list` s,
+    :code:`dict` s, etc.) with an *internal loop*.  For 
     example, we could have written the previous 3 
     lines in the form of a "one-liner" like so:
 
