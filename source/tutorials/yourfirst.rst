@@ -1718,7 +1718,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
 
-    What is `__pycache__?
+    What is :code:`__pycache__`?
     When you run a python program with an :code:`import` 
     command, Python learns that you have written code 
     that you may call again. The interpreter compiles 
@@ -1735,7 +1735,7 @@ python_tutorial directory and have activated the corresponding environment.
     Create a new file (in the top-level directory 
     of your project) called :code:`.gitignore` 
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ touch .gitignore
 
@@ -1743,7 +1743,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     with the following contents:
 
-    .. code:: bash
+    .. code-block:: bash
 
        __pycache__/
 
@@ -1757,7 +1757,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 17. Stage and commit the new :code:`.gitignore` file.
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ git add .gitignore
        $ git commit -m "Ignoring pycache"
@@ -1771,7 +1771,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 18. Stage *both files* and commit all new changes in one commit:
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ git add -a
        $ git commit -m "Refactor scripts to use new module"
@@ -1786,7 +1786,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Create another module file called :code:`printing.py` 
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ touch printing.py
 
@@ -1794,7 +1794,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     And create a printing function (with docstring!):
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 1
 
        def print_comparison(name, date, time, original_data, computed_data):
@@ -1829,7 +1829,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     2) Replace the printing output section at the bottom of each script with:
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 100
 
        print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
@@ -1838,7 +1838,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     or
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 100
 
        print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
@@ -1847,7 +1847,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 21. [git] Stage all changes and commit:
 
-    .. code:: bash
+    .. code-block:: bash
    
        $ git add -a
        $ git commit -m "Creating printing module"
@@ -1874,7 +1874,7 @@ python_tutorial directory and have activated the corresponding environment.
     Your new `computation.py` module should look 
     similar to the following:
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 1
 
        def compute_windchill(t, v):
@@ -1931,7 +1931,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 23. Stage and commit everything:
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ git commit -m "Creating computation module"
 
@@ -1949,7 +1949,7 @@ python_tutorial directory and have activated the corresponding environment.
     Create a new directory called :code:`mysci` and 
     create an empty file in it called :code:`__init__.py`:
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ mkdir mysci
        $ cd mysci
@@ -1960,7 +1960,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Then, move 3 modules into this package:
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ git mv readdata.py mysci/
        $ git mv printing.py mysci/
@@ -1972,7 +1972,7 @@ python_tutorial directory and have activated the corresponding environment.
     top of our two scripts so that the modules are 
     automatically imported from the new package:
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 1
 
        from mysci.readdata import read_data
@@ -1984,7 +1984,7 @@ python_tutorial directory and have activated the corresponding environment.
 25. Stage everything (don't forget the 
     `__init__.py` file!) and commit 
 
-    .. code:: bash
+    .. code-block:: bash
        $ git add -a
        $ git commit -m "Creating mysci package"
 
@@ -1998,7 +1998,7 @@ python_tutorial directory and have activated the corresponding environment.
     like this (ignoring the
     `__pycache__` directories:
 
-    .. code:: bash
+    .. code-block:: bash
 
        NCAR_python_tutorial_2020/
 
@@ -2041,7 +2041,7 @@ python_tutorial directory and have activated the corresponding environment.
     example, we could have written the previous 3 
     lines in the form of a "one-liner" like so:
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 100
 
        windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
@@ -2059,7 +2059,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 27. Do a final stage and commit changes 
 
-    .. code:: bash
+    .. code-block:: bash
 
        $ git add -a
        $ git commit -m "Using list comprehensions"
