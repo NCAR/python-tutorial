@@ -1475,24 +1475,24 @@ python_tutorial directory and have activated the corresponding environment.
    .. code-block:: python
       :lineno-start: 29
          
-         # Compute the heat index
-         def compute_heatindex(t, h):
-            a = -42.379
-            b = 2.04901523
-            c = 10.14333127
-            d = 0.22475541
-            e = 0.00683783
-            f = 0.05481717
-            g = 0.00122874
-            h = 0.00085282
-            i = 0.00000199
+      # Compute the heat index
+      def compute_heatindex(t, h):
+         a = -42.379
+         b = 2.04901523
+         c = 10.14333127
+         d = 0.22475541
+         e = 0.00683783
+         f = 0.05481717
+         g = 0.00122874
+         h = 0.00085282
+         i = 0.00000199
 
-            rh = h / 100
+         rh = h / 100
 
-            hi = a + (b * t) + (c * rh) + (d * t * rh) 
+         hi = a + (b * t) + (c * rh) + (d * t * rh) 
             + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
             + (h * t * rh**2) + (i * t**2 * rh**2)
-          return hi
+         return hi
 
    ..
    
@@ -1502,11 +1502,11 @@ python_tutorial directory and have activated the corresponding environment.
    .. code-block:: python
       :lineno-start: 4
 
-         # Column names and column indices to read
-         columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
+      # Column names and column indices to read
+      columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
    
-         # Data types for each column (only if non-string)
-         types = {'tempout': float, 'humout': float, 'heatindex': float}
+      # Data types for each column (only if non-string)
+      types = {'tempout': float, 'humout': float, 'heatindex': float}
    
    ..
 
@@ -1515,17 +1515,17 @@ python_tutorial directory and have activated the corresponding environment.
    .. code-block::python
       :lineno-start: 40
 
-         # Let's actually compute the heat index
-         heatindex = []
-         for temp, hum in zip(data['tempout'], data['humout']):
-            heatindex.append(compute_heatindex(temp, hum))
+      # Let's actually compute the heat index
+      heatindex = []
+      for temp, hum in zip(data['tempout'], data['humout']):
+         heatindex.append(compute_heatindex(temp, hum))
 
-         # Output comparison of data
-         print('                ORIGINAL  COMPUTED')
-         print(' DATE    TIME  HEAT INDX HEAT INDX DIFFERENCE')
-         print('------- ------ --------- --------- ----------')
-         for date, time, hi_orig, hi_comp in zip(data['date'], data['time'], data['heatindex'], heatindex):
-             print(f'{date} {time:>6} {hi_orig:9.6f} {hi_comp:9.6f} {hi_orig-hi_comp:10.6f}')
+      # Output comparison of data
+      print('                ORIGINAL  COMPUTED')
+      print(' DATE    TIME  HEAT INDX HEAT INDX DIFFERENCE')
+      print('------- ------ --------- --------- ----------')
+      for date, time, hi_orig, hi_comp in zip(data['date'], data['time'], data['heatindex'], heatindex):
+         print(f'{date} {time:>6} {hi_orig:9.6f} {hi_comp:9.6f} {hi_orig-hi_comp:10.6f}')
    
    ..
    
@@ -1632,38 +1632,38 @@ python_tutorial directory and have activated the corresponding environment.
     .. code-block:: python
        :lineno-start: 1
          
-          def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
-             """
-             Read data from CU Boulder Weather Station data file
+       def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
+          """
+          Read data from CU Boulder Weather Station data file
        
-             Parameters:
-                columns: A dictionary of column names mapping to column indices
-                types: A dictionary of column names mapping to types to which
-                   to convert each column of data
+          Parameters:
+             columns: A dictionary of column names mapping to column indices
+             types: A dictionary of column names mapping to types to which
+                to convert each column of data
              filename: The string path pointing to the CU Boulder Weather
                    Station data file
-             """
+          """
 
-             # Initialize my data variable
-             data = {}
-             for column in columns:
-                data[column] = []
+          # Initialize my data variable
+          data = {}
+          for column in columns:
+             data[column] = []
 
-             # Read and parse the data file
-             with open(filename, 'r') as datafile:
+          # Read and parse the data file
+          with open(filename, 'r') as datafile:
 
-                # Read the first three lines (header)
-                for _ in range(3):
-                   datafile.readline()
+             # Read the first three lines (header)
+             for _ in range(3):
+                datafile.readline()
 
-                # Read and parse the rest of the file
-                for line in datafile:
-                   split_line = line.split()
-                   for column in columns:
-                      i = columns[column]
-                      t = types.get(column, str)
-                      value = t(split_line[i])
-                      data[column].append(value)
+             # Read and parse the rest of the file
+             for line in datafile:
+                split_line = line.split()
+                for column in columns:
+                   i = columns[column]
+                   t = types.get(column, str)
+                   value = t(split_line[i])
+                   data[column].append(value)
 
     ..
 
@@ -1693,7 +1693,7 @@ python_tutorial directory and have activated the corresponding environment.
     .. code-block:: python
        lineno-start: 1
 
-          from readdata import read_data 
+       from readdata import read_data 
    
     ..
 
@@ -1705,12 +1705,12 @@ python_tutorial directory and have activated the corresponding environment.
     deleted code with a function call:
 
     .. code-block:: python
-          lineno-start: 100
+       lineno-start: 100
              
-             # Read data from file
-             data = read_data(columns, types=types)   
+       # Read data from file
+       data = read_data(columns, types=types)   
    
-       ..
+    ..
    
     Test out both of these scripts to make sure they still work!
 
@@ -1797,24 +1797,24 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start:1
 
-          def print_comparison(name, date, time, original_data, computed_data):
-             """
-             Print a comparison of two timeseries (original and computed)
+       def print_comparison(name, date, time, original_data, computed_data):
+          """
+          Print a comparison of two timeseries (original and computed)
 
-             Parameters:
-                name: A string name for the data being compared. (Limited
-                   to 9 characters in length)
+          Parameters:
+             name: A string name for the data being compared. (Limited
+                to 9 characters in length)
              date: List of strings representing the dates for each data element
              time: List of strings representing time of day for each data element
              original_data: List of original data (floats)
              computed_data: List of computed data (floats)
-             """
+          """
 
-             print(f'                ORIGINAL  COMPUTED')
-             print(f' DATE    TIME  {name.upper():>9} {name.upper():>9} DIFFERENCE')
-             print(f'------- ------ --------- --------- ----------')
-             for date, time, orig, comp in zip(date, time, original_data, computed_data):
-                print(f'{date} {time:>6} {orig:9.6f} {comp:9.6f} {orig-comp:10.6f}')
+          print(f'                ORIGINAL  COMPUTED')
+          print(f' DATE    TIME  {name.upper():>9} {name.upper():>9} DIFFERENCE')
+          print(f'------- ------ --------- --------- ----------')
+          for date, time, orig, comp in zip(date, time, original_data, computed_data):
+             print(f'{date} {time:>6} {orig:9.6f} {comp:9.6f} {orig-comp:10.6f}')
     ..
 
     The only new functionality shown here is 
@@ -1832,7 +1832,7 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start: 100
        
-          print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
+       print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
   
     ..
    
@@ -1841,7 +1841,7 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start: 100
    
-          print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
+       print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
    
     ..
 
@@ -1877,54 +1877,54 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start: 1
     
-          def compute_windchill(t, v):
-             """
-             Compute the wind chill factor given the temperature and wind speed
+       def compute_windchill(t, v):
+          """
+          Compute the wind chill factor given the temperature and wind speed
 
-             NOTE: This computation is valid only for 
-                temperatures between -45F and +45F and for 
-                wind speeds between 3 mph and 60 mph.
+          NOTE: This computation is valid only for 
+             temperatures between -45F and +45F and for 
+             wind speeds between 3 mph and 60 mph.
 
-             Parameters:
-                t: The temperature in units of F
-                v: The wind speed in units of mph
-             """
+          Parameters:
+             t: The temperature in units of F
+             v: The wind speed in units of mph
+          """
 
-             a = 35.74
-             b = 0.6215
-             c = 35.75
-             d = 0.4275
+          a = 35.74
+          b = 0.6215
+          c = 35.75
+          d = 0.4275
 
-             v16 = v ** 0.16
-             wci = a + (b * t) - (c * v16) + (d * t * v16)
-             return wci
+          v16 = v ** 0.16
+          wci = a + (b * t) - (c * v16) + (d * t * v16)
+          return wci
 
 
-          def compute_heatindex(temp, hum):
-             """
-             Compute the heat index given the temperature and the humidity
+       def compute_heatindex(temp, hum):
+          """
+          Compute the heat index given the temperature and the humidity
 
-             Parameters:
-                t: The temperature in units of F
-                h: The relative humitidy in units of %
-             """
+          Parameters:
+             t: The temperature in units of F
+             h: The relative humitidy in units of %
+          """
 
-             a = -42.379
-             b = 2.04901523
-             c = 10.14333127
-             d = 0.22475541
-             e = 0.00683783
-             f = 0.05481717
-             g = 0.00122874
-             h = 0.00085282
-             i = 0.00000199
+          a = -42.379
+          b = 2.04901523
+          c = 10.14333127
+          d = 0.22475541
+          e = 0.00683783
+          f = 0.05481717
+          g = 0.00122874
+          h = 0.00085282
+          i = 0.00000199
 
-             rh = h / 100
-    `
-             hi = a + (b * t) + (c * rh) + (d * t * rh) 
-                + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
-                + (h * t * rh**2) + (i * t**2 * rh**2)
-             return hi
+          rh = h / 100
+             
+          hi = a + (b * t) + (c * rh) + (d * t * rh) 
+          + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
+          + (h * t * rh**2) + (i * t**2 * rh**2)
+          return hi
     ..
    
     And then modified the scripts accordingly as in steps #12-14 and #18.
@@ -1974,9 +1974,9 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start: 1
     
-          from mysci.readdata import read_data
-          from mysci.printing import print_comparison
-          from mysci.computation import compute_heatindex
+       from mysci.readdata import read_data
+       from mysci.printing import print_comparison
+       from mysci.computation import compute_heatindex
     
     ..
 
@@ -2024,9 +2024,9 @@ python_tutorial directory and have activated the corresponding environment.
     .. code :: python
        :lineno-start: 100
     
-          windchill = []
-          for temp, windspeed in zip(data['tempout'], data['windspeed']):
-             windchill.append(compute_windchill(temp, windspeed))
+       windchill = []
+       for temp, windspeed in zip(data['tempout'], data['windspeed']):
+          windchill.append(compute_windchill(temp, windspeed))
     ..
     
     This divides the initialization of the :code:`windchill` 
@@ -2043,7 +2043,7 @@ python_tutorial directory and have activated the corresponding environment.
     .. code:: python
        :lineno-start: 100
     
-          windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
+       windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
     
     ..
     
