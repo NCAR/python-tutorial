@@ -1718,7 +1718,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
 
-    What is :code:`__pycache__`?
+    What is :code:`__pycache__` ?
     When you run a python program with an :code:`import` 
     command, Python learns that you have written code 
     that you may call again. The interpreter compiles 
@@ -2097,13 +2097,17 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    .. math::
 
-      Gamma = log(Humidity) + (b * Temperature) / (c + Temperature)
-
-      DPT = c * Gamma / (b - Gamma)
+      \Gamma = \log{h} + \frac{b * t}{c + t}
 
    ..
 
-   Where *DPT* represents Dew Point Temperature in Degrees C, Humidity is in %, Temeprature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
+   .. math::
+
+      DPT = \frac{c * \Gamma}{b - \Gamma}
+
+   ..
+
+   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity is in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
 
    In order to do a natural logorithm, we will need to import our first external module: :code:`math`.
    It is best practice to import modules at the beginning of the script.
