@@ -2072,7 +2072,7 @@ python_tutorial directory and have activated the corresponding environment.
 That concludes the lesson on "Creating Your Frst Package", the first in our introduction to Python packages series.
 
 You should now be familiar with modules, using the 
-:code:`import` statement, some more :code:`f-string formatting options,
+:code:`import` statement, some more :code:`f-string` formatting options,
 :code:`__pycache__`, :code:`.gitignore`, :code:`.__init__`, and list 
 comprehensions.
 
