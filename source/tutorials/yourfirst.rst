@@ -1497,7 +1497,7 @@ python_tutorial directory and have activated the corresponding environment.
    ..
    
 4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to 
-   read in the humidity and heat index values as :code:`float`s:
+   read in the humidity and heat index values as :code:`float` s:
    
    .. code-block:: python
       :lineno-start: 4
@@ -1531,7 +1531,7 @@ python_tutorial directory and have activated the corresponding environment.
    
    Run this script with :code:`python heatindexcomp.py` and see the results. 
 
-   So far you have only revisited concepts from "Your First Package".
+   So far you have only revisited concepts from "Your First Script".
 
 6. Git stage and commit this new script.
 
@@ -1553,16 +1553,45 @@ python_tutorial directory and have activated the corresponding environment.
 
       $ touch readdata.py
 
-    ..
+   ..
    
    This new file will include the common code for reading the data file from both the 
    windchill and heatindex script.
 
-   8. Copy and paste the lines for reading in the data file:
+8. Copy and paste the lines for reading in the data file:
 
-      .. code-block:: python
-         :lineno-start: 1
+   .. code-block:: python
+      :lineno-start: 1
 
+      # Initialize my data variable
+      data = {}
+      for column in columns:
+         data[column] = []
+
+      # Read and parse the data file
+      with open(filename, 'r') as datafile:
+
+         # Read the first three lines (header)
+         for _ in range(3):
+            datafile.readline()
+
+         # Read and parse the rest of the file
+         for line in datafile:
+            split_line = line.split()
+            for column in columns:
+               i = columns[column]
+               t = types.get(column, str)
+               value = t(split_line[i])
+               data[column].append(value)
+
+   ..
+
+9. Turn these lines into a function:
+
+   .. code-block:: python
+      :lineno-start: 1
+         
+      def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
          # Initialize my data variable
          data = {}
          for column in columns:
@@ -1584,53 +1613,24 @@ python_tutorial directory and have activated the corresponding environment.
                   value = t(split_line[i])
                   data[column].append(value)
 
-      ..
+   ..
 
-   9. Turn these lines into a function:
-
-      .. code-block:: python
-         :lineno-start: 1
-         
-         def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
-            # Initialize my data variable
-            data = {}
-            for column in columns:
-               data[column] = []
-
-            # Read and parse the data file
-            with open(filename, 'r') as datafile:
-
-               # Read the first three lines (header)
-               for _ in range(3):
-                  datafile.readline()
-
-               # Read and parse the rest of the file
-               for line in datafile:
-                  split_line = line.split()
-                  for column in columns:
-                     i = columns[column]
-                     t = types.get(column, str)
-                     value = t(split_line[i])
-                     data[column].append(value)
-
-      ..
-
-      The function arguments for our :code:`read_data` function are :code:`columns`, :code:`types`, and :code:`filename`.
-      :code:`types` and :code:`filename` are both keyword arguments, which means that it is not necessary to include them in your function call; 
-      if you do not call them, their value is taken as what they are set equal to in the definition. 
+   The function arguments for our :code:`read_data` function are :code:`columns`, :code:`types`, and :code:`filename`.
+   :code:`types` and :code:`filename` are both keyword arguments, which means that it is not necessary to include them in your function call; 
+   if you do not call them, their value is taken as what they are set equal to in the definition. 
       
-      When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
-      (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
+   When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
+   (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
     
-      Similarly, filename is set to the path of our data file as long as the user doesn't specify a different 
-      file. 
+   Similarly, filename is set to the path of our data file as long as the user doesn't specify a different 
+   file. 
       
-      Keyword arguments can be called in any order.
+   Keyword arguments can be called in any order.
 
-   10. Add a docstring to the function:
+10. Add a docstring to the function:
 
-       .. code-block:: python
-          :lineno-start: 1
+    .. code-block:: python
+       :lineno-start: 1
          
           def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
              """
@@ -1665,7 +1665,7 @@ python_tutorial directory and have activated the corresponding environment.
                       value = t(split_line[i])
                       data[column].append(value)
 
-       ..
+    ..
 
     The section between the tripple quotes :code:`"""` is the docstring. 
     The "Read data from CU Boulder 
@@ -1686,20 +1686,22 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-12. Ammend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by:
+12. Ammend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
+   
+13. Add the following import statement to the top of each script:
+   
+    .. code-block:: python
+       lineno-start: 1
 
-    1) Deleting the equivalent read-file code in them.
+          from readdata import read_data 
    
-    2) Adding the following import statement to the top of each script:
-   
-       .. code-block:: python
-          lineno-start: 1
+    ..
 
-             from readdata import read_data   
+    In python you can call up functionality from scripts outside of your active script using the 
+    :code:'import' statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
+    And now we can call up the function from these scripts.
    
-       ..
-   
-    And 3) after the initializations of the :code:`columns` and :code:`types` variables, replace the 
+14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the 
     deleted code with a function call:
 
     .. code-block:: python
@@ -1710,13 +1712,9 @@ python_tutorial directory and have activated the corresponding environment.
    
        ..
    
-    In python you can call up functionality from scripts outside of your active script using the 
-    :code:'import' statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
-    And now we can call up the function from these scripts.
-
     Test out both of these scripts to make sure they still work!
 
-13. Do a :code:`git status` now.  
+15. Do a :code:`git status` now.  
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
    
@@ -1751,13 +1749,13 @@ python_tutorial directory and have activated the corresponding environment.
     
     ..
    
-14. Do another :code:`git status`.  What do you see?
+16. Do another :code:`git status`.  What do you see?
    
     Now, instead of :code:`__pycache__` being listed as 
     "untracked", you see :code:`.gitignore` being listed as 
     "untracked", and no mention of :code:`__pycache__`.
    
-15. Stage and commit the new :code:`.gitignore` file.
+17. Stage and commit the new :code:`.gitignore` file.
     
     .. code:: bash
 
@@ -1771,7 +1769,7 @@ python_tutorial directory and have activated the corresponding environment.
     not been committed to the project repository!  
     Because they have not yet been staged.
    
-16. Stage *both files* and commit all new changes in one commit:
+18. Stage *both files* and commit all new changes in one commit:
     
     .. code:: bash
 
@@ -1782,7 +1780,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     You can type :code:`-a` instead of the name of your files to add all unstaged changes.
 
-17. There is still have some duplicated 
+19. There is still have some duplicated 
     code between the two scripts. Let's combine the final 
     output code and printing code.
    
@@ -1823,7 +1821,7 @@ python_tutorial directory and have activated the corresponding environment.
     :code:`string.upper()`, which capitalzes all lower case 
     letters in a string
    
-18. Edit the two scripts to use this new module (similar methods to step #12), and test your results.
+20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
    
     Try to do this on your own first, but if you are getting error messages the solution looks like:
   
@@ -1847,7 +1845,7 @@ python_tutorial directory and have activated the corresponding environment.
    
     ..
 
-19. [git] Stage all changes and commit:
+21. [git] Stage all changes and commit:
 
     .. code:: bash
     
@@ -1856,7 +1854,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-20. You now have 2 different modules related 
+22. You now have 2 different modules related 
     to the same project.  It is best practice
     to separate different functions into different 
     modules depending upon the kind of functionality 
@@ -1929,9 +1927,9 @@ python_tutorial directory and have activated the corresponding environment.
              return hi
     ..
    
-    And then modified the scripts accordingly as in steps #12 and #18.
+    And then modified the scripts accordingly as in steps #12-14 and #18.
 
-21. Stage and commit everything:
+23. Stage and commit everything:
 
     .. code:: bash
 
@@ -1939,7 +1937,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-22. Now, you've got quite a few Python 
+24. Now, you've got quite a few Python 
     files in the main directory. Which ones are scripts?  
     Which ones are modules meant to be imported?
    
@@ -1982,7 +1980,7 @@ python_tutorial directory and have activated the corresponding environment.
     
     ..
 
-23. Stage everything (don't forget the 
+25. Stage everything (don't forget the 
     `__init__.py` file!) and commit 
     
     .. code:: bash
@@ -2016,7 +2014,7 @@ python_tutorial directory and have activated the corresponding environment.
           windchillcomp.py
     ..
 
-24. As a brief aside --
+26. As a brief aside --
     look at the use of the computation
     functions in these scripts.  
     
@@ -2058,7 +2056,7 @@ python_tutorial directory and have activated the corresponding environment.
     Use list comprehensions to make the computation 
     steps in both of scripts one-liners.
 
-25. Do a final stage and commit changes 
+27. Do a final stage and commit changes 
     
     .. code:: bash
 
