@@ -1176,7 +1176,7 @@ Let's begin.
    .. code-block:: python
       :lineno-start: 40
 
-      # Let's actually compute the wind chill factor
+      # Compute the wind chill factor
       windchill = []
       for temp, windspeed in zip(data['tempout'], data['windspeed']):
          windchill.append(compute_windchill(temp, windspeed))
@@ -1473,7 +1473,7 @@ python_tutorial directory and have activated the corresponding environment.
    a :code:`compute_heatindex` function:
    
    .. code-block:: python
-      :lineno-start: 29
+      :lineno-start: 30
          
       # Compute the heat index
       def compute_heatindex(t, h):
@@ -1500,7 +1500,7 @@ python_tutorial directory and have activated the corresponding environment.
    read in the humidity and heat index values as :code:`float` s:
    
    .. code-block:: python
-      :lineno-start: 4
+      :lineno-start: 1
 
       # Column names and column indices to read
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
@@ -1512,10 +1512,10 @@ python_tutorial directory and have activated the corresponding environment.
 
 5. Update the function call and printing sections of the script to match:
    
-   .. code-block::python
-      :lineno-start: 40
+   .. code-block::pythonF
+      :lineno-start: 49
 
-      # Let's actually compute the heat index
+      # Compute the heat index
       heatindex = []
       for temp, hum in zip(data['tempout'], data['humout']):
          heatindex.append(compute_heatindex(temp, hum))
@@ -1705,13 +1705,14 @@ python_tutorial directory and have activated the corresponding environment.
     deleted code with a function call:
 
     .. code-block:: python
-       :lineno-start: 100
+       :lineno-start: 9
   
        # Read data from file
        data = read_data(columns, types=types)   
 
     ..
-
+    The :code:`types=types` says that the input argument :code:`types` is being set equal to our dictionary :code:`types`.
+   
     Test out both of these scripts to make sure they still work!
 
 15. Do a :code:`git status` now.  
@@ -1830,8 +1831,9 @@ python_tutorial directory and have activated the corresponding environment.
     2) Replace the printing output section at the bottom of each script with:
 
     .. code-block:: python
-       :lineno-start: 100
+       :lineno-start: 29
 
+       # Output comparison of data
        print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
 
     ..
@@ -1839,8 +1841,9 @@ python_tutorial directory and have activated the corresponding environment.
     or
 
     .. code-block:: python
-       :lineno-start: 100
+       :lineno-start: 37
 
+       # Output comparison of data
        print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
 
     ..
@@ -1927,7 +1930,67 @@ python_tutorial directory and have activated the corresponding environment.
           return hi
     ..
 
-    And then modified the scripts accordingly as in steps #12-14 and #18.
+    And then modified the scripts accordingly as in steps #12-14 and #18
+    by adding your import statements :code:`from computation import compute_windchill` OR :code:`from computation import compute_heatindex` and
+    removing the redundant function definitions.
+
+    Your two scripts should look as follows:
+
+    For :code:`windchillcomp.py` :
+
+    .. code:: python
+       :lineno-start: 1
+
+       from readdata import read_data
+       from printing import print_comparison
+       from computation import compute_windchill
+
+       # Column names and column indices to read
+       columns = {'date':0, 'time':1, 'tempout':2, 'windspeed':7, 'windchill':12}
+
+       # Data types for each column (only if non-string)
+       types = {'tempout': float, 'windspeed':float, 'windchill':float}
+
+       # Read data from file
+       data = read_data(columns, types=types)
+
+       # Compute the wind chill factor
+       windchill = []
+       for temp, windspeed in zip(data['tempout'], data['windspeed']):
+          windchill.append(compute_windchill(temp, windspeed))
+
+       # Output comparison of data
+       print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
+
+    ..
+
+And for :code:`heatindexcomp.py` :
+    
+    .. code:: python
+       :lineno-start: 1
+
+       from readdata import read_data
+       from printing import print_comparison
+       from computation import compute_heatindex
+
+       # Column names and column indices to read
+       columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
+   
+       # Data types for each column (only if non-string)
+       types = {'tempout': float, 'humout': float, 'heatindex': float}
+
+       # Read data from file
+       data = read_data(columns, types=types)
+
+       # Compute the heat index
+       heatindex = []
+       for temp, hum in zip(data['tempout'], data['humout']):
+          heatindex.append(compute_heatindex(temp, hum))
+
+       # Output comparison of data
+       print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
+
+    ..
 
 23. Stage and commit everything:
 
@@ -2024,8 +2087,9 @@ python_tutorial directory and have activated the corresponding environment.
     it looks like this:
 
     .. code-block :: python
-       :lineno-start: 100
+       :lineno-start: 14
 
+       # Compute the wind chill factor
        windchill = []
        for temp, windspeed in zip(data['tempout'], data['windspeed']):
           windchill.append(compute_windchill(temp, windspeed))
@@ -2043,8 +2107,9 @@ python_tutorial directory and have activated the corresponding environment.
     lines in the form of a "one-liner" like so:
 
     .. code-block:: python
-       :lineno-start: 100
+       :lineno-start: 14
 
+       # Compute the wind chill factor
        windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
 
     ..
@@ -2096,7 +2161,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    .. math::
 
-      \Gamma = \log{h} + \frac{b * t}{c + t}
+      \Gamma = \log{(h)} + \frac{b * t}{c + t}
 
    ..
 
@@ -2120,10 +2185,10 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    To access the logarithmic function within the module :code:`math` you would type :code:`math.log`.
 
-   Then write the function to the bottom of :code:`computation.py`:
+   Then write the function to the bottom of :code:`computation.py` (with 2 empty lines between each function):
 
    .. code-block::
-      :lineno-start: 100
+      :lineno-start: 53
 
       def compute_dewpoint(t, h):
          """
@@ -2182,16 +2247,16 @@ one at a time in order to reduce any confusion you may have about what each libr
    Make changes to the import statements to include:
 
    .. code-block:: python
-      :lineno-start: 1
+      :lineno-start: 3
 
-      from computation.py import compute_dewpoint
+      from mysci.computation.py import compute_dewpoint
 
    ..
 
    And change your :code:`columns` and :code:`types` dictionaries to include :code:`dewpt`:
 
    .. code-block:: python
-      :lineno-start: 4
+      :lineno-start: 5
 
       # Columns names and column indices to read
       columns = {'date':0 , 'time':1, 'tempout':2, 'humout':5, 'dewpt':6}
@@ -2204,9 +2269,9 @@ one at a time in order to reduce any confusion you may have about what each libr
    And finally, make changes to the function calls:
 
    .. code-block:: python
-      :lineno-start: 100
+      :lineno-start: 14
 
-      # Calculate dewpointtemp
+      # Compute the dew point temperature
       dewpointtemp = [compute_dewpoint(t, h) for t, h in zip(data['tempout'], data['humout'])]
 
       # Output comparison of data
