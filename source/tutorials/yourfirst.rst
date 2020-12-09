@@ -1556,9 +1556,9 @@ python_tutorial directory and have activated the corresponding environment.
    ..
    
    This new file will include the common code for reading the data file from both the 
-   windchill and heatindex script.
+   :code:`windchillcomp.py` and :code:`heatindexcomp.py` scripts.
 
-8. Copy and paste the lines for reading in the data file:
+8. Copy and paste the lines for reading in the data file into :code:`readdata.py`:
 
    .. code-block:: python
       :lineno-start: 1
@@ -1794,7 +1794,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-    And create a printing function (with docstring!):
+    And create a printing function (with docstring!) in :code:`printing.py`:
 
     .. code-block:: python
        :lineno-start: 1
@@ -1849,7 +1849,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-21. [git] Stage all changes and commit:
+21. Stage all changes and commit:
 
     .. code-block:: bash
    
@@ -1997,6 +1997,7 @@ And for :code:`heatindexcomp.py` :
 
     .. code-block:: bash
 
+       $ git stage -a
        $ git commit -m "Creating computation module"
 
     ..
@@ -2145,7 +2146,7 @@ comprehensions.
 .. seealso::
       
    `More information on Python modules <https://docs.python.org/3/tutorial/modules.html>`_
-   `More information on on :code:`.gitignore` <https://git-scm.com/docs/gitignore>`_
+   `More information on on .gitignore <https://git-scm.com/docs/gitignore>`_
    `More information on list comprehension <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_
    
 ..
@@ -2317,6 +2318,6 @@ specifically the :code:`log` method.
 
 .. seealso::
       
-   `More information on the :code:`math` module <https://docs.python.org/3/library/math.html>`_
+   `More information on the Math module <https://docs.python.org/3/library/math.html>`_
    
 ..
