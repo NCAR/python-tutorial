@@ -2141,6 +2141,14 @@ You should now be familiar with modules, using the
 :code:`__pycache__`, :code:`.gitignore`, :code:`.__init__`, and list 
 comprehensions.
 
+.. seealso::
+      
+   `More information on Python modules <https://docs.python.org/3/tutorial/modules.html>`_
+   `More information on on :code:`.gitignore` <https://git-scm.com/docs/gitignore>`_
+   `More information on list comprehension <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_
+   
+..
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Using a Built-In Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2307,7 +2315,7 @@ You should now be familiar with importing packages that you did not build and so
 specifically the :code:`log` method.
 
 .. seealso::
-
-   You can read more about this module here: https://docs.python.org/3/library/math.html
+      
+   `More information on the :code:`math` module <https://docs.python.org/3/library/math.html>`_
    
 ..
