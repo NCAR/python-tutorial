@@ -1711,6 +1711,7 @@ python_tutorial directory and have activated the corresponding environment.
        data = read_data(columns, types=types)   
 
     ..
+    
     The :code:`types=types` says that the input argument :code:`types` is being set equal to our dictionary :code:`types`.
    
     Test out both of these scripts to make sure they still work!
@@ -1938,7 +1939,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     For :code:`windchillcomp.py` :
 
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 1
 
        from readdata import read_data
@@ -1966,7 +1967,7 @@ python_tutorial directory and have activated the corresponding environment.
 
 And for :code:`heatindexcomp.py` :
     
-    .. code:: python
+    .. code-block:: python
        :lineno-start: 1
 
        from readdata import read_data
