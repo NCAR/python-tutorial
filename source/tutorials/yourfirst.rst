@@ -1702,7 +1702,7 @@ Open a terminal to begin and make sure you are in the
     ..
 
     In python you can call up functionality from scripts outside of your active script using the 
-    :code:'import' statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
+    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
     And now we can call up the function from these scripts.
    
 14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the 
