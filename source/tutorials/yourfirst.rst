@@ -1623,7 +1623,7 @@ Open a terminal to begin and make sure you are in the
    When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
    (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
     
-   Similarly, filename is set to the path of our data file as long as the user doesn't specify a different 
+   Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different 
    file. 
       
    Keyword arguments can be called in any order.
