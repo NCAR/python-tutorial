@@ -2312,8 +2312,10 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    So far you have only used the :code:`math.log` function, but let's test out some other common methods within :code:`math`\.
 
    Perhaps you want to change the base of your logarithm. To do this you could type :code:`math.log(x, base)`. Here :code:`base` is
-   a keyword argument (just like :code:`filename` or :code:`types` in our :code:`read_data()` function) which means that :code:`base` does not need to be specified- 
-   when it is not the logarithm is assumed to be natural (base *e*). When both arguments are entered, the function returns the logarithm of :code:`x` to the given :code:`base`\, 
+   a keyword argument (just like :code:`filename` or :code:`types` in our :code:`read_data()` function) which
+   means that :code:`base` does not need to be specified.  When it is not specified, the logarithm is assumed to
+   be natural (base *e*). When both arguments are entered, the function returns the logarithm of :code:`x` to
+   the given :code:`base`\, 
    calculated by :code:`log(x)/log(base)`\. Let's test this out:
 
    .. code-block:: python
