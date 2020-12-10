@@ -966,7 +966,7 @@ Let's begin.
 
 11. This seems great, so far! But what if you want to read more columns to our
     data later? You would have to change the initialization of the data
-    variable (at the top of :code:`mysci.py`) and have to add the appropriate line
+    variable (at the top of :code:`mysci.py`\) and have to add the appropriate line
     in the "read and parse" section. Essentially, that means you need to
     maintain 2 parts of the code and make sure that both remain consistent with
     each other.
@@ -1171,7 +1171,7 @@ Let's begin.
    is for division, and a double backslash, :python:`//`, is for integer division.
 
    And then let's compute a new list with windchill data at the bottom of
-   :code:`mysci.py`:
+   :code:`mysci.py`\:
 
    .. code-block:: python
       :lineno-start: 40
@@ -1333,7 +1333,7 @@ Let's begin.
     2. At the top right of any Github page, there is a '+' icon. Click that,
        then select 'New Repository'.
 
-    3. Name your repository :code:`python_tutorial`.
+    3. Name your repository :code:`python_tutorial`\.
        It is best practice for your local project and GitHub repository to
        share a name.
 
@@ -1406,7 +1406,7 @@ First Python Package
 -----------------------------
 
 In this section of the tutorial we will learn how to create a Python package 
-and the basics of how to use built-in packages :code:`math` and :code:`numpy`. This will prepare you 
+and the basics of how to use built-in package :code:`math`\. This will prepare you 
 to learn any package you thik may be useful for your scientific analysis.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1497,7 +1497,7 @@ python_tutorial directory and have activated the corresponding environment.
    ..
    
 4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to 
-   read in the humidity and heat index values as :code:`float` s:
+   read in the humidity and heat index values as :code:`float`\s:
    
    .. code-block:: python
       :lineno-start: 1
@@ -1547,7 +1547,7 @@ python_tutorial directory and have activated the corresponding environment.
    and parsing code is duplicated! And the output is 
    similarly formatted, too.  
    
-   Create a new file called :code:`readdata.py`:
+   Create a new file called :code:`readdata.py`\:
 
    .. code-block:: bash
 
@@ -1558,7 +1558,7 @@ python_tutorial directory and have activated the corresponding environment.
    This new file will include the common code for reading the data file from both the 
    :code:`windchillcomp.py` and :code:`heatindexcomp.py` scripts.
 
-8. Copy and paste the lines for reading in the data file into :code:`readdata.py`:
+8. Copy and paste the lines for reading in the data file into :code:`readdata.py`\:
 
    .. code-block:: python
       :lineno-start: 1
@@ -1615,7 +1615,7 @@ python_tutorial directory and have activated the corresponding environment.
 
    ..
 
-   The function arguments for our :code:`read_data` function are :code:`columns`, :code:`types`, and :code:`filename`.
+   The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
    :code:`types` and :code:`filename` are both keyword arguments, which means that it is not necessary to include them in your function call; 
    if you do not call them, their value is taken as what they are set equal to in the definition. 
       
@@ -1720,7 +1720,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
 
-    What is :code:`__pycache__` ?
+    What is :code:`__pycache__`\?
     When you run a python program with an :code:`import` 
     command, Python learns that you have written code 
     that you may call again. The interpreter compiles 
@@ -1751,11 +1751,11 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-16. Do another :code:`git status`.  What do you see?
+16. Do another :code:`git status`\.  What do you see?
 
     Now, instead of :code:`__pycache__` being listed as 
     "untracked", you see :code:`.gitignore` being listed as 
-    "untracked", and no mention of :code:`__pycache__`.
+    "untracked", and no mention of :code:`__pycache__`\.
 
 17. Stage and commit the new :code:`.gitignore` file.
 
@@ -1786,7 +1786,7 @@ python_tutorial directory and have activated the corresponding environment.
     code between the two scripts. Let's combine the final 
     output code and printing code.
 
-    Create another module file called :code:`printing.py` 
+    Create another module file called :code:`printing.py`\:
 
     .. code-block:: bash
 
@@ -1794,7 +1794,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-    And create a printing function (with docstring!) in :code:`printing.py`:
+    And create a printing function (with docstring!) in :code:`printing.py`\:
 
     .. code-block:: python
        :lineno-start: 1
@@ -1820,7 +1820,7 @@ python_tutorial directory and have activated the corresponding environment.
     ..
 
     The only new functionality shown here is 
-    :code:`string.upper()`, which capitalzes all lower case 
+    :code:`string.upper()`\, which capitalzes all lower case 
     letters in a string
 
 20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
@@ -1867,10 +1867,10 @@ python_tutorial directory and have activated the corresponding environment.
     output" into different modules.
 
     Do the same thing with the computation functions, 
-    :code:`compute_windchill` and :code:`compute_heatindex`.
+    :code:`compute_windchill` and :code:`compute_heatindex`\.
 
     Move these functions into a new module called 
-    :code:`computation.py`, and modify the scripts to use 
+    :code:`computation.py`\, and modify the scripts to use 
     this new module.  Remember to add docstrings!
 
     Try to do this on your own first!!
@@ -1937,7 +1937,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     Your two scripts should look as follows:
 
-    For :code:`windchillcomp.py` :
+    For :code:`windchillcomp.py`\:
 
     .. code-block:: python
        :lineno-start: 1
@@ -1965,7 +1965,7 @@ python_tutorial directory and have activated the corresponding environment.
 
     ..
 
-And for :code:`heatindexcomp.py` :
+And for :code:`heatindexcomp.py`\:
     
     .. code-block:: python
        :lineno-start: 1
@@ -2012,7 +2012,7 @@ And for :code:`heatindexcomp.py` :
     with an :code:`__init__.py` file inside it.
 
     Create a new directory called :code:`mysci` and 
-    create an empty file in it called :code:`__init__.py`:
+    create an empty file in it called :code:`__init__.py`\:
 
     .. code-block:: bash
 
@@ -2103,8 +2103,8 @@ And for :code:`heatindexcomp.py` :
 
     Python gives you some shortcuts to doing this 
     via a concept called  "comprehensions", which 
-    are ways of initializing containers (:code:`list` s,
-    :code:`dict` s, etc.) with an *internal loop*.  For 
+    are ways of initializing containers (:code:`list`\s,
+    :code:`dict`\s, etc.) with an *internal loop*.  For 
     example, we could have written the previous 3 
     lines in the form of a "one-liner" like so:
 
@@ -2140,7 +2140,7 @@ That concludes the lesson on "Creating Your Frst Package", the first in our intr
 
 You should now be familiar with modules, using the 
 :code:`import` statement, some more :code:`f-string` formatting options,
-:code:`__pycache__`, :code:`.gitignore`, :code:`.__init__`, and list 
+:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list 
 comprehensions.
 
 .. seealso::
@@ -2155,7 +2155,7 @@ comprehensions.
 Using a Built-In Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far you have created a separate :code:`readdata`, :code:`printing`, and :code:`computation` module 
+So far you have created separate :code:`readdata`\, :code:`printing`\, and :code:`computation` modules 
 to remove redundant code blocks from your scripts. And you have combined these
 modules into a package that we imported into our scripts.
 
@@ -2183,7 +2183,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity is in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
 
-   In order to do a natural logorithm, we will need to import our first built-in package: :code:`math`.
+   In order to do a natural logorithm, we will need to import our first built-in package: :code:`math`\.
    It is best practice to import modules at the beginning of the script.
 
    .. code-block::
@@ -2193,7 +2193,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    ..
 
-   To access the logarithmic function within the module :code:`math` you would type :code:`math.log`.
+   To access the logarithmic function within the module :code:`math` you would type :code:`math.log`\.
 
    Then write the function to the bottom of :code:`computation.py` (with 2 empty lines between each function):
 
@@ -2226,7 +2226,7 @@ one at a time in order to reduce any confusion you may have about what each libr
    This function converts our input temperature to degrees Celsius and humidity to relative humidity,
    specifies the constants, calculates the dew point temperature, and finally converta that temperature to degrees Farenheit.
 
-3. Git add and commit :code:`computation.py` 
+3. Git add and commit :code:`computation.py`\:
 
    .. code-block:: bash
       
@@ -2243,7 +2243,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    ..
 
-5. Git add and commit :code:`dewpointtempcomp.py` 
+5. Git add and commit :code:`dewpointtempcomp.py`\:
 
    .. code-block:: bash
    
@@ -2252,7 +2252,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    ..
 
-6. Edit :code:`dewpointtempcomp.py`:
+6. Edit :code:`dewpointtempcomp.py`\:
 
    Make changes to the import statements to include:
 
@@ -2263,7 +2263,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    ..
 
-   And change your :code:`columns` and :code:`types` dictionaries to include :code:`dewpt`:
+   And change your :code:`columns` and :code:`types` dictionaries to include :code:`dewpt`\:
 
    .. code-block:: python
       :lineno-start: 5
@@ -2300,15 +2300,102 @@ one at a time in order to reduce any confusion you may have about what each libr
 
 8. Let's learn more about the math module!
 
-   Hopefully since you already imported code from your readdata, printing, and computation modules, importing from a built-in package :code:`math` seemed a little less intimidating.
+   Hopefully since you already imported code from your :code:`readdata`\, :code:`printing`, and :code:computation` modules, importing from a built-in package :code:`math` seemed a little less intimidating.
 
-   You only used the :code:`math.log` function, but some other common methods within :code:`math` include:
+   So far you have only used the :code:`math.log` function, but let's test out some other common methods within :code:`math`\.
 
-   :code:`math.pi` which is the value of pi
-   :code:`math.tan(x)` which returns the tangent of x radiance
-   :code:`math.radians(x)` which converts angle x from degrees to radians
-   :code:`math.log10()` which returns the base-10 logarithm of x
-   Just to name a few.
+   Perhaps you want to change the base of your logarithm. To do this you could type :code:`math.log(x, base)`. Here :code:`base` is
+   a keyword argument (just like :code:`filename` or :code:`types` in our :code:`read_data()` function) which means that :code:`base` does not need to be specified- 
+   when it is not the logarithm is assumed to be natural (base *e*). When both arguments are entered, the function returns the logarithm of :code:`x` to the given :code:`base`\, 
+   calculated by :code:`log(x)/log(base)`\. Let's test this out:
+
+   .. code-block:: python
+
+      import math as m
+
+      x = math.e
+
+      y_natural = m.log(x)
+      y_base10 = m.log(x, 10)
+
+      print(x, y_natural, y_base10)
+
+   ..
+
+   Something new that we have done here is use the :code:`import ... as` statements. This essentially allows us to 
+   shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
+
+   `math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
+   How much more accurate is :code:`math.e` than this approximation?
+   
+   The above function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but for some common bases there are separate logarithmic functions. 
+   Try using :code:`log10(x)`\:
+
+
+   .. code-block:: python
+
+      import math as m
+
+      x = math.e
+
+      y_natural = m.log(x)
+      y_base10 = m.log(x, 10)
+      y_log10 = m.log10(x)
+
+      print(x, y_natural, y_base10, y_log10)
+
+   ..
+
+   Do the two values differ? :code:`math.log10(x)` is considered to be more accurate than :code:`math.log(x, 10)`\.
+   Similarly :code:`math.log2(x)` is more accurate than :code:`math.log9x, 2)`\.
+
+9. Let's cover some :code:`math` trigonometry examples!
+
+   Pi is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159. 
+   We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
+
+   Say we wanted to convert a number from 60 degrees to radians. We have two options:
+
+   .. code-block:: python
+
+      import math as m
+
+      deg = 60
+
+      rads = deg * m.pi / 180
+      rads_fromfunc = radians(deg)
+
+      print(deg, m.pi, ras, rads_fromfunc)
+
+   ..
+
+   In the first example we used :python:`math.pi` to perform our calculation (by default printed to 15 digits). In the second conversion, 
+   we used the function :code:`math.radians(x)` which converts angle x from degrees to radians.
+
+   We can also use trigonometric functions: :code:`math.sin` to get the sine value of an angle, :code:`math.cos` to get the cosine, 
+   :code:`math.tan` for the tangent, :code:`math.asin` for the arc sine, :code:`math.acos` to get the arc cosine, and :code:`math.atan` to get the arc tangent. 
+   You can also calculate the hypotenuse of a triangle with :code:`math.hypot()`\.
+   The input angle for each of these functions must be in radians to get the expected result!
+
+   .. code-block:: python
+
+      import math as m
+
+      deg = 180
+
+      cos_deg = m.cos(deg)
+      cos_rad = m.cos(m.radians(60))
+
+      print(cos_deg, cos_rad)
+
+   ..
+
+   You might remember that the cosine of 180 degrees is -1, you can see that we only get the correct value if we enter the degree in radians (180 deg = PI radians).
+
+10. Let's use :code:`math.factorial()`:
+
+   Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
+   Try :code:`math.factorial(5)` and see what you get!
 
 -----
 
