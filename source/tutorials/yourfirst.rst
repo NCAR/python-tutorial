@@ -2340,8 +2340,6 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    The function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but
    for some common bases there are separate logarithmic functions. 
    Try using :code:`log10(x)`\:
-
-
    .. code-block:: python
 
       import math as m
