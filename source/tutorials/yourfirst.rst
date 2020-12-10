@@ -1545,7 +1545,7 @@ Open a terminal to begin and make sure you are in the
 7. Now, you have two scripts that do very 
    similar things. In fact, all of the data reading 
    and parsing code is duplicated! And the output is 
-   similarly formatted, too.  
+   similarly formatted, too.  Let's remove that duplication!
    
    Create a new file called :code:`readdata.py`\:
 
