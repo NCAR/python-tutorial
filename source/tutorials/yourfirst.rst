@@ -2142,7 +2142,7 @@ And for :code:`heatindexcomp.py`\:
 
 -----
 
-That concludes the lesson on "Creating Your Frst Package", the first in our introduction to Python packages series.
+That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
 
 You should now be familiar with modules, using the 
 :code:`import` statement, some more :code:`f-string` formatting options,
