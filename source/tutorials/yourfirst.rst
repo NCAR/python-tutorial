@@ -2325,7 +2325,7 @@ one at a time in order to reduce any confusion you may have about what each libr
    Something new that we have done here is use the :code:`import ... as` statements. This essentially allows us to 
    shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
 
-   `math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
+   :code:`math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
    How much more accurate is :code:`math.e` than this approximation?
    
    The above function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but for some common bases there are separate logarithmic functions. 
@@ -2336,7 +2336,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
       import math as m
 
-      x = math.e
+      x = m.e
 
       y_natural = m.log(x)
       y_base10 = m.log(x, 10)
@@ -2347,7 +2347,7 @@ one at a time in order to reduce any confusion you may have about what each libr
    ..
 
    Do the two values differ? :code:`math.log10(x)` is considered to be more accurate than :code:`math.log(x, 10)`\.
-   Similarly :code:`math.log2(x)` is more accurate than :code:`math.log9x, 2)`\.
+   Similarly :code:`math.log2(x)` is more accurate than :code:`math.log(x, 2)`\.
 
 9. Let's cover some :code:`math` trigonometry examples!
 
@@ -2394,8 +2394,8 @@ one at a time in order to reduce any confusion you may have about what each libr
 
 10. Let's use :code:`math.factorial()`:
 
-   Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
-   Try :code:`math.factorial(5)` and see what you get!
+    Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
+    Try :code:`math.factorial(5)` and see what you get!
 
 -----
 
