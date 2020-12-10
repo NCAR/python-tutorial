@@ -2190,7 +2190,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
 
-   In order to do a natural logorithm, we will need to import our first built-in package: :code:`math`\.
+   In order to compute a natural logarithm, we will need to import the :code:`math` package.
    It is best practice to import modules at the beginning of the script.
 
    .. code-block::
