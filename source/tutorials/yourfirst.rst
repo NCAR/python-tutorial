@@ -1720,7 +1720,7 @@ Open a terminal to begin and make sure you are in the
    
     Test out both of these scripts to make sure they still work!
 
-15. Do a :code:`git status` now.  
+15. Do a \":code:`git status`\" now.  
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
 
