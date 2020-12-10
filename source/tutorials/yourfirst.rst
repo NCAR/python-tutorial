@@ -1927,7 +1927,7 @@ Open a terminal to begin and make sure you are in the
           h = 0.00085282
           i = 0.00000199
 
-          rh = h / 100
+          rh = hum / 100
 
           hi = a + (b * t) + (c * rh) + (d * t * rh) 
           + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
