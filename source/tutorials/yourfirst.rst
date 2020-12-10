@@ -1451,7 +1451,7 @@ Open a terminal to begin and make sure you are in the
 
    Like wind chill, which is a measure of how much 
    colder the weather feels to the human body due 
-   to windspeed, heat index is a measure of how 
+   to wind speed, heat index is a measure of how 
    much hotter the weather feels to the human body 
    due to humidity. The Rothfusz formula for heat 
    index is:
