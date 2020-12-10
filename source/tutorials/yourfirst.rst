@@ -1449,7 +1449,7 @@ Open a terminal to begin and make sure you are in the
 
 3. Now you will compute the Heat Index.
 
-   Like windchill, which is a measure of how much 
+   Like wind chill, which is a measure of how much 
    colder the weather feels to the human body due 
    to windspeed, heat index is a measure of how 
    much hotter the weather feels to the human body 
