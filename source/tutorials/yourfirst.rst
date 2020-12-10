@@ -1462,12 +1462,12 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-   where *HI* is the Heat Index, *t* is temperature is in degrees F, 
-   *h* is humidity is in %, *a* = -42.379, *b* = 2.04901523, 
+   where *HI* is the Heat Index, *T* is temperature is in degrees F, 
+   *H* is humidity in %, *a* = -42.379, *b* = 2.04901523, 
    *c* = 10.14333127, *d* = 0.22475541, *e* = 0.00683783, 
    *f* = 0.05481717, *g* = 0.00122874, *h* = 0.00085282, and 
    *i* = 0.00000199. The Roothfusz regression is not valid for 
-   extreme temperature or hummidity conditions.
+   extreme temperature or humidity conditions.
 
    Replace the :code:`compute_windchill` function with in your :code:`heatindexcomp.py` script with
    a :code:`compute_heatindex` function:
