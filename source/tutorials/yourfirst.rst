@@ -1626,7 +1626,8 @@ Open a terminal to begin and make sure you are in the
    Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different 
    file. 
       
-   Keyword arguments can be called in any order.
+   Keyword arguments can be called in any order, but they must follow all *positional* arguments
+   (i.e., arguments that do not have default values).
 
 10. Add a docstring to the function:
 
