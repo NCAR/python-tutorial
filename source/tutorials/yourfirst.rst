@@ -2334,7 +2334,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    Something new that we have done here is use the \":code:`import ... as ...`\" statement. This essentially allows us to 
    shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
 
-   :code:`math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
+   The symbol :code:`math.e` represents Euler's number (*e*), the base of the natural logarithm. Euler's number (*e*) is an irrational number with infinite decimal places, often approximated as 2.718. 
    How much more accurate is :code:`math.e` than this approximation?
    
    The function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but
