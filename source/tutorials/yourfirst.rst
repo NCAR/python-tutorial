@@ -1690,7 +1690,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-12. Ammend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
+12. Amend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
 
 13. Add the following import statement to the top of each script:
 
