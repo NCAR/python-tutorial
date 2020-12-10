@@ -1616,8 +1616,9 @@ Open a terminal to begin and make sure you are in the
    ..
 
    The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
-   :code:`types` and :code:`filename` are both keyword arguments, which means that it is not necessary to include them in your function call; 
-   if you do not call them, their value is taken as what they are set equal to in the definition. 
+   The :code:`types` and :code:`filename` variables are both keyword arguments, which means that it is not
+   necessary to include them in your function call; if you do not call them, their value is taken as what they are
+   assigned to in the function definition. 
       
    When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
    (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
