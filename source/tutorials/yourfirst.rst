@@ -1458,7 +1458,7 @@ Open a terminal to begin and make sure you are in the
 
    .. math::
 
-      HI = a + (b *t) + (c * h) + (d * t * h) + (e * t^2) + (f * h^2) + (g * t^2 * h) + (h * t * h^2) + (i * t^2 * h^2)
+      \textit{HI} = a + (b * T) + (c * H) + (d * T * H) + (e * T^2) + (f * H^2) + (g * T^2 * H) + (h * T * H^2) + (i * T^2 * H^2)
 
    ..
 
