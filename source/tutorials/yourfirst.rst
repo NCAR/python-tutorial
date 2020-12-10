@@ -2322,7 +2322,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
       import math as m
 
-      x = math.e
+      x = m.e
 
       y_natural = m.log(x)
       y_base10 = m.log(x, 10)
