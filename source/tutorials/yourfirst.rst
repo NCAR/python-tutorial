@@ -2029,7 +2029,7 @@ And for :code:`heatindexcomp.py`\:
 
     ..
 
-    Then, move 3 modules into this package:
+    Then, move the 3 modules into this package:
 
     .. code-block:: bash
 
