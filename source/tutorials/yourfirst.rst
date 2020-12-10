@@ -2363,7 +2363,7 @@ one at a time in order to reduce any confusion you may have about what each libr
       deg = 60
 
       rads = deg * m.pi / 180
-      rads_fromfunc = radians(deg)
+      rads_fromfunc = m.radians(deg)
 
       print(deg, m.pi, ras, rads_fromfunc)
 
