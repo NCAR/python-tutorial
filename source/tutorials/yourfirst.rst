@@ -2335,7 +2335,8 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    :code:`math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
    How much more accurate is :code:`math.e` than this approximation?
    
-   The above function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but for some common bases there are separate logarithmic functions. 
+   The function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but
+   for some common bases there are separate logarithmic functions. 
    Try using :code:`log10(x)`\:
 
 
