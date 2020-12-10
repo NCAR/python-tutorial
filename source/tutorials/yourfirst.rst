@@ -2184,7 +2184,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    .. math::
 
-      DPT = \frac{c * \Gamma}{b - \Gamma}
+      \textit{DPT} = \frac{c * \Gamma}{b - \Gamma}
 
    ..
 
