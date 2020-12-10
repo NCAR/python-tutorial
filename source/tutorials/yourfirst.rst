@@ -1428,7 +1428,7 @@ that you can pay extra money to install and use - again Python
 is free! 
 
 Open a terminal to begin and make sure you are in the 
-python_tutorial directory and have activated the corresponding environment.
+:code:`python_tutorial` directory and have activated the corresponding environment.
 
 1. Make a copy of your first script with a new name:
    
