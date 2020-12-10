@@ -1529,7 +1529,7 @@ Open a terminal to begin and make sure you are in the
    
    ..
    
-   Run this script with :code:`python heatindexcomp.py` and see the results. 
+   Run this script with \":code:`python heatindexcomp.py`\" and see the results. 
 
    So far you have only revisited concepts from "Your First Script".
 
