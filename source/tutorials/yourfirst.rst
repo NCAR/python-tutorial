@@ -1512,7 +1512,7 @@ Open a terminal to begin and make sure you are in the
 
 5. Update the function call and printing sections of the script to match:
    
-   .. code-block::pythonF
+   .. code-block:: python
       :lineno-start: 49
 
       # Compute the heat index
