@@ -2351,7 +2351,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
 9. Let's cover some :code:`math` trigonometry examples!
 
-   Pi is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159. 
+   The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159. 
    We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
 
    Say we wanted to convert a number from 60 degrees to radians. We have two options:
