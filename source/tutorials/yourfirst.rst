@@ -2307,7 +2307,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 8. Let's learn more about the math module!
 
-   Hopefully since you already imported code from your :code:`readdata`\, :code:`printing`, and :code:computation` modules, importing from a built-in package :code:`math` seemed a little less intimidating.
+   Since you already imported code from your :code:`readdata`\, :code:`printing`, and :code:`computation` modules, importing from the built-in package :code:`math` seemed a little less intimidating.
 
    So far you have only used the :code:`math.log` function, but let's test out some other common methods within :code:`math`\.
 
