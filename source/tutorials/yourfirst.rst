@@ -2346,7 +2346,7 @@ one at a time in order to reduce any confusion you may have about what each libr
 
    ..
 
-   Do the two values differ? :code:`math.log10(x)` is considered to be more accurate than :code:`math.log(x, 10)`\.
+   Do the two values differ? The :code:`math.log10(x)` function is considered to be more accurate than :code:`math.log(x, 10)`\.
    Similarly :code:`math.log2(x)` is more accurate than :code:`math.log(x, 2)`\.
 
 9. Let's cover some :code:`math` trigonometry examples!
