@@ -2231,7 +2231,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    ..
 
    This function converts our input temperature to degrees Celsius and humidity to relative humidity,
-   specifies the constants, calculates the dew point temperature, and finally converta that temperature to degrees Farenheit.
+   specifies the constants, calculates the dew point temperature, and finally converts that temperature to degrees Fahrenheit.
 
 3. Git add and commit :code:`computation.py`\:
 
