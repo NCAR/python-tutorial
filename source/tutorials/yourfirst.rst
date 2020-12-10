@@ -1831,7 +1831,7 @@ Open a terminal to begin and make sure you are in the
 
     Try to do this on your own first, but if you are getting error messages the solution looks like:
 
-    1)  Add the :code:`from printing import print_comparison` line to the top of each script
+    1)  Add the \":code:`from printing import print_comparison`\" line to the top of each script.
 
     2) Replace the printing output section at the bottom of each script with:
 
