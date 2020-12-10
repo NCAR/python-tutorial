@@ -2202,7 +2202,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    To access the logarithmic function within the module :code:`math` you would type :code:`math.log`\.
 
-   Then write the function to the bottom of :code:`computation.py` (with 2 empty lines between each function):
+   Then write the function at the bottom of :code:`computation.py` file (with best practice suggesting 2 empty lines between each function):
 
    .. code-block::
       :lineno-start: 53
