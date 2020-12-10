@@ -2165,9 +2165,10 @@ So far you have created separate :code:`readdata`\, :code:`printing`\, and :code
 to remove redundant code blocks from your scripts. And you have combined these
 modules into a package that we imported into our scripts.
 
-There are many different libraries of code you can import and use, now we will teach you how to import a built-in package (it is already instaled in your environment - Yay!). 
-This tutorial will only going to teach you the most commonly used libraries-- 
-one at a time in order to reduce any confusion you may have about what each library offers.
+Python comes with many different *built-in* packages (i.e., libraries) that you can import and use.  The
+beauty of using built-in packages is that you don't have to install anything new!  If you can use and run
+Python, you already have access to these packages.  For this tutorial, we are going to cover just a little 
+bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
