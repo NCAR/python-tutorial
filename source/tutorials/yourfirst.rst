@@ -1825,7 +1825,7 @@ Open a terminal to begin and make sure you are in the
 
     The only new functionality shown here is 
     :code:`string.upper()` (or, specifically, :code:`name.upper()`\), which capitalizes all lower case 
-    letters in a string
+    letters in a string.
 
 20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
 
