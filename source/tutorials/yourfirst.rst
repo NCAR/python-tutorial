@@ -2331,7 +2331,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    ..
 
-   Something new that we have done here is use the :code:`import ... as` statements. This essentially allows us to 
+   Something new that we have done here is use the \":code:`import ... as ...`\" statement. This essentially allows us to 
    shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
 
    :code:`math.e` calls up Euler's number (*e*), the base of the natural logarithm. *e* is an irrational number with infinite decimal places, often approximated as 2.718. 
