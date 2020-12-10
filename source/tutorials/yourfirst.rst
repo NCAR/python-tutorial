@@ -1908,7 +1908,7 @@ Open a terminal to begin and make sure you are in the
           return wci
 
 
-       def compute_heatindex(temp, hum):
+       def compute_heatindex(t, hum):
           """
           Compute the heat index given the temperature and the humidity
 
