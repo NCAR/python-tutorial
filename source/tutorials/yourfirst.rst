@@ -1673,7 +1673,9 @@ Open a terminal to begin and make sure you are in the
     The "Read data from CU Boulder 
     Weather Station data file . . ." describing the utility 
     of the function and the list of parameters are 
-    standard information included in a docstring.
+    standard information included in a docstring, but there is no requirement.  Everything
+    between the triple quotes is essentially a comment that you can write and format any
+    way you want.  
 
     This new file is a *module*. Modules are simply 
     files containing Python code, meant to be called 
