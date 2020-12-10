@@ -1914,7 +1914,7 @@ Open a terminal to begin and make sure you are in the
 
           Parameters:
              t: The temperature in units of F
-             h: The relative humitidy in units of %
+             hum: The relative humitidy in units of %
           """
 
           a = -42.379
