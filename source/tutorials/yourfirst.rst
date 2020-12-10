@@ -2013,8 +2013,9 @@ And for :code:`heatindexcomp.py`\:
 
     Typically, you should group all of the modules 
     meant for import only into another directory called 
-    a *package*.  A *package* is a directory, often 
-    with an :code:`__init__.py` file inside it.
+    a *package*.  A *package* is a directory containing 
+    a file called :code:`__init__.py` inside it.  (Note that
+    this file is commonly empty.)
 
     Create a new directory called :code:`mysci` and 
     create an empty file in it called :code:`__init__.py`\:
