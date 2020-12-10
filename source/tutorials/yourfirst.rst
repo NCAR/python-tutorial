@@ -1679,7 +1679,7 @@ Open a terminal to begin and make sure you are in the
 
     This new file is a *module*. Modules are simply 
     files containing Python code, meant to be called 
-    up within a different Python script.
+    up (or "imported") within a different Python script.  We'll get to this later.
 
 11. Stage and commit this new file:
 
