@@ -1420,8 +1420,8 @@ methods, making them easier to write, read, and share.
 Perhaps you are already familiar with importing packages into 
 your workflow. Many scientists pass around files that contain 
 unique user-written functions to reduce redundant work between 
-scientists, but perhaps the original author found a bug in their 
-script. It is difficult to track down every user of their code to let them know. 
+scientists, but what if the original author found a bug in their 
+script? It is difficult to track down every user of their code to let them know. 
 In Python package managers help you know what 
 version of those functions you are using. Matlab also has packages 
 that you can pay extra money to install and use - again Python 
