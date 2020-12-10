@@ -1936,7 +1936,8 @@ Open a terminal to begin and make sure you are in the
     ..
 
     And then modified the scripts accordingly as in steps #12-14 and #18
-    by adding your import statements :code:`from computation import compute_windchill` OR :code:`from computation import compute_heatindex` and
+    by adding your import statements \":code:`from computation import compute_windchill`\"
+    OR \":code:`from computation import compute_heatindex`\" and
     removing the redundant function definitions.
 
     Your two scripts should look as follows:
