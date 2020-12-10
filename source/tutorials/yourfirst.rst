@@ -1476,7 +1476,7 @@ Open a terminal to begin and make sure you are in the
       :lineno-start: 30
          
       # Compute the heat index
-      def compute_heatindex(t, h):
+      def compute_heatindex(t, hum):
          a = -42.379
          b = 2.04901523
          c = 10.14333127
@@ -1487,7 +1487,7 @@ Open a terminal to begin and make sure you are in the
          h = 0.00085282
          i = 0.00000199
 
-         rh = h / 100
+         rh = hum / 100
 
          hi = a + (b * t) + (c * rh) + (d * t * rh) 
             + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
