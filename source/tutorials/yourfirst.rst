@@ -1970,7 +1970,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-And for :code:`heatindexcomp.py`\:
+    And for :code:`heatindexcomp.py`\:
     
     .. code-block:: python
        :lineno-start: 1
