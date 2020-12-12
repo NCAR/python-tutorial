@@ -966,7 +966,7 @@ Let's begin.
 
 11. This seems great, so far! But what if you want to read more columns to our
     data later? You would have to change the initialization of the data
-    variable (at the top of :code:`mysci.py`) and have to add the appropriate line
+    variable (at the top of :code:`mysci.py`\) and have to add the appropriate line
     in the "read and parse" section. Essentially, that means you need to
     maintain 2 parts of the code and make sure that both remain consistent with
     each other.
@@ -1171,12 +1171,12 @@ Let's begin.
    is for division, and a double backslash, :python:`//`, is for integer division.
 
    And then let's compute a new list with windchill data at the bottom of
-   :code:`mysci.py`:
+   :code:`mysci.py`\:
 
    .. code-block:: python
       :lineno-start: 40
 
-      # Let's actually compute the wind chill factor
+      # Compute the wind chill factor
       windchill = []
       for temp, windspeed in zip(data['tempout'], data['windspeed']):
          windchill.append(compute_windchill(temp, windspeed))
@@ -1333,7 +1333,7 @@ Let's begin.
     2. At the top right of any Github page, there is a '+' icon. Click that,
        then select 'New Repository'.
 
-    3. Name your repository :code:`python_tutorial`.
+    3. Name your repository :code:`python_tutorial`\.
        It is best practice for your local project and GitHub repository to
        share a name.
 
@@ -1398,4 +1398,1022 @@ repository to GitHub.
    - `User defined functions <https://docs.python.org/3/reference/compound_stmts.html#function-definitions>`_
    - `String formatting <https://docs.python.org/3/library/string.html#format-string-syntax>`_
 
+..
+
+
+-----------------------------
+First Python Package
+-----------------------------
+
+In this section of the tutorial we will learn how to create a Python package 
+and the basics of how to use built-in package :code:`math`\. This will prepare you 
+to learn any package you thik may be useful for your scientific analysis.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating Your Own Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this section you will learn how to move functions and code blocks into 
+Python packages that you can import into your analysis 
+methods, making them easier to write, read, and share. 
+
+Perhaps you are already familiar with importing packages into 
+your workflow. Many scientists pass around files that contain 
+unique user-written functions to reduce redundant work between 
+scientists, but what if the original author found a bug in their 
+script? It is difficult to track down every user of their code to let them know. 
+In Python, package managers help you know what 
+version of those functions you are using. Matlab also has packages 
+that you can pay extra money to install and use - again Python 
+is free! 
+
+Open a terminal to begin and make sure you are in the 
+:code:`python_tutorial` directory and have activated the corresponding environment.
+
+1. Make a copy of your first script with a new name:
+   
+   .. code-block:: bash
+
+      $ cp windchillcomp.py heatindexcomp.py
+   
+   ..
+
+2. Git add and commit this new file:
+
+   .. code-block:: bash
+
+      $ git add heatindexcomp.py
+      $ git commit -m "Copying first script to start second"
+
+   ..
+
+3. Now you will compute the Heat Index.
+
+   Like wind chill, which is a measure of how much 
+   colder the weather feels to the human body due 
+   to wind speed, heat index is a measure of how 
+   much hotter the weather feels to the human body 
+   due to humidity. The Rothfusz formula for heat 
+   index is:
+
+   .. math::
+
+      \textit{HI} = a + (b * T) + (c * H) + (d * T * H) + (e * T^2) + (f * H^2) + (g * T^2 * H) + (h * T * H^2) + (i * T^2 * H^2)
+
+   ..
+
+   where *HI* is the Heat Index, *T* is temperature is in degrees F, 
+   *H* is humidity in %, *a* = -42.379, *b* = 2.04901523, 
+   *c* = 10.14333127, *d* = 0.22475541, *e* = 0.00683783, 
+   *f* = 0.05481717, *g* = 0.00122874, *h* = 0.00085282, and 
+   *i* = 0.00000199. The Roothfusz regression is not valid for 
+   extreme temperature or humidity conditions.
+
+   Replace the :code:`compute_windchill` function with in your :code:`heatindexcomp.py` script with
+   a :code:`compute_heatindex` function:
+   
+   .. code-block:: python
+      :lineno-start: 30
+         
+      # Compute the heat index
+      def compute_heatindex(t, hum):
+         a = -42.379
+         b = 2.04901523
+         c = 10.14333127
+         d = 0.22475541
+         e = 0.00683783
+         f = 0.05481717
+         g = 0.00122874
+         h = 0.00085282
+         i = 0.00000199
+
+         rh = hum / 100
+
+         hi = a + (b * t) + (c * rh) + (d * t * rh) 
+            + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
+            + (h * t * rh**2) + (i * t**2 * rh**2)
+         return hi
+
+   ..
+   
+4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to 
+   read in the humidity and heat index values as :code:`float`\s:
+   
+   .. code-block:: python
+      :lineno-start: 1
+
+      # Column names and column indices to read
+      columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
+   
+      # Data types for each column (only if non-string)
+      types = {'tempout': float, 'humout': float, 'heatindex': float}
+   
+   ..
+
+5. Update the function call and printing sections of the script to match:
+   
+   .. code-block:: python
+      :lineno-start: 49
+
+      # Compute the heat index
+      heatindex = []
+      for temp, hum in zip(data['tempout'], data['humout']):
+         heatindex.append(compute_heatindex(temp, hum))
+
+      # Output comparison of data
+      print('                ORIGINAL  COMPUTED')
+      print(' DATE    TIME  HEAT INDX HEAT INDX DIFFERENCE')
+      print('------- ------ --------- --------- ----------')
+      for date, time, hi_orig, hi_comp in zip(data['date'], data['time'], data['heatindex'], heatindex):
+         print(f'{date} {time:>6} {hi_orig:9.6f} {hi_comp:9.6f} {hi_orig-hi_comp:10.6f}')
+   
+   ..
+   
+   Run this script with \":code:`python heatindexcomp.py`\" and see the results. 
+
+   So far you have only revisited concepts from "Your First Script".
+
+6. Git stage and commit this new script.
+
+   .. code-block:: bash
+
+      $ git add heatindexcomp.py
+      $ git commit -m "Updating new heat index script"
+
+   ..
+
+7. Now, you have two scripts that do very 
+   similar things. In fact, all of the data reading 
+   and parsing code is duplicated! And the output is 
+   similarly formatted, too.  Let's remove that duplication!
+   
+   Create a new file called :code:`readdata.py`\:
+
+   .. code-block:: bash
+
+      $ touch readdata.py
+
+   ..
+   
+   This new file will include the common code for reading the data file from both the 
+   :code:`windchillcomp.py` and :code:`heatindexcomp.py` scripts.
+
+8. Copy and paste the lines for reading in the data file into :code:`readdata.py`\:
+
+   .. code-block:: python
+      :lineno-start: 1
+
+      # Initialize my data variable
+      data = {}
+      for column in columns:
+         data[column] = []
+
+      # Read and parse the data file
+      with open(filename, 'r') as datafile:
+
+         # Read the first three lines (header)
+         for _ in range(3):
+            datafile.readline()
+
+         # Read and parse the rest of the file
+         for line in datafile:
+            split_line = line.split()
+            for column in columns:
+               i = columns[column]
+               t = types.get(column, str)
+               value = t(split_line[i])
+               data[column].append(value)
+
+   ..
+
+9. Turn these lines into a function:
+
+   .. code-block:: python
+      :lineno-start: 1
+         
+      def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
+         # Initialize my data variable
+         data = {}
+         for column in columns:
+            data[column] = []
+
+         # Read and parse the data file
+         with open(filename, 'r') as datafile:
+
+            # Read the first three lines (header)
+            for _ in range(3):
+               datafile.readline()
+
+            # Read and parse the rest of the file
+            for line in datafile:
+               split_line = line.split()
+               for column in columns:
+                  i = columns[column]
+                  t = types.get(column, str)
+                  value = t(split_line[i])
+                  data[column].append(value)
+
+   ..
+
+   The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
+   The :code:`types` and :code:`filename` variables are both keyword arguments, which means that it is not
+   necessary to include them in your function call; if you do not call them, their value is taken as what they are
+   assigned to in the function definition. 
+      
+   When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
+   (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
+    
+   Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different 
+   file. 
+      
+   Keyword arguments can be called in any order, but they must follow all *positional* arguments
+   (i.e., arguments that do not have default values).
+
+10. Add a docstring to the function:
+
+    .. code-block:: python
+       :lineno-start: 1
+         
+       def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
+          """
+          Read data from CU Boulder Weather Station data file
+       
+          Parameters:
+             columns: A dictionary of column names mapping to column indices
+             types: A dictionary of column names mapping to types to which
+                to convert each column of data
+             filename: The string path pointing to the CU Boulder Weather
+                   Station data file
+          """
+
+          # Initialize my data variable
+          data = {}
+          for column in columns:
+             data[column] = []
+
+          # Read and parse the data file
+          with open(filename, 'r') as datafile:
+
+             # Read the first three lines (header)
+             for _ in range(3):
+                datafile.readline()
+
+             # Read and parse the rest of the file
+             for line in datafile:
+                split_line = line.split()
+                for column in columns:
+                   i = columns[column]
+                   t = types.get(column, str)
+                   value = t(split_line[i])
+                   data[column].append(value)
+
+    ..
+
+    The section between the tripple quotes :code:`"""` is the docstring. 
+    The "Read data from CU Boulder 
+    Weather Station data file . . ." describing the utility 
+    of the function and the list of parameters are 
+    standard information included in a docstring, but there is no requirement.  Everything
+    between the triple quotes is essentially a comment that you can write and format any
+    way you want.  
+
+    This new file is a *module*. Modules are simply 
+    files containing Python code, meant to be called 
+    up (or "imported") within a different Python script.  We'll get to this later.
+
+11. Stage and commit this new file:
+
+    .. code-block:: bash
+
+       $ git add readdata.py
+       $ git commit -m "Adding new readdata module"
+
+    ..
+
+12. Amend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
+
+13. Add the following import statement to the top of each script:
+
+    .. code-block:: python
+       :lineno-start: 1
+
+       from readdata import read_data 
+
+    ..
+
+    In python you can call up functionality from scripts outside of your active script using the 
+    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
+    And now we can call up the function from these scripts.
+   
+14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the 
+    deleted code with a function call:
+
+    .. code-block:: python
+       :lineno-start: 9
+  
+       # Read data from file
+       data = read_data(columns, types=types)   
+
+    ..
+    
+    The :code:`types=types` says that the input argument :code:`types` is being set equal to our dictionary :code:`types`.
+   
+    Test out both of these scripts to make sure they still work!
+
+15. Do a \":code:`git status`\" now.  
+
+    Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
+
+    What is :code:`__pycache__`\?
+    When you run a python program with an :code:`import` 
+    command, Python learns that you have written code 
+    that you may call again. The interpreter compiles 
+    your scripts to bytecode and stores them in a cache, 
+    making your scripts run a little faster next time. 
+    As a user can for the most part ignore this new folder. 
+    If you change or delete your scripts they will be 
+    recompiled and reappear in this folder.
+
+    However, you *don't* want to add this directory to 
+    our project repository, so before you commit 
+    anything, tell git to ignore it!
+
+    Create a new file (in the top-level directory 
+    of your project) called :code:`.gitignore` 
+
+    .. code-block:: bash
+
+       $ touch .gitignore
+
+    ..
+
+    with the following contents:
+
+    .. code-block:: bash
+
+       __pycache__/
+
+    ..
+
+16. Do another :code:`git status`\.  What do you see?
+
+    Now, instead of :code:`__pycache__` being listed as 
+    "untracked", you see :code:`.gitignore` being listed as 
+    "untracked", and no mention of :code:`__pycache__`\.
+
+17. Stage and commit the new :code:`.gitignore` file.
+
+    .. code-block:: bash
+
+       $ git add .gitignore
+       $ git commit -m "Ignoring pycache"
+
+    ..
+
+    Do another :code:`git status`.  Notice that
+    the edits you made to your two scripts have still 
+    not been committed to the project repository!  
+    Because they have not yet been staged.
+
+18. Stage *both files* and commit all new changes in one commit:
+
+    .. code-block:: bash
+
+       $ git add -a
+       $ git commit -m "Refactor scripts to use new module"
+
+    ..
+
+    You can type :code:`-a` instead of the name of your files to add all unstaged changes.
+
+19. There is still have some duplicated 
+    code between the two scripts. Let's combine the final 
+    output code and printing code.
+
+    Create another module file called :code:`printing.py`\:
+
+    .. code-block:: bash
+
+       $ touch printing.py
+
+    ..
+
+    And create a printing function (with docstring!) in :code:`printing.py`\:
+
+    .. code-block:: python
+       :lineno-start: 1
+
+       def print_comparison(name, date, time, original_data, computed_data):
+          """
+          Print a comparison of two timeseries (original and computed)
+
+          Parameters:
+             name: A string name for the data being compared. (Limited
+                to 9 characters in length)
+             date: List of strings representing the dates for each data element
+             time: List of strings representing time of day for each data element
+             original_data: List of original data (floats)
+             computed_data: List of computed data (floats)
+          """
+
+          print(f'                ORIGINAL  COMPUTED')
+          print(f' DATE    TIME  {name.upper():>9} {name.upper():>9} DIFFERENCE')
+          print(f'------- ------ --------- --------- ----------')
+          for date, time, orig, comp in zip(date, time, original_data, computed_data):
+             print(f'{date} {time:>6} {orig:9.6f} {comp:9.6f} {orig-comp:10.6f}')
+    ..
+
+    The only new functionality shown here is 
+    :code:`string.upper()` (or, specifically, :code:`name.upper()`\), which capitalizes all lower case 
+    letters in a string.
+
+20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
+
+    Try to do this on your own first, but if you are getting error messages the solution looks like:
+
+    1)  Add the \":code:`from printing import print_comparison`\" line to the top of each script.
+
+    2) Replace the printing output section at the bottom of each script with:
+
+       .. code-block:: python
+          :lineno-start: 29
+
+          # Output comparison of data
+          print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
+
+       ..
+
+       or
+
+       .. code-block:: python
+          :lineno-start: 37
+
+          # Output comparison of data
+          print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
+
+       ..
+
+21. Stage all changes and commit:
+
+    .. code-block:: bash
+   
+       $ git add -a
+       $ git commit -m "Creating printing module"
+
+    ..
+
+22. You now have 2 different modules related 
+    to the same project.  It is best practice
+    to separate different functions into different 
+    modules depending upon the kind of functionality 
+    they represent.  In this case, you've separated 
+    out the concepts of "data input" and "printing 
+    output" into different modules.
+
+    Do the same thing with the computation functions, 
+    :code:`compute_windchill` and :code:`compute_heatindex`\.
+
+    Move these functions into a new module called 
+    :code:`computation.py`\, and modify the scripts to use 
+    this new module.  Remember to add docstrings!
+
+    Try to do this on your own first!!
+
+    Your new :code:`computation.py` module should look 
+    similar to the following:
+
+    .. code-block:: python
+       :lineno-start: 1
+
+       def compute_windchill(t, v):
+          """
+          Compute the wind chill factor given the temperature and wind speed
+
+          NOTE: This computation is valid only for 
+             temperatures between -45F and +45F and for 
+             wind speeds between 3 mph and 60 mph.
+
+          Parameters:
+             t: The temperature in units of F
+             v: The wind speed in units of mph
+          """
+
+          a = 35.74
+          b = 0.6215
+          c = 35.75
+          d = 0.4275
+
+          v16 = v ** 0.16
+          wci = a + (b * t) - (c * v16) + (d * t * v16)
+          return wci
+
+
+       def compute_heatindex(t, hum):
+          """
+          Compute the heat index given the temperature and the humidity
+
+          Parameters:
+             t: The temperature in units of F
+             hum: The relative humitidy in units of %
+          """
+
+          a = -42.379
+          b = 2.04901523
+          c = 10.14333127
+          d = 0.22475541
+          e = 0.00683783
+          f = 0.05481717
+          g = 0.00122874
+          h = 0.00085282
+          i = 0.00000199
+
+          rh = hum / 100
+
+          hi = a + (b * t) + (c * rh) + (d * t * rh) 
+          + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
+          + (h * t * rh**2) + (i * t**2 * rh**2)
+          return hi
+    ..
+
+    And then modified the scripts accordingly as in steps #12-14 and #18
+    by adding your import statements \":code:`from computation import compute_windchill`\"
+    OR \":code:`from computation import compute_heatindex`\" and
+    removing the redundant function definitions.
+
+    Your two scripts should look as follows:
+
+    For :code:`windchillcomp.py`\:
+
+    .. code-block:: python
+       :lineno-start: 1
+
+       from readdata import read_data
+       from printing import print_comparison
+       from computation import compute_windchill
+
+       # Column names and column indices to read
+       columns = {'date':0, 'time':1, 'tempout':2, 'windspeed':7, 'windchill':12}
+
+       # Data types for each column (only if non-string)
+       types = {'tempout': float, 'windspeed':float, 'windchill':float}
+
+       # Read data from file
+       data = read_data(columns, types=types)
+
+       # Compute the wind chill factor
+       windchill = []
+       for temp, windspeed in zip(data['tempout'], data['windspeed']):
+          windchill.append(compute_windchill(temp, windspeed))
+
+       # Output comparison of data
+       print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
+
+    ..
+
+    And for :code:`heatindexcomp.py`\:
+    
+    .. code-block:: python
+       :lineno-start: 1
+
+       from readdata import read_data
+       from printing import print_comparison
+       from computation import compute_heatindex
+
+       # Column names and column indices to read
+       columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
+   
+       # Data types for each column (only if non-string)
+       types = {'tempout': float, 'humout': float, 'heatindex': float}
+
+       # Read data from file
+       data = read_data(columns, types=types)
+
+       # Compute the heat index
+       heatindex = []
+       for temp, hum in zip(data['tempout'], data['humout']):
+          heatindex.append(compute_heatindex(temp, hum))
+
+       # Output comparison of data
+       print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
+
+    ..
+
+23. Stage and commit everything:
+
+    .. code-block:: bash
+
+       $ git stage -a
+       $ git commit -m "Creating computation module"
+
+    ..
+
+24. Now, you've got quite a few Python 
+    files in the main directory. Which ones are scripts?  
+    Which ones are modules meant to be imported?
+
+    Typically, you should group all of the modules 
+    meant for import only into another directory called 
+    a *package*.  A *package* is a directory containing 
+    a file called :code:`__init__.py` inside it.  (Note that
+    this file is commonly empty.)
+
+    Create a new directory called :code:`mysci` and 
+    create an empty file in it called :code:`__init__.py`\:
+
+    .. code-block:: bash
+
+       $ mkdir mysci
+       $ cd mysci
+       $ touch __init__.py
+       $ cd ..
+
+    ..
+
+    Then, move the 3 modules into this package:
+
+    .. code-block:: bash
+
+       $ git mv readdata.py mysci/
+       $ git mv printing.py mysci/
+       $ git mv computation.py mysci/
+
+    ..
+
+    Then, let's modify the import statements at the 
+    top of our two scripts so that the modules are 
+    automatically imported from the new package:
+
+    .. code-block:: python
+       :lineno-start: 1
+
+       from mysci.readdata import read_data
+       from mysci.printing import print_comparison
+       from mysci.computation import compute_heatindex
+
+    ..
+
+25. Stage everything (don't forget the 
+    :code:`__init__.py` file!) and commit 
+
+    .. code-block:: bash
+
+       $ git add -a
+       $ git commit -m "Creating mysci package"
+
+    ..
+
+    Our commits are getting bigger, but that's okay.  
+    Each commit corresponds to a *single* 
+    (conceptually) change to the codebase.
+
+    With this last change, our project should look 
+    like this (ignoring the
+    :code:`__pycache__` directories:
+
+    .. code-block:: bash
+
+       NCAR_python_tutorial_2020/
+
+          data/
+             wxobs20170821.txt
+
+          mysci/
+             __init__.py
+             readdata.py
+             printing.py
+             computation.py
+
+          heatindexcomp.py
+          windchillcomp.py
+    ..
+
+26. As a brief aside --
+    look at the use of the computation
+    functions in these scripts.  
+
+    In the case of the wind chill factor computation,
+    it looks like this:
+
+    .. code-block :: python
+       :lineno-start: 14
+
+       # Compute the wind chill factor
+       windchill = []
+       for temp, windspeed in zip(data['tempout'], data['windspeed']):
+          windchill.append(compute_windchill(temp, windspeed))
+    ..
+
+    This divides the initialization of the :code:`windchill` 
+    variable as an empty :code:`list` from the "filling" 
+    of that :code:`list` with computed values.
+
+    Python gives you some shortcuts to doing this 
+    via a concept called  "comprehensions", which 
+    are ways of initializing containers (:code:`list`\s,
+    :code:`dict`\s, etc.) with an *internal loop*.  For 
+    example, we could have written the previous 3 
+    lines in the form of a "one-liner" like so:
+
+    .. code-block:: python
+       :lineno-start: 14
+
+       # Compute the wind chill factor
+       windchill = [compute_windchill(t, w) for t, w in zip(data['tempout'], data['windspeed'])]
+
+    ..
+
+    This is a *list comprehension*, and it 
+    initializes the entire list with the computed 
+    contents, rather than initializing an empy list 
+    and appending values to it after the fact.  
+    Computationally, this is actually *more efficient*.
+
+    Use list comprehensions to make the computation 
+    steps in both of scripts one-liners.
+
+27. Do a final stage and commit changes 
+
+    .. code-block:: bash
+
+       $ git add -a
+       $ git commit -m "Using list comprehensions"
+
+    ..
+
+-----
+
+That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
+
+You should now be familiar with modules, using the 
+:code:`import` statement, some more :code:`f-string` formatting options,
+:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list 
+comprehensions.
+
+.. seealso::
+      
+   `More information on Python modules <https://docs.python.org/3/tutorial/modules.html>`_
+   `More information on on .gitignore <https://git-scm.com/docs/gitignore>`_
+   `More information on list comprehension <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_
+   
+..
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using a Built-In Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So far you have created separate :code:`readdata`\, :code:`printing`\, and :code:`computation` modules 
+to remove redundant code blocks from your scripts. And you have combined these
+modules into a package that we imported into our scripts.
+
+Python comes with many different *built-in* packages (i.e., libraries) that you can import and use.  The
+beauty of using built-in packages is that you don't have to install anything new!  If you can use and run
+Python, you already have access to these packages.  For this tutorial, we are going to cover just a little 
+bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
+
+1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
+
+2. Now we're going to add a function for calculating dew point temperature to your :code:`computation.py` module:
+
+   The formula for this is:
+
+   .. math::
+
+      \Gamma = \log{(h)} + \frac{b * t}{c + t}
+
+   ..
+
+   .. math::
+
+      \textit{DPT} = \frac{c * \Gamma}{b - \Gamma}
+
+   ..
+
+   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
+
+   In order to compute a natural logarithm, we will need to import the :code:`math` package.
+   It is best practice to import packages and modules at the beginning (top) of the file.
+
+   .. code-block::
+      :lineno-start: 1
+
+      import math
+
+   ..
+
+   To access the logarithmic function within the module :code:`math` you would type :code:`math.log`\.
+
+   Then write the function at the bottom of :code:`computation.py` file (with best practice suggesting 2 empty lines between each function):
+
+   .. code-block::
+      :lineno-start: 53
+
+      def compute_dewpoint(t, h):
+         """
+         Compute the dew point temperature given the temperature and humidity
+
+         Parameters:
+            t: The temperature in units of F
+            h: The relative humidity in units of %
+         """
+
+         tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
+         rh = h / 100
+    
+         a = 6.112 # mbar
+         b = 18.678
+         c = 257.14 # deg C
+
+         gamma = math.log(rh) + (b * tempC) / (c + tempC)
+         tdp = c * gamma / (b - gamma)
+
+         tdp_F = 9 / 5 * tdp + 32 # Convert deg C to deg F
+         return tdp_F
+   ..
+
+   This function converts our input temperature to degrees Celsius and humidity to relative humidity,
+   specifies the constants, calculates the dew point temperature, and finally converts that temperature to degrees Fahrenheit.
+
+3. Git add and commit :code:`computation.py`\:
+
+   .. code-block:: bash
+      
+      $ git add computation.py
+      $ git commit -m "Function for Computing DPT"
+
+   ..
+
+4. Make a copy of your second script with the new name `dewpointtempcomp.py`:
+
+   .. code-block:: bash
+
+      $ cp windchillcomp.py dewpointtempcomp.py
+
+   ..
+
+5. Git add and commit :code:`dewpointtempcomp.py`\:
+
+   .. code-block:: bash
+   
+      $ git add dewpointtempcomp.py
+      $ git commit -m "Creating a 3rd Script or DPT calculation"
+
+   ..
+
+6. Edit :code:`dewpointtempcomp.py`\:
+
+   Make changes to the import statements to include:
+
+   .. code-block:: python
+      :lineno-start: 3
+
+      from mysci.computation.py import compute_dewpoint
+
+   ..
+
+   And change your :code:`columns` and :code:`types` dictionaries to include :code:`dewpt`\:
+
+   .. code-block:: python
+      :lineno-start: 5
+
+      # Columns names and column indices to read
+      columns = {'date':0 , 'time':1, 'tempout':2, 'humout':5, 'dewpt':6}
+
+      # Data types for each column (only if non-string)
+      types = {'tempout':float, 'humout':float, 'dewpt':float}
+
+   ..
+
+   And finally, make changes to the function calls:
+
+   .. code-block:: python
+      :lineno-start: 14
+
+      # Compute the dew point temperature
+      dewpointtemp = [compute_dewpoint(t, h) for t, h in zip(data['tempout'], data['humout'])]
+
+      # Output comparison of data
+      print_comparison('DEW PT', data['date'], data['time'], data['dewpt'], dewpointtemp)
+
+   ..
+
+7. Git add and commit:
+
+   .. code-block:: bash
+
+      $ git add dewpointtempcomp.py
+      $ git commit -m "Computed dew point temperature"
+
+   ..
+
+8. Let's learn more about the math module!
+
+   Since you already imported code from your :code:`readdata`\, :code:`printing`, and :code:`computation` modules, importing from the built-in package :code:`math` seemed a little less intimidating.
+
+   So far you have only used the :code:`math.log` function, but let's test out some other common methods within :code:`math`\.
+
+   Perhaps you want to change the base of your logarithm. To do this you could type :code:`math.log(x, base)`. Here :code:`base` is
+   a keyword argument (just like :code:`filename` or :code:`types` in our :code:`read_data()` function) which
+   means that :code:`base` does not need to be specified.  When it is not specified, the logarithm is assumed to
+   be natural (base *e*). When both arguments are entered, the function returns the logarithm of :code:`x` to
+   the given :code:`base`\, 
+   calculated by :code:`log(x)/log(base)`\. Let's test this out:
+
+   .. code-block:: python
+
+      import math as m
+
+      x = m.e
+
+      y_natural = m.log(x)
+      y_base10 = m.log(x, 10)
+
+      print(x, y_natural, y_base10)
+
+   ..
+
+   Something new that we have done here is use the \":code:`import ... as ...`\" statement. This essentially allows us to 
+   shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
+
+   The symbol :code:`math.e` represents Euler's number (*e*), the base of the natural logarithm. Euler's number (*e*) is an irrational number with infinite decimal places, often approximated as 2.718. 
+   How much more accurate is :code:`math.e` than this approximation?
+   
+   The function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but
+   for some common bases there are separate logarithmic functions. 
+   Try using :code:`log10(x)`\:
+
+   .. code-block:: python
+
+      import math as m
+
+      x = m.e
+
+      y_natural = m.log(x)
+      y_base10 = m.log(x, 10)
+      y_log10 = m.log10(x)
+
+      print(x, y_natural, y_base10, y_log10)
+
+   ..
+
+   Do the two values differ? The :code:`math.log10(x)` function is considered to be more accurate than :code:`math.log(x, 10)`\.
+   Similarly :code:`math.log2(x)` is more accurate than :code:`math.log(x, 2)`\.
+
+9. Let's cover some :code:`math` trigonometry examples!
+
+   The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159. 
+   We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
+
+   Say we wanted to convert a number from 60 degrees to radians. We have two options:
+
+   .. code-block:: python
+
+      import math as m
+
+      deg = 60
+
+      rads = deg * m.pi / 180
+      rads_fromfunc = m.radians(deg)
+
+      print(deg, m.pi, rads, rads_fromfunc)
+
+   ..
+
+   In the first example we used :python:`math.pi` to perform our calculation (by default printed to 15 digits). In the second conversion, 
+   we used the function :code:`math.radians(x)` which converts angle x from degrees to radians.
+
+   We can also use trigonometric functions: :code:`math.sin` to get the sine value of an angle, :code:`math.cos` to get the cosine, 
+   :code:`math.tan` for the tangent, :code:`math.asin` for the arc sine, :code:`math.acos` to get the arc cosine, and :code:`math.atan` to get the arc tangent. 
+   You can also calculate the hypotenuse of a triangle with :code:`math.hypot()`\.
+   The input angle for each of these functions must be in radians to get the expected result!
+
+   .. code-block:: python
+
+      import math as m
+
+      deg = 180
+
+      cos_deg = m.cos(deg)
+      cos_rad = m.cos(m.radians(60))
+
+      print(cos_deg, cos_rad)
+
+   ..
+
+   You might remember that the cosine of 180 degrees is -1, you can see that we only get the correct value if we enter the degree in radians (180 deg = PI radians).
+
+10. Let's use :code:`math.factorial()`:
+
+    Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
+    Try :code:`math.factorial(5)` and see what you get!
+
+-----
+
+That concludes the "Using a Built-In Package" section of this tutorial.
+You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module - 
+specifically the :code:`log` method.
+
+.. seealso::
+      
+   `More information on the Math module <https://docs.python.org/3/library/math.html>`_
+   
 ..

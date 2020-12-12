@@ -151,6 +151,39 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingYourFirstPart2">
+                      <div class="tier1 collapsed" data-toggle="collapse" data-target="#collapseYourFirstPart2"  aria-expanded="false" aria-controls="collapseYourFirstPart2">
+                        <a href="#first-python-package">
+                          First Python Package <i class="fas fa-angle-down rotate-icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body collapse" aria-labelledby="headingYourFirstPart2" data-parent="#yourfirstOutline" id="collapseYourFirstPart2">
+                      <div class="card-body accordian-tier3" id="yourfirstPart2">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#creating-your-own-package">
+                                Creating Your Own Package
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#using-a-built-in-package">
+                                Using a Built-In Package
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1128,7 +1161,7 @@ is for division, and a double backslash, <code class="code python docutils liter
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
 41
 42
-43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s actually compute the wind chill factor</span>
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the wind chill factor</span>
 <span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">]):</span>
    <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
@@ -1297,6 +1330,1008 @@ repository to GitHub.</p>
 <li><p><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#function-definitions">User defined functions</a></p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">String formatting</a></p></li>
 </ul>
+</div>
+</div>
+</div>
+<div class="section" id="first-python-package">
+<h2>First Python Package<a class="headerlink" href="#first-python-package" title="Permalink to this headline">¶</a></h2>
+<p>In this section of the tutorial we will learn how to create a Python package
+and the basics of how to use built-in package <code class="code docutils literal notranslate"><span class="pre">math</span></code>. This will prepare you
+to learn any package you thik may be useful for your scientific analysis.</p>
+<div class="section" id="creating-your-own-package">
+<h3>Creating Your Own Package<a class="headerlink" href="#creating-your-own-package" title="Permalink to this headline">¶</a></h3>
+<p>In this section you will learn how to move functions and code blocks into
+Python packages that you can import into your analysis
+methods, making them easier to write, read, and share.</p>
+<p>Perhaps you are already familiar with importing packages into
+your workflow. Many scientists pass around files that contain
+unique user-written functions to reduce redundant work between
+scientists, but what if the original author found a bug in their
+script? It is difficult to track down every user of their code to let them know.
+In Python, package managers help you know what
+version of those functions you are using. Matlab also has packages
+that you can pay extra money to install and use - again Python
+is free!</p>
+<p>Open a terminal to begin and make sure you are in the
+<code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and have activated the corresponding environment.</p>
+<ol class="arabic">
+<li><p>Make a copy of your first script with a new name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp windchillcomp.py heatindexcomp.py
+</pre></div>
+</div>
+</li>
+<li><p>Git add and commit this new file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add heatindexcomp.py
+$ git commit -m <span class="s2">&quot;Copying first script to start second&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now you will compute the Heat Index.</p>
+<p>Like wind chill, which is a measure of how much
+colder the weather feels to the human body due
+to wind speed, heat index is a measure of how
+much hotter the weather feels to the human body
+due to humidity. The Rothfusz formula for heat
+index is:</p>
+<div class="math notranslate nohighlight">
+\[\textit{HI} = a + (b * T) + (c * H) + (d * T * H) + (e * T^2) + (f * H^2) + (g * T^2 * H) + (h * T * H^2) + (i * T^2 * H^2)\]</div>
+<p>where <em>HI</em> is the Heat Index, <em>T</em> is temperature is in degrees F,
+<em>H</em> is humidity in %, <em>a</em> = -42.379, <em>b</em> = 2.04901523,
+<em>c</em> = 10.14333127, <em>d</em> = 0.22475541, <em>e</em> = 0.00683783,
+<em>f</em> = 0.05481717, <em>g</em> = 0.00122874, <em>h</em> = 0.00085282, and
+<em>i</em> = 0.00000199. The Roothfusz regression is not valid for
+extreme temperature or humidity conditions.</p>
+<p>Replace the <code class="code docutils literal notranslate"><span class="pre">compute_windchill</span></code> function with in your <code class="code docutils literal notranslate"><span class="pre">heatindexcomp.py</span></code> script with
+a <code class="code docutils literal notranslate"><span class="pre">compute_heatindex</span></code> function:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the heat index</span>
+<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">hum</span><span class="p">):</span>
+   <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="mf">2.04901523</span>
+   <span class="n">c</span> <span class="o">=</span> <span class="mf">10.14333127</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.22475541</span>
+   <span class="n">e</span> <span class="o">=</span> <span class="mf">0.00683783</span>
+   <span class="n">f</span> <span class="o">=</span> <span class="mf">0.05481717</span>
+   <span class="n">g</span> <span class="o">=</span> <span class="mf">0.00122874</span>
+   <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
+   <span class="n">i</span> <span class="o">=</span> <span class="mf">0.00000199</span>
+
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
+
+   <span class="n">hi</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
+      <span class="o">+</span> <span class="p">(</span><span class="n">e</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
+      <span class="o">+</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">hi</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Change the <code class="code docutils literal notranslate"><span class="pre">columns</span></code> and <code class="code docutils literal notranslate"><span class="pre">types</span></code> dictionary we read from the data file to
+read in the humidity and heat index values as <code class="code docutils literal notranslate"><span class="pre">float</span></code>s:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;heatindex&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">}</span>
+
+<span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;heatindex&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Update the function call and printing sections of the script to match:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the heat index</span>
+<span class="n">heatindex</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">hum</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humout&#39;</span><span class="p">]):</span>
+   <span class="n">heatindex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_heatindex</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">hum</span><span class="p">))</span>
+
+<span class="c1"># Output comparison of data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;                ORIGINAL  COMPUTED&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; DATE    TIME  HEAT INDX HEAT INDX DIFFERENCE&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------- ------ --------- --------- ----------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">hi_orig</span><span class="p">,</span> <span class="n">hi_comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;heatindex&#39;</span><span class="p">],</span> <span class="n">heatindex</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">hi_orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">hi_comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">hi_orig</span><span class="o">-</span><span class="n">hi_comp</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Run this script with &quot;<code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">heatindexcomp.py</span></code>&quot; and see the results.</p>
+<p>So far you have only revisited concepts from “Your First Script”.</p>
+</li>
+<li><p>Git stage and commit this new script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add heatindexcomp.py
+$ git commit -m <span class="s2">&quot;Updating new heat index script&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, you have two scripts that do very
+similar things. In fact, all of the data reading
+and parsing code is duplicated! And the output is
+similarly formatted, too.  Let’s remove that duplication!</p>
+<p>Create a new file called <code class="code docutils literal notranslate"><span class="pre">readdata.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch readdata.py
+</pre></div>
+</div>
+<p>This new file will include the common code for reading the data file from both the
+<code class="code docutils literal notranslate"><span class="pre">windchillcomp.py</span></code> and <code class="code docutils literal notranslate"><span class="pre">heatindexcomp.py</span></code> scripts.</p>
+</li>
+<li><p>Copy and paste the lines for reading in the data file into <code class="code docutils literal notranslate"><span class="pre">readdata.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Initialize my data variable</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+   <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Read and parse the data file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+   <span class="c1"># Read the first three lines (header)</span>
+   <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+   <span class="c1"># Read and parse the rest of the file</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+      <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+      <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+         <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+         <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+         <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+         <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Turn these lines into a function:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
+   <span class="c1"># Initialize my data variable</span>
+   <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+   <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+      <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+   <span class="c1"># Read and parse the data file</span>
+   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+      <span class="c1"># Read the first three lines (header)</span>
+      <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+         <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+      <span class="c1"># Read and parse the rest of the file</span>
+      <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+         <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+         <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The function arguments for our <code class="code docutils literal notranslate"><span class="pre">read_data</span></code> function are <code class="code docutils literal notranslate"><span class="pre">columns</span></code>, <code class="code docutils literal notranslate"><span class="pre">types</span></code>, and <code class="code docutils literal notranslate"><span class="pre">filename</span></code>.
+The <code class="code docutils literal notranslate"><span class="pre">types</span></code> and <code class="code docutils literal notranslate"><span class="pre">filename</span></code> variables are both keyword arguments, which means that it is not
+necessary to include them in your function call; if you do not call them, their value is taken as what they are
+assigned to in the function definition.</p>
+<p>When you see <code class="code docutils literal notranslate"><span class="pre">types={}</span></code> it means that <code class="code docutils literal notranslate"><span class="pre">types</span></code> is presumed to be an empty dictionary when unspecified
+(and so you don’t have to specify it every time you call the function when this keyword isn’t relevant).</p>
+<p>Similarly, <code class="code docutils literal notranslate"><span class="pre">filename</span></code> is set to the path of our data file as long as the user doesn’t specify a different
+file.</p>
+<p>Keyword arguments can be called in any order, but they must follow all <em>positional</em> arguments
+(i.e., arguments that do not have default values).</p>
+</li>
+<li><p>Add a docstring to the function:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Read data from CU Boulder Weather Station data file</span>
+
+<span class="sd">   Parameters:</span>
+<span class="sd">      columns: A dictionary of column names mapping to column indices</span>
+<span class="sd">      types: A dictionary of column names mapping to types to which</span>
+<span class="sd">         to convert each column of data</span>
+<span class="sd">      filename: The string path pointing to the CU Boulder Weather</span>
+<span class="sd">            Station data file</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+
+   <span class="c1"># Initialize my data variable</span>
+   <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+   <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+      <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+   <span class="c1"># Read and parse the data file</span>
+   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+
+      <span class="c1"># Read the first three lines (header)</span>
+      <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+         <span class="n">datafile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+      <span class="c1"># Read and parse the rest of the file</span>
+      <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">datafile</span><span class="p">:</span>
+         <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+         <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The section between the tripple quotes <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> is the docstring.
+The “Read data from CU Boulder
+Weather Station data file …” describing the utility
+of the function and the list of parameters are
+standard information included in a docstring, but there is no requirement.  Everything
+between the triple quotes is essentially a comment that you can write and format any
+way you want.</p>
+<p>This new file is a <em>module</em>. Modules are simply
+files containing Python code, meant to be called
+up (or “imported”) within a different Python script.  We’ll get to this later.</p>
+</li>
+<li><p>Stage and commit this new file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add readdata.py
+$ git commit -m <span class="s2">&quot;Adding new readdata module&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Amend your two Python (<code class="code docutils literal notranslate"><span class="pre">heatindexcomp.py</span></code> and <code class="code docutils literal notranslate"><span class="pre">windchillcomp.py</span></code>) scripts by deleting the equivalent read-file code in them.</p></li>
+<li><p>Add the following import statement to the top of each script:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">readdata</span> <span class="kn">import</span> <span class="n">read_data</span>
+</pre></div>
+</td></tr></table></div>
+<p>In python you can call up functionality from scripts outside of your active script using the
+<code class="code docutils literal notranslate"><span class="pre">import</span></code> statement. Here we import our <code class="code docutils literal notranslate"><span class="pre">read_data</span></code> function from the <code class="code docutils literal notranslate"><span class="pre">readdata</span></code> module.
+And now we can call up the function from these scripts.</p>
+</li>
+<li><p>And after the initializations of the <code class="code docutils literal notranslate"><span class="pre">columns</span></code> and <code class="code docutils literal notranslate"><span class="pre">types</span></code> variables, replace the
+deleted code with a function call:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Read data from file</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="n">types</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">types=types</span></code> says that the input argument <code class="code docutils literal notranslate"><span class="pre">types</span></code> is being set equal to our dictionary <code class="code docutils literal notranslate"><span class="pre">types</span></code>.</p>
+<p>Test out both of these scripts to make sure they still work!</p>
+</li>
+<li><p>Do a &quot;<code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>&quot; now.</p>
+<p>Do you notice something new?  Running our new scripts created the <cite>__pycache__</cite> directory.</p>
+<p>What is <code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code>?
+When you run a python program with an <code class="code docutils literal notranslate"><span class="pre">import</span></code>
+command, Python learns that you have written code
+that you may call again. The interpreter compiles
+your scripts to bytecode and stores them in a cache,
+making your scripts run a little faster next time.
+As a user can for the most part ignore this new folder.
+If you change or delete your scripts they will be
+recompiled and reappear in this folder.</p>
+<p>However, you <em>don’t</em> want to add this directory to
+our project repository, so before you commit
+anything, tell git to ignore it!</p>
+<p>Create a new file (in the top-level directory
+of your project) called <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch .gitignore
+</pre></div>
+</div>
+<p>with the following contents:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>__pycache__/
+</pre></div>
+</div>
+</li>
+<li><p>Do another <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.  What do you see?</p>
+<p>Now, instead of <code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code> being listed as
+“untracked”, you see <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code> being listed as
+“untracked”, and no mention of <code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code>.</p>
+</li>
+<li><p>Stage and commit the new <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .gitignore
+$ git commit -m <span class="s2">&quot;Ignoring pycache&quot;</span>
+</pre></div>
+</div>
+<p>Do another <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.  Notice that
+the edits you made to your two scripts have still
+not been committed to the project repository!
+Because they have not yet been staged.</p>
+</li>
+<li><p>Stage <em>both files</em> and commit all new changes in one commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+$ git commit -m <span class="s2">&quot;Refactor scripts to use new module&quot;</span>
+</pre></div>
+</div>
+<p>You can type <code class="code docutils literal notranslate"><span class="pre">-a</span></code> instead of the name of your files to add all unstaged changes.</p>
+</li>
+<li><p>There is still have some duplicated
+code between the two scripts. Let’s combine the final
+output code and printing code.</p>
+<p>Create another module file called <code class="code docutils literal notranslate"><span class="pre">printing.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch printing.py
+</pre></div>
+</div>
+<p>And create a printing function (with docstring!) in <code class="code docutils literal notranslate"><span class="pre">printing.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_comparison</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Print a comparison of two timeseries (original and computed)</span>
+
+<span class="sd">   Parameters:</span>
+<span class="sd">      name: A string name for the data being compared. (Limited</span>
+<span class="sd">         to 9 characters in length)</span>
+<span class="sd">      date: List of strings representing the dates for each data element</span>
+<span class="sd">      time: List of strings representing time of day for each data element</span>
+<span class="sd">      original_data: List of original data (floats)</span>
+<span class="sd">      computed_data: List of computed data (floats)</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;                ORIGINAL  COMPUTED&#39;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; DATE    TIME  </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s1">&gt;9</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s1">&gt;9</span><span class="si">}</span><span class="s1"> DIFFERENCE&#39;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;------- ------ --------- --------- ----------&#39;</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">orig</span><span class="o">-</span><span class="n">comp</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The only new functionality shown here is
+<code class="code docutils literal notranslate"><span class="pre">string.upper()</span></code> (or, specifically, <code class="code docutils literal notranslate"><span class="pre">name.upper()</span></code>), which capitalizes all lower case
+letters in a string.</p>
+</li>
+<li><p>Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.</p>
+<p>Try to do this on your own first, but if you are getting error messages the solution looks like:</p>
+<ol class="arabic">
+<li><p>Add the &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">printing</span> <span class="pre">import</span> <span class="pre">print_comparison</span></code>&quot; line to the top of each script.</p></li>
+<li><p>Replace the printing output section at the bottom of each script with:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Output comparison of data</span>
+<span class="n">print_comparison</span><span class="p">(</span><span class="s1">&#39;WINDCHILL&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windchill&#39;</span><span class="p">],</span> <span class="n">windchill</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>or</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Output comparison of data</span>
+<span class="n">print_comparison</span><span class="p">(</span><span class="s1">&#39;HEAT INDX&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;heatindex&#39;</span><span class="p">],</span> <span class="n">heatindex</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</li>
+<li><p>Stage all changes and commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+$ git commit -m <span class="s2">&quot;Creating printing module&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>You now have 2 different modules related
+to the same project.  It is best practice
+to separate different functions into different
+modules depending upon the kind of functionality
+they represent.  In this case, you’ve separated
+out the concepts of “data input” and “printing
+output” into different modules.</p>
+<p>Do the same thing with the computation functions,
+<code class="code docutils literal notranslate"><span class="pre">compute_windchill</span></code> and <code class="code docutils literal notranslate"><span class="pre">compute_heatindex</span></code>.</p>
+<p>Move these functions into a new module called
+<code class="code docutils literal notranslate"><span class="pre">computation.py</span></code>, and modify the scripts to use
+this new module.  Remember to add docstrings!</p>
+<p>Try to do this on your own first!!</p>
+<p>Your new <code class="code docutils literal notranslate"><span class="pre">computation.py</span></code> module should look
+similar to the following:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_windchill</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Compute the wind chill factor given the temperature and wind speed</span>
+
+<span class="sd">   NOTE: This computation is valid only for</span>
+<span class="sd">      temperatures between -45F and +45F and for</span>
+<span class="sd">      wind speeds between 3 mph and 60 mph.</span>
+
+<span class="sd">   Parameters:</span>
+<span class="sd">      t: The temperature in units of F</span>
+<span class="sd">      v: The wind speed in units of mph</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+
+   <span class="n">a</span> <span class="o">=</span> <span class="mf">35.74</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="mf">0.6215</span>
+   <span class="n">c</span> <span class="o">=</span> <span class="mf">35.75</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.4275</span>
+
+   <span class="n">v16</span> <span class="o">=</span> <span class="n">v</span> <span class="o">**</span> <span class="mf">0.16</span>
+   <span class="n">wci</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">v16</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">wci</span>
+
+
+<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">hum</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Compute the heat index given the temperature and the humidity</span>
+
+<span class="sd">   Parameters:</span>
+<span class="sd">      t: The temperature in units of F</span>
+<span class="sd">      hum: The relative humitidy in units of %</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+
+   <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="mf">2.04901523</span>
+   <span class="n">c</span> <span class="o">=</span> <span class="mf">10.14333127</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.22475541</span>
+   <span class="n">e</span> <span class="o">=</span> <span class="mf">0.00683783</span>
+   <span class="n">f</span> <span class="o">=</span> <span class="mf">0.05481717</span>
+   <span class="n">g</span> <span class="o">=</span> <span class="mf">0.00122874</span>
+   <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
+   <span class="n">i</span> <span class="o">=</span> <span class="mf">0.00000199</span>
+
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
+
+   <span class="n">hi</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
+   <span class="o">+</span> <span class="p">(</span><span class="n">e</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
+   <span class="o">+</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">hi</span>
+</pre></div>
+</td></tr></table></div>
+<p>And then modified the scripts accordingly as in steps #12-14 and #18
+by adding your import statements &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">computation</span> <span class="pre">import</span> <span class="pre">compute_windchill</span></code>&quot;
+OR &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">computation</span> <span class="pre">import</span> <span class="pre">compute_heatindex</span></code>&quot; and
+removing the redundant function definitions.</p>
+<p>Your two scripts should look as follows:</p>
+<p>For <code class="code docutils literal notranslate"><span class="pre">windchillcomp.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">readdata</span> <span class="kn">import</span> <span class="n">read_data</span>
+<span class="kn">from</span> <span class="nn">printing</span> <span class="kn">import</span> <span class="n">print_comparison</span>
+<span class="kn">from</span> <span class="nn">computation</span> <span class="kn">import</span> <span class="n">compute_windchill</span>
+
+<span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;windchill&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">}</span>
+
+<span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;windchill&#39;</span><span class="p">:</span><span class="nb">float</span><span class="p">}</span>
+
+<span class="c1"># Read data from file</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="n">types</span><span class="p">)</span>
+
+<span class="c1"># Compute the wind chill factor</span>
+<span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">]):</span>
+   <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
+
+<span class="c1"># Output comparison of data</span>
+<span class="n">print_comparison</span><span class="p">(</span><span class="s1">&#39;WINDCHILL&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windchill&#39;</span><span class="p">],</span> <span class="n">windchill</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>And for <code class="code docutils literal notranslate"><span class="pre">heatindexcomp.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">readdata</span> <span class="kn">import</span> <span class="n">read_data</span>
+<span class="kn">from</span> <span class="nn">printing</span> <span class="kn">import</span> <span class="n">print_comparison</span>
+<span class="kn">from</span> <span class="nn">computation</span> <span class="kn">import</span> <span class="n">compute_heatindex</span>
+
+<span class="c1"># Column names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;heatindex&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">}</span>
+
+<span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;heatindex&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+
+<span class="c1"># Read data from file</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="n">types</span><span class="p">)</span>
+
+<span class="c1"># Compute the heat index</span>
+<span class="n">heatindex</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">hum</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humout&#39;</span><span class="p">]):</span>
+   <span class="n">heatindex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_heatindex</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">hum</span><span class="p">))</span>
+
+<span class="c1"># Output comparison of data</span>
+<span class="n">print_comparison</span><span class="p">(</span><span class="s1">&#39;HEAT INDX&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;heatindex&#39;</span><span class="p">],</span> <span class="n">heatindex</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Stage and commit everything:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git stage -a
+$ git commit -m <span class="s2">&quot;Creating computation module&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, you’ve got quite a few Python
+files in the main directory. Which ones are scripts?
+Which ones are modules meant to be imported?</p>
+<p>Typically, you should group all of the modules
+meant for import only into another directory called
+a <em>package</em>.  A <em>package</em> is a directory containing
+a file called <code class="code docutils literal notranslate"><span class="pre">__init__.py</span></code> inside it.  (Note that
+this file is commonly empty.)</p>
+<p>Create a new directory called <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> and
+create an empty file in it called <code class="code docutils literal notranslate"><span class="pre">__init__.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir mysci
+$ <span class="nb">cd</span> mysci
+$ touch __init__.py
+$ <span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>Then, move the 3 modules into this package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git mv readdata.py mysci/
+$ git mv printing.py mysci/
+$ git mv computation.py mysci/
+</pre></div>
+</div>
+<p>Then, let’s modify the import statements at the
+top of our two scripts so that the modules are
+automatically imported from the new package:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mysci.readdata</span> <span class="kn">import</span> <span class="n">read_data</span>
+<span class="kn">from</span> <span class="nn">mysci.printing</span> <span class="kn">import</span> <span class="n">print_comparison</span>
+<span class="kn">from</span> <span class="nn">mysci.computation</span> <span class="kn">import</span> <span class="n">compute_heatindex</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Stage everything (don’t forget the
+<code class="code docutils literal notranslate"><span class="pre">__init__.py</span></code> file!) and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+$ git commit -m <span class="s2">&quot;Creating mysci package&quot;</span>
+</pre></div>
+</div>
+<p>Our commits are getting bigger, but that’s okay.
+Each commit corresponds to a <em>single</em>
+(conceptually) change to the codebase.</p>
+<p>With this last change, our project should look
+like this (ignoring the
+<code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code> directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NCAR_python_tutorial_2020/
+
+   data/
+      wxobs20170821.txt
+
+   mysci/
+      __init__.py
+      readdata.py
+      printing.py
+      computation.py
+
+   heatindexcomp.py
+   windchillcomp.py
+</pre></div>
+</div>
+</li>
+<li><p>As a brief aside –
+look at the use of the computation
+functions in these scripts.</p>
+<p>In the case of the wind chill factor computation,
+it looks like this:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the wind chill factor</span>
+<span class="n">windchill</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">]):</span>
+   <span class="n">windchill</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">windspeed</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>This divides the initialization of the <code class="code docutils literal notranslate"><span class="pre">windchill</span></code>
+variable as an empty <code class="code docutils literal notranslate"><span class="pre">list</span></code> from the “filling”
+of that <code class="code docutils literal notranslate"><span class="pre">list</span></code> with computed values.</p>
+<p>Python gives you some shortcuts to doing this
+via a concept called  “comprehensions”, which
+are ways of initializing containers (<code class="code docutils literal notranslate"><span class="pre">list</span></code>s,
+<code class="code docutils literal notranslate"><span class="pre">dict</span></code>s, etc.) with an <em>internal loop</em>.  For
+example, we could have written the previous 3
+lines in the form of a “one-liner” like so:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the wind chill factor</span>
+<span class="n">windchill</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_windchill</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">])]</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is a <em>list comprehension</em>, and it
+initializes the entire list with the computed
+contents, rather than initializing an empy list
+and appending values to it after the fact.
+Computationally, this is actually <em>more efficient</em>.</p>
+<p>Use list comprehensions to make the computation
+steps in both of scripts one-liners.</p>
+</li>
+<li><p>Do a final stage and commit changes</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+$ git commit -m <span class="s2">&quot;Using list comprehensions&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the lesson on “Creating Your First Package”, the first in our introduction to Python packages series.</p>
+<p>You should now be familiar with modules, using the
+<code class="code docutils literal notranslate"><span class="pre">import</span></code> statement, some more <code class="code docutils literal notranslate"><span class="pre">f-string</span></code> formatting options,
+<code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code>, <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code>, <code class="code docutils literal notranslate"><span class="pre">.__init__</span></code>, and list
+comprehensions.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">More information on Python modules</a>
+<a class="reference external" href="https://git-scm.com/docs/gitignore">More information on on .gitignore</a>
+<a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">More information on list comprehension</a></p>
+</div>
+</div>
+<div class="section" id="using-a-built-in-package">
+<h3>Using a Built-In Package<a class="headerlink" href="#using-a-built-in-package" title="Permalink to this headline">¶</a></h3>
+<p>So far you have created separate <code class="code docutils literal notranslate"><span class="pre">readdata</span></code>, <code class="code docutils literal notranslate"><span class="pre">printing</span></code>, and <code class="code docutils literal notranslate"><span class="pre">computation</span></code> modules
+to remove redundant code blocks from your scripts. And you have combined these
+modules into a package that we imported into our scripts.</p>
+<p>Python comes with many different <em>built-in</em> packages (i.e., libraries) that you can import and use.  The
+beauty of using built-in packages is that you don’t have to install anything new!  If you can use and run
+Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
+bit of the built-in <code class="code docutils literal notranslate"><span class="pre">math</span></code> package, which extends the computational capabilities beyond the basic math operators we’ve already covered.</p>
+<ol class="arabic">
+<li><p>Open your terminal, navigate to your <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and activate the corresponding environment.</p></li>
+<li><p>Now we’re going to add a function for calculating dew point temperature to your <code class="code docutils literal notranslate"><span class="pre">computation.py</span></code> module:</p>
+<p>The formula for this is:</p>
+<div class="math notranslate nohighlight">
+\[\Gamma = \log{(h)} + \frac{b * t}{c + t}\]</div>
+<div class="math notranslate nohighlight">
+\[\textit{DPT} = \frac{c * \Gamma}{b - \Gamma}\]</div>
+<p>Where <em>DPT</em> represents Dew Point Temperature in Degrees C, <em>h</em> is humidity in %, <em>t</em> is temperature is in degrees C, <em>a</em> = 6.112 mbar, <em>b</em> = 18.678, and <em>c</em> = 257.14 degrees C.</p>
+<p>In order to compute a natural logarithm, we will need to import the <code class="code docutils literal notranslate"><span class="pre">math</span></code> package.
+It is best practice to import packages and modules at the beginning (top) of the file.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</td></tr></table></div>
+<p>To access the logarithmic function within the module <code class="code docutils literal notranslate"><span class="pre">math</span></code> you would type <code class="code docutils literal notranslate"><span class="pre">math.log</span></code>.</p>
+<p>Then write the function at the bottom of <code class="code docutils literal notranslate"><span class="pre">computation.py</span></code> file (with best practice suggesting 2 empty lines between each function):</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">   Compute the dew point temperature given the temperature and humidity</span>
+
+<span class="sd">   Parameters:</span>
+<span class="sd">      t: The temperature in units of F</span>
+<span class="sd">      h: The relative humidity in units of %</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+
+   <span class="n">tempC</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span> <span class="c1"># Convert temperature from deg F to deg C</span>
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">100</span>
+
+   <span class="n">a</span> <span class="o">=</span> <span class="mf">6.112</span> <span class="c1"># mbar</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="mf">18.678</span>
+   <span class="n">c</span> <span class="o">=</span> <span class="mf">257.14</span> <span class="c1"># deg C</span>
+
+   <span class="n">gamma</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">tempC</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">tempC</span><span class="p">)</span>
+   <span class="n">tdp</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">gamma</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">gamma</span><span class="p">)</span>
+
+   <span class="n">tdp_F</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">tdp</span> <span class="o">+</span> <span class="mi">32</span> <span class="c1"># Convert deg C to deg F</span>
+   <span class="k">return</span> <span class="n">tdp_F</span>
+</pre></div>
+</td></tr></table></div>
+<p>This function converts our input temperature to degrees Celsius and humidity to relative humidity,
+specifies the constants, calculates the dew point temperature, and finally converts that temperature to degrees Fahrenheit.</p>
+</li>
+<li><p>Git add and commit <code class="code docutils literal notranslate"><span class="pre">computation.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add computation.py
+$ git commit -m <span class="s2">&quot;Function for Computing DPT&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make a copy of your second script with the new name <cite>dewpointtempcomp.py</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp windchillcomp.py dewpointtempcomp.py
+</pre></div>
+</div>
+</li>
+<li><p>Git add and commit <code class="code docutils literal notranslate"><span class="pre">dewpointtempcomp.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add dewpointtempcomp.py
+$ git commit -m <span class="s2">&quot;Creating a 3rd Script or DPT calculation&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Edit <code class="code docutils literal notranslate"><span class="pre">dewpointtempcomp.py</span></code>:</p>
+<p>Make changes to the import statements to include:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mysci.computation.py</span> <span class="kn">import</span> <span class="n">compute_dewpoint</span>
+</pre></div>
+</td></tr></table></div>
+<p>And change your <code class="code docutils literal notranslate"><span class="pre">columns</span></code> and <code class="code docutils literal notranslate"><span class="pre">types</span></code> dictionaries to include <code class="code docutils literal notranslate"><span class="pre">dewpt</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Columns names and column indices to read</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span><span class="mi">0</span> <span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;dewpt&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span>
+
+<span class="c1"># Data types for each column (only if non-string)</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tempout&#39;</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;humout&#39;</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;dewpt&#39;</span><span class="p">:</span><span class="nb">float</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>And finally, make changes to the function calls:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the dew point temperature</span>
+<span class="n">dewpointtemp</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tempout&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humout&#39;</span><span class="p">])]</span>
+
+<span class="c1"># Output comparison of data</span>
+<span class="n">print_comparison</span><span class="p">(</span><span class="s1">&#39;DEW PT&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;dewpt&#39;</span><span class="p">],</span> <span class="n">dewpointtemp</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Git add and commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add dewpointtempcomp.py
+$ git commit -m <span class="s2">&quot;Computed dew point temperature&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Let’s learn more about the math module!</p>
+<p>Since you already imported code from your <code class="code docutils literal notranslate"><span class="pre">readdata</span></code>, <code class="code docutils literal notranslate"><span class="pre">printing</span></code>, and <code class="code docutils literal notranslate"><span class="pre">computation</span></code> modules, importing from the built-in package <code class="code docutils literal notranslate"><span class="pre">math</span></code> seemed a little less intimidating.</p>
+<p>So far you have only used the <code class="code docutils literal notranslate"><span class="pre">math.log</span></code> function, but let’s test out some other common methods within <code class="code docutils literal notranslate"><span class="pre">math</span></code>.</p>
+<p>Perhaps you want to change the base of your logarithm. To do this you could type <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">base)</span></code>. Here <code class="code docutils literal notranslate"><span class="pre">base</span></code> is
+a keyword argument (just like <code class="code docutils literal notranslate"><span class="pre">filename</span></code> or <code class="code docutils literal notranslate"><span class="pre">types</span></code> in our <code class="code docutils literal notranslate"><span class="pre">read_data()</span></code> function) which
+means that <code class="code docutils literal notranslate"><span class="pre">base</span></code> does not need to be specified.  When it is not specified, the logarithm is assumed to
+be natural (base <em>e</em>). When both arguments are entered, the function returns the logarithm of <code class="code docutils literal notranslate"><span class="pre">x</span></code> to
+the given <code class="code docutils literal notranslate"><span class="pre">base</span></code>,
+calculated by <code class="code docutils literal notranslate"><span class="pre">log(x)/log(base)</span></code>. Let’s test this out:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">e</span>
+
+<span class="n">y_natural</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_base10</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_natural</span><span class="p">,</span> <span class="n">y_base10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Something new that we have done here is use the &quot;<code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">...</span> <span class="pre">as</span> <span class="pre">...</span></code>&quot; statement. This essentially allows us to
+shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.</p>
+<p>The symbol <code class="code docutils literal notranslate"><span class="pre">math.e</span></code> represents Euler’s number (<em>e</em>), the base of the natural logarithm. Euler’s number (<em>e</em>) is an irrational number with infinite decimal places, often approximated as 2.718.
+How much more accurate is <code class="code docutils literal notranslate"><span class="pre">math.e</span></code> than this approximation?</p>
+<p>The function <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">base)</span></code> is very useful for computing logarithms in any base - but
+for some common bases there are separate logarithmic functions.
+Try using <code class="code docutils literal notranslate"><span class="pre">log10(x)</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">e</span>
+
+<span class="n">y_natural</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_base10</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y_log10</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_natural</span><span class="p">,</span> <span class="n">y_base10</span><span class="p">,</span> <span class="n">y_log10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Do the two values differ? The <code class="code docutils literal notranslate"><span class="pre">math.log10(x)</span></code> function is considered to be more accurate than <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">10)</span></code>.
+Similarly <code class="code docutils literal notranslate"><span class="pre">math.log2(x)</span></code> is more accurate than <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">2)</span></code>.</p>
+</li>
+<li><p>Let’s cover some <code class="code docutils literal notranslate"><span class="pre">math</span></code> trigonometry examples!</p>
+<p>The math symbol <span class="math notranslate nohighlight">\(\pi\)</span> is an irrational number (like <em>e</em>) that is approximately <span class="math notranslate nohighlight">\(\frac{22}{7}\)</span> or 3.14159.
+We can access the most accurate <code class="code docutils literal notranslate"><span class="pre">float</span></code> version of this number (depending on your C compiler), with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">math</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">pi</span></span></code>.</p>
+<p>Say we wanted to convert a number from 60 degrees to radians. We have two options:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="n">deg</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="n">rads</span> <span class="o">=</span> <span class="n">deg</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="n">rads_fromfunc</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">rads</span><span class="p">,</span> <span class="n">rads_fromfunc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the first example we used <code class="code python docutils literal notranslate"><span class="name"><span class="pre">math</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">pi</span></span></code> to perform our calculation (by default printed to 15 digits). In the second conversion,
+we used the function <code class="code docutils literal notranslate"><span class="pre">math.radians(x)</span></code> which converts angle x from degrees to radians.</p>
+<p>We can also use trigonometric functions: <code class="code docutils literal notranslate"><span class="pre">math.sin</span></code> to get the sine value of an angle, <code class="code docutils literal notranslate"><span class="pre">math.cos</span></code> to get the cosine,
+<code class="code docutils literal notranslate"><span class="pre">math.tan</span></code> for the tangent, <code class="code docutils literal notranslate"><span class="pre">math.asin</span></code> for the arc sine, <code class="code docutils literal notranslate"><span class="pre">math.acos</span></code> to get the arc cosine, and <code class="code docutils literal notranslate"><span class="pre">math.atan</span></code> to get the arc tangent.
+You can also calculate the hypotenuse of a triangle with <code class="code docutils literal notranslate"><span class="pre">math.hypot()</span></code>.
+The input angle for each of these functions must be in radians to get the expected result!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="n">deg</span> <span class="o">=</span> <span class="mi">180</span>
+
+<span class="n">cos_deg</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+<span class="n">cos_rad</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cos_deg</span><span class="p">,</span> <span class="n">cos_rad</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You might remember that the cosine of 180 degrees is -1, you can see that we only get the correct value if we enter the degree in radians (180 deg = PI radians).</p>
+</li>
+<li><p>Let’s use <code class="code docutils literal notranslate"><span class="pre">math.factorial()</span></code>:</p>
+<p>Another popular <code class="code docutils literal notranslate"><span class="pre">math</span></code> function is <code class="code docutils literal notranslate"><span class="pre">factorial()</span></code> which is much faster and requires a lot less code than writing your own <code class="code docutils literal notranslate"><span class="pre">for</span></code> loops to find the factorial of a number.
+Try <code class="code docutils literal notranslate"><span class="pre">math.factorial(5)</span></code> and see what you get!</p>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the “Using a Built-In Package” section of this tutorial.
+You should now be familiar with importing packages that you did not build and some methods within the <code class="code docutils literal notranslate"><span class="pre">math</span></code> module -
+specifically the <code class="code docutils literal notranslate"><span class="pre">log</span></code> method.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/math.html">More information on the Math module</a></p>
 </div>
 </div>
 </div>
