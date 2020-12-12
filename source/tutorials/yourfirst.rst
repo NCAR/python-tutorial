@@ -1835,23 +1835,23 @@ Open a terminal to begin and make sure you are in the
 
     2) Replace the printing output section at the bottom of each script with:
 
-    .. code-block:: python
-       :lineno-start: 29
+       .. code-block:: python
+          :lineno-start: 29
 
-       # Output comparison of data
-       print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
+          # Output comparison of data
+          print_comparison('WINDCHILL', data['date'], data['time'], data['windchill'], windchill)
 
-    ..
+       ..
 
-    or
+       or
 
-    .. code-block:: python
-       :lineno-start: 37
+       .. code-block:: python
+          :lineno-start: 37
 
-       # Output comparison of data
-       print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
+          # Output comparison of data
+          print_comparison('HEAT INDX', data['date'], data['time'], data['heatindex'], heatindex)
 
-    ..
+       ..
 
 21. Stage all changes and commit:
 
