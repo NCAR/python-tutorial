@@ -1407,7 +1407,7 @@ First Python Package
 
 In this section of the tutorial we will learn how to create a Python package 
 and the basics of how to use built-in package :code:`math`\. This will prepare you 
-to learn any package you thik may be useful for your scientific analysis.
+to learn any package you think may be useful for your scientific analysis.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Creating Your Own Package
