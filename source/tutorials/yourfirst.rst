@@ -1407,7 +1407,7 @@ First Python Package
 
 In this section of the tutorial we will learn how to create a Python package 
 and the basics of how to use built-in package :code:`math`\. This will prepare you 
-to learn any package you thik may be useful for your scientific analysis.
+to learn any package you think may be useful for your scientific analysis.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Creating Your Own Package
@@ -1914,7 +1914,7 @@ Open a terminal to begin and make sure you are in the
 
           Parameters:
              t: The temperature in units of F
-             hum: The relative humitidy in units of %
+             hum: The relative humididy in units of %
           """
 
           a = -42.379
@@ -2124,7 +2124,7 @@ Open a terminal to begin and make sure you are in the
 
     This is a *list comprehension*, and it 
     initializes the entire list with the computed 
-    contents, rather than initializing an empy list 
+    contents, rather than initializing an empty list 
     and appending values to it after the fact.  
     Computationally, this is actually *more efficient*.
 
