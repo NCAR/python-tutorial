@@ -1730,7 +1730,7 @@ Open a terminal to begin and make sure you are in the
     that you may call again. The interpreter compiles 
     your scripts to bytecode and stores them in a cache, 
     making your scripts run a little faster next time. 
-    As a user can for the most part ignore this new folder. 
+    As a user, you can for the most part ignore this new folder. 
     If you change or delete your scripts they will be 
     recompiled and reappear in this folder.
 
@@ -2072,7 +2072,7 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       NCAR_python_tutorial_2020/
+       python_tutorial
 
           data/
              wxobs20170821.txt
