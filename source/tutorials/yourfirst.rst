@@ -1898,8 +1898,8 @@ Open a terminal to begin and make sure you are in the
              wind speeds between 3 mph and 60 mph.
 
           Parameters:
-             t: The temperature in units of F
-             v: The wind speed in units of mph
+             t: The temperature in units of F (float)
+             v: The wind speed in units of mph (float)
           """
 
           a = 35.74
@@ -1917,8 +1917,8 @@ Open a terminal to begin and make sure you are in the
           Compute the heat index given the temperature and the humidity
 
           Parameters:
-             t: The temperature in units of F
-             hum: The relative humidity in units of %
+             t: The temperature in units of F (float)
+             hum: The relative humidity in units of % (float)
           """
 
           a = -42.379
