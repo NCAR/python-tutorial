@@ -1613,6 +1613,8 @@ Open a terminal to begin and make sure you are in the
                   value = t(split_line[i])
                   data[column].append(value)
 
+         return data
+
    ..
 
    The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
@@ -1666,6 +1668,8 @@ Open a terminal to begin and make sure you are in the
                    t = types.get(column, str)
                    value = t(split_line[i])
                    data[column].append(value)
+
+          return data
 
     ..
 
@@ -1805,7 +1809,7 @@ Open a terminal to begin and make sure you are in the
 
        def print_comparison(name, date, time, original_data, computed_data):
           """
-          Print a comparison of two timeseries (original and computed)
+          Print a comparison of two time series (original and computed)
 
           Parameters:
              name: A string name for the data being compared. (Limited
@@ -1894,8 +1898,8 @@ Open a terminal to begin and make sure you are in the
              wind speeds between 3 mph and 60 mph.
 
           Parameters:
-             t: The temperature in units of F
-             v: The wind speed in units of mph
+             t: The temperature in units of F (float)
+             v: The wind speed in units of mph (float)
           """
 
           a = 35.74
@@ -1913,8 +1917,8 @@ Open a terminal to begin and make sure you are in the
           Compute the heat index given the temperature and the humidity
 
           Parameters:
-             t: The temperature in units of F
-             hum: The relative humididy in units of %
+             t: The temperature in units of F (float)
+             hum: The relative humidity in units of % (float)
           """
 
           a = -42.379

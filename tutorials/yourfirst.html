@@ -1543,7 +1543,9 @@ similarly formatted, too.  Let’s remove that duplication!</p>
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
    <span class="c1"># Initialize my data variable</span>
    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
@@ -1564,6 +1566,8 @@ similarly formatted, too.  Let’s remove that duplication!</p>
             <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
             <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+   <span class="k">return</span> <span class="n">data</span>
 </pre></div>
 </td></tr></table></div>
 <p>The function arguments for our <code class="code docutils literal notranslate"><span class="pre">read_data</span></code> function are <code class="code docutils literal notranslate"><span class="pre">columns</span></code>, <code class="code docutils literal notranslate"><span class="pre">types</span></code>, and <code class="code docutils literal notranslate"><span class="pre">filename</span></code>.
@@ -1609,7 +1613,9 @@ file.</p>
 29
 30
 31
-32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">{},</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;data/wxobs20170821.txt&quot;</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Read data from CU Boulder Weather Station data file</span>
 
@@ -1641,6 +1647,8 @@ file.</p>
             <span class="n">t</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
             <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+   <span class="k">return</span> <span class="n">data</span>
 </pre></div>
 </td></tr></table></div>
 <p>The section between the tripple quotes <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> is the docstring.
@@ -1752,7 +1760,7 @@ output code and printing code.</p>
 17
 18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_comparison</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">   Print a comparison of two timeseries (original and computed)</span>
+<span class="sd">   Print a comparison of two time series (original and computed)</span>
 
 <span class="sd">   Parameters:</span>
 <span class="sd">      name: A string name for the data being compared. (Limited</span>
@@ -1870,8 +1878,8 @@ similar to the following:</p>
 <span class="sd">      wind speeds between 3 mph and 60 mph.</span>
 
 <span class="sd">   Parameters:</span>
-<span class="sd">      t: The temperature in units of F</span>
-<span class="sd">      v: The wind speed in units of mph</span>
+<span class="sd">      t: The temperature in units of F (float)</span>
+<span class="sd">      v: The wind speed in units of mph (float)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
 
    <span class="n">a</span> <span class="o">=</span> <span class="mf">35.74</span>
@@ -1889,8 +1897,8 @@ similar to the following:</p>
 <span class="sd">   Compute the heat index given the temperature and the humidity</span>
 
 <span class="sd">   Parameters:</span>
-<span class="sd">      t: The temperature in units of F</span>
-<span class="sd">      hum: The relative humididy in units of %</span>
+<span class="sd">      t: The temperature in units of F (float)</span>
+<span class="sd">      hum: The relative humidity in units of % (float)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
 
    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
