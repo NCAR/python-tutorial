@@ -1809,7 +1809,7 @@ Open a terminal to begin and make sure you are in the
 
        def print_comparison(name, date, time, original_data, computed_data):
           """
-          Print a comparison of two timeseries (original and computed)
+          Print a comparison of two time series (original and computed)
 
           Parameters:
              name: A string name for the data being compared. (Limited
