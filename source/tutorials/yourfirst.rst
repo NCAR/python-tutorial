@@ -1613,6 +1613,8 @@ Open a terminal to begin and make sure you are in the
                   value = t(split_line[i])
                   data[column].append(value)
 
+         return data
+
    ..
 
    The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
@@ -1666,6 +1668,8 @@ Open a terminal to begin and make sure you are in the
                    t = types.get(column, str)
                    value = t(split_line[i])
                    data[column].append(value)
+
+          return data
 
     ..
 
