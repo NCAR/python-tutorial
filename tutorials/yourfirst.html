@@ -1758,15 +1758,15 @@ output code and printing code.</p>
 15
 16
 17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_comparison</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_comparison</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dates</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Print a comparison of two time series (original and computed)</span>
 
 <span class="sd">   Parameters:</span>
 <span class="sd">      name: A string name for the data being compared. (Limited</span>
 <span class="sd">         to 9 characters in length)</span>
-<span class="sd">      date: List of strings representing the dates for each data element</span>
-<span class="sd">      time: List of strings representing time of day for each data element</span>
+<span class="sd">      dates: List of strings representing the dates for each data element</span>
+<span class="sd">      times: List of strings representing time of day for each data element</span>
 <span class="sd">      original_data: List of original data (floats)</span>
 <span class="sd">      computed_data: List of computed data (floats)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
@@ -1774,7 +1774,7 @@ output code and printing code.</p>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;                ORIGINAL  COMPUTED&#39;</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; DATE    TIME  </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s1">&gt;9</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s1">&gt;9</span><span class="si">}</span><span class="s1"> DIFFERENCE&#39;</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;------- ------ --------- --------- ----------&#39;</span><span class="p">)</span>
-   <span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">original_data</span><span class="p">,</span> <span class="n">computed_data</span><span class="p">):</span>
       <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">orig</span><span class="o">-</span><span class="n">comp</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
@@ -2182,8 +2182,8 @@ It is best practice to import packages and modules at the beginning (top) of the
 <span class="sd">   Compute the dew point temperature given the temperature and humidity</span>
 
 <span class="sd">   Parameters:</span>
-<span class="sd">      t: The temperature in units of F</span>
-<span class="sd">      h: The relative humidity in units of %</span>
+<span class="sd">      t: The temperature in units of F (float)</span>
+<span class="sd">      h: The relative humidity in units of % (float)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
 
    <span class="n">tempC</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span> <span class="c1"># Convert temperature from deg F to deg C</span>
