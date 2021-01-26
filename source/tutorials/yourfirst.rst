@@ -1807,15 +1807,15 @@ Open a terminal to begin and make sure you are in the
     .. code-block:: python
        :lineno-start: 1
 
-       def print_comparison(name, date, time, original_data, computed_data):
+       def print_comparison(name, dates, times, original_data, computed_data):
           """
           Print a comparison of two time series (original and computed)
 
           Parameters:
              name: A string name for the data being compared. (Limited
                 to 9 characters in length)
-             date: List of strings representing the dates for each data element
-             time: List of strings representing time of day for each data element
+             dates: List of strings representing the dates for each data element
+             times: List of strings representing time of day for each data element
              original_data: List of original data (floats)
              computed_data: List of computed data (floats)
           """
@@ -1823,7 +1823,7 @@ Open a terminal to begin and make sure you are in the
           print(f'                ORIGINAL  COMPUTED')
           print(f' DATE    TIME  {name.upper():>9} {name.upper():>9} DIFFERENCE')
           print(f'------- ------ --------- --------- ----------')
-          for date, time, orig, comp in zip(date, time, original_data, computed_data):
+          for date, time, orig, comp in zip(dates, times, original_data, computed_data):
              print(f'{date} {time:>6} {orig:9.6f} {comp:9.6f} {orig-comp:10.6f}')
     ..
 
@@ -2216,8 +2216,8 @@ bit of the built-in :code:`math` package, which extends the computational capabi
          Compute the dew point temperature given the temperature and humidity
 
          Parameters:
-            t: The temperature in units of F
-            h: The relative humidity in units of %
+            t: The temperature in units of F (float)
+            h: The relative humidity in units of % (float)
          """
 
          tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
