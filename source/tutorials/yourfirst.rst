@@ -2410,6 +2410,24 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
     Try :code:`math.factorial(5)` and see what you get!
 
+
+11. Create a `setup.py`.
+
+    .. code-block:: bash
+
+       $ touch readdata.py
+
+    ..
+
+    `setup.py` is a Python file necessary for package distribution. This file tells pip how to install your module into your environment.
+
+12. Push to GitHub!
+
+13. Pip Install from local branch (talk about pip vs conda)
+
+14. Install from each other's GitHub repository
+
+15. Demonstrate how to publish to pypi
 -----
 
 That concludes the "Using a Built-In Package" section of this tutorial.
