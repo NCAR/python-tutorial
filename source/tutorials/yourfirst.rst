@@ -2411,15 +2411,35 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     Try :code:`math.factorial(5)` and see what you get!
 
 
-11. Create a `setup.py`.
+11. Create a `setup.py` file within your `mysci` package:
 
     .. code-block:: bash
 
+       $ cd mysci
        $ touch readdata.py
 
     ..
 
     `setup.py` is a Python file necessary for package distribution. This file tells pip how to install your module into your environment.
+    It is the only fully supported method for providing information about your package. 
+    Required information is the name of your package, the version of your package, and a list of packages and subpackages you'd like included.
+
+    It's contents will look as follows (but with your name and email):
+
+    .. code-block:: python
+
+        from setuptools import setup
+
+        setup(
+            name="mysci",
+            version="1.0.0",
+            description="A sample package"
+            author="Xdev"
+            author_email="xdev@ucar.edu"
+            packages=["mysci"],
+            install_requires=[])
+
+    ..
 
 12. Push to GitHub!
 
