@@ -2454,11 +2454,62 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
     ..
 
-13. Pip Install from local branch (talk about pip vs conda)
+13. Pip Install your package locally.
 
-14. Install from each other's GitHub repository
+    To test that our package is set up correctly, let's install it into our project repository. 
 
-15. Demonstrate how to publish to pypi
+    .. code-block:: bash
+
+       $ pip install mysci
+
+    ..
+
+    What is `pip`? Pip is a package manager for Python. It is similar to Conda, which does package management, but Conda is a also language-agnostic and cross platform virtual environment manager. Conda can use Pip.
+    We recommend using Conda whenever possible for your package management, but in some instances Conda will not work or Pip is more appropriate (say, if the package is local or on a GitHub repository).
+
+14. Install from your GitHub repository
+
+    .. code-block:: bash
+
+       $ pip install git+ssh://git@github.com:Username/Project.git
+
+
+    ..
+
+    It is possible to install any package into your active environment from a GitHub repository. This is one of the easiest ways to use functions written by your fellow scientits - and this is how they could use your functions. 
+    To do this replace `Username` and `Project` with your target username and repository (likely `mysci` for this example).
+
+    .. note::
+         If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
+    ..
+
+15. Publish to (Test)PyPi
+
+    With our package containing a setup.py it is properly prepared for publication on PyPi (https://pypi.org/).
+    PyPi stands for the Python Package Index. It is a hub to find, install. and publish Python packages.
+    Since we do not want to clog the name space of PyPi we will use TestPyPi.
+
+    The first step is to create an account with TestPyPi. Follow this link to do so: (https://test.pypi.org/account/login/?next=%2Fmanage%2Fprojects%2F)
+
+    To upload our package we will need to use an external package, Twine (https://twine.readthedocs.io/en/latest/)
+    
+    .. code-block:: bash
+
+        $ pip install twine
+
+    ..
+
+    We install `twine` into our environment, just as we did our local package.
+
+    .. code-block:: bash
+
+      $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+    ..
+
+    Twine will then ask for your username and password. 
+
+    Once the upload succeeds head to TestPyPi and see your package displayed as a new release. 
 -----
 
 That concludes the "Using a Built-In Package" section of this tutorial.
