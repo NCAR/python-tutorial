@@ -1372,7 +1372,7 @@ Let's begin.
 
        .. code-block:: bash
 
-          $ git push origin master
+          $ git push origin main
 
        ..
 
@@ -1783,12 +1783,12 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Refactor scripts to use new module"
 
     ..
 
-    You can type :code:`-a` instead of the name of your files to add all unstaged changes.
+    You can type :code:`-A` instead of the name of your files to add all unstaged changes.
 
 19. There is still have some duplicated 
     code between the two scripts. Let's combine the final 
@@ -1861,7 +1861,7 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
    
-       $ git add -a
+       $ git add -A
        $ git commit -m "Creating printing module"
 
     ..
@@ -2006,7 +2006,7 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       $ git stage -a
+       $ git stage -A
        $ git commit -m "Creating computation module"
 
     ..
@@ -2061,7 +2061,7 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Creating mysci package"
 
     ..
@@ -2139,7 +2139,7 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Using list comprehensions"
 
     ..
@@ -2411,7 +2411,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     Try :code:`math.factorial(5)` and see what you get!
 
 
-11. Create a `setup.py` file within your `mysci` package:
+11. Time to publish our package! Create a `setup.py` file within your `mysci` package:
 
     .. code-block:: bash
 
@@ -2440,6 +2440,8 @@ bit of the built-in :code:`math` package, which extends the computational capabi
             install_requires=[])
 
     ..
+
+    This `setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (`install_requires`) which is set to an empty list since our current package uses no external packages.
 
 12. Push to GitHub!
 
