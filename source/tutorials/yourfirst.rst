@@ -2416,7 +2416,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     .. code-block:: bash
 
        $ cd mysci
-       $ touch readdata.py
+       $ touch setup.py
 
     ..
 
@@ -2427,6 +2427,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     It's contents will look as follows (but with your name and email):
 
     .. code-block:: python
+        :linenos:
 
         from setuptools import setup
 
@@ -2444,6 +2445,14 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     This `setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (`install_requires`) which is set to an empty list since our current package uses no external packages.
 
 12. Push to GitHub!
+
+    .. code-block:: bash
+
+       $ git add setup.py
+       $ git commit -m "Adding setup.py"
+       $ git push origin main
+
+    ..
 
 13. Pip Install from local branch (talk about pip vs conda)
 
