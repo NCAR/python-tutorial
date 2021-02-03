@@ -2475,11 +2475,10 @@ At the end of this section, we'll talk about how to publish your package to PyPI
 
 But first, let's learn how to package our code properly.
 
-1. Create a `setup.py` file within your `mysci` package:
+1. Create a `setup.py` file one level above your `mysci` package:
 
     .. code-block:: bash
 
-       $ cd mysci
        $ touch setup.py
 
     ..
