@@ -2411,7 +2411,62 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     Try :code:`math.factorial(5)` and see what you get!
 
 
-11. Time to publish our package! Create a `setup.py` file within your `mysci` package:
+-----
+
+That concludes the "Using a Built-In Package" section of this tutorial.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Publishing Your Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Time to publish our package! ...But what does that mean?  Haven't we published it already by hosting the git repository on GitHub?
+
+In a sense, yes, you have already published *your code*.  But you haven't published it in a way that makes your code *easy for someone else to install*.  That's what *packaging* is all about.
+
+In its current state, your *code* could be downloaded by somebody from GitHub using the `git clone` command:
+
+.. code-block:: bash
+
+   git clone https://github.com/username/repo.git
+
+..
+
+where :code:`username` and :code:`repo` are your GitHub username and the name of the GitHub repository, respectively.  This will download the git repository from GitHub and put it in a directory called :code:`repo`.  But then to use this code *in your own project* you would have to copy the contents of the :code:`repo` directory into your own project space so that you could :code:`import` the :code:`mysci` package in your own scripts and code.
+
+That's burdensome!  Fortunately, the Python developers created a way of *installing external packages* into a *common space* from which your :code:`python` interpreter can find.  That tool is called :code:`pip`, which is short for the "package installer for Python."  With :code:`pip`, you can install a package that was downloaded (i.e., *cloned*) from GitHub, like so:
+
+.. code-block:: bash
+
+   git clone https://github.com/username/some_package.git
+   pip install some_package
+
+..
+
+...assuming that the :code:`some_package` repository has been *properly packaged*, which is what this section of this tutorial is all about!
+
+Now, before we begin teaching you how to package your code properly, so that other people can easily share it, you might be asking yourself, "Can't I just install a package directly from GitHub?"  And the answer is YES!  You can!  The :code:`git clone` step can be skipped entirely by writing:
+
+.. code-block:: bash
+
+   pip install git+https://github.com/username/some_package.git
+
+..
+
+where you should not the :code:`git+https://` protocol syntax, instead of just :code:`https://`, which tells :code:`pip` to do the :code:`git clone` step first before trying to install the package.
+
+...And, lastly, if you are looking at this and *still* thinking that it looks messy, then you are in luck!  The Python development community has created a free online service called the Python Package Index (PyPI) that allows you to publish your package to the PyPI servers so that other users can then install your package by simply executing:
+
+.. code-block:: bash
+
+   pip install some_package
+   
+..
+
+At the end of this section, we'll talk about how to publish your package to PyPI.
+
+But first, let's learn how to package our code properly.
+
+1. Create a `setup.py` file within your `mysci` package:
 
     .. code-block:: bash
 
@@ -2420,16 +2475,15 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
     ..
 
-    `setup.py` is a Python file necessary for package distribution. This file tells pip how to install your module into your environment.
-    It is the only fully supported method for providing information about your package. 
-    Required information is the name of your package, the version of your package, and a list of packages and subpackages you'd like included.
+    The :code:`setup.py` file is a Python file necessary for package distribution. This file tells :code:`pip` how to install your package into the *common Python space* for your :code:`python` interpreter.
+    Required information is the name of your package, the version of your package (which you can choose), and a list of packages you'd like installed by pip (e.g., your :code:`mysci` package).
 
     It's contents will look as follows (but with your name and email):
 
     .. code-block:: python
         :linenos:
 
-        from setuptools import setup
+        from distutils.core import setup
 
         setup(
             name="mysci",
@@ -2438,13 +2492,14 @@ bit of the built-in :code:`math` package, which extends the computational capabi
             author="Xdev"
             author_email="xdev@ucar.edu"
             packages=["mysci"],
-            install_requires=[])
+            install_requires=[],
+        )
 
     ..
 
-    This `setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (`install_requires`) which is set to an empty list since our current package uses no external packages.
+    This :code:`setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (:code:`install_requires`) which is set to an empty list since our current package uses no external packages.
 
-12. Push to GitHub!
+2. Push to GitHub!
 
     .. code-block:: bash
 
@@ -2454,44 +2509,63 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
     ..
 
-13. Pip Install your package locally.
+3. Pip Install your package locally.
 
     To test that our package is set up correctly, let's install it into our project repository. 
 
     .. code-block:: bash
 
-       $ pip install mysci
+       $ pip install .
 
     ..
 
-    What is `pip`? Pip is a package manager for Python. It is similar to Conda, which does package management, but Conda is a also language-agnostic and cross platform virtual environment manager. Conda can use Pip.
-    We recommend using Conda whenever possible for your package management, but in some instances Conda will not work or Pip is more appropriate (say, if the package is local or on a GitHub repository).
+Everything should install smoothly, and now you will be able to :code:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
 
-14. Install from your GitHub repository
+.. note::
+
+   The :code:`pip` and :code:`python` commands are *tied* to one another.  You can think of it as the :code:`pip` command installing package *into* :code:`python`.  At the beginning of this tutorial, when we created the Conda environment :code:`python_tutorial`, we installed :code:`python` into that Conda environment.  Conda *also* installed :code:`pip` into that environment, so you can use that Conda environment's :code:`pip` to install packages into that same Conda environment's :code:`python`.
+
+..
+
+Now, before moving on, let's use :code:`pip` to *uninstall* the package we just installed:
+
+.. code-block:: bash
+
+   pip uninstall mysci
+   
+..
+4. Install from your GitHub repository
+
+    Now, let's re-install our package directly from GitHub.
+    
 
     .. code-block:: bash
 
-       $ pip install git+ssh://git@github.com:Username/Project.git
-
+       $ pip install git+https://github.com:Username/Project.git
 
     ..
 
-    It is possible to install any package into your active environment from a GitHub repository. This is one of the easiest ways to use functions written by your fellow scientits - and this is how they could use your functions. 
     To do this replace `Username` and `Project` with your target username and repository (likely `mysci` for this example).
 
     .. note::
          If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
     ..
 
-15. Publish to (Test)PyPi
+5. How to publish to PyPi
 
-    With our package containing a setup.py it is properly prepared for publication on PyPi (https://pypi.org/).
-    PyPi stands for the Python Package Index. It is a hub to find, install. and publish Python packages.
-    Since we do not want to clog the name space of PyPi we will use TestPyPi.
+    With our package containing a properly formed :code:`setup.py`, it is now ready for publication on PyPI (https://pypi.org/).
+    We don't recommend that you *actually* publish *this* package (i.e., the one you just created in this
+    tutorial) because every package on PyPI needs a unique name, which means only *one* of you will be
+    able to actually perform this step of the tutorial successfully!  Also, the package we've created in this
+    tutorial is probably not the most useful package out there, so maybe it's not worth sharing.
+    
+    Anyway, we will give you the instructions for how to publish a package to PyPI here, so that when you
+    *do* actually create a package you want to share with the world, you will know how to do it.
 
-    The first step is to create an account with TestPyPi. Follow this link to do so: (https://test.pypi.org/account/login/?next=%2Fmanage%2Fprojects%2F)
+    The first step is to create an account on PyPI.  Follow this link to do so: (https://pypi.org/account/register/).
+    Take note of your newly created username and password.
 
-    To upload our package we will need to use an external package, Twine (https://twine.readthedocs.io/en/latest/)
+    To upload our package, we will need to use another external package called Twine (https://twine.readthedocs.io/en/latest/).  We'll install this new package with :code:`pip`:
     
     .. code-block:: bash
 
@@ -2499,20 +2573,31 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
     ..
 
-    We install `twine` into our environment, just as we did our local package.
+    By installing this package, a new utility called :code:`twine` will be installed that you can use to upload
+    your package.  First, however, we need to build a *distribution* package using our newly created
+    :code:`setup.py` file.  To do that, execute the following command in the same directory where the
+    :code:`setup.py` file is located:
+    
+    .. code-block:: bash
+    
+       python setup.py sdist bdist_wheel
+       
+    ..
+    
+    Then, to upload your newly created *distribution* package to PyPI, execute the following:
 
     .. code-block:: bash
 
-      $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+      $ twine upload dist/*
 
     ..
 
     Twine will then ask for your username and password. 
 
-    Once the upload succeeds head to TestPyPi and see your package displayed as a new release. 
+    Once the upload succeeds, head to PyPI and see your package displayed as a new release!
 -----
 
-That concludes the "Using a Built-In Package" section of this tutorial.
+That concludes the "How to publish your package" section of this tutorial.
 You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module - 
 specifically the :code:`log` method.
 
