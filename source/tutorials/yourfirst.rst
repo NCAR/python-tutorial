@@ -2436,7 +2436,7 @@ In its current state, your *code* could be downloaded by somebody from GitHub us
 
 .. code-block:: bash
 
-   git clone https://github.com/username/repo.git
+   $ git clone https://github.com/username/repo.git
 
 ..
 
@@ -2446,8 +2446,8 @@ That's burdensome!  Fortunately, the Python developers created a way of *install
 
 .. code-block:: bash
 
-   git clone https://github.com/username/some_package.git
-   pip install some_package
+   $ git clone https://github.com/username/some_package.git
+   $ pip install some_package
 
 ..
 
@@ -2457,7 +2457,7 @@ Now, before we begin teaching you how to package your code properly, so that oth
 
 .. code-block:: bash
 
-   pip install git+https://github.com/username/some_package.git
+   $ pip install git+https://github.com/username/some_package.git
 
 ..
 
@@ -2467,7 +2467,7 @@ where you should not the :code:`git+https://` protocol syntax, instead of just :
 
 .. code-block:: bash
 
-   pip install some_package
+   $ pip install some_package
 
 ..
 
@@ -2540,7 +2540,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-       pip uninstall mysci
+       $ pip uninstall mysci
 
     ..
 
@@ -2579,7 +2579,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-       pip install twine
+       $ pip install twine
 
     ..
 
@@ -2590,7 +2590,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-       python setup.py sdist bdist_wheel
+       $ python setup.py sdist bdist_wheel
 
     ..
 
@@ -2598,7 +2598,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-       twine upload dist/*
+       $ twine upload dist/*
 
     ..
 
