@@ -2596,6 +2596,7 @@ Now, before moving on, let's use :code:`pip` to *uninstall* the package we just 
     Twine will then ask for your username and password. 
 
     Once the upload succeeds, head to PyPI and see your package displayed as a new release!
+
 -----
 
 That concludes the "How to publish your package" section of this tutorial.
