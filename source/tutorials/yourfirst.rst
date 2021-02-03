@@ -2415,6 +2415,15 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 That concludes the "Using a Built-In Package" section of this tutorial.
 
+You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module -
+specifically the :code:`log` method.
+
+.. seealso::
+
+   `More information on the Math module <https://docs.python.org/3/library/math.html>`_
+
+..
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Publishing Your Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2600,11 +2609,3 @@ But first, let's learn how to package our code properly.
 -----
 
 That concludes the "How to publish your package" section of this tutorial.
-You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module -
-specifically the :code:`log` method.
-
-.. seealso::
-
-   `More information on the Math module <https://docs.python.org/3/library/math.html>`_
-
-..
