@@ -2534,6 +2534,7 @@ Now, before moving on, let's use :code:`pip` to *uninstall* the package we just 
    pip uninstall mysci
    
 ..
+
 4. Install from your GitHub repository
 
     Now, let's re-install our package directly from GitHub.
