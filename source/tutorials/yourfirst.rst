@@ -2608,4 +2608,4 @@ But first, let's learn how to package our code properly.
 
 -----
 
-That concludes the "How to publish your package" section of this tutorial.
+That concludes the "Publishing Your Package" section of this tutorial.
