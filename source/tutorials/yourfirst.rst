@@ -2176,7 +2176,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
-2. Now we're going to add a function for calculating dew point temperature to your :code:`computation.py` module:
+2. Now we're going to add a function for calculating dew point temperature to your :code:`mysci/computation.py` module:
 
    The formula for this is:
 
@@ -2397,9 +2397,9 @@ bit of the built-in :code:`math` package, which extends the computational capabi
       deg = 180
 
       cos_deg = m.cos(deg)
-      cos_rad = m.cos(m.radians(60))
+      cos_rad = m.cos(m.radians(deg))
 
-      print(cos_deg, cos_rad)
+      print(deg, cos_deg, cos_rad)
 
    ..
 
