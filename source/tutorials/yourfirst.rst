@@ -2579,7 +2579,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-        $ pip install twine
+       pip install twine
 
     ..
 
@@ -2598,7 +2598,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-      $ twine upload dist/*
+       twine upload dist/*
 
     ..
 
