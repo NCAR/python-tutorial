@@ -1372,7 +1372,7 @@ Let's begin.
 
        .. code-block:: bash
 
-          $ git push origin master
+          $ git push origin main
 
        ..
 
@@ -1405,37 +1405,37 @@ repository to GitHub.
 First Python Package
 -----------------------------
 
-In this section of the tutorial we will learn how to create a Python package 
-and the basics of how to use built-in package :code:`math`\. This will prepare you 
+In this section of the tutorial we will learn how to create a Python package
+and the basics of how to use built-in package :code:`math`\. This will prepare you
 to learn any package you think may be useful for your scientific analysis.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Creating Your Own Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section you will learn how to move functions and code blocks into 
-Python packages that you can import into your analysis 
-methods, making them easier to write, read, and share. 
+In this section you will learn how to move functions and code blocks into
+Python packages that you can import into your analysis
+methods, making them easier to write, read, and share.
 
-Perhaps you are already familiar with importing packages into 
-your workflow. Many scientists pass around files that contain 
-unique user-written functions to reduce redundant work between 
-scientists, but what if the original author found a bug in their 
-script? It is difficult to track down every user of their code to let them know. 
-In Python, package managers help you know what 
-version of those functions you are using. Matlab also has packages 
-that you can pay extra money to install and use - again Python 
-is free! 
+Perhaps you are already familiar with importing packages into
+your workflow. Many scientists pass around files that contain
+unique user-written functions to reduce redundant work between
+scientists, but what if the original author found a bug in their
+script? It is difficult to track down every user of their code to let them know.
+In Python, package managers help you know what
+version of those functions you are using. Matlab also has packages
+that you can pay extra money to install and use - again Python
+is free!
 
-Open a terminal to begin and make sure you are in the 
+Open a terminal to begin and make sure you are in the
 :code:`python_tutorial` directory and have activated the corresponding environment.
 
 1. Make a copy of your first script with a new name:
-   
+
    .. code-block:: bash
 
       $ cp windchillcomp.py heatindexcomp.py
-   
+
    ..
 
 2. Git add and commit this new file:
@@ -1449,11 +1449,11 @@ Open a terminal to begin and make sure you are in the
 
 3. Now you will compute the Heat Index.
 
-   Like wind chill, which is a measure of how much 
-   colder the weather feels to the human body due 
-   to wind speed, heat index is a measure of how 
-   much hotter the weather feels to the human body 
-   due to humidity. The Rothfusz formula for heat 
+   Like wind chill, which is a measure of how much
+   colder the weather feels to the human body due
+   to wind speed, heat index is a measure of how
+   much hotter the weather feels to the human body
+   due to humidity. The Rothfusz formula for heat
    index is:
 
    .. math::
@@ -1462,19 +1462,19 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-   where *HI* is the Heat Index, *T* is temperature is in degrees F, 
-   *H* is humidity in %, *a* = -42.379, *b* = 2.04901523, 
-   *c* = 10.14333127, *d* = 0.22475541, *e* = 0.00683783, 
-   *f* = 0.05481717, *g* = 0.00122874, *h* = 0.00085282, and 
-   *i* = 0.00000199. The Roothfusz regression is not valid for 
+   where *HI* is the Heat Index, *T* is temperature is in degrees F,
+   *H* is humidity in %, *a* = -42.379, *b* = 2.04901523,
+   *c* = 10.14333127, *d* = 0.22475541, *e* = 0.00683783,
+   *f* = 0.05481717, *g* = 0.00122874, *h* = 0.00085282, and
+   *i* = 0.00000199. The Roothfusz regression is not valid for
    extreme temperature or humidity conditions.
 
    Replace the :code:`compute_windchill` function with in your :code:`heatindexcomp.py` script with
    a :code:`compute_heatindex` function:
-   
+
    .. code-block:: python
       :lineno-start: 30
-         
+
       # Compute the heat index
       def compute_heatindex(t, hum):
          a = -42.379
@@ -1489,29 +1489,29 @@ Open a terminal to begin and make sure you are in the
 
          rh = hum / 100
 
-         hi = a + (b * t) + (c * rh) + (d * t * rh) 
-            + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
+         hi = a + (b * t) + (c * rh) + (d * t * rh)
+            + (e * t**2) + (f * rh**2) + (g * t**2 * rh)
             + (h * t * rh**2) + (i * t**2 * rh**2)
          return hi
 
    ..
-   
-4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to 
+
+4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to
    read in the humidity and heat index values as :code:`float`\s:
-   
+
    .. code-block:: python
       :lineno-start: 1
 
       # Column names and column indices to read
       columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
-   
+
       # Data types for each column (only if non-string)
       types = {'tempout': float, 'humout': float, 'heatindex': float}
-   
+
    ..
 
 5. Update the function call and printing sections of the script to match:
-   
+
    .. code-block:: python
       :lineno-start: 49
 
@@ -1526,10 +1526,10 @@ Open a terminal to begin and make sure you are in the
       print('------- ------ --------- --------- ----------')
       for date, time, hi_orig, hi_comp in zip(data['date'], data['time'], data['heatindex'], heatindex):
          print(f'{date} {time:>6} {hi_orig:9.6f} {hi_comp:9.6f} {hi_orig-hi_comp:10.6f}')
-   
+
    ..
-   
-   Run this script with \":code:`python heatindexcomp.py`\" and see the results. 
+
+   Run this script with \":code:`python heatindexcomp.py`\" and see the results.
 
    So far you have only revisited concepts from "Your First Script".
 
@@ -1542,11 +1542,11 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-7. Now, you have two scripts that do very 
-   similar things. In fact, all of the data reading 
-   and parsing code is duplicated! And the output is 
+7. Now, you have two scripts that do very
+   similar things. In fact, all of the data reading
+   and parsing code is duplicated! And the output is
    similarly formatted, too.  Let's remove that duplication!
-   
+
    Create a new file called :code:`readdata.py`\:
 
    .. code-block:: bash
@@ -1554,8 +1554,8 @@ Open a terminal to begin and make sure you are in the
       $ touch readdata.py
 
    ..
-   
-   This new file will include the common code for reading the data file from both the 
+
+   This new file will include the common code for reading the data file from both the
    :code:`windchillcomp.py` and :code:`heatindexcomp.py` scripts.
 
 8. Copy and paste the lines for reading in the data file into :code:`readdata.py`\:
@@ -1590,7 +1590,7 @@ Open a terminal to begin and make sure you are in the
 
    .. code-block:: python
       :lineno-start: 1
-         
+
       def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
          # Initialize my data variable
          data = {}
@@ -1620,14 +1620,14 @@ Open a terminal to begin and make sure you are in the
    The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
    The :code:`types` and :code:`filename` variables are both keyword arguments, which means that it is not
    necessary to include them in your function call; if you do not call them, their value is taken as what they are
-   assigned to in the function definition. 
-      
-   When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified 
-   (and so you don't have to specify it every time you call the function when this keyword isn't relevant). 
-    
-   Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different 
-   file. 
-      
+   assigned to in the function definition.
+
+   When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified
+   (and so you don't have to specify it every time you call the function when this keyword isn't relevant).
+
+   Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different
+   file.
+
    Keyword arguments can be called in any order, but they must follow all *positional* arguments
    (i.e., arguments that do not have default values).
 
@@ -1635,11 +1635,11 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: python
        :lineno-start: 1
-         
+
        def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
           """
           Read data from CU Boulder Weather Station data file
-       
+
           Parameters:
              columns: A dictionary of column names mapping to column indices
              types: A dictionary of column names mapping to types to which
@@ -1673,16 +1673,16 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-    The section between the tripple quotes :code:`"""` is the docstring. 
-    The "Read data from CU Boulder 
-    Weather Station data file . . ." describing the utility 
-    of the function and the list of parameters are 
+    The section between the tripple quotes :code:`"""` is the docstring.
+    The "Read data from CU Boulder
+    Weather Station data file . . ." describing the utility
+    of the function and the list of parameters are
     standard information included in a docstring, but there is no requirement.  Everything
     between the triple quotes is essentially a comment that you can write and format any
-    way you want.  
+    way you want.
 
-    This new file is a *module*. Modules are simply 
-    files containing Python code, meant to be called 
+    This new file is a *module*. Modules are simply
+    files containing Python code, meant to be called
     up (or "imported") within a different Python script.  We'll get to this later.
 
 11. Stage and commit this new file:
@@ -1701,49 +1701,49 @@ Open a terminal to begin and make sure you are in the
     .. code-block:: python
        :lineno-start: 1
 
-       from readdata import read_data 
+       from readdata import read_data
 
     ..
 
-    In python you can call up functionality from scripts outside of your active script using the 
-    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module. 
+    In python you can call up functionality from scripts outside of your active script using the
+    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
     And now we can call up the function from these scripts.
-   
-14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the 
+
+14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the
     deleted code with a function call:
 
     .. code-block:: python
        :lineno-start: 9
-  
+
        # Read data from file
-       data = read_data(columns, types=types)   
+       data = read_data(columns, types=types)
 
     ..
-    
+
     The :code:`types=types` says that the input argument :code:`types` is being set equal to our dictionary :code:`types`.
-   
+
     Test out both of these scripts to make sure they still work!
 
-15. Do a \":code:`git status`\" now.  
+15. Do a \":code:`git status`\" now.
 
-    Do you notice something new?  Running our new scripts created the `__pycache__` directory.  
+    Do you notice something new?  Running our new scripts created the `__pycache__` directory.
 
     What is :code:`__pycache__`\?
-    When you run a python program with an :code:`import` 
-    command, Python learns that you have written code 
-    that you may call again. The interpreter compiles 
-    your scripts to bytecode and stores them in a cache, 
-    making your scripts run a little faster next time. 
-    As a user, you can for the most part ignore this new folder. 
-    If you change or delete your scripts they will be 
+    When you run a python program with an :code:`import`
+    command, Python learns that you have written code
+    that you may call again. The interpreter compiles
+    your scripts to bytecode and stores them in a cache,
+    making your scripts run a little faster next time.
+    As a user, you can for the most part ignore this new folder.
+    If you change or delete your scripts they will be
     recompiled and reappear in this folder.
 
-    However, you *don't* want to add this directory to 
-    our project repository, so before you commit 
+    However, you *don't* want to add this directory to
+    our project repository, so before you commit
     anything, tell git to ignore it!
 
-    Create a new file (in the top-level directory 
-    of your project) called :code:`.gitignore` 
+    Create a new file (in the top-level directory
+    of your project) called :code:`.gitignore`
 
     .. code-block:: bash
 
@@ -1761,8 +1761,8 @@ Open a terminal to begin and make sure you are in the
 
 16. Do another :code:`git status`\.  What do you see?
 
-    Now, instead of :code:`__pycache__` being listed as 
-    "untracked", you see :code:`.gitignore` being listed as 
+    Now, instead of :code:`__pycache__` being listed as
+    "untracked", you see :code:`.gitignore` being listed as
     "untracked", and no mention of :code:`__pycache__`\.
 
 17. Stage and commit the new :code:`.gitignore` file.
@@ -1775,23 +1775,23 @@ Open a terminal to begin and make sure you are in the
     ..
 
     Do another :code:`git status`.  Notice that
-    the edits you made to your two scripts have still 
-    not been committed to the project repository!  
+    the edits you made to your two scripts have still
+    not been committed to the project repository!
     Because they have not yet been staged.
 
 18. Stage *both files* and commit all new changes in one commit:
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Refactor scripts to use new module"
 
     ..
 
-    You can type :code:`-a` instead of the name of your files to add all unstaged changes.
+    You can type :code:`-A` instead of the name of your files to add all unstaged changes.
 
-19. There is still have some duplicated 
-    code between the two scripts. Let's combine the final 
+19. There is still have some duplicated
+    code between the two scripts. Let's combine the final
     output code and printing code.
 
     Create another module file called :code:`printing.py`\:
@@ -1827,8 +1827,8 @@ Open a terminal to begin and make sure you are in the
              print(f'{date} {time:>6} {orig:9.6f} {comp:9.6f} {orig-comp:10.6f}')
     ..
 
-    The only new functionality shown here is 
-    :code:`string.upper()` (or, specifically, :code:`name.upper()`\), which capitalizes all lower case 
+    The only new functionality shown here is
+    :code:`string.upper()` (or, specifically, :code:`name.upper()`\), which capitalizes all lower case
     letters in a string.
 
 20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
@@ -1860,30 +1860,30 @@ Open a terminal to begin and make sure you are in the
 21. Stage all changes and commit:
 
     .. code-block:: bash
-   
-       $ git add -a
+
+       $ git add -A
        $ git commit -m "Creating printing module"
 
     ..
 
-22. You now have 2 different modules related 
+22. You now have 2 different modules related
     to the same project.  It is best practice
-    to separate different functions into different 
-    modules depending upon the kind of functionality 
-    they represent.  In this case, you've separated 
-    out the concepts of "data input" and "printing 
+    to separate different functions into different
+    modules depending upon the kind of functionality
+    they represent.  In this case, you've separated
+    out the concepts of "data input" and "printing
     output" into different modules.
 
-    Do the same thing with the computation functions, 
+    Do the same thing with the computation functions,
     :code:`compute_windchill` and :code:`compute_heatindex`\.
 
-    Move these functions into a new module called 
-    :code:`computation.py`\, and modify the scripts to use 
+    Move these functions into a new module called
+    :code:`computation.py`\, and modify the scripts to use
     this new module.  Remember to add docstrings!
 
     Try to do this on your own first!!
 
-    Your new :code:`computation.py` module should look 
+    Your new :code:`computation.py` module should look
     similar to the following:
 
     .. code-block:: python
@@ -1893,8 +1893,8 @@ Open a terminal to begin and make sure you are in the
           """
           Compute the wind chill factor given the temperature and wind speed
 
-          NOTE: This computation is valid only for 
-             temperatures between -45F and +45F and for 
+          NOTE: This computation is valid only for
+             temperatures between -45F and +45F and for
              wind speeds between 3 mph and 60 mph.
 
           Parameters:
@@ -1933,8 +1933,8 @@ Open a terminal to begin and make sure you are in the
 
           rh = hum / 100
 
-          hi = a + (b * t) + (c * rh) + (d * t * rh) 
-          + (e * t**2) + (f * rh**2) + (g * t**2 * rh) 
+          hi = a + (b * t) + (c * rh) + (d * t * rh)
+          + (e * t**2) + (f * rh**2) + (g * t**2 * rh)
           + (h * t * rh**2) + (i * t**2 * rh**2)
           return hi
     ..
@@ -1975,7 +1975,7 @@ Open a terminal to begin and make sure you are in the
     ..
 
     And for :code:`heatindexcomp.py`\:
-    
+
     .. code-block:: python
        :lineno-start: 1
 
@@ -1985,7 +1985,7 @@ Open a terminal to begin and make sure you are in the
 
        # Column names and column indices to read
        columns = {'date': 0, 'time': 1, 'tempout': 2, 'humout': 5, 'heatindex': 13}
-   
+
        # Data types for each column (only if non-string)
        types = {'tempout': float, 'humout': float, 'heatindex': float}
 
@@ -2006,22 +2006,22 @@ Open a terminal to begin and make sure you are in the
 
     .. code-block:: bash
 
-       $ git stage -a
+       $ git stage -A
        $ git commit -m "Creating computation module"
 
     ..
 
-24. Now, you've got quite a few Python 
-    files in the main directory. Which ones are scripts?  
+24. Now, you've got quite a few Python
+    files in the main directory. Which ones are scripts?
     Which ones are modules meant to be imported?
 
-    Typically, you should group all of the modules 
-    meant for import only into another directory called 
-    a *package*.  A *package* is a directory containing 
+    Typically, you should group all of the modules
+    meant for import only into another directory called
+    a *package*.  A *package* is a directory containing
     a file called :code:`__init__.py` inside it.  (Note that
     this file is commonly empty.)
 
-    Create a new directory called :code:`mysci` and 
+    Create a new directory called :code:`mysci` and
     create an empty file in it called :code:`__init__.py`\:
 
     .. code-block:: bash
@@ -2043,8 +2043,8 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-    Then, let's modify the import statements at the 
-    top of our two scripts so that the modules are 
+    Then, let's modify the import statements at the
+    top of our two scripts so that the modules are
     automatically imported from the new package:
 
     .. code-block:: python
@@ -2056,21 +2056,21 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-25. Stage everything (don't forget the 
-    :code:`__init__.py` file!) and commit 
+25. Stage everything (don't forget the
+    :code:`__init__.py` file!) and commit
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Creating mysci package"
 
     ..
 
-    Our commits are getting bigger, but that's okay.  
-    Each commit corresponds to a *single* 
+    Our commits are getting bigger, but that's okay.
+    Each commit corresponds to a *single*
     (conceptually) change to the codebase.
 
-    With this last change, our project should look 
+    With this last change, our project should look
     like this (ignoring the
     :code:`__pycache__` directories:
 
@@ -2093,7 +2093,7 @@ Open a terminal to begin and make sure you are in the
 
 26. As a brief aside --
     look at the use of the computation
-    functions in these scripts.  
+    functions in these scripts.
 
     In the case of the wind chill factor computation,
     it looks like this:
@@ -2107,15 +2107,15 @@ Open a terminal to begin and make sure you are in the
           windchill.append(compute_windchill(temp, windspeed))
     ..
 
-    This divides the initialization of the :code:`windchill` 
-    variable as an empty :code:`list` from the "filling" 
+    This divides the initialization of the :code:`windchill`
+    variable as an empty :code:`list` from the "filling"
     of that :code:`list` with computed values.
 
-    Python gives you some shortcuts to doing this 
-    via a concept called  "comprehensions", which 
+    Python gives you some shortcuts to doing this
+    via a concept called  "comprehensions", which
     are ways of initializing containers (:code:`list`\s,
-    :code:`dict`\s, etc.) with an *internal loop*.  For 
-    example, we could have written the previous 3 
+    :code:`dict`\s, etc.) with an *internal loop*.  For
+    example, we could have written the previous 3
     lines in the form of a "one-liner" like so:
 
     .. code-block:: python
@@ -2126,20 +2126,20 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-    This is a *list comprehension*, and it 
-    initializes the entire list with the computed 
-    contents, rather than initializing an empty list 
-    and appending values to it after the fact.  
+    This is a *list comprehension*, and it
+    initializes the entire list with the computed
+    contents, rather than initializing an empty list
+    and appending values to it after the fact.
     Computationally, this is actually *more efficient*.
 
-    Use list comprehensions to make the computation 
+    Use list comprehensions to make the computation
     steps in both of scripts one-liners.
 
-27. Do a final stage and commit changes 
+27. Do a final stage and commit changes
 
     .. code-block:: bash
 
-       $ git add -a
+       $ git add -A
        $ git commit -m "Using list comprehensions"
 
     ..
@@ -2148,35 +2148,35 @@ Open a terminal to begin and make sure you are in the
 
 That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
 
-You should now be familiar with modules, using the 
+You should now be familiar with modules, using the
 :code:`import` statement, some more :code:`f-string` formatting options,
-:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list 
+:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list
 comprehensions.
 
 .. seealso::
-      
+
    `More information on Python modules <https://docs.python.org/3/tutorial/modules.html>`_
    `More information on on .gitignore <https://git-scm.com/docs/gitignore>`_
    `More information on list comprehension <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_
-   
+
 ..
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Using a Built-In Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far you have created separate :code:`readdata`\, :code:`printing`\, and :code:`computation` modules 
+So far you have created separate :code:`readdata`\, :code:`printing`\, and :code:`computation` modules
 to remove redundant code blocks from your scripts. And you have combined these
 modules into a package that we imported into our scripts.
 
 Python comes with many different *built-in* packages (i.e., libraries) that you can import and use.  The
 beauty of using built-in packages is that you don't have to install anything new!  If you can use and run
-Python, you already have access to these packages.  For this tutorial, we are going to cover just a little 
+Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
 bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
-2. Now we're going to add a function for calculating dew point temperature to your :code:`computation.py` module:
+2. Now we're going to add a function for calculating dew point temperature to your :code:`mysci/computation.py` module:
 
    The formula for this is:
 
@@ -2222,7 +2222,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
          tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
          rh = h / 100
-    
+
          a = 6.112 # mbar
          b = 18.678
          c = 257.14 # deg C
@@ -2240,7 +2240,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 3. Git add and commit :code:`computation.py`\:
 
    .. code-block:: bash
-      
+
       $ git add computation.py
       $ git commit -m "Function for Computing DPT"
 
@@ -2257,7 +2257,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 5. Git add and commit :code:`dewpointtempcomp.py`\:
 
    .. code-block:: bash
-   
+
       $ git add dewpointtempcomp.py
       $ git commit -m "Creating a 3rd Script or DPT calculation"
 
@@ -2319,7 +2319,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    a keyword argument (just like :code:`filename` or :code:`types` in our :code:`read_data()` function) which
    means that :code:`base` does not need to be specified.  When it is not specified, the logarithm is assumed to
    be natural (base *e*). When both arguments are entered, the function returns the logarithm of :code:`x` to
-   the given :code:`base`\, 
+   the given :code:`base`\,
    calculated by :code:`log(x)/log(base)`\. Let's test this out:
 
    .. code-block:: python
@@ -2335,14 +2335,14 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    ..
 
-   Something new that we have done here is use the \":code:`import ... as ...`\" statement. This essentially allows us to 
+   Something new that we have done here is use the \":code:`import ... as ...`\" statement. This essentially allows us to
    shorten the name of the module for convenience if it is very long or if we are going to be calling it a lot.
 
-   The symbol :code:`math.e` represents Euler's number (*e*), the base of the natural logarithm. Euler's number (*e*) is an irrational number with infinite decimal places, often approximated as 2.718. 
+   The symbol :code:`math.e` represents Euler's number (*e*), the base of the natural logarithm. Euler's number (*e*) is an irrational number with infinite decimal places, often approximated as 2.718.
    How much more accurate is :code:`math.e` than this approximation?
-   
+
    The function :code:`math.log(x, base)` is very useful for computing logarithms in any base - but
-   for some common bases there are separate logarithmic functions. 
+   for some common bases there are separate logarithmic functions.
    Try using :code:`log10(x)`\:
 
    .. code-block:: python
@@ -2364,7 +2364,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 9. Let's cover some :code:`math` trigonometry examples!
 
-   The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159. 
+   The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159.
    We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
 
    Say we wanted to convert a number from 60 degrees to radians. We have two options:
@@ -2382,11 +2382,11 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    ..
 
-   In the first example we used :python:`math.pi` to perform our calculation (by default printed to 15 digits). In the second conversion, 
+   In the first example we used :python:`math.pi` to perform our calculation (by default printed to 15 digits). In the second conversion,
    we used the function :code:`math.radians(x)` which converts angle x from degrees to radians.
 
-   We can also use trigonometric functions: :code:`math.sin` to get the sine value of an angle, :code:`math.cos` to get the cosine, 
-   :code:`math.tan` for the tangent, :code:`math.asin` for the arc sine, :code:`math.acos` to get the arc cosine, and :code:`math.atan` to get the arc tangent. 
+   We can also use trigonometric functions: :code:`math.sin` to get the sine value of an angle, :code:`math.cos` to get the cosine,
+   :code:`math.tan` for the tangent, :code:`math.asin` for the arc sine, :code:`math.acos` to get the arc cosine, and :code:`math.atan` to get the arc tangent.
    You can also calculate the hypotenuse of a triangle with :code:`math.hypot()`\.
    The input angle for each of these functions must be in radians to get the expected result!
 
@@ -2397,9 +2397,9 @@ bit of the built-in :code:`math` package, which extends the computational capabi
       deg = 180
 
       cos_deg = m.cos(deg)
-      cos_rad = m.cos(m.radians(60))
+      cos_rad = m.cos(m.radians(deg))
 
-      print(cos_deg, cos_rad)
+      print(deg, cos_deg, cos_rad)
 
    ..
 
@@ -2410,14 +2410,201 @@ bit of the built-in :code:`math` package, which extends the computational capabi
     Another popular :code:`math` function is :code:`factorial()` which is much faster and requires a lot less code than writing your own :code:`for` loops to find the factorial of a number.
     Try :code:`math.factorial(5)` and see what you get!
 
+
 -----
 
 That concludes the "Using a Built-In Package" section of this tutorial.
-You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module - 
+
+You should now be familiar with importing packages that you did not build and some methods within the :code:`math` module -
 specifically the :code:`log` method.
 
 .. seealso::
-      
+
    `More information on the Math module <https://docs.python.org/3/library/math.html>`_
-   
+
 ..
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Publishing Your Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Time to publish our package! ...But what does that mean?  Haven't we published it already by hosting the git repository on GitHub?
+
+In a sense, yes, you have already published *your code*.  But you haven't published it in a way that makes your code *easy for someone else to install*.  That's what *packaging* is all about.
+
+In its current state, your *code* could be downloaded by somebody from GitHub using the `git clone` command:
+
+.. code-block:: bash
+
+   $ git clone https://github.com/username/repo.git
+
+..
+
+where :code:`username` and :code:`repo` are your GitHub username and the name of the GitHub repository, respectively.  This will download the git repository from GitHub and put it in a directory called :code:`repo`.  But then to use this code *in your own project* you would have to copy the contents of the :code:`repo` directory into your own project space so that you could :code:`import` the :code:`mysci` package in your own scripts and code.
+
+That's burdensome!  Fortunately, the Python developers created a way of *installing external packages* into a *common space* from which your :code:`python` interpreter can find.  That tool is called :code:`pip`, which is short for the "package installer for Python."  With :code:`pip`, you can install a package that was downloaded (i.e., *cloned*) from GitHub, like so:
+
+.. code-block:: bash
+
+   $ git clone https://github.com/username/some_package.git
+   $ pip install some_package
+
+..
+
+...assuming that the :code:`some_package` repository has been *properly packaged*, which is what this section of this tutorial is all about!
+
+Now, before we begin teaching you how to package your code properly, so that other people can easily share it, you might be asking yourself, "Can't I just install a package directly from GitHub?"  And the answer is YES!  You can!  The :code:`git clone` step can be skipped entirely by writing:
+
+.. code-block:: bash
+
+   $ pip install git+https://github.com/username/some_package.git
+
+..
+
+where you should not the :code:`git+https://` protocol syntax, instead of just :code:`https://`, which tells :code:`pip` to do the :code:`git clone` step first before trying to install the package.
+
+...And, lastly, if you are looking at this and *still* thinking that it looks messy, then you are in luck!  The Python development community has created a free online service called the Python Package Index (PyPI) that allows you to publish your package to the PyPI servers so that other users can then install your package by simply executing:
+
+.. code-block:: bash
+
+   $ pip install some_package
+
+..
+
+At the end of this section, we'll talk about how to publish your package to PyPI.
+
+But first, let's learn how to package our code properly.
+
+1. Create a :code:`setup.py` file one level above your :code:`mysci` package (in the :code:`python_tutorial` directory):
+
+    .. code-block:: bash
+
+       $ touch setup.py
+
+    ..
+
+    The :code:`setup.py` file is a Python file necessary for package distribution. This file tells :code:`pip` how to install your package into the *common Python space* for your :code:`python` interpreter.
+    Required information is the name of your package, the version of your package (which you can choose), and a list of packages you'd like installed by pip (e.g., your :code:`mysci` package).
+
+    It's contents will look as follows (but with your name and email):
+
+    .. code-block:: python
+        :linenos:
+
+        from distutils.core import setup
+
+        setup(
+            name="mysci",
+            version="1.0.0",
+            description="A sample package"
+            author="Xdev"
+            author_email="xdev@ucar.edu"
+            packages=["mysci"],
+            install_requires=[],
+        )
+
+    ..
+
+    This :code:`setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (:code:`install_requires`) which is set to an empty list since our current package uses no external packages.
+
+2. Push to GitHub!
+
+    .. code-block:: bash
+
+       $ git add setup.py
+       $ git commit -m "Adding setup.py"
+       $ git push origin main
+
+    ..
+
+3. Pip Install your package locally.
+
+    To test that our package is set up correctly, let's install it into our project repository.
+
+    .. code-block:: bash
+
+       $ pip install .
+
+    ..
+
+    Everything should install smoothly, and now you will be able to :code:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
+
+    .. note::
+
+       The :code:`pip` and :code:`python` commands are *tied* to one another.  You can think of it as the :code:`pip` command installing package *into* :code:`python`.  At the beginning of this tutorial, when we created the Conda environment :code:`python_tutorial`, we installed :code:`python` into that Conda environment.  Conda *also* installed :code:`pip` into that environment, so you can use that Conda environment's :code:`pip` to install packages into that same Conda environment's :code:`python`.
+
+    ..
+
+    Now, before moving on, let's use :code:`pip` to *uninstall* the package we just installed:
+
+    .. code-block:: bash
+
+       $ pip uninstall mysci
+
+    ..
+
+4. Install from your GitHub repository
+
+    Now, let's re-install our package directly from GitHub.
+
+
+    .. code-block:: bash
+
+       $ pip install git+https://github.com:Username/Project.git
+
+    ..
+
+    To do this replace `Username` and `Project` with your target username and repository (likely `mysci` for this example).
+
+    .. note::
+         If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
+    ..
+
+5. How to publish to PyPi
+
+    With our package containing a properly formed :code:`setup.py`, it is now ready for publication on PyPI (https://pypi.org/).
+    We don't recommend that you *actually* publish *this* package (i.e., the one you just created in this
+    tutorial) because every package on PyPI needs a unique name, which means only *one* of you will be
+    able to actually perform this step of the tutorial successfully!  Also, the package we've created in this
+    tutorial is probably not the most useful package out there, so maybe it's not worth sharing.
+
+    Anyway, we will give you the instructions for how to publish a package to PyPI here, so that when you
+    *do* actually create a package you want to share with the world, you will know how to do it.
+
+    The first step is to create an account on PyPI.  Follow this link to do so: (https://pypi.org/account/register/).
+    Take note of your newly created username and password.
+
+    To upload our package, we will need to use another external package called Twine (https://twine.readthedocs.io/en/latest/).  We'll install this new package with :code:`pip`:
+
+    .. code-block:: bash
+
+       $ pip install twine
+
+    ..
+
+    By installing this package, a new utility called :code:`twine` will be installed that you can use to upload
+    your package.  First, however, we need to build a *distribution* package using our newly created
+    :code:`setup.py` file.  To do that, execute the following command in the same directory where the
+    :code:`setup.py` file is located:
+
+    .. code-block:: bash
+
+       $ python setup.py sdist bdist_wheel
+
+    ..
+
+    Then, to upload your newly created *distribution* package to PyPI, execute the following:
+
+    .. code-block:: bash
+
+       $ twine upload dist/*
+
+    ..
+
+    Twine will then ask for your username and password.
+
+    Once the upload succeeds, head to PyPI and see your package displayed as a new release!
+
+-----
+
+That concludes the "Publishing Your Package" section of this tutorial.
