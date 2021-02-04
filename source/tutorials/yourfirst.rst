@@ -2475,7 +2475,7 @@ At the end of this section, we'll talk about how to publish your package to PyPI
 
 But first, let's learn how to package our code properly.
 
-1. Create a `setup.py` file one level above your `mysci` package:
+1. Create a `setup.py` file one level above your `mysci` package (in the `python_tutorial` directory):
 
     .. code-block:: bash
 
