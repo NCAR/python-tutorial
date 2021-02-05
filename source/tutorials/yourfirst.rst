@@ -1256,7 +1256,8 @@ Let's begin.
 
    ..
 
-   Using a :python:`f-string` with float formatting you can determine the precision
+   Using an `f-string <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>`_
+   with float formatting you can determine the precision
    to which to print the values. The :python:`.5f` means you want 5 places after the
    decimal point.
 
@@ -1296,7 +1297,7 @@ Let's begin.
 
    ..
 
-   Here you used *f-*:python:`string` formatting with more *f-*:python:`string` formatting
+   Here you used f-string formatting with more f-string formatting
    options. The :python:`>6` indicates that you'd like the characters of the string to be
    right-justified and to take up 6 spaces.
 
@@ -1390,7 +1391,7 @@ write your first Python script.
 
 In this section you calculated wind chill index by writing and calling your
 first function. You also learned about Python math operators, the :python:`zip()`
-command, :python:`tuple` datastructure, *f-*:python:`string` formatting, and how to push your
+command, :python:`tuple` datastructure, f-string formatting, and how to push your
 repository to GitHub.
 
 .. seealso::
@@ -2149,7 +2150,7 @@ Open a terminal to begin and make sure you are in the
 That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
 
 You should now be familiar with modules, using the
-:code:`import` statement, some more :code:`f-string` formatting options,
+:code:`import` statement, some more f-string formatting options,
 :code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list
 comprehensions.
 
