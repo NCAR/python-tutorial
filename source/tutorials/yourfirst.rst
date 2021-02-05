@@ -1498,7 +1498,7 @@ Open a terminal to begin and make sure you are in the
    ..
 
 4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to
-   read in the humidity and heat index values as :code:`float`\s:
+   read in the humidity and heat index values as :python:`float`\s:
 
    .. code-block:: python
       :lineno-start: 1
@@ -1707,7 +1707,7 @@ Open a terminal to begin and make sure you are in the
     ..
 
     In python you can call up functionality from scripts outside of your active script using the
-    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
+    :python:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
     And now we can call up the function from these scripts.
 
 14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the
@@ -1836,7 +1836,7 @@ Open a terminal to begin and make sure you are in the
 
     Try to do this on your own first, but if you are getting error messages the solution looks like:
 
-    1)  Add the \":code:`from printing import print_comparison`\" line to the top of each script.
+    1)  Add the \":python:`from printing import print_comparison`\" line to the top of each script.
 
     2) Replace the printing output section at the bottom of each script with:
 
@@ -1941,8 +1941,8 @@ Open a terminal to begin and make sure you are in the
     ..
 
     And then modified the scripts accordingly as in steps #12-14 and #18
-    by adding your import statements \":code:`from computation import compute_windchill`\"
-    OR \":code:`from computation import compute_heatindex`\" and
+    by adding your import statements \":python:`from computation import compute_windchill`\"
+    OR \":python:`from computation import compute_heatindex`\" and
     removing the redundant function definitions.
 
     Your two scripts should look as follows:
@@ -2109,13 +2109,13 @@ Open a terminal to begin and make sure you are in the
     ..
 
     This divides the initialization of the :code:`windchill`
-    variable as an empty :code:`list` from the "filling"
-    of that :code:`list` with computed values.
+    variable as an empty :python:`list` from the "filling"
+    of that :python:`list` with computed values.
 
     Python gives you some shortcuts to doing this
     via a concept called  "comprehensions", which
-    are ways of initializing containers (:code:`list`\s,
-    :code:`dict`\s, etc.) with an *internal loop*.  For
+    are ways of initializing containers (:python:`list`\s,
+    :python:`dict`\s, etc.) with an *internal loop*.  For
     example, we could have written the previous 3
     lines in the form of a "one-liner" like so:
 
@@ -2150,8 +2150,8 @@ Open a terminal to begin and make sure you are in the
 That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
 
 You should now be familiar with modules, using the
-:code:`import` statement, some more f-string formatting options,
-:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list
+:python:`import` statement, some more f-string formatting options,
+:code:`__pycache__`\, :code:`.gitignore`\, :code:`__init__.py`\, and list
 comprehensions.
 
 .. seealso::
@@ -2363,10 +2363,10 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    Do the two values differ? The :code:`math.log10(x)` function is considered to be more accurate than :code:`math.log(x, 10)`\.
    Similarly :code:`math.log2(x)` is more accurate than :code:`math.log(x, 2)`\.
 
-9. Let's cover some :code:`math` trigonometry examples!
+9. Let's cover some :python:`math` trigonometry examples!
 
    The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159.
-   We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
+   We can access the most accurate :python:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
 
    Say we wanted to convert a number from 60 degrees to radians. We have two options:
 
@@ -2528,7 +2528,7 @@ But first, let's learn how to package our code properly.
 
     ..
 
-    Everything should install smoothly, and now you will be able to :code:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
+    Everything should install smoothly, and now you will be able to :python:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
 
     .. note::
 
