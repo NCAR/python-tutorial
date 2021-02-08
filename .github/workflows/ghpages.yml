@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -44,7 +44,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          BASE_BRANCH: master
+          BASE_BRANCH: main
           BRANCH: gh-pages
           FOLDER: build/html
           CLEAN: true
