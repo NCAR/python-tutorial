@@ -180,6 +180,15 @@
                             </div>
                           </div>
                         </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="tier2">
+                              <a href="#publishing-your-package">
+                                Publishing Your Package
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1304,7 +1313,7 @@ something like this:</p>
 </div>
 </li>
 <li><p>And finally push your project to GitHub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin main
 </pre></div>
 </div>
 </li>
@@ -1727,11 +1736,11 @@ not been committed to the project repository!
 Because they have not yet been staged.</p>
 </li>
 <li><p>Stage <em>both files</em> and commit all new changes in one commit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -A
 $ git commit -m <span class="s2">&quot;Refactor scripts to use new module&quot;</span>
 </pre></div>
 </div>
-<p>You can type <code class="code docutils literal notranslate"><span class="pre">-a</span></code> instead of the name of your files to add all unstaged changes.</p>
+<p>You can type <code class="code docutils literal notranslate"><span class="pre">-A</span></code> instead of the name of your files to add all unstaged changes.</p>
 </li>
 <li><p>There is still have some duplicated
 code between the two scripts. Let’s combine the final
@@ -1802,7 +1811,7 @@ letters in a string.</p>
 </ol>
 </li>
 <li><p>Stage all changes and commit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -A
 $ git commit -m <span class="s2">&quot;Creating printing module&quot;</span>
 </pre></div>
 </div>
@@ -2010,7 +2019,7 @@ removing the redundant function definitions.</p>
 </td></tr></table></div>
 </li>
 <li><p>Stage and commit everything:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git stage -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git stage -A
 $ git commit -m <span class="s2">&quot;Creating computation module&quot;</span>
 </pre></div>
 </div>
@@ -2050,7 +2059,7 @@ automatically imported from the new package:</p>
 </li>
 <li><p>Stage everything (don’t forget the
 <code class="code docutils literal notranslate"><span class="pre">__init__.py</span></code> file!) and commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -A
 $ git commit -m <span class="s2">&quot;Creating mysci package&quot;</span>
 </pre></div>
 </div>
@@ -2113,7 +2122,7 @@ Computationally, this is actually <em>more efficient</em>.</p>
 steps in both of scripts one-liners.</p>
 </li>
 <li><p>Do a final stage and commit changes</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add -A
 $ git commit -m <span class="s2">&quot;Using list comprehensions&quot;</span>
 </pre></div>
 </div>
@@ -2143,7 +2152,7 @@ Python, you already have access to these packages.  For this tutorial, we are go
 bit of the built-in <code class="code docutils literal notranslate"><span class="pre">math</span></code> package, which extends the computational capabilities beyond the basic math operators we’ve already covered.</p>
 <ol class="arabic">
 <li><p>Open your terminal, navigate to your <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and activate the corresponding environment.</p></li>
-<li><p>Now we’re going to add a function for calculating dew point temperature to your <code class="code docutils literal notranslate"><span class="pre">computation.py</span></code> module:</p>
+<li><p>Now we’re going to add a function for calculating dew point temperature to your <code class="code docutils literal notranslate"><span class="pre">mysci/computation.py</span></code> module:</p>
 <p>The formula for this is:</p>
 <div class="math notranslate nohighlight">
 \[\Gamma = \log{(h)} + \frac{b * t}{c + t}\]</div>
@@ -2321,9 +2330,9 @@ The input angle for each of these functions must be in radians to get the expect
 <span class="n">deg</span> <span class="o">=</span> <span class="mi">180</span>
 
 <span class="n">cos_deg</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
-<span class="n">cos_rad</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">))</span>
+<span class="n">cos_rad</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">deg</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cos_deg</span><span class="p">,</span> <span class="n">cos_rad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">cos_deg</span><span class="p">,</span> <span class="n">cos_rad</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You might remember that the cosine of 180 degrees is -1, you can see that we only get the correct value if we enter the degree in radians (180 deg = PI radians).</p>
@@ -2334,13 +2343,147 @@ Try <code class="code docutils literal notranslate"><span class="pre">math.facto
 </li>
 </ol>
 <hr class="docutils" />
-<p>That concludes the “Using a Built-In Package” section of this tutorial.
-You should now be familiar with importing packages that you did not build and some methods within the <code class="code docutils literal notranslate"><span class="pre">math</span></code> module -
+<p>That concludes the “Using a Built-In Package” section of this tutorial.</p>
+<p>You should now be familiar with importing packages that you did not build and some methods within the <code class="code docutils literal notranslate"><span class="pre">math</span></code> module -
 specifically the <code class="code docutils literal notranslate"><span class="pre">log</span></code> method.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/math.html">More information on the Math module</a></p>
 </div>
+</div>
+<div class="section" id="publishing-your-package">
+<h3>Publishing Your Package<a class="headerlink" href="#publishing-your-package" title="Permalink to this headline">¶</a></h3>
+<p>Time to publish our package! …But what does that mean?  Haven’t we published it already by hosting the git repository on GitHub?</p>
+<p>In a sense, yes, you have already published <em>your code</em>.  But you haven’t published it in a way that makes your code <em>easy for someone else to install</em>.  That’s what <em>packaging</em> is all about.</p>
+<p>In its current state, your <em>code</em> could be downloaded by somebody from GitHub using the <cite>git clone</cite> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/username/repo.git
+</pre></div>
+</div>
+<p>where <code class="code docutils literal notranslate"><span class="pre">username</span></code> and <code class="code docutils literal notranslate"><span class="pre">repo</span></code> are your GitHub username and the name of the GitHub repository, respectively.  This will download the git repository from GitHub and put it in a directory called <code class="code docutils literal notranslate"><span class="pre">repo</span></code>.  But then to use this code <em>in your own project</em> you would have to copy the contents of the <code class="code docutils literal notranslate"><span class="pre">repo</span></code> directory into your own project space so that you could <code class="code docutils literal notranslate"><span class="pre">import</span></code> the <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> package in your own scripts and code.</p>
+<p>That’s burdensome!  Fortunately, the Python developers created a way of <em>installing external packages</em> into a <em>common space</em> from which your <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter can find.  That tool is called <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, which is short for the “package installer for Python.”  With <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, you can install a package that was downloaded (i.e., <em>cloned</em>) from GitHub, like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/username/some_package.git
+$ pip install some_package
+</pre></div>
+</div>
+<p>…assuming that the <code class="code docutils literal notranslate"><span class="pre">some_package</span></code> repository has been <em>properly packaged</em>, which is what this section of this tutorial is all about!</p>
+<p>Now, before we begin teaching you how to package your code properly, so that other people can easily share it, you might be asking yourself, “Can’t I just install a package directly from GitHub?”  And the answer is YES!  You can!  The <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> step can be skipped entirely by writing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/username/some_package.git
+</pre></div>
+</div>
+<p>where you should not the <code class="code docutils literal notranslate"><span class="pre">git+https://</span></code> protocol syntax, instead of just <code class="code docutils literal notranslate"><span class="pre">https://</span></code>, which tells <code class="code docutils literal notranslate"><span class="pre">pip</span></code> to do the <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> step first before trying to install the package.</p>
+<p>…And, lastly, if you are looking at this and <em>still</em> thinking that it looks messy, then you are in luck!  The Python development community has created a free online service called the Python Package Index (PyPI) that allows you to publish your package to the PyPI servers so that other users can then install your package by simply executing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install some_package
+</pre></div>
+</div>
+<p>At the end of this section, we’ll talk about how to publish your package to PyPI.</p>
+<p>But first, let’s learn how to package our code properly.</p>
+<ol class="arabic">
+<li><p>Create a <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file one level above your <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> package (in the <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory):</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch setup.py
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file is a Python file necessary for package distribution. This file tells <code class="code docutils literal notranslate"><span class="pre">pip</span></code> how to install your package into the <em>common Python space</em> for your <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter.
+Required information is the name of your package, the version of your package (which you can choose), and a list of packages you’d like installed by pip (e.g., your <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> package).</p>
+<p>It’s contents will look as follows (but with your name and email):</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mysci&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A sample package&quot;</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Xdev&quot;</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;xdev@ucar.edu&quot;</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mysci&quot;</span><span class="p">],</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[],</span>
+<span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>This <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> includes the information on the package name, version, description, author, contact info, contents, and dependencies (<code class="code docutils literal notranslate"><span class="pre">install_requires</span></code>) which is set to an empty list since our current package uses no external packages.</p>
+</div></blockquote>
+</li>
+<li><p>Push to GitHub!</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add setup.py
+$ git commit -m <span class="s2">&quot;Adding setup.py&quot;</span>
+$ git push origin main
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Pip Install your package locally.</p>
+<blockquote>
+<div><p>To test that our package is set up correctly, let’s install it into our project repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install .
+</pre></div>
+</div>
+<p>Everything should install smoothly, and now you will be able to <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">mysci</span></code> in <em>any</em> Python code that you write, regardless of where that code is…*as long as you use the same <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter*!  See the Note below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">pip</span></code> and <code class="code docutils literal notranslate"><span class="pre">python</span></code> commands are <em>tied</em> to one another.  You can think of it as the <code class="code docutils literal notranslate"><span class="pre">pip</span></code> command installing package <em>into</em> <code class="code docutils literal notranslate"><span class="pre">python</span></code>.  At the beginning of this tutorial, when we created the Conda environment <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>, we installed <code class="code docutils literal notranslate"><span class="pre">python</span></code> into that Conda environment.  Conda <em>also</em> installed <code class="code docutils literal notranslate"><span class="pre">pip</span></code> into that environment, so you can use that Conda environment’s <code class="code docutils literal notranslate"><span class="pre">pip</span></code> to install packages into that same Conda environment’s <code class="code docutils literal notranslate"><span class="pre">python</span></code>.</p>
+</div>
+<p>Now, before moving on, let’s use <code class="code docutils literal notranslate"><span class="pre">pip</span></code> to <em>uninstall</em> the package we just installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip uninstall mysci
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install from your GitHub repository</p>
+<blockquote>
+<div><p>Now, let’s re-install our package directly from GitHub.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com:Username/Project.git
+</pre></div>
+</div>
+<p>To do this replace <cite>Username</cite> and <cite>Project</cite> with your target username and repository (likely <cite>mysci</cite> for this example).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>How to publish to PyPi</p>
+<blockquote>
+<div><p>With our package containing a properly formed <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code>, it is now ready for publication on PyPI (<a class="reference external" href="https://pypi.org/">https://pypi.org/</a>).
+We don’t recommend that you <em>actually</em> publish <em>this</em> package (i.e., the one you just created in this
+tutorial) because every package on PyPI needs a unique name, which means only <em>one</em> of you will be
+able to actually perform this step of the tutorial successfully!  Also, the package we’ve created in this
+tutorial is probably not the most useful package out there, so maybe it’s not worth sharing.</p>
+<p>Anyway, we will give you the instructions for how to publish a package to PyPI here, so that when you
+<em>do</em> actually create a package you want to share with the world, you will know how to do it.</p>
+<p>The first step is to create an account on PyPI.  Follow this link to do so: (<a class="reference external" href="https://pypi.org/account/register/">https://pypi.org/account/register/</a>).
+Take note of your newly created username and password.</p>
+<p>To upload our package, we will need to use another external package called Twine (<a class="reference external" href="https://twine.readthedocs.io/en/latest/">https://twine.readthedocs.io/en/latest/</a>).  We’ll install this new package with <code class="code docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install twine
+</pre></div>
+</div>
+<p>By installing this package, a new utility called <code class="code docutils literal notranslate"><span class="pre">twine</span></code> will be installed that you can use to upload
+your package.  First, however, we need to build a <em>distribution</em> package using our newly created
+<code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file.  To do that, execute the following command in the same directory where the
+<code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file is located:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python setup.py sdist bdist_wheel
+</pre></div>
+</div>
+<p>Then, to upload your newly created <em>distribution</em> package to PyPI, execute the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ twine upload dist/*
+</pre></div>
+</div>
+<p>Twine will then ask for your username and password.</p>
+<p>Once the upload succeeds, head to PyPI and see your package displayed as a new release!</p>
+</div></blockquote>
+</li>
+</ol>
+<hr class="docutils" />
+<p>That concludes the “Publishing Your Package” section of this tutorial.</p>
 </div>
 </div>
 </div>
