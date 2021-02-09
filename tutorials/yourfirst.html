@@ -2158,7 +2158,7 @@ bit of the built-in <code class="code docutils literal notranslate"><span class=
 \[\Gamma = \log{(h)} + \frac{b * t}{c + t}\]</div>
 <div class="math notranslate nohighlight">
 \[\textit{DPT} = \frac{c * \Gamma}{b - \Gamma}\]</div>
-<p>Where <em>DPT</em> represents Dew Point Temperature in Degrees C, <em>h</em> is humidity in %, <em>t</em> is temperature is in degrees C, <em>a</em> = 6.112 mbar, <em>b</em> = 18.678, and <em>c</em> = 257.14 degrees C.</p>
+<p>Where <em>DPT</em> represents Dew Point Temperature in Degrees C, <em>h</em> is humidity in %, <em>t</em> is temperature is in degrees C, <em>b</em> = 18.678, and <em>c</em> = 257.14 degrees C.</p>
 <p>In order to compute a natural logarithm, we will need to import the <code class="code docutils literal notranslate"><span class="pre">math</span></code> package.
 It is best practice to import packages and modules at the beginning (top) of the file.</p>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -2185,8 +2185,7 @@ It is best practice to import packages and modules at the beginning (top) of the
 69
 70
 71
-72
-73</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+72</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Compute the dew point temperature given the temperature and humidity</span>
 
@@ -2198,7 +2197,6 @@ It is best practice to import packages and modules at the beginning (top) of the
    <span class="n">tempC</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span> <span class="c1"># Convert temperature from deg F to deg C</span>
    <span class="n">rh</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">100</span>
 
-   <span class="n">a</span> <span class="o">=</span> <span class="mf">6.112</span> <span class="c1"># mbar</span>
    <span class="n">b</span> <span class="o">=</span> <span class="mf">18.678</span>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">257.14</span> <span class="c1"># deg C</span>
 
@@ -2360,8 +2358,9 @@ specifically the <code class="code docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <p>where <code class="code docutils literal notranslate"><span class="pre">username</span></code> and <code class="code docutils literal notranslate"><span class="pre">repo</span></code> are your GitHub username and the name of the GitHub repository, respectively.  This will download the git repository from GitHub and put it in a directory called <code class="code docutils literal notranslate"><span class="pre">repo</span></code>.  But then to use this code <em>in your own project</em> you would have to copy the contents of the <code class="code docutils literal notranslate"><span class="pre">repo</span></code> directory into your own project space so that you could <code class="code docutils literal notranslate"><span class="pre">import</span></code> the <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> package in your own scripts and code.</p>
-<p>That’s burdensome!  Fortunately, the Python developers created a way of <em>installing external packages</em> into a <em>common space</em> from which your <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter can find.  That tool is called <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, which is short for the “package installer for Python.”  With <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, you can install a package that was downloaded (i.e., <em>cloned</em>) from GitHub, like so:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/username/some_package.git
+<p>That’s burdensome!  Fortunately, the Python developers created a way of <em>installing external packages</em> into a <em>common space</em> from which your <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter can find.  That tool is called <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, which is short for the “package installer for Python.”  With <code class="code docutils literal notranslate"><span class="pre">pip</span></code>, you can install a package that was downloaded (i.e., <em>cloned</em>) from GitHub, like so (make sure you are out of the directory you are trying to clone):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+$ git clone https://github.com/username/some_package.git
 $ pip install some_package
 </pre></div>
 </div>
