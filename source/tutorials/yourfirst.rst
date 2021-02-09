@@ -2226,7 +2226,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
          b = 18.678
          c = 257.14 # deg C
 
-         gamma = math.log(rh) + (b * tempC) / (bc + tempC)
+         gamma = math.log(rh) + (b * tempC) / (c + tempC)
          tdp = c * gamma / (b - gamma)
 
          tdp_F = 9 / 5 * tdp + 32 # Convert deg C to deg F
