@@ -2182,17 +2182,17 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    .. math::
 
-      \Gamma = \log{(h)} + \frac{a * t}{b + t}
+      \Gamma = \log{(h)} + \frac{b * t}{c + t}
 
    ..
 
    .. math::
 
-      \textit{DPT} = \frac{b * \Gamma}{a - \Gamma}
+      \textit{DPT} = \frac{c * \Gamma}{b - \Gamma}
 
    ..
 
-   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *a* = 18.678, and *b* = 257.14 degrees C.
+   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *b* = 18.678, and *c* = 257.14 degrees C.
 
    In order to compute a natural logarithm, we will need to import the :code:`math` package.
    It is best practice to import packages and modules at the beginning (top) of the file.
@@ -2223,11 +2223,11 @@ bit of the built-in :code:`math` package, which extends the computational capabi
          tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
          rh = h / 100
 
-         a = 18.678
-         b = 257.14 # deg C
+         b = 18.678
+         c = 257.14 # deg C
 
-         gamma = math.log(rh) + (a * tempC) / (b + tempC)
-         tdp = b * gamma / (a - gamma)
+         gamma = math.log(rh) + (b * tempC) / (bc + tempC)
+         tdp = c * gamma / (b - gamma)
 
          tdp_F = 9 / 5 * tdp + 32 # Convert deg C to deg F
          return tdp_F
