@@ -1386,9 +1386,9 @@ index is:</p>
 \[\textit{HI} = a + (b * T) + (c * H) + (d * T * H) + (e * T^2) + (f * H^2) + (g * T^2 * H) + (h * T * H^2) + (i * T^2 * H^2)\]</div>
 <p>where <em>HI</em> is the Heat Index, <em>T</em> is temperature is in degrees F,
 <em>H</em> is humidity in %, <em>a</em> = -42.379, <em>b</em> = 2.04901523,
-<em>c</em> = 10.14333127, <em>d</em> = 0.22475541, <em>e</em> = 0.00683783,
-<em>f</em> = 0.05481717, <em>g</em> = 0.00122874, <em>h</em> = 0.00085282, and
-<em>i</em> = 0.00000199. The Roothfusz regression is not valid for
+<em>c</em> = 10.14333127, <em>d</em> = -0.22475541, <em>e</em> = -0.00683783,
+<em>f</em> = -0.05481717, <em>g</em> = 0.00122874, <em>h</em> = 0.00085282, and
+<em>i</em> = -0.00000199. The Roothfusz regression is not valid for
 extreme temperature or humidity conditions.</p>
 <p>Replace the <code class="code docutils literal notranslate"><span class="pre">compute_windchill</span></code> function with in your <code class="code docutils literal notranslate"><span class="pre">heatindexcomp.py</span></code> script with
 a <code class="code docutils literal notranslate"><span class="pre">compute_heatindex</span></code> function:</p>
@@ -1414,12 +1414,12 @@ a <code class="code docutils literal notranslate"><span class="pre">compute_heat
    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
    <span class="n">b</span> <span class="o">=</span> <span class="mf">2.04901523</span>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">10.14333127</span>
-   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.22475541</span>
-   <span class="n">e</span> <span class="o">=</span> <span class="mf">0.00683783</span>
-   <span class="n">f</span> <span class="o">=</span> <span class="mf">0.05481717</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.22475541</span>
+   <span class="n">e</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00683783</span>
+   <span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.05481717</span>
    <span class="n">g</span> <span class="o">=</span> <span class="mf">0.00122874</span>
    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
-   <span class="n">i</span> <span class="o">=</span> <span class="mf">0.00000199</span>
+   <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00000199</span>
 
    <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
 
@@ -1913,12 +1913,12 @@ similar to the following:</p>
    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
    <span class="n">b</span> <span class="o">=</span> <span class="mf">2.04901523</span>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">10.14333127</span>
-   <span class="n">d</span> <span class="o">=</span> <span class="mf">0.22475541</span>
-   <span class="n">e</span> <span class="o">=</span> <span class="mf">0.00683783</span>
-   <span class="n">f</span> <span class="o">=</span> <span class="mf">0.05481717</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.22475541</span>
+   <span class="n">e</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00683783</span>
+   <span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.05481717</span>
    <span class="n">g</span> <span class="o">=</span> <span class="mf">0.00122874</span>
    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
-   <span class="n">i</span> <span class="o">=</span> <span class="mf">0.00000199</span>
+   <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00000199</span>
 
    <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
 
