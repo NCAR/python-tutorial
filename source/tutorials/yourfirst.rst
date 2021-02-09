@@ -2182,7 +2182,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    .. math::
 
-      \Gamma = \log{(h)} + \frac{c * t}{b + t}
+      \Gamma = \log{(h)} + \frac{a * t}{b + t}
 
    ..
 
