@@ -1465,9 +1465,9 @@ Open a terminal to begin and make sure you are in the
 
    where *HI* is the Heat Index, *T* is temperature is in degrees F,
    *H* is humidity in %, *a* = -42.379, *b* = 2.04901523,
-   *c* = 10.14333127, *d* = 0.22475541, *e* = 0.00683783,
-   *f* = 0.05481717, *g* = 0.00122874, *h* = 0.00085282, and
-   *i* = 0.00000199. The Roothfusz regression is not valid for
+   *c* = 10.14333127, *d* = -0.22475541, *e* = -0.00683783,
+   *f* = -0.05481717, *g* = 0.00122874, *h* = 0.00085282, and
+   *i* = -0.00000199. The Roothfusz regression is not valid for
    extreme temperature or humidity conditions.
 
    Replace the :code:`compute_windchill` function with in your :code:`heatindexcomp.py` script with
@@ -1481,12 +1481,12 @@ Open a terminal to begin and make sure you are in the
          a = -42.379
          b = 2.04901523
          c = 10.14333127
-         d = 0.22475541
-         e = 0.00683783
-         f = 0.05481717
+         d = -0.22475541
+         e = -0.00683783
+         f = -0.05481717
          g = 0.00122874
          h = 0.00085282
-         i = 0.00000199
+         i = -0.00000199
 
          rh = hum / 100
 
@@ -1925,12 +1925,12 @@ Open a terminal to begin and make sure you are in the
           a = -42.379
           b = 2.04901523
           c = 10.14333127
-          d = 0.22475541
-          e = 0.00683783
-          f = 0.05481717
+          d = -0.22475541
+          e = -0.00683783
+          f = -0.05481717
           g = 0.00122874
           h = 0.00085282
-          i = 0.00000199
+          i = -0.00000199
 
           rh = hum / 100
 
@@ -2193,7 +2193,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
    ..
 
-   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *a* = 6.112 mbar, *b* = 18.678, and *c* = 257.14 degrees C.
+   Where *DPT* represents Dew Point Temperature in Degrees C, *h* is humidity in %, *t* is temperature is in degrees C, *b* = 18.678, and *c* = 257.14 degrees C.
 
    In order to compute a natural logarithm, we will need to import the :code:`math` package.
    It is best practice to import packages and modules at the beginning (top) of the file.
@@ -2224,7 +2224,6 @@ bit of the built-in :code:`math` package, which extends the computational capabi
          tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
          rh = h / 100
 
-         a = 6.112 # mbar
          b = 18.678
          c = 257.14 # deg C
 
@@ -2443,10 +2442,11 @@ In its current state, your *code* could be downloaded by somebody from GitHub us
 
 where :code:`username` and :code:`repo` are your GitHub username and the name of the GitHub repository, respectively.  This will download the git repository from GitHub and put it in a directory called :code:`repo`.  But then to use this code *in your own project* you would have to copy the contents of the :code:`repo` directory into your own project space so that you could :code:`import` the :code:`mysci` package in your own scripts and code.
 
-That's burdensome!  Fortunately, the Python developers created a way of *installing external packages* into a *common space* from which your :code:`python` interpreter can find.  That tool is called :code:`pip`, which is short for the "package installer for Python."  With :code:`pip`, you can install a package that was downloaded (i.e., *cloned*) from GitHub, like so:
+That's burdensome!  Fortunately, the Python developers created a way of *installing external packages* into a *common space* from which your :code:`python` interpreter can find.  That tool is called :code:`pip`, which is short for the "package installer for Python."  With :code:`pip`, you can install a package that was downloaded (i.e., *cloned*) from GitHub, like so (make sure you are out of the directory you are trying to clone):
 
 .. code-block:: bash
 
+   $ cd ..
    $ git clone https://github.com/username/some_package.git
    $ pip install some_package
 
@@ -2551,7 +2551,7 @@ But first, let's learn how to package our code properly.
 
    .. code-block:: bash
 
-      $ pip install git+https://github.com:Username/Project.git
+       $ pip install git+https://github.com/Username/Project.git
 
    ..
 
