@@ -1227,7 +1227,8 @@ different values (one from data and one computed by our function):</p>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wc_data</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">wc_data</span> <span class="o">-</span> <span class="n">wc_comp</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Using a <code class="code python docutils literal notranslate"><span class="name"><span class="pre">f</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">string</span></span></code> with float formatting you can determine the precision
+<p>Using an <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-string</a>
+with float formatting you can determine the precision
 to which to print the values. The <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">.</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="name"><span class="pre">f</span></span></code> means you want 5 places after the
 decimal point.</p>
 <div class="admonition seealso">
@@ -1262,7 +1263,7 @@ script to something indicative of what it actually does.</p>
    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s1">&gt;6</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_orig</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_comp</span><span class="si">:</span><span class="s1">9.6f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">wc_diff</span><span class="si">:</span><span class="s1">10.6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Here you used <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting with more <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting
+<p>Here you used f-string formatting with more f-string formatting
 options. The <code class="code python docutils literal notranslate"><span class="operator"><span class="pre">&gt;</span></span><span class="literal number integer"><span class="pre">6</span></span></code> indicates that you’d like the characters of the string to be
 right-justified and to take up 6 spaces.</p>
 <p>The <code class="code python docutils literal notranslate"><span class="literal number integer"><span class="pre">9</span></span><span class="name"><span class="pre">f</span></span></code> specifies that you want the value to fill 9 spaces, so <code class="code python docutils literal notranslate"><span class="literal number float"><span class="pre">9.6</span></span><span class="name"><span class="pre">f</span></span></code>
@@ -1331,7 +1332,7 @@ commits.</p>
 write your first Python script.</p>
 <p>In this section you calculated wind chill index by writing and calling your
 first function. You also learned about Python math operators, the <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">zip</span></span><span class="punctuation"><span class="pre">()</span></span></code>
-command, <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code> datastructure, <em>f-</em><code class="code python docutils literal notranslate"><span class="name"><span class="pre">string</span></span></code> formatting, and how to push your
+command, <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">tuple</span></span></code> datastructure, f-string formatting, and how to push your
 repository to GitHub.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -1431,7 +1432,7 @@ a <code class="code docutils literal notranslate"><span class="pre">compute_heat
 </td></tr></table></div>
 </li>
 <li><p>Change the <code class="code docutils literal notranslate"><span class="pre">columns</span></code> and <code class="code docutils literal notranslate"><span class="pre">types</span></code> dictionary we read from the data file to
-read in the humidity and heat index values as <code class="code docutils literal notranslate"><span class="pre">float</span></code>s:</p>
+read in the humidity and heat index values as <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code>s:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1683,7 +1684,7 @@ $ git commit -m <span class="s2">&quot;Adding new readdata module&quot;</span>
 </pre></div>
 </td></tr></table></div>
 <p>In python you can call up functionality from scripts outside of your active script using the
-<code class="code docutils literal notranslate"><span class="pre">import</span></code> statement. Here we import our <code class="code docutils literal notranslate"><span class="pre">read_data</span></code> function from the <code class="code docutils literal notranslate"><span class="pre">readdata</span></code> module.
+<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">import</span></span></code> statement. Here we import our <code class="code docutils literal notranslate"><span class="pre">read_data</span></code> function from the <code class="code docutils literal notranslate"><span class="pre">readdata</span></code> module.
 And now we can call up the function from these scripts.</p>
 </li>
 <li><p>And after the initializations of the <code class="code docutils literal notranslate"><span class="pre">columns</span></code> and <code class="code docutils literal notranslate"><span class="pre">types</span></code> variables, replace the
@@ -1794,7 +1795,7 @@ letters in a string.</p>
 <li><p>Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.</p>
 <p>Try to do this on your own first, but if you are getting error messages the solution looks like:</p>
 <ol class="arabic">
-<li><p>Add the &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">printing</span> <span class="pre">import</span> <span class="pre">print_comparison</span></code>&quot; line to the top of each script.</p></li>
+<li><p>Add the &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">printing</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">print_comparison</span></span></code>&quot; line to the top of each script.</p></li>
 <li><p>Replace the printing output section at the bottom of each script with:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>29
 30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Output comparison of data</span>
@@ -1929,8 +1930,8 @@ similar to the following:</p>
 </pre></div>
 </td></tr></table></div>
 <p>And then modified the scripts accordingly as in steps #12-14 and #18
-by adding your import statements &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">computation</span> <span class="pre">import</span> <span class="pre">compute_windchill</span></code>&quot;
-OR &quot;<code class="code docutils literal notranslate"><span class="pre">from</span> <span class="pre">computation</span> <span class="pre">import</span> <span class="pre">compute_heatindex</span></code>&quot; and
+by adding your import statements &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">computation</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">compute_windchill</span></span></code>&quot;
+OR &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">computation</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">compute_heatindex</span></span></code>&quot; and
 removing the redundant function definitions.</p>
 <p>Your two scripts should look as follows:</p>
 <p>For <code class="code docutils literal notranslate"><span class="pre">windchillcomp.py</span></code>:</p>
@@ -2100,12 +2101,12 @@ it looks like this:</p>
 </pre></div>
 </td></tr></table></div>
 <p>This divides the initialization of the <code class="code docutils literal notranslate"><span class="pre">windchill</span></code>
-variable as an empty <code class="code docutils literal notranslate"><span class="pre">list</span></code> from the “filling”
-of that <code class="code docutils literal notranslate"><span class="pre">list</span></code> with computed values.</p>
+variable as an empty <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> from the “filling”
+of that <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code> with computed values.</p>
 <p>Python gives you some shortcuts to doing this
 via a concept called  “comprehensions”, which
-are ways of initializing containers (<code class="code docutils literal notranslate"><span class="pre">list</span></code>s,
-<code class="code docutils literal notranslate"><span class="pre">dict</span></code>s, etc.) with an <em>internal loop</em>.  For
+are ways of initializing containers (<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">list</span></span></code>s,
+<code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">dict</span></span></code>s, etc.) with an <em>internal loop</em>.  For
 example, we could have written the previous 3
 lines in the form of a “one-liner” like so:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
@@ -2131,8 +2132,8 @@ $ git commit -m <span class="s2">&quot;Using list comprehensions&quot;</span>
 <hr class="docutils" />
 <p>That concludes the lesson on “Creating Your First Package”, the first in our introduction to Python packages series.</p>
 <p>You should now be familiar with modules, using the
-<code class="code docutils literal notranslate"><span class="pre">import</span></code> statement, some more <code class="code docutils literal notranslate"><span class="pre">f-string</span></code> formatting options,
-<code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code>, <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code>, <code class="code docutils literal notranslate"><span class="pre">.__init__</span></code>, and list
+<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">import</span></span></code> statement, some more f-string formatting options,
+<code class="code docutils literal notranslate"><span class="pre">__pycache__</span></code>, <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code>, <code class="code docutils literal notranslate"><span class="pre">__init__.py</span></code>, and list
 comprehensions.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -2303,9 +2304,9 @@ Try using <code class="code docutils literal notranslate"><span class="pre">log1
 <p>Do the two values differ? The <code class="code docutils literal notranslate"><span class="pre">math.log10(x)</span></code> function is considered to be more accurate than <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">10)</span></code>.
 Similarly <code class="code docutils literal notranslate"><span class="pre">math.log2(x)</span></code> is more accurate than <code class="code docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">2)</span></code>.</p>
 </li>
-<li><p>Let’s cover some <code class="code docutils literal notranslate"><span class="pre">math</span></code> trigonometry examples!</p>
+<li><p>Let’s cover some <code class="code python docutils literal notranslate"><span class="name"><span class="pre">math</span></span></code> trigonometry examples!</p>
 <p>The math symbol <span class="math notranslate nohighlight">\(\pi\)</span> is an irrational number (like <em>e</em>) that is approximately <span class="math notranslate nohighlight">\(\frac{22}{7}\)</span> or 3.14159.
-We can access the most accurate <code class="code docutils literal notranslate"><span class="pre">float</span></code> version of this number (depending on your C compiler), with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">math</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">pi</span></span></code>.</p>
+We can access the most accurate <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">float</span></span></code> version of this number (depending on your C compiler), with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">math</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">pi</span></span></code>.</p>
 <p>Say we wanted to convert a number from 60 degrees to radians. We have two options:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
 
@@ -2378,8 +2379,7 @@ $ pip install some_package
 <p>But first, let’s learn how to package our code properly.</p>
 <ol class="arabic">
 <li><p>Create a <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file one level above your <code class="code docutils literal notranslate"><span class="pre">mysci</span></code> package (in the <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory):</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch setup.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch setup.py
 </pre></div>
 </div>
 <p>The <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> file is a Python file necessary for package distribution. This file tells <code class="code docutils literal notranslate"><span class="pre">pip</span></code> how to install your package into the <em>common Python space</em> for your <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter.
@@ -2409,24 +2409,20 @@ Required information is the name of your package, the version of your package (w
 </pre></div>
 </td></tr></table></div>
 <p>This <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> includes the information on the package name, version, description, author, contact info, contents, and dependencies (<code class="code docutils literal notranslate"><span class="pre">install_requires</span></code>) which is set to an empty list since our current package uses no external packages.</p>
-</div></blockquote>
 </li>
 <li><p>Push to GitHub!</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add setup.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add setup.py
 $ git commit -m <span class="s2">&quot;Adding setup.py&quot;</span>
 $ git push origin main
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Pip Install your package locally.</p>
-<blockquote>
-<div><p>To test that our package is set up correctly, let’s install it into our project repository.</p>
+<p>To test that our package is set up correctly, let’s install it into our project repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install .
 </pre></div>
 </div>
-<p>Everything should install smoothly, and now you will be able to <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">mysci</span></code> in <em>any</em> Python code that you write, regardless of where that code is…*as long as you use the same <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter*!  See the Note below.</p>
+<p>Everything should install smoothly, and now you will be able to <code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">import</span></span> <span class="name namespace"><span class="pre">mysci</span></span></code> in <em>any</em> Python code that you write, regardless of where that code is…*as long as you use the same <code class="code docutils literal notranslate"><span class="pre">python</span></code> interpreter*!  See the Note below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="code docutils literal notranslate"><span class="pre">pip</span></code> and <code class="code docutils literal notranslate"><span class="pre">python</span></code> commands are <em>tied</em> to one another.  You can think of it as the <code class="code docutils literal notranslate"><span class="pre">pip</span></code> command installing package <em>into</em> <code class="code docutils literal notranslate"><span class="pre">python</span></code>.  At the beginning of this tutorial, when we created the Conda environment <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code>, we installed <code class="code docutils literal notranslate"><span class="pre">python</span></code> into that Conda environment.  Conda <em>also</em> installed <code class="code docutils literal notranslate"><span class="pre">pip</span></code> into that environment, so you can use that Conda environment’s <code class="code docutils literal notranslate"><span class="pre">pip</span></code> to install packages into that same Conda environment’s <code class="code docutils literal notranslate"><span class="pre">python</span></code>.</p>
@@ -2435,11 +2431,9 @@ $ git push origin main
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip uninstall mysci
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Install from your GitHub repository</p>
-<blockquote>
-<div><p>Now, let’s re-install our package directly from GitHub.</p>
+<p>Now, let’s re-install our package directly from GitHub.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/Username/Project.git
 </pre></div>
 </div>
@@ -2448,11 +2442,9 @@ $ git push origin main
 <p class="admonition-title">Note</p>
 <p>If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.</p>
 </div>
-</div></blockquote>
 </li>
 <li><p>How to publish to PyPi</p>
-<blockquote>
-<div><p>With our package containing a properly formed <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code>, it is now ready for publication on PyPI (<a class="reference external" href="https://pypi.org/">https://pypi.org/</a>).
+<p>With our package containing a properly formed <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code>, it is now ready for publication on PyPI (<a class="reference external" href="https://pypi.org/">https://pypi.org/</a>).
 We don’t recommend that you <em>actually</em> publish <em>this</em> package (i.e., the one you just created in this
 tutorial) because every package on PyPI needs a unique name, which means only <em>one</em> of you will be
 able to actually perform this step of the tutorial successfully!  Also, the package we’ve created in this
@@ -2478,7 +2470,6 @@ your package.  First, however, we need to build a <em>distribution</em> package 
 </div>
 <p>Twine will then ask for your username and password.</p>
 <p>Once the upload succeeds, head to PyPI and see your package displayed as a new release!</p>
-</div></blockquote>
 </li>
 </ol>
 <hr class="docutils" />
