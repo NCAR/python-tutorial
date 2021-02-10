@@ -2550,7 +2550,7 @@ But first, let's learn how to package our code properly.
 
     .. code-block:: bash
 
-       $ pip install git+https://github.com:Username/Project.git
+       $ pip install git+https://github.com/Username/Project.git
 
     ..
 
