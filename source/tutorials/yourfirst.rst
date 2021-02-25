@@ -1256,7 +1256,8 @@ Let's begin.
 
    ..
 
-   Using a :python:`f-string` with float formatting you can determine the precision
+   Using an `f-string <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>`_
+   with float formatting you can determine the precision
    to which to print the values. The :python:`.5f` means you want 5 places after the
    decimal point.
 
@@ -1296,7 +1297,7 @@ Let's begin.
 
    ..
 
-   Here you used *f-*:python:`string` formatting with more *f-*:python:`string` formatting
+   Here you used f-string formatting with more f-string formatting
    options. The :python:`>6` indicates that you'd like the characters of the string to be
    right-justified and to take up 6 spaces.
 
@@ -1390,7 +1391,7 @@ write your first Python script.
 
 In this section you calculated wind chill index by writing and calling your
 first function. You also learned about Python math operators, the :python:`zip()`
-command, :python:`tuple` datastructure, *f-*:python:`string` formatting, and how to push your
+command, :python:`tuple` datastructure, f-string formatting, and how to push your
 repository to GitHub.
 
 .. seealso::
@@ -1497,7 +1498,7 @@ Open a terminal to begin and make sure you are in the
    ..
 
 4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to
-   read in the humidity and heat index values as :code:`float`\s:
+   read in the humidity and heat index values as :python:`float`\s:
 
    .. code-block:: python
       :lineno-start: 1
@@ -1706,7 +1707,7 @@ Open a terminal to begin and make sure you are in the
     ..
 
     In python you can call up functionality from scripts outside of your active script using the
-    :code:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
+    :python:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
     And now we can call up the function from these scripts.
 
 14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the
@@ -1835,7 +1836,7 @@ Open a terminal to begin and make sure you are in the
 
     Try to do this on your own first, but if you are getting error messages the solution looks like:
 
-    1)  Add the \":code:`from printing import print_comparison`\" line to the top of each script.
+    1)  Add the \":python:`from printing import print_comparison`\" line to the top of each script.
 
     2) Replace the printing output section at the bottom of each script with:
 
@@ -1940,8 +1941,8 @@ Open a terminal to begin and make sure you are in the
     ..
 
     And then modified the scripts accordingly as in steps #12-14 and #18
-    by adding your import statements \":code:`from computation import compute_windchill`\"
-    OR \":code:`from computation import compute_heatindex`\" and
+    by adding your import statements \":python:`from computation import compute_windchill`\"
+    OR \":python:`from computation import compute_heatindex`\" and
     removing the redundant function definitions.
 
     Your two scripts should look as follows:
@@ -2108,13 +2109,13 @@ Open a terminal to begin and make sure you are in the
     ..
 
     This divides the initialization of the :code:`windchill`
-    variable as an empty :code:`list` from the "filling"
-    of that :code:`list` with computed values.
+    variable as an empty :python:`list` from the "filling"
+    of that :python:`list` with computed values.
 
     Python gives you some shortcuts to doing this
     via a concept called  "comprehensions", which
-    are ways of initializing containers (:code:`list`\s,
-    :code:`dict`\s, etc.) with an *internal loop*.  For
+    are ways of initializing containers (:python:`list`\s,
+    :python:`dict`\s, etc.) with an *internal loop*.  For
     example, we could have written the previous 3
     lines in the form of a "one-liner" like so:
 
@@ -2149,8 +2150,8 @@ Open a terminal to begin and make sure you are in the
 That concludes the lesson on "Creating Your First Package", the first in our introduction to Python packages series.
 
 You should now be familiar with modules, using the
-:code:`import` statement, some more :code:`f-string` formatting options,
-:code:`__pycache__`\, :code:`.gitignore`\, :code:`.__init__`\, and list
+:python:`import` statement, some more f-string formatting options,
+:code:`__pycache__`\, :code:`.gitignore`\, :code:`__init__.py`\, and list
 comprehensions.
 
 .. seealso::
@@ -2361,10 +2362,10 @@ bit of the built-in :code:`math` package, which extends the computational capabi
    Do the two values differ? The :code:`math.log10(x)` function is considered to be more accurate than :code:`math.log(x, 10)`\.
    Similarly :code:`math.log2(x)` is more accurate than :code:`math.log(x, 2)`\.
 
-9. Let's cover some :code:`math` trigonometry examples!
+9. Let's cover some :python:`math` trigonometry examples!
 
    The math symbol :math:`\pi` is an irrational number (like *e*) that is approximately :math:`\frac{22}{7}` or 3.14159.
-   We can access the most accurate :code:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
+   We can access the most accurate :python:`float` version of this number (depending on your C compiler), with :python:`math.pi`\.
 
    Say we wanted to convert a number from 60 degrees to radians. We have two options:
 
@@ -2477,133 +2478,133 @@ But first, let's learn how to package our code properly.
 
 1. Create a :code:`setup.py` file one level above your :code:`mysci` package (in the :code:`python_tutorial` directory):
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ touch setup.py
+      $ touch setup.py
 
-    ..
+   ..
 
-    The :code:`setup.py` file is a Python file necessary for package distribution. This file tells :code:`pip` how to install your package into the *common Python space* for your :code:`python` interpreter.
-    Required information is the name of your package, the version of your package (which you can choose), and a list of packages you'd like installed by pip (e.g., your :code:`mysci` package).
+   The :code:`setup.py` file is a Python file necessary for package distribution. This file tells :code:`pip` how to install your package into the *common Python space* for your :code:`python` interpreter.
+   Required information is the name of your package, the version of your package (which you can choose), and a list of packages you'd like installed by pip (e.g., your :code:`mysci` package).
 
-    It's contents will look as follows (but with your name and email):
+   It's contents will look as follows (but with your name and email):
 
-    .. code-block:: python
-        :linenos:
+   .. code-block:: python
+      :linenos:
 
-        from distutils.core import setup
+      from distutils.core import setup
 
-        setup(
-            name="mysci",
-            version="1.0.0",
-            description="A sample package"
-            author="Xdev"
-            author_email="xdev@ucar.edu"
-            packages=["mysci"],
-            install_requires=[],
-        )
+      setup(
+          name="mysci",
+          version="1.0.0",
+          description="A sample package"
+          author="Xdev"
+          author_email="xdev@ucar.edu"
+          packages=["mysci"],
+          install_requires=[],
+      )
 
-    ..
+   ..
 
-    This :code:`setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (:code:`install_requires`) which is set to an empty list since our current package uses no external packages.
+   This :code:`setup.py` includes the information on the package name, version, description, author, contact info, contents, and dependencies (:code:`install_requires`) which is set to an empty list since our current package uses no external packages.
 
 2. Push to GitHub!
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ git add setup.py
-       $ git commit -m "Adding setup.py"
-       $ git push origin main
+      $ git add setup.py
+      $ git commit -m "Adding setup.py"
+      $ git push origin main
 
-    ..
+   ..
 
 3. Pip Install your package locally.
 
-    To test that our package is set up correctly, let's install it into our project repository.
+   To test that our package is set up correctly, let's install it into our project repository.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ pip install .
+      $ pip install .
 
-    ..
+   ..
 
-    Everything should install smoothly, and now you will be able to :code:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
+   Everything should install smoothly, and now you will be able to :python:`import mysci` in *any* Python code that you write, regardless of where that code is...*as long as you use the same :code:`python` interpreter*!  See the Note below.
 
-    .. note::
+   .. note::
 
-       The :code:`pip` and :code:`python` commands are *tied* to one another.  You can think of it as the :code:`pip` command installing package *into* :code:`python`.  At the beginning of this tutorial, when we created the Conda environment :code:`python_tutorial`, we installed :code:`python` into that Conda environment.  Conda *also* installed :code:`pip` into that environment, so you can use that Conda environment's :code:`pip` to install packages into that same Conda environment's :code:`python`.
+      The :code:`pip` and :code:`python` commands are *tied* to one another.  You can think of it as the :code:`pip` command installing package *into* :code:`python`.  At the beginning of this tutorial, when we created the Conda environment :code:`python_tutorial`, we installed :code:`python` into that Conda environment.  Conda *also* installed :code:`pip` into that environment, so you can use that Conda environment's :code:`pip` to install packages into that same Conda environment's :code:`python`.
 
-    ..
+   ..
 
-    Now, before moving on, let's use :code:`pip` to *uninstall* the package we just installed:
+   Now, before moving on, let's use :code:`pip` to *uninstall* the package we just installed:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ pip uninstall mysci
+      $ pip uninstall mysci
 
-    ..
+   ..
 
 4. Install from your GitHub repository
 
-    Now, let's re-install our package directly from GitHub.
+   Now, let's re-install our package directly from GitHub.
 
 
-    .. code-block:: bash
+   .. code-block:: bash
 
        $ pip install git+https://github.com/Username/Project.git
 
-    ..
+   ..
 
-    To do this replace `Username` and `Project` with your target username and repository (likely `mysci` for this example).
+   To do this replace `Username` and `Project` with your target username and repository (likely `mysci` for this example).
 
-    .. note::
-         If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
-    ..
+   .. note::
+      If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
+   ..
 
 5. How to publish to PyPI
 
-    With our package containing a properly formed :code:`setup.py`, it is now ready for publication on PyPI (https://pypi.org/).
-    We don't recommend that you *actually* publish *this* package (i.e., the one you just created in this
-    tutorial) because every package on PyPI needs a unique name, which means only *one* of you will be
-    able to actually perform this step of the tutorial successfully!  Also, the package we've created in this
-    tutorial is probably not the most useful package out there, so maybe it's not worth sharing.
+   With our package containing a properly formed :code:`setup.py`, it is now ready for publication on PyPI (https://pypi.org/).
+   We don't recommend that you *actually* publish *this* package (i.e., the one you just created in this
+   tutorial) because every package on PyPI needs a unique name, which means only *one* of you will be
+   able to actually perform this step of the tutorial successfully!  Also, the package we've created in this
+   tutorial is probably not the most useful package out there, so maybe it's not worth sharing.
 
-    Anyway, we will give you the instructions for how to publish a package to PyPI here, so that when you
-    *do* actually create a package you want to share with the world, you will know how to do it.
+   Anyway, we will give you the instructions for how to publish a package to PyPI here, so that when you
+   *do* actually create a package you want to share with the world, you will know how to do it.
 
-    The first step is to create an account on PyPI.  Follow this link to do so: (https://pypi.org/account/register/).
-    Take note of your newly created username and password.
+   The first step is to create an account on PyPI.  Follow this link to do so: (https://pypi.org/account/register/).
+   Take note of your newly created username and password.
 
-    To upload our package, we will need to use another external package called Twine (https://twine.readthedocs.io/en/latest/).  We'll install this new package with :code:`pip`:
+   To upload our package, we will need to use another external package called Twine (https://twine.readthedocs.io/en/latest/).  We'll install this new package with :code:`pip`:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ pip install twine
+      $ pip install twine
 
-    ..
+   ..
 
-    By installing this package, a new utility called :code:`twine` will be installed that you can use to upload
-    your package.  First, however, we need to build a *distribution* package using our newly created
-    :code:`setup.py` file.  To do that, execute the following command in the same directory where the
-    :code:`setup.py` file is located:
+   By installing this package, a new utility called :code:`twine` will be installed that you can use to upload
+   your package.  First, however, we need to build a *distribution* package using our newly created
+   :code:`setup.py` file.  To do that, execute the following command in the same directory where the
+   :code:`setup.py` file is located:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ python setup.py sdist bdist_wheel
+      $ python setup.py sdist bdist_wheel
 
-    ..
+   ..
 
-    Then, to upload your newly created *distribution* package to PyPI, execute the following:
+   Then, to upload your newly created *distribution* package to PyPI, execute the following:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-       $ twine upload dist/*
+      $ twine upload dist/*
 
-    ..
+   ..
 
-    Twine will then ask for your username and password.
+   Twine will then ask for your username and password.
 
-    Once the upload succeeds, head to PyPI and see your package displayed as a new release!
+   Once the upload succeeds, head to PyPI and see your package displayed as a new release!
 
 -----
 
