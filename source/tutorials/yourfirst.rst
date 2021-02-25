@@ -2560,7 +2560,7 @@ But first, let's learn how to package our code properly.
          If you are not comfortable with people using your code you can change the privacy and permission settings of your repository.
     ..
 
-5. How to publish to PyPi
+5. How to publish to PyPI
 
     With our package containing a properly formed :code:`setup.py`, it is now ready for publication on PyPI (https://pypi.org/).
     We don't recommend that you *actually* publish *this* package (i.e., the one you just created in this
