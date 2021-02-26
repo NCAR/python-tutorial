@@ -196,10 +196,9 @@ In building your first Python script we will set up our workspace, read a
 
 Here is a video recording of the live tutorial covering "Reading a .txt File":
 
-.. youtube:: Jog7ybd6amw
-   :height: 315
-   :width: 560
-   :align: center
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Jog7ybd6amw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ..
 
@@ -694,10 +693,9 @@ data structures.
 
 Here is a video recording of the live tutorial covering "Creating a Data Dictionary":
 
-.. youtube:: 5z6-t62x7Xs
-   :height: 315
-   :width: 560
-   :align: center
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/5z6-t62x7Xs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ..
 
@@ -1095,10 +1093,9 @@ function and learning about basic math operators.
 
 Here is a video recording of the live tutorial covering "Writing Functions":
 
-.. youtube:: BerEf_3CsL8
-   :height: 315
-   :width: 560
-   :align: center
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/BerEf_3CsL8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ..
 
@@ -1465,10 +1462,9 @@ is free!
 
 Here is a video recording of the live tutorial covering "Creating Your Own Package":
 
-.. youtube:: 6lbbTwGFcTc
-   :height: 315
-   :width: 560
-   :align: center
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/6lbbTwGFcTc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ..
 
@@ -2222,10 +2218,10 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 Here is a video recording of the live tutorial covering "Using a Built-In Package and Publishing Your Package":
 
-.. youtube:: 44QUMCh2ZHU
-   :height: 315
-   :width: 560
-   :align: center
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/44QUMCh2ZHU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ..
 
