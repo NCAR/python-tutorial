@@ -209,15 +209,15 @@ Here is a video recording of from the live tutorial covering "Reading a .txt Fil
 
 ..
 
-Open a terminal to begin.
+1. Open a terminal to begin.
 
-.. note::
+   .. note::
 
-   On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
+      On Windows, open **Anaconda Prompt**. On a Mac or Linux machine, simply open **Terminal**.
 
-..
+   ..
 
-1. Create a directory:
+2. Create a directory:
 
    .. code-block:: bash
 
@@ -228,13 +228,13 @@ Open a terminal to begin.
    The first thing we have to do is create a directory to store our work.
    Let's call it :code:`python_tutorial`.
 
-2. Go into the directory:
+3. Go into the directory:
 
    .. code-block:: bash
 
       $ cd python_tutorial
 
-3. Create a virtual environment for this project:
+4. Create a virtual environment for this project:
 
    .. code-block:: bash
 
@@ -260,7 +260,7 @@ Open a terminal to begin.
 
    ..
 
-4. And activate your Conda environment:
+5. And activate your Conda environment:
 
    .. code-block:: bash
 
@@ -268,7 +268,7 @@ Open a terminal to begin.
 
    ..
 
-5. Make the directory a Git repository:
+6. Make the directory a Git repository:
 
    .. code-block:: bash
 
@@ -288,7 +288,7 @@ Open a terminal to begin.
 
    ..
 
-6. Create a data directory:
+7. Create a data directory:
 
    .. code-block:: bash
 
@@ -298,13 +298,13 @@ Open a terminal to begin.
 
    And we'll make a directory for our data.
 
-7. Go into the data directory:
+8. Go into the data directory:
 
    .. code-block:: bash
 
       $ cd data
 
-8. Download sample data from the CU Boulder weather station:
+9. Download sample data from the CU Boulder weather station:
 
    .. code-block:: bash
 
@@ -318,21 +318,21 @@ Open a terminal to begin.
    (ATOC) department and is part of the larger University of Colorado ATOC
    Weather Network.
 
-9. Check the status of your repository:
+10. Check the status of your repository:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-      $ git status
+       $ git status
 
-   ..
+    ..
 
-   You will see the newly created :bash:`data` directory (which is listed as
-   :bash:`./`, since you are currently *in* that directory) is listed as
-   "untracked," which means all of the files you added to that directory are
-   *also* untracked by Git.  The :bash:`git status` command will tell you what
-   to do with untracked files. Those instructions mirror the next 2 steps:
+    You will see the newly created :bash:`data` directory (which is listed as
+    :bash:`./`, since you are currently *in* that directory) is listed as
+    "untracked," which means all of the files you added to that directory are
+    *also* untracked by Git.  The :bash:`git status` command will tell you what
+    to do with untracked files. Those instructions mirror the next 2 steps:
 
-10. Add the file to the Git staging area:
+11. Add the file to the Git staging area:
 
     .. code-block:: bash
 
@@ -352,7 +352,7 @@ Open a terminal to begin.
 
     ..
 
-11. Check your git status once again:
+12. Check your git status once again:
 
     .. code-block:: bash
 
@@ -363,7 +363,7 @@ Open a terminal to begin.
     Now this file is listed as a "change to be commited," i.e. staged. Staged
     changes can now be commited to your repository history.
 
-12. Commit the file to the Git repository:
+13. Commit the file to the Git repository:
 
     .. code-block:: bash
 
@@ -383,7 +383,7 @@ Open a terminal to begin.
 
     ..
 
-13. Look at the Git logs:
+14. Look at the Git logs:
 
     .. code-block:: bash
 
@@ -394,7 +394,7 @@ Open a terminal to begin.
     If you type :bash:`git log` you will show a log of all the commits, or changes
     made to your repository.
 
-14. Go back to the top-level directory:
+15. Go back to the top-level directory:
 
     .. code-block:: bash
 
@@ -402,7 +402,7 @@ Open a terminal to begin.
 
     ..
 
-15. And now that you've set up our workspace, create a blank Python script,
+16. And now that you've set up our workspace, create a blank Python script,
     called :code:`mysci.py`:
 
     .. code-block:: bash
@@ -419,7 +419,7 @@ Open a terminal to begin.
 
     ..
 
-16. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
+17. Edit the :code:`mysci.py` file using nano, vim, or your favorite text editor:
 
     .. code-block:: python
        :linenos:
@@ -436,7 +436,7 @@ Open a terminal to begin.
 
     ..
 
-17. Try testing the script by typing :bash:`python` and then the name of your script:
+18. Try testing the script by typing :bash:`python` and then the name of your script:
 
     .. code-block:: bash
 
@@ -447,7 +447,7 @@ Open a terminal to begin.
     **Yay!** You've just created your first Python script.
 
 
-18. You probably won't need to run your Hello World script again, so delete the
+19. You probably won't need to run your Hello World script again, so delete the
     :python:`print("Hello, world!")` line and start over with something more useful -
     we'll read the first 4 lines from our datafile.
 
@@ -493,7 +493,7 @@ Open a terminal to begin.
 
     ..
 
-19. And test your script again by typing:
+20. And test your script again by typing:
 
     .. code-block:: bash
 
@@ -505,7 +505,7 @@ Open a terminal to begin.
     you wish to execute the script. This will no longer be specified as a
     unique step in between every change to our script.
 
-20. Change the :code:`mysci.py` script to read your whole data file:
+21. Change the :code:`mysci.py` script to read your whole data file:
 
     .. code-block:: python
        :linenos:
@@ -534,7 +534,7 @@ Open a terminal to begin.
 
     Don't forget to execute with :bash:`python mysci.py`.
 
-21. Change the :code:`mysci.py` script to read your whole data file using a context
+22. Change the :code:`mysci.py` script to read your whole data file using a context
     manager with:
 
     .. code-block:: python
@@ -570,7 +570,7 @@ Open a terminal to begin.
 
     ..
 
-22. What did we just see? What is the data object? What type is data? How do we
+23. What did we just see? What is the data object? What type is data? How do we
     find out?
 
     Change the DEBUG section of our script to:
@@ -592,10 +592,10 @@ Open a terminal to begin.
     explicitly specify the datatype when you name a variable, Python will
     automatically figure it out by the nature of the data.
 
-23. Now, clean up the script by removing the DEBUG section, before we commit
+24. Now, clean up the script by removing the DEBUG section, before we commit
     this to Git.
 
-24. Let's check the status of our Git repository
+25. Let's check the status of our Git repository
 
     .. code-block:: bash
 
@@ -609,7 +609,7 @@ Open a terminal to begin.
 
     ..
 
-25. Stage these changes:
+26. Stage these changes:
 
     .. code-block:: bash
 
@@ -617,7 +617,7 @@ Open a terminal to begin.
 
     ..
 
-26. Let's check the status of our Git repository,again. What's different from
+27. Let's check the status of our Git repository,again. What's different from
     the last time we checked the status?
 
     .. code-block:: bash
@@ -626,7 +626,7 @@ Open a terminal to begin.
 
     ..
 
-27. Commit these changes:
+28. Commit these changes:
 
     .. code-block:: bash
 
@@ -637,7 +637,7 @@ Open a terminal to begin.
     Here a good commit message :code:`-m` for our changes would be
     :code:`"Adding script file"`
 
-28. Let's check the status of our Git repository, now. It should tell you that
+29. Let's check the status of our Git repository, now. It should tell you that
     there are no changes made to your repository (i.e., your repository is
     up-to-date with the state of the code in your directory).
 
@@ -647,7 +647,7 @@ Open a terminal to begin.
 
     ..
 
-29. Look at the Git logs, again:
+30. Look at the Git logs, again:
 
     .. code-block:: bash
 
@@ -1470,10 +1470,9 @@ Here is a video recording of from the live tutorial covering "Creating Your Own 
 
 ..
 
-Open a terminal to begin and make sure you are in the
-:code:`python_tutorial` directory and have activated the corresponding environment.
+1. Open a terminal to begin and make sure you are in the :code:`python_tutorial` directory and have activated the corresponding environment.
 
-1. Make a copy of your first script with a new name:
+2. Make a copy of your first script with a new name:
 
    .. code-block:: bash
 
@@ -1481,7 +1480,7 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-2. Git add and commit this new file:
+3. Git add and commit this new file:
 
    .. code-block:: bash
 
@@ -1490,7 +1489,7 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-3. Now you will compute the Heat Index.
+4. Now you will compute the Heat Index.
 
    Like wind chill, which is a measure of how much
    colder the weather feels to the human body due
@@ -1539,7 +1538,7 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-4. Change the :code:`columns` and :code:`types` dictionary we read from the data file to
+5. Change the :code:`columns` and :code:`types` dictionary we read from the data file to
    read in the humidity and heat index values as :python:`float`\s:
 
    .. code-block:: python
@@ -1553,7 +1552,7 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-5. Update the function call and printing sections of the script to match:
+6. Update the function call and printing sections of the script to match:
 
    .. code-block:: python
       :lineno-start: 49
@@ -1576,7 +1575,7 @@ Open a terminal to begin and make sure you are in the
 
    So far you have only revisited concepts from "Your First Script".
 
-6. Git stage and commit this new script.
+7. Git stage and commit this new script.
 
    .. code-block:: bash
 
@@ -1585,7 +1584,7 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-7. Now, you have two scripts that do very
+8. Now, you have two scripts that do very
    similar things. In fact, all of the data reading
    and parsing code is duplicated! And the output is
    similarly formatted, too.  Let's remove that duplication!
@@ -1601,7 +1600,7 @@ Open a terminal to begin and make sure you are in the
    This new file will include the common code for reading the data file from both the
    :code:`windchillcomp.py` and :code:`heatindexcomp.py` scripts.
 
-8. Copy and paste the lines for reading in the data file into :code:`readdata.py`\:
+9. Copy and paste the lines for reading in the data file into :code:`readdata.py`\:
 
    .. code-block:: python
       :lineno-start: 1
@@ -1629,52 +1628,52 @@ Open a terminal to begin and make sure you are in the
 
    ..
 
-9. Turn these lines into a function:
+10. Turn these lines into a function:
 
-   .. code-block:: python
-      :lineno-start: 1
+    .. code-block:: python
+       :lineno-start: 1
 
-      def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
-         # Initialize my data variable
-         data = {}
-         for column in columns:
-            data[column] = []
+       def read_data(columns, types={}, filename="data/wxobs20170821.txt"):
+          # Initialize my data variable
+          data = {}
+          for column in columns:
+             data[column] = []
 
-         # Read and parse the data file
-         with open(filename, 'r') as datafile:
+          # Read and parse the data file
+          with open(filename, 'r') as datafile:
 
-            # Read the first three lines (header)
-            for _ in range(3):
-               datafile.readline()
+             # Read the first three lines (header)
+             for _ in range(3):
+                datafile.readline()
 
-            # Read and parse the rest of the file
-            for line in datafile:
-               split_line = line.split()
-               for column in columns:
-                  i = columns[column]
-                  t = types.get(column, str)
-                  value = t(split_line[i])
-                  data[column].append(value)
+             # Read and parse the rest of the file
+             for line in datafile:
+                split_line = line.split()
+                for column in columns:
+                   i = columns[column]
+                   t = types.get(column, str)
+                   value = t(split_line[i])
+                   data[column].append(value)
 
-         return data
+          return data
 
-   ..
+    ..
 
-   The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
-   The :code:`types` and :code:`filename` variables are both keyword arguments, which means that it is not
-   necessary to include them in your function call; if you do not call them, their value is taken as what they are
-   assigned to in the function definition.
+    The function arguments for our :code:`read_data` function are :code:`columns`\, :code:`types`\, and :code:`filename`\.
+    The :code:`types` and :code:`filename` variables are both keyword arguments, which means that it is not
+    necessary to include them in your function call; if you do not call them, their value is taken as what they are
+    assigned to in the function definition.
 
-   When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified
-   (and so you don't have to specify it every time you call the function when this keyword isn't relevant).
+    When you see :code:`types={}` it means that :code:`types` is presumed to be an empty dictionary when unspecified
+    (and so you don't have to specify it every time you call the function when this keyword isn't relevant).
 
-   Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different
-   file.
+    Similarly, :code:`filename` is set to the path of our data file as long as the user doesn't specify a different
+    file.
 
-   Keyword arguments can be called in any order, but they must follow all *positional* arguments
-   (i.e., arguments that do not have default values).
+    Keyword arguments can be called in any order, but they must follow all *positional* arguments
+    (i.e., arguments that do not have default values).
 
-10. Add a docstring to the function:
+11. Add a docstring to the function:
 
     .. code-block:: python
        :lineno-start: 1
@@ -1728,7 +1727,7 @@ Open a terminal to begin and make sure you are in the
     files containing Python code, meant to be called
     up (or "imported") within a different Python script.  We'll get to this later.
 
-11. Stage and commit this new file:
+12. Stage and commit this new file:
 
     .. code-block:: bash
 
@@ -1737,9 +1736,9 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-12. Amend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
+13. Amend your two Python (:code:`heatindexcomp.py` and :code:`windchillcomp.py`) scripts by deleting the equivalent read-file code in them.
 
-13. Add the following import statement to the top of each script:
+14. Add the following import statement to the top of each script:
 
     .. code-block:: python
        :lineno-start: 1
@@ -1752,7 +1751,7 @@ Open a terminal to begin and make sure you are in the
     :python:`import` statement. Here we import our :code:`read_data` function from the :code:`readdata` module.
     And now we can call up the function from these scripts.
 
-14. And after the initializations of the :code:`columns` and :code:`types` variables, replace the
+15. And after the initializations of the :code:`columns` and :code:`types` variables, replace the
     deleted code with a function call:
 
     .. code-block:: python
@@ -1767,7 +1766,7 @@ Open a terminal to begin and make sure you are in the
 
     Test out both of these scripts to make sure they still work!
 
-15. Do a \":code:`git status`\" now.
+16. Do a \":code:`git status`\" now.
 
     Do you notice something new?  Running our new scripts created the `__pycache__` directory.
 
@@ -1802,13 +1801,13 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-16. Do another :code:`git status`\.  What do you see?
+17. Do another :code:`git status`\.  What do you see?
 
     Now, instead of :code:`__pycache__` being listed as
     "untracked", you see :code:`.gitignore` being listed as
     "untracked", and no mention of :code:`__pycache__`\.
 
-17. Stage and commit the new :code:`.gitignore` file.
+18. Stage and commit the new :code:`.gitignore` file.
 
     .. code-block:: bash
 
@@ -1822,7 +1821,7 @@ Open a terminal to begin and make sure you are in the
     not been committed to the project repository!
     Because they have not yet been staged.
 
-18. Stage *both files* and commit all new changes in one commit:
+19. Stage *both files* and commit all new changes in one commit:
 
     .. code-block:: bash
 
@@ -1833,7 +1832,7 @@ Open a terminal to begin and make sure you are in the
 
     You can type :code:`-A` instead of the name of your files to add all unstaged changes.
 
-19. There is still have some duplicated
+20. There is still have some duplicated
     code between the two scripts. Let's combine the final
     output code and printing code.
 
@@ -1874,7 +1873,7 @@ Open a terminal to begin and make sure you are in the
     :code:`string.upper()` (or, specifically, :code:`name.upper()`\), which capitalizes all lower case
     letters in a string.
 
-20. Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.
+21. Edit the two scripts to use this new module (similar methods to step #13-15), and test your results.
 
     Try to do this on your own first, but if you are getting error messages the solution looks like:
 
@@ -1900,7 +1899,7 @@ Open a terminal to begin and make sure you are in the
 
        ..
 
-21. Stage all changes and commit:
+22. Stage all changes and commit:
 
     .. code-block:: bash
 
@@ -1909,7 +1908,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-22. You now have 2 different modules related
+23. You now have 2 different modules related
     to the same project.  It is best practice
     to separate different functions into different
     modules depending upon the kind of functionality
@@ -1982,7 +1981,7 @@ Open a terminal to begin and make sure you are in the
           return hi
     ..
 
-    And then modified the scripts accordingly as in steps #12-14 and #18
+    And then modified the scripts accordingly as in steps #13-15 and #19
     by adding your import statements \":python:`from computation import compute_windchill`\"
     OR \":python:`from computation import compute_heatindex`\" and
     removing the redundant function definitions.
@@ -2045,7 +2044,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-23. Stage and commit everything:
+24. Stage and commit everything:
 
     .. code-block:: bash
 
@@ -2054,7 +2053,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-24. Now, you've got quite a few Python
+25. Now, you've got quite a few Python
     files in the main directory. Which ones are scripts?
     Which ones are modules meant to be imported?
 
@@ -2099,7 +2098,7 @@ Open a terminal to begin and make sure you are in the
 
     ..
 
-25. Stage everything (don't forget the
+26. Stage everything (don't forget the
     :code:`__init__.py` file!) and commit
 
     .. code-block:: bash
@@ -2134,7 +2133,7 @@ Open a terminal to begin and make sure you are in the
           windchillcomp.py
     ..
 
-26. As a brief aside --
+27. As a brief aside --
     look at the use of the computation
     functions in these scripts.
 
@@ -2178,7 +2177,7 @@ Open a terminal to begin and make sure you are in the
     Use list comprehensions to make the computation
     steps in both of scripts one-liners.
 
-27. Do a final stage and commit changes
+28. Do a final stage and commit changes
 
     .. code-block:: bash
 
