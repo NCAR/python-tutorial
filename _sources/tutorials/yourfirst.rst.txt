@@ -194,7 +194,7 @@ Reading a .txt File
 In building your first Python script we will set up our workspace, read a
 :code:`.txt` file, and learn Git fundamentals.
 
-Here is a video recording of from the live tutorial covering "Reading a .txt File":
+Here is a video recording of the live tutorial covering "Reading a .txt File":
 
 .. youtube:: Jog7ybd6amw
    :height: 315
@@ -692,7 +692,7 @@ You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
 
-Here is a video recording of from the live tutorial covering "Creating a Data Dictionary":
+Here is a video recording of the live tutorial covering "Creating a Data Dictionary":
 
 .. youtube:: 5z6-t62x7Xs
    :height: 315
@@ -1093,7 +1093,7 @@ In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.
 
 
-Here is a video recording of from the live tutorial covering "Writing Functions":
+Here is a video recording of the live tutorial covering "Writing Functions":
 
 .. youtube:: BerEf_3CsL8
    :height: 315
@@ -1463,7 +1463,7 @@ that you can pay extra money to install and use - again Python
 is free!
 
 
-Here is a video recording of from the live tutorial covering "Creating Your Own Package":
+Here is a video recording of the live tutorial covering "Creating Your Own Package":
 
 .. youtube:: 6lbbTwGFcTc
    :height: 315
@@ -2220,7 +2220,7 @@ beauty of using built-in packages is that you don't have to install anything new
 Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
 bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
 
-Here is a video recording of from the live tutorial covering "Using a Built-In Package and Publishing Your Package":
+Here is a video recording of the live tutorial covering "Using a Built-In Package and Publishing Your Package":
 
 .. youtube:: 44QUMCh2ZHU
    :height: 315
