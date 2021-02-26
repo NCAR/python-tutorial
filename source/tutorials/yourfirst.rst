@@ -2195,6 +2195,9 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 ..
 
+.. youtube:: 6lbbTwGFcTc
+..
+
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
 2. Now we're going to add a function for calculating dew point temperature to your :code:`mysci/computation.py` module:
