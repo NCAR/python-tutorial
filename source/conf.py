@@ -66,7 +66,21 @@ def setup(app):
     app.add_css_file('css/custom.css')
 
 
-# Additional classes
+# ReST for embedding Youtube videos
+"""
+    ReST directive for embedding Youtube and Vimeo videos.
+    There are two directives added: ``youtube`` and ``vimeo``. The only
+    argument is the video id of the video to include.
+    Both directives have three optional arguments: ``height``, ``width``
+    and ``align``. Default height is 281 and default width is 500.
+    Example::
+        .. youtube:: anwy2MPT5RE
+            :height: 315
+            :width: 560
+            :align: left
+    :copyright: (c) 2012 by Danilo Bargen.
+    :license: BSD 3-clause
+"""
 def align(argument):
     """Conversion function for the "align" option."""
     return directives.choice(argument, ('left', 'center', 'right'))
@@ -101,7 +115,6 @@ class Youtube(IframeVideo):
     width="%(width)u" height="%(height)u" frameborder="0" \
     webkitAllowFullScreen mozallowfullscreen allowfullscreen \
     class="align-%(align)s"></iframe>'
-
 
 
 def setup(builder):
