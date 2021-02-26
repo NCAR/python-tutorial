@@ -1410,6 +1410,12 @@ In this section of the tutorial we will learn how to create a Python package
 and the basics of how to use built-in package :code:`math`\. This will prepare you
 to learn any package you think may be useful for your scientific analysis.
 
+.. seealso::
+
+   We have a write-up of the `question and answer session following the live tutorial <https://ncar.github.io/xdev/posts/your-first-package-python-tutorial-faq/>`_.
+
+..
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Creating Your Own Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
