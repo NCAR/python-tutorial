@@ -350,17 +350,19 @@ controling your work.</p>
 <h3>Reading a .txt File<a class="headerlink" href="#reading-a-txt-file" title="Permalink to this headline">¶</a></h3>
 <p>In building your first Python script we will set up our workspace, read a
 <code class="code docutils literal notranslate"><span class="pre">.txt</span></code> file, and learn Git fundamentals.</p>
-<div class="admonition seealso">
+<p>Here is a video recording of from the live tutorial covering “Reading a .txt File”:</p>
+<iframe src="http://www.youtube.com/embed/Jog7ybd6amw"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen     class="align-center"></iframe><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>You can watch the <a class="reference external" href="https://drive.google.com/file/d/1PU6UxI1p0kCqQbHmSKuP-ox5rtoxPLtX/view?usp=sharing">video recording of  Part I</a>
-of this tutorial online, and we have a write-up of the <a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq/">question and answer session following Part I, as well</a>.</p>
+<p><a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq/">Questions and Answers from the live “Reading a .txt File” tutorial</a>.</p>
 </div>
-<p>Open a terminal to begin.</p>
+<p>Let’s begin.</p>
+<ol class="arabic">
+<li><p>Open a terminal.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On Windows, open <strong>Anaconda Prompt</strong>. On a Mac or Linux machine, simply open <strong>Terminal</strong>.</p>
 </div>
-<ol class="arabic">
+</li>
 <li><p>Create a directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir python_tutorial
 </pre></div>
@@ -714,16 +716,16 @@ had just commited your new script file that reads in the data from a file as a s
 You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.</p>
-<div class="admonition seealso">
+<p>Here is a video recording of from the live tutorial covering “Creating a Data Dictionary”:</p>
+<iframe src="http://www.youtube.com/embed/5z6-t62x7Xs"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen     class="align-center"></iframe><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>You can watch a video recording of <a class="reference external" href="https://drive.google.com/file/d/1DwXaLQH28aqqR1NwOLEYzbR86zQNlTVk/view?usp=sharing">Part II</a>
-of this tutorial online, and we have a write-up of the <a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/">question and answer session following Part II, as well</a>.</p>
+<p><a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/">Questions and Answers from the live “Creating a Data Dictionary” tutorial</a>.</p>
 </div>
 <p>Let’s begin.</p>
 <ol class="arabic">
 <li><p>One big string isn’t very useful, so use <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">str</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">split</span></span><span class="punctuation"><span class="pre">()</span></span></code> to parse the data
 file into a data structure you can use.</p>
-<p>Change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read:</p>
+<p>With your terminal open and <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> environment activated, change the <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> script to read:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1090,14 +1092,14 @@ had just commited your new script that reads the file, saving the variables of d
 time, and tempout in a data dictionary.
 In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.</p>
-<div class="admonition seealso">
+<p>Here is a video recording of from the live tutorial covering “Writing Functions”:</p>
+<iframe src="http://www.youtube.com/embed/BerEf_3CsL8"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen     class="align-center"></iframe><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>You can watch a video recording of <a class="reference external" href="https://drive.google.com/file/d/1eyPn_GXmvKlWe-e7p97HxS4bRbsTbvyI/view?usp=sharing">Part III</a>
-of this tutorial online, and we have a write-up of the <a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/">question and answer session following Part III, as well</a>.</p>
+<p><a class="reference external" href="https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/">Question and Answers from the live “Writing Functions” tutorial</a>.</p>
 </div>
 <p>Let’s begin.</p>
 <ol class="arabic">
-<li><p>Okay, now that you’ve read the data in a way that is easy to modify later,
+<li><p>Now that you’ve read the data in a way that is easy to modify later,
 it is time to actually do something with the data.</p>
 <p>Compute the wind chill factor, which is the cooling effect of the wind. As
 wind speed increases the rate at which a body loses heat increases. The
@@ -1111,7 +1113,7 @@ Wind Chill Index is only defined for temperatures within the range -45 to
 +45 degrees F.</p>
 <p>You’ve read the temperature data into the tempout variable, but to do this
 calculation, you also need to read the windspeed variable from column 7.</p>
-<p>Modify the columns variable to read:</p>
+<p>With your terminal open and <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> environment activated, modify the columns variable in <code class="code docutils literal notranslate"><span class="pre">mysci.py</span></code> to read:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Column names and column indices to read</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;tempout&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;windspeed&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
@@ -1348,6 +1350,10 @@ repository to GitHub.</p>
 <p>In this section of the tutorial we will learn how to create a Python package
 and the basics of how to use built-in package <code class="code docutils literal notranslate"><span class="pre">math</span></code>. This will prepare you
 to learn any package you think may be useful for your scientific analysis.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://ncar.github.io/xdev/posts/your-first-package-python-tutorial-faq/">Questions and Answers from the live “First Python Package” tutorials</a>.</p>
+</div>
 <div class="section" id="creating-your-own-package">
 <h3>Creating Your Own Package<a class="headerlink" href="#creating-your-own-package" title="Permalink to this headline">¶</a></h3>
 <p>In this section you will learn how to move functions and code blocks into
@@ -1362,9 +1368,10 @@ In Python, package managers help you know what
 version of those functions you are using. Matlab also has packages
 that you can pay extra money to install and use - again Python
 is free!</p>
-<p>Open a terminal to begin and make sure you are in the
-<code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and have activated the corresponding environment.</p>
+<p>Here is a video recording of from the live tutorial covering “Creating Your Own Package”:</p>
+<iframe src="http://www.youtube.com/embed/6lbbTwGFcTc"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen     class="align-center"></iframe><p>Let’s begin.</p>
 <ol class="arabic">
+<li><p>Open a terminal and make sure you are in the <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and have activated the corresponding environment.</p></li>
 <li><p>Make a copy of your first script with a new name:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp windchillcomp.py heatindexcomp.py
 </pre></div>
@@ -1792,7 +1799,7 @@ output code and printing code.</p>
 <code class="code docutils literal notranslate"><span class="pre">string.upper()</span></code> (or, specifically, <code class="code docutils literal notranslate"><span class="pre">name.upper()</span></code>), which capitalizes all lower case
 letters in a string.</p>
 </li>
-<li><p>Edit the two scripts to use this new module (similar methods to step #12-14), and test your results.</p>
+<li><p>Edit the two scripts to use this new module (similar methods to step #13-15), and test your results.</p>
 <p>Try to do this on your own first, but if you are getting error messages the solution looks like:</p>
 <ol class="arabic">
 <li><p>Add the &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">printing</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">print_comparison</span></span></code>&quot; line to the top of each script.</p></li>
@@ -1929,7 +1936,7 @@ similar to the following:</p>
    <span class="k">return</span> <span class="n">hi</span>
 </pre></div>
 </td></tr></table></div>
-<p>And then modified the scripts accordingly as in steps #12-14 and #18
+<p>And then modified the scripts accordingly as in steps #13-15 and #19
 by adding your import statements &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">computation</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">compute_windchill</span></span></code>&quot;
 OR &quot;<code class="code python docutils literal notranslate"><span class="keyword namespace"><span class="pre">from</span></span> <span class="name namespace"><span class="pre">computation</span></span> <span class="keyword namespace"><span class="pre">import</span></span> <span class="name"><span class="pre">compute_heatindex</span></span></code>&quot; and
 removing the redundant function definitions.</p>
@@ -2151,6 +2158,12 @@ modules into a package that we imported into our scripts.</p>
 beauty of using built-in packages is that you don’t have to install anything new!  If you can use and run
 Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
 bit of the built-in <code class="code docutils literal notranslate"><span class="pre">math</span></code> package, which extends the computational capabilities beyond the basic math operators we’ve already covered.</p>
+<p>Here is a video recording of from the live tutorial covering “Using a Built-In Package and Publishing Your Package”:</p>
+<iframe src="http://www.youtube.com/embed/44QUMCh2ZHU"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen     class="align-center"></iframe><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The recording is missing the first 10 minutes or so of the presentation and thus does not contain the introduction, the review from last session, and a brief list comprehension aside. The video begins when editing the mysci/computation.py module. There should be an <cite>import math</cite> statement at the beginning of the script and then you should be able to follow along with writing a new function <cite>compute_dewpoint</cite>, as shown.</p>
+</div>
+<p>Let’s begin.</p>
 <ol class="arabic">
 <li><p>Open your terminal, navigate to your <code class="code docutils literal notranslate"><span class="pre">python_tutorial</span></code> directory and activate the corresponding environment.</p></li>
 <li><p>Now we’re going to add a function for calculating dew point temperature to your <code class="code docutils literal notranslate"><span class="pre">mysci/computation.py</span></code> module:</p>
