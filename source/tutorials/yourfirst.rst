@@ -196,8 +196,8 @@ In building your first Python script we will set up our workspace, read a
 
 .. seealso::
 
-   You can watch the `video recording of  Part I <https://youtu.be/Jog7ybd6amw>`_
-   of this tutorial online, and we have a write-up of the `question and answer session following Part I, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
+   You can watch the `video recording of  "Reading in a .txt File" <https://youtu.be/Jog7ybd6amw>`_
+   online, and we have a write-up of the `question and answer session following this section as well <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
 
 ..
 
@@ -684,8 +684,8 @@ data structures.
 
 .. seealso::
 
-   You can watch a video recording of `Part II <https://youtu.be/5z6-t62x7Xs>`_
-   of this tutorial online, and we have a write-up of the `question and answer session following Part II, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
+   You can watch a video recording of `"Creating a Data Dictionary" <https://youtu.be/5z6-t62x7Xs>`_
+   online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
 
 ..
 
@@ -1076,8 +1076,8 @@ function and learning about basic math operators.
 
 .. seealso::
 
-   You can watch a video recording of `Part III <https://youtu.be/BerEf_3CsL8>`_
-   of this tutorial online, and we have a write-up of the `question and answer session following Part III, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
+   You can watch a video recording of `"Writing Functions" <https://youtu.be/BerEf_3CsL8>`_
+   online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
 
 ..
 
@@ -1433,6 +1433,13 @@ In Python, package managers help you know what
 version of those functions you are using. Matlab also has packages
 that you can pay extra money to install and use - again Python
 is free!
+
+.. seealso::
+
+   You can watch a video recording of `"Creating Your Own Package" <https://youtu.be/6lbbTwGFcTc>`_
+   online.
+
+..
 
 Open a terminal to begin and make sure you are in the
 :code:`python_tutorial` directory and have activated the corresponding environment.
@@ -2180,6 +2187,13 @@ Python comes with many different *built-in* packages (i.e., libraries) that you 
 beauty of using built-in packages is that you don't have to install anything new!  If you can use and run
 Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
 bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
+
+.. seealso::
+
+   You can watch a video recording of `"Using a Built-In Package and Publishing Your Package" <https://youtu.be/6lbbTwGFcTc>`_
+   online.
+
+..
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
