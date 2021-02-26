@@ -196,7 +196,7 @@ In building your first Python script we will set up our workspace, read a
 
 .. seealso::
 
-   You can watch the `video recording of  Part I <https://drive.google.com/file/d/1PU6UxI1p0kCqQbHmSKuP-ox5rtoxPLtX/view?usp=sharing>`_
+   You can watch the `video recording of  Part I <https://youtu.be/Jog7ybd6amw>`_
    of this tutorial online, and we have a write-up of the `question and answer session following Part I, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
 
 ..
@@ -684,7 +684,7 @@ data structures.
 
 .. seealso::
 
-   You can watch a video recording of `Part II <https://drive.google.com/file/d/1DwXaLQH28aqqR1NwOLEYzbR86zQNlTVk/view?usp=sharing>`_
+   You can watch a video recording of `Part II <https://youtu.be/5z6-t62x7Xs>`_
    of this tutorial online, and we have a write-up of the `question and answer session following Part II, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
 
 ..
@@ -1076,7 +1076,7 @@ function and learning about basic math operators.
 
 .. seealso::
 
-   You can watch a video recording of `Part III <https://drive.google.com/file/d/1eyPn_GXmvKlWe-e7p97HxS4bRbsTbvyI/view?usp=sharing>`_
+   You can watch a video recording of `Part III <https://youtu.be/BerEf_3CsL8>`_
    of this tutorial online, and we have a write-up of the `question and answer session following Part III, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
 
 ..
