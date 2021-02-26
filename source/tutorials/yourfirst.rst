@@ -1463,7 +1463,7 @@ is free!
 
 Here is a video recording of from the live tutorial covering "Creating Your Own Package":
 
-.. youtube:: 44QUMCh2ZHU
+.. youtube:: 6lbbTwGFcTc
    :height: 315
    :width: 560
    :align: center
@@ -2219,7 +2219,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 Here is a video recording of from the live tutorial covering "Using a Built-In Package and Publishing Your Package":
 
-.. youtube:: 6lbbTwGFcTc
+.. youtube:: 44QUMCh2ZHU
    :height: 315
    :width: 560
    :align: center
