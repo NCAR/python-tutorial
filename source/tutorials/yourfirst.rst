@@ -194,10 +194,18 @@ Reading a .txt File
 In building your first Python script we will set up our workspace, read a
 :code:`.txt` file, and learn Git fundamentals.
 
+Here is a video recording of from the live tutorial covering "Reading a .txt File":
+
+.. youtube:: Jog7ybd6amw
+   :height: 315
+   :width: 560
+   :align: center
+
+..
+
 .. seealso::
 
-   You can watch the `video recording of  "Reading in a .txt File" <https://youtu.be/Jog7ybd6amw>`_
-   online, and we have a write-up of the `question and answer session following this section as well <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
+   `Questions and Answers from the live "Reading a .txt File" tutorial <https://ncar.github.io/xdev/posts/python-tutorial-faq/>`_.
 
 ..
 
@@ -682,10 +690,18 @@ You will now manipulate your data into a more usable format - a dictionary.
 In doing so you will learn how to write iterative for loops and about Python
 data structures.
 
+Here is a video recording of from the live tutorial covering "Creating a Data Dictionary":
+
+.. youtube:: 5z6-t62x7Xs
+   :height: 315
+   :width: 560
+   :align: center
+
+..
+
 .. seealso::
 
-   You can watch a `video recording of "Creating a Data Dictionary" <https://youtu.be/5z6-t62x7Xs>`_
-   online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
+   `Questions and Answers from the live "Creating a Data Dictionary" tutorial <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
 
 ..
 
@@ -1074,10 +1090,20 @@ time, and tempout in a data dictionary.
 In this section you will compute wind chill index by writing your first
 function and learning about basic math operators.
 
+
+Here is a video recording of from the live tutorial covering "Writing Functions":
+
+.. youtube:: BerEf_3CsL8
+   :height: 315
+   :width: 560
+   :align: center
+
+..
+
 .. seealso::
 
-   You can watch a `video recording of "Writing Functions" <https://youtu.be/BerEf_3CsL8>`_
-   online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
+   
+   `Question and Answers from the live "Writing Functions" tutorial <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
 
 ..
 
@@ -1412,7 +1438,7 @@ to learn any package you think may be useful for your scientific analysis.
 
 .. seealso::
 
-   We have a write-up of the `question and answer session following the live tutorial <https://ncar.github.io/xdev/posts/your-first-package-python-tutorial-faq/>`_.
+   `Questions and Answers from the live "First Python Package" tutorials <https://ncar.github.io/xdev/posts/your-first-package-python-tutorial-faq/>`_.
 
 ..
 
@@ -1434,10 +1460,13 @@ version of those functions you are using. Matlab also has packages
 that you can pay extra money to install and use - again Python
 is free!
 
-.. seealso::
 
-   You can watch a `video recording of "Creating Your Own Package" <https://youtu.be/6lbbTwGFcTc>`_
-   online.
+Here is a video recording of from the live tutorial covering "Creating Your Own Package":
+
+.. youtube:: 44QUMCh2ZHU
+   :height: 315
+   :width: 560
+   :align: center
 
 ..
 
@@ -2188,14 +2217,17 @@ beauty of using built-in packages is that you don't have to install anything new
 Python, you already have access to these packages.  For this tutorial, we are going to cover just a little
 bit of the built-in :code:`math` package, which extends the computational capabilities beyond the basic math operators we've already covered.
 
-.. seealso::
+Here is a video recording of from the live tutorial covering "Using a Built-In Package and Publishing Your Package":
 
-   You can watch a `video recording of "Using a Built-In Package and Publishing Your Package" <https://youtu.be/6lbbTwGFcTc>`_
-   online.
+.. youtube:: 6lbbTwGFcTc
+   :height: 315
+   :width: 560
+   :align: center
 
 ..
 
-.. youtube:: 6lbbTwGFcTc
+.. note::
+   The recording is missing the first 10 minutes or so of the presentation and thus does not contain the introduction, the review from last session, and a brief list comprehension aside. The video begins when editing the mysci/computation.py module. There should be an `import math` statement at the beginning of the script and then you should be able to follow along with writing a new function `compute_dewpoint`, as shown.
 ..
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
