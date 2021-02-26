@@ -684,7 +684,7 @@ data structures.
 
 .. seealso::
 
-   You can watch a video recording of `"Creating a Data Dictionary" <https://youtu.be/5z6-t62x7Xs>`_
+   You can watch a `video recording of "Creating a Data Dictionary" <https://youtu.be/5z6-t62x7Xs>`_
    online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-2/>`_.
 
 ..
@@ -1076,7 +1076,7 @@ function and learning about basic math operators.
 
 .. seealso::
 
-   You can watch a video recording of `"Writing Functions" <https://youtu.be/BerEf_3CsL8>`_
+   You can watch a `video recording of "Writing Functions" <https://youtu.be/BerEf_3CsL8>`_
    online, and we have a write-up of the `question and answer session following this section, as well <https://ncar.github.io/xdev/posts/python-tutorial-faq-part-3/>`_.
 
 ..
@@ -1436,7 +1436,7 @@ is free!
 
 .. seealso::
 
-   You can watch a video recording of `"Creating Your Own Package" <https://youtu.be/6lbbTwGFcTc>`_
+   You can watch a `video recording of "Creating Your Own Package" <https://youtu.be/6lbbTwGFcTc>`_
    online.
 
 ..
@@ -2190,7 +2190,7 @@ bit of the built-in :code:`math` package, which extends the computational capabi
 
 .. seealso::
 
-   You can watch a video recording of `"Using a Built-In Package and Publishing Your Package" <https://youtu.be/6lbbTwGFcTc>`_
+   You can watch a `video recording of "Using a Built-In Package and Publishing Your Package" <https://youtu.be/6lbbTwGFcTc>`_
    online.
 
 ..
