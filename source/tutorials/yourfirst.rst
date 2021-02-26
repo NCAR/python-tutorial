@@ -209,7 +209,9 @@ Here is a video recording of from the live tutorial covering "Reading a .txt Fil
 
 ..
 
-1. Open a terminal to begin.
+Let's begin.
+
+1. Open a terminal.
 
    .. note::
 
@@ -710,7 +712,7 @@ Let's begin.
 1. One big string isn't very useful, so use :python:`str.split()` to parse the data
    file into a data structure you can use.
 
-   Change the :code:`mysci.py` script to read:
+   With your terminal open and :code:`python_tutorial` environment activated, change the :code:`mysci.py` script to read:
 
    .. code-block:: python
       :linenos:
@@ -1109,7 +1111,7 @@ Here is a video recording of from the live tutorial covering "Writing Functions"
 
 Let's begin.
 
-1. Okay, now that you've read the data in a way that is easy to modify later,
+1. Now that you've read the data in a way that is easy to modify later,
    it is time to actually do something with the data.
 
    Compute the wind chill factor, which is the cooling effect of the wind. As
@@ -1131,7 +1133,7 @@ Let's begin.
    You've read the temperature data into the tempout variable, but to do this
    calculation, you also need to read the windspeed variable from column 7.
 
-   Modify the columns variable to read:
+   With your terminal open and :code:`python_tutorial` environment activated, modify the columns variable in :code:`mysci.py` to read:
 
    .. code-block:: python
       :linenos:
@@ -1470,7 +1472,9 @@ Here is a video recording of from the live tutorial covering "Creating Your Own 
 
 ..
 
-1. Open a terminal to begin and make sure you are in the :code:`python_tutorial` directory and have activated the corresponding environment.
+Let's begin.
+
+1. Open a terminal and make sure you are in the :code:`python_tutorial` directory and have activated the corresponding environment.
 
 2. Make a copy of your first script with a new name:
 
@@ -2228,6 +2232,8 @@ Here is a video recording of from the live tutorial covering "Using a Built-In P
 .. note::
    The recording is missing the first 10 minutes or so of the presentation and thus does not contain the introduction, the review from last session, and a brief list comprehension aside. The video begins when editing the mysci/computation.py module. There should be an `import math` statement at the beginning of the script and then you should be able to follow along with writing a new function `compute_dewpoint`, as shown.
 ..
+
+Let's begin.
 
 1. Open your terminal, navigate to your :code:`python_tutorial` directory and activate the corresponding environment.
 
