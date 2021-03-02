@@ -16,6 +16,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
       - name: Build (local action)
         uses: ./.github/actions/build
 
