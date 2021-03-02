@@ -4,10 +4,7 @@ description: Composite action to build the Sphinx site
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
+    # Shouldn't put checkout here since it has to be done before using this anyway
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
