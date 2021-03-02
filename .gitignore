@@ -5,5 +5,7 @@ cache
 output
 .doit.*
 .vscode
+.idea
 
 build
+venv
