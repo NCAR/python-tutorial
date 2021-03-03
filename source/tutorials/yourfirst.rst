@@ -1522,7 +1522,7 @@ Let's begin.
       :lineno-start: 30
 
       # Compute the heat index
-      def compute_heatindex(t, hum):
+      def compute_heatindex(t, rh_pct):
          a = -42.379
          b = 2.04901523
          c = 10.14333127
@@ -1533,7 +1533,7 @@ Let's begin.
          h = 0.00085282
          i = -0.00000199
 
-         rh = hum / 100
+         rh = rh_pct / 100
 
          hi = a + (b * t) + (c * rh) + (d * t * rh)
             + (e * t**2) + (f * rh**2) + (g * t**2 * rh)
@@ -1958,13 +1958,13 @@ Let's begin.
           return wci
 
 
-       def compute_heatindex(t, hum):
+       def compute_heatindex(t, rh_pct):
           """
           Compute the heat index given the temperature and the humidity
 
           Parameters:
              t: The temperature in units of F (float)
-             hum: The relative humidity in units of % (float)
+             rh_pct: The relative humidity in units of % (float)
           """
 
           a = -42.379
@@ -1977,7 +1977,7 @@ Let's begin.
           h = 0.00085282
           i = -0.00000199
 
-          rh = hum / 100
+          rh = rh_pct / 100
 
           hi = a + (b * t) + (c * rh) + (d * t * rh)
           + (e * t**2) + (f * rh**2) + (g * t**2 * rh)
@@ -2272,17 +2272,17 @@ Let's begin.
    .. code-block::
       :lineno-start: 53
 
-      def compute_dewpoint(t, h):
+      def compute_dewpoint(t, rh_pct):
          """
          Compute the dew point temperature given the temperature and humidity
 
          Parameters:
             t: The temperature in units of F (float)
-            h: The relative humidity in units of % (float)
+            rh_pct: The relative humidity in units of % (float)
          """
 
          tempC = (t - 32) * 5 / 9 # Convert temperature from deg F to deg C
-         rh = h / 100
+         rh = rh_pct / 100
 
          b = 18.678
          c = 257.14 # deg C
