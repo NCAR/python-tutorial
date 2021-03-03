@@ -1,6 +1,12 @@
 name: build
 description: Composite action to build the Sphinx site
 
+inputs:
+  error-for-warnings:
+    description: Whether to error (and fail the workflow) for Sphinx warnings
+    required: true
+    default: true
+
 runs:
   using: composite
   steps:
@@ -14,5 +20,11 @@ runs:
         python -m pip install -r requirements.txt
           
     - name: Build Sphinx Documentation
+      if: ${{ ! inputs.error-for-warnings }}
       shell: bash
       run: make html
+
+    - name: Build Sphinx Documentation (failing if warnings)
+      if: ${{ inputs.error-for-warnings }}
+      shell: bash
+      run: make html SPHINXOPTS="-W --keep-going -n"

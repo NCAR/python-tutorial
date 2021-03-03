@@ -23,4 +23,6 @@ jobs:
 
       - name: Build (local action)
         uses: ./.github/actions/build
+        with:
+          error-for-warnings: true
 
