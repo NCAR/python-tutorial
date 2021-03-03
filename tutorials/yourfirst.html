@@ -1418,7 +1418,7 @@ a <code class="code docutils literal notranslate"><span class="pre">compute_heat
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Compute the heat index</span>
-<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">hum</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">rh_pct</span><span class="p">):</span>
    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
    <span class="n">b</span> <span class="o">=</span> <span class="mf">2.04901523</span>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">10.14333127</span>
@@ -1429,7 +1429,7 @@ a <code class="code docutils literal notranslate"><span class="pre">compute_heat
    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
    <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00000199</span>
 
-   <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">rh_pct</span> <span class="o">/</span> <span class="mi">100</span>
 
    <span class="n">hi</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
       <span class="o">+</span> <span class="p">(</span><span class="n">e</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
@@ -1909,13 +1909,13 @@ similar to the following:</p>
    <span class="k">return</span> <span class="n">wci</span>
 
 
-<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">hum</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">compute_heatindex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">rh_pct</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Compute the heat index given the temperature and the humidity</span>
 
 <span class="sd">   Parameters:</span>
 <span class="sd">      t: The temperature in units of F (float)</span>
-<span class="sd">      hum: The relative humidity in units of % (float)</span>
+<span class="sd">      rh_pct: The relative humidity in units of % (float)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
 
    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">42.379</span>
@@ -1928,7 +1928,7 @@ similar to the following:</p>
    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.00085282</span>
    <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00000199</span>
 
-   <span class="n">rh</span> <span class="o">=</span> <span class="n">hum</span> <span class="o">/</span> <span class="mi">100</span>
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">rh_pct</span> <span class="o">/</span> <span class="mi">100</span>
 
    <span class="n">hi</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
    <span class="o">+</span> <span class="p">(</span><span class="n">e</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">rh</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rh</span><span class="p">)</span>
@@ -2199,17 +2199,17 @@ It is best practice to import packages and modules at the beginning (top) of the
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_dewpoint</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">rh_pct</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Compute the dew point temperature given the temperature and humidity</span>
 
 <span class="sd">   Parameters:</span>
 <span class="sd">      t: The temperature in units of F (float)</span>
-<span class="sd">      h: The relative humidity in units of % (float)</span>
+<span class="sd">      rh_pct: The relative humidity in units of % (float)</span>
 <span class="sd">   &quot;&quot;&quot;</span>
 
    <span class="n">tempC</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span> <span class="c1"># Convert temperature from deg F to deg C</span>
-   <span class="n">rh</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">100</span>
+   <span class="n">rh</span> <span class="o">=</span> <span class="n">rh_pct</span> <span class="o">/</span> <span class="mi">100</span>
 
    <span class="n">b</span> <span class="o">=</span> <span class="mf">18.678</span>
    <span class="n">c</span> <span class="o">=</span> <span class="mf">257.14</span> <span class="c1"># deg C</span>
